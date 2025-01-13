@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format:silent": "prettier --write . --log-level silent",
+    "format:silent": "prettier --write --check . --log-level silent",
     "format": "prettier --write ."
   },
   "dependencies": {
