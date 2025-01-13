@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# José Duque Curriculum Vitae
 
-## Getting Started
+<a href="https://nextjs.org">
+  <img
+    src="https://img.shields.io/badge/Next.js-000000.svg?logo=nextdotjs&logoColor=white"
+    alt="Next JS"
+  />
+</a>
+<a href="https://gitmoji.dev">
+  <img
+    src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square"
+    alt="Gitmoji"
+  />
+</a>
 
-First, run the development server:
+**Site URL: [www.duquejo.com](https://www.duquejo.com/)**
+
+Welcome to my GitHub repository dedicated to showcasing my professional journey! This repository serves as an interactive and dynamic Curriculum Vitae, providing an in-depth look at my skills, experiences, and projects.
+
+Thank you for visiting, and I look forward to connecting with you!
+
+## Table of Contents
+
+- [Technologies & Tools](#technologies)
+- [Installation](#installation)
+- [Live Screenshots](#screenshots)
+- [Support](#support)
+- [Contributing](#contributing)
+
+## Technologies
+
+## Installation
+
+## Screenshots
+
+## Support
+
+## Contributing
+
+- Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow/).
+- In case you need to add a contribution request, create a branch, add commits, and [open a pull request](https://github.com/duquejo/vue-cv/compare/) following the [Gitmoji convention](https://gitmoji.dev/):
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<intention> [scope?][:?] <message> # Ex: ":sparkles: feat(users): users management feature"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **intention**: An emoji from the list.
+- **scope**: An optional string that adds contextual information for the scope of the change.
+- **message**: A brief explanation of the change.
