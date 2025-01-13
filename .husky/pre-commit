@@ -1,0 +1,2 @@
+yarn format:silent
+yarn lint

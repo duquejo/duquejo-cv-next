@@ -1,5 +1,5 @@
 const commitlintConfig = () => ({
-  extends: ["gitmoji"],
+  extends: ['gitmoji'],
 });
 
 export default commitlintConfig();
