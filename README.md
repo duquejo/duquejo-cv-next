@@ -1,7 +1,7 @@
 # José Duque Curriculum Vitae
 
-![https://nextjs.org](https://img.shields.io/badge/Next.js-000000.svg?logo=nextdotjs&logoColor=white)
-![https://gitmoji.dev](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square)
+<a href="https://nextjs.org"><img src="https://img.shields.io/badge/Next.js-000000.svg?logo=nextdotjs" alt="Next JS"/></a>
+<a href="https://gitmoji.dev"><img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji"/></a>
 
 **Site URL: [www.duquejo.com](https://www.duquejo.com/)**
 
