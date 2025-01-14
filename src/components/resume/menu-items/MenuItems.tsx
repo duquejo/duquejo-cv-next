@@ -7,16 +7,17 @@ import type { MenuItem } from '@/interfaces';
 
 interface Props {
   items: MenuItem[];
+  size?: 'default' | 'sm' | 'lg';
 }
 
-export const MenuItems = ({ items }: Props) => {
+export const MenuItems = ({ items, size = 'default' }: Props) => {
   const pathName = usePathname();
 
   return (
     <SidebarMenu>
       {items.map((item) => (
         <SidebarMenuItem key={item.title}>
-          <SidebarMenuButton asChild isActive={pathName === item.url}>
+          <SidebarMenuButton asChild isActive={pathName === item.url} size={size}>
             <Link
               href={item.url}
               className="data-[active=true]:decoration-primary data-[active=true]:underline data-[active=true]:underline-offset-4"

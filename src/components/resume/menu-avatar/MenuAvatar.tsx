@@ -9,13 +9,13 @@ export const MenuAvatar = () => {
 
   return (
     <>
-      <picture className="h-auto mt-10 w-6 lg:w-auto">
+      <picture className="mt-10 w-6 lg:w-auto">
         <Image
           className="object-cover rounded"
           src="/static/img/avatar-small.webp"
           width="160"
-          height="160"
-          alt="Avatar"
+          height="146"
+          alt="José Miguel Duque"
         />
       </picture>
       {state === 'expanded' && (

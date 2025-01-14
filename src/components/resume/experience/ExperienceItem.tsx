@@ -8,8 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { ExperienceContent } from '@/components/resume/experience/ExperienceContent';
 
 export const ExperienceItem = ({
   start_date,
@@ -43,9 +43,11 @@ export const ExperienceItem = ({
           )}
         >
           <time className="block">{start_date}</time>
-          <time className="block mt-1 lg:mt-0 lg:before:content-['-'] lg:before:mx-1">
-            {end_date}
-          </time>
+          {end_date && (
+            <time className="block mt-1 lg:mt-0 lg:before:content-['-'] lg:before:mx-1">
+              {end_date}
+            </time>
+          )}
         </span>
         <span className="text-xs font-normal ml-2 text-right lg:text-left">{enterprise}</span>
       </div>
@@ -54,46 +56,11 @@ export const ExperienceItem = ({
           <CardTitle>{project}</CardTitle>
           <CardDescription>{role}</CardDescription>
         </CardHeader>
-        <CardContent className="flex">
-          {resume && (
-            <>
-              <div
-                className={cn(
-                  'flex flex-col justify-between items-baseline',
-                  screenshot && 'basis-6/12',
-                )}
-              >
-                <div className="flex-auto">
-                  <span className="font-semibold text-base">Responsibilities</span>
-                  {resume.length > 1 ? (
-                    <ol className="list-disc ml-4 text-justify marker:text-secondary">
-                      {resume.map((r, i) => (
-                        <li key={`resume-${i}`} className="my-1 text-sm text-justify">
-                          {r}
-                        </li>
-                      ))}
-                    </ol>
-                  ) : (
-                    <p className="my-1 text-justify text-sm">{resume}</p>
-                  )}
-                </div>
-
-                {url && (
-                  <Button className="mt-5 flex-shrink" variant="secondary">
-                    Project&#39;s link
-                  </Button>
-                )}
-              </div>
-            </>
-          )}
-          {screenshot && (
-            <picture className="flex flex-grow flex-col px-4 pt-0">
-              <div className="aspect-video rounded-xl bg-muted/50" />
-            </picture>
-          )}
+        <CardContent className="py-0">
+          <ExperienceContent resume={resume} screenshot={screenshot} url={url} />
         </CardContent>
         {additional_info && (
-          <CardFooter className="flex flex-col items-start gap-y-2">
+          <CardFooter className="flex flex-col items-start gap-y-2 pt-5">
             <div className="font-semibold text-base">Skills</div>
             <div className="flex gap-1 flex-wrap">
               {additional_info.map((info) => (

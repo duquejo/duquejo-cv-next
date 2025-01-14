@@ -11,18 +11,18 @@ const education: ExperienceType[] = [
   {
     start_date: 'November 2021',
     end_date: '',
-    enterprise: 'Ruta N Corporation - Ceiba Software S.A.S - Globant',
+    enterprise: '',
     isRecent: true,
     project: 'Certification',
-    role: 'Boot-camp Node JS',
+    role: 'Boot-camp Node JS - Ruta N Corporation - Ceiba Software S.A.S - Globant',
   },
   {
     start_date: '2010',
     end_date: '2016',
-    enterprise: 'Politécnico Colombiano Jaime Isaza Cadavid',
+    enterprise: '',
     isRecent: true,
-    project: 'Professional',
-    role: 'Software Engineering',
+    project: 'Professional degree',
+    role: 'Software Engineering - Politécnico Colombiano Jaime Isaza Cadavid',
   },
 ];
 
@@ -32,6 +32,7 @@ const knowledge: Knowledge[] = [
   { name: 'CSS3', type: 'hard' },
   { name: 'Tailwind', type: 'hard' },
   { name: 'HTML5', type: 'hard' },
+  { name: 'DDD Architecture', type: 'soft' },
   { name: 'Laravel', type: 'hard' },
   { name: 'React.js', type: 'hard' },
   { name: 'Vue.js', type: 'hard' },
@@ -93,6 +94,7 @@ const knowledge: Knowledge[] = [
   { name: 'SSR', type: 'soft' },
   { name: 'Quasar', type: 'hard' },
   { name: 'Kubernetes', type: 'hard' },
+  { name: 'Hexagonal architecture', type: 'soft' },
 ];
 
 const mainLanguages: MainLanguage[] = [
@@ -151,7 +153,7 @@ const services: Services[] = [
 
 export default function ServicesPage() {
   return (
-    <article className="flex flex-col mt-5 lg:mt-0 px-8 pt-8">
+    <article className="flex flex-col mt-5 lg:mt-0 px-8 pt-5 pb-10">
       <section>
         <h1 className="text-4xl lg:text-6xl mb-5 leading-tight mt-10 text-center font-semibold underline underline-offset-8 decoration-yellow-400">
           Services & <br />
@@ -242,7 +244,7 @@ export default function ServicesPage() {
               <Progress className="mb-2" value={ml.value} color={ml.color} />
             </div>
           ))}
-          {/*Knowledges*/}
+          {/*Tools & Soft skills*/}
           <h3 className="text-base lg:text-xl mb-6 mt-10 font-semibold underline-offset-8 underline decoration-yellow-400">
             Tools & Soft-skills
           </h3>
