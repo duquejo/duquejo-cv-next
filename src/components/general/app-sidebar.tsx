@@ -1,7 +1,6 @@
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -9,7 +8,7 @@ import {
   SidebarMenu,
   SidebarSeparator,
 } from '@/components/ui/sidebar';
-import { Calendar, Inbox, Projector, Send } from 'lucide-react';
+import { Calendar, Gamepad, Inbox, Music, Pencil, Projector, Send } from 'lucide-react';
 import { MenuAvatar } from '@/components/resume/menu-avatar/MenuAvatar';
 import type { MenuItem } from '@/interfaces';
 import { MenuItems } from '@/components/resume/menu-items/MenuItems';
@@ -17,7 +16,7 @@ import { MenuItems } from '@/components/resume/menu-items/MenuItems';
 // Menu items.
 const aboutMeItems: MenuItem[] = [
   {
-    title: 'Resume',
+    title: 'Resumeé',
     url: '/',
     icon: <Inbox />,
   },
@@ -26,21 +25,39 @@ const aboutMeItems: MenuItem[] = [
 const serviceItems: MenuItem[] = [
   {
     title: 'Services',
-    url: '/services',
+    url: '/career/services',
     icon: <Calendar />,
   },
   {
     title: 'Projects',
-    url: '/projects',
+    url: '/career/projects',
     icon: <Projector />,
   },
 ];
 
 const lastItems: MenuItem[] = [
   {
+    title: 'My blog',
+    url: '/blog',
+    icon: <Pencil />,
+  },
+  {
     title: 'Contact',
     url: '/contact',
     icon: <Send />,
+  },
+];
+
+const hobbiesItems: MenuItem[] = [
+  {
+    title: 'Music production',
+    url: '/hobbies/music-production',
+    icon: <Music />,
+  },
+  {
+    title: 'Game development',
+    url: '/hobbies/game-development',
+    icon: <Gamepad />,
   },
 ];
 
@@ -67,10 +84,21 @@ export const AppSidebar = () => {
           <SidebarSeparator orientation="horizontal" />
 
           <SidebarGroup>
-            <SidebarGroupLabel>Projects & Services</SidebarGroupLabel>
+            <SidebarGroupLabel>Professional career</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 <MenuItems items={serviceItems} />
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+
+          <SidebarSeparator orientation="horizontal" />
+
+          <SidebarGroup>
+            <SidebarGroupLabel>Hobbies</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                <MenuItems items={hobbiesItems} />
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
@@ -86,8 +114,6 @@ export const AppSidebar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarSeparator orientation="horizontal" />
-      <SidebarFooter>asd</SidebarFooter>
     </Sidebar>
   );
 };

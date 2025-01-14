@@ -1,31 +1,31 @@
 'use client';
 
 import Link from 'next/link';
+import { Github, Linkedin } from 'lucide-react';
+import { Social } from '@/interfaces';
 
-const social = [
+const social: Social[] = [
   {
     name: 'GitHub',
     link: 'https://github.com/duquejo',
+    icon: <Github className="icon" />,
   },
   {
     name: 'LinkedIn',
     link: 'https://www.linkedin.com/in/duquejo/',
+    icon: <Linkedin className="icon" />,
   },
 ];
 
 export const AppFooter = () => {
   return (
-    <footer className="flex-1 mt-5 lg:mt-0 fixed bottom-0 left-0 right-0 bg-white flex items-center justify-between gap-x-2">
-      <ul className="flex gap-x-4">
-        {social.map((s) => (
-          <li key={s.name} className="icon">
-            <Link href={s.link} target="_blank" title={s.name} aria-label={s.name}>
-              {s.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <span className="text-gray-800 text-sm">©️ {new Date().getFullYear()} José Duque</span>
+    <footer className="border-t flex p-3 items-center justify-center gap-x-8">
+      {social.map((s) => (
+        <Link href={s.link} key={s.name} target="_blank" title={s.name} aria-label={s.name}>
+          {s.icon}
+        </Link>
+      ))}
+      <span className="font-semibold text-sm">© {new Date().getFullYear()} José Duque</span>
     </footer>
   );
 };

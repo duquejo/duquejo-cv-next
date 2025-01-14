@@ -1,30 +1,17 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, CodeXml, Computer, Database, Languages } from 'lucide-react';
-import { ExperienceItem } from '@/components/resume/experience/ExperienceItem';
-import type { ExperienceType, Knowledge } from '@/interfaces';
+import { BookOpen, CodeXml, Computer, Database } from 'lucide-react';
+import type { Knowledge } from '@/interfaces';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { MainLanguage } from '@/interfaces/main-languages.interface';
 import { Services } from '@/interfaces/services.interface';
+import { Metadata } from 'next';
+import { generateStandardTitle } from '@/lib/utils';
 
-const education: ExperienceType[] = [
-  {
-    start_date: 'November 2021',
-    end_date: '',
-    enterprise: '',
-    isRecent: true,
-    project: 'Certification',
-    role: 'Boot-camp Node JS - Ruta N Corporation - Ceiba Software S.A.S - Globant',
-  },
-  {
-    start_date: '2010',
-    end_date: '2016',
-    enterprise: '',
-    isRecent: true,
-    project: 'Professional degree',
-    role: 'Software Engineering - Politécnico Colombiano Jaime Isaza Cadavid',
-  },
-];
+export const metadata: Metadata = {
+  title: generateStandardTitle('Services'),
+  description: 'Backend, Frontend, Full-stack or consulting services at glance',
+};
 
 const knowledge: Knowledge[] = [
   { name: 'AWS', type: 'hard' },
@@ -154,17 +141,14 @@ const services: Services[] = [
 export default function ServicesPage() {
   return (
     <article className="flex flex-col mt-5 lg:mt-0 px-8 pt-5 pb-10">
-      <section>
-        <h1 className="text-4xl lg:text-6xl mb-5 leading-tight mt-10 text-center font-semibold underline underline-offset-8 decoration-yellow-400">
+      <section className="mt-10">
+        <h1 className="text-4xl lg:text-6xl mb-5 leading-tight text-center font-semibold underline underline-offset-8 decoration-yellow-400">
           Services & <br />
           Technology stack
         </h1>
       </section>
       {/*General Services*/}
-      <section>
-        <h2 className="text-lg lg:text-2xl mb-3 hidden md:block font-semibold underline-offset-4 underline decoration-yellow-400">
-          General services
-        </h2>
+      <section className="pt-5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
           {services.map((service, i) => (
             <Card key={`service-${i}`}>
@@ -184,77 +168,30 @@ export default function ServicesPage() {
           ))}
         </div>
       </section>
-      <section className="mt-10 flex flex-col lg:flex-row gap-x-10">
-        <div className="basis-full">
-          {/*Education*/}
-          <h3 className="text-base lg:text-xl mb-6 mt-10 font-semibold underline-offset-8 underline decoration-yellow-400">
-            Academic studies
-          </h3>
-          {education.map((e, i) => (
-            <ExperienceItem key={i} {...e} />
-          ))}
-        </div>
-        <div className="basis-full lg:basis-2/3">
-          {/*Languages*/}
-          <h3 className="text-base lg:text-xl mb-6 mt-5 font-semibold underline-offset-8 underline decoration-yellow-400">
-            Languages
-          </h3>
-          <div className="grid grid-cols-2 gap-x-2">
-            <Card className="flex flex-col justify-center items-center">
-              <CardHeader>
-                <Languages size={40} strokeWidth={1} className="dark:text-primary" />
-              </CardHeader>
-              <CardContent>
-                <p className="mt-3 lg:mt-0 text-center text-sm text-muted-foreground leading-tight">
-                  <b>Spanish</b>{' '}
-                  <small>
-                    Native
-                    <br />
-                    (C2)
-                  </small>
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="flex flex-col justify-center items-center">
-              <CardHeader>
-                <Languages size={40} strokeWidth={1} className="dark:text-primary" />
-              </CardHeader>
-              <CardContent>
-                <p className="mt-3 lg:mt-0 text-center text-sm text-muted-foreground leading-tight">
-                  <b>English</b>{' '}
-                  <small>
-                    Proficient
-                    <br />
-                    (B2)
-                  </small>
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-          {/*Tech Languages*/}
-          <h3 className="text-base lg:text-xl mb-6 mt-10 font-semibold underline-offset-8 underline decoration-yellow-400">
-            Tech languages
-          </h3>
-          {mainLanguages.map((ml) => (
-            <div key={ml.tag}>
-              <div className="flex justify-between mb-1">
-                <strong className="text-xs">{ml.tag}</strong>
-                <strong className="text-xs">{ml.value}%</strong>
-              </div>
-              <Progress className="mb-2" value={ml.value} color={ml.color} />
+      <section className="mt-10 flex flex-col gap-x-10">
+        {/*Tech Languages*/}
+        <h3 className="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
+          Main tech languages
+        </h3>
+        {mainLanguages.map((ml) => (
+          <div key={ml.tag}>
+            <div className="flex justify-between mb-2">
+              <strong className="text-xs">{ml.tag}</strong>
+              <strong className="text-xs">{ml.value}%</strong>
             </div>
-          ))}
-          {/*Tools & Soft skills*/}
-          <h3 className="text-base lg:text-xl mb-6 mt-10 font-semibold underline-offset-8 underline decoration-yellow-400">
-            Tools & Soft-skills
-          </h3>
-          <div className="flex flex-wrap gap-2 lg:gap-3 justify-evenly lg:justify-normal">
-            {knowledge.map((k, i) => (
-              <Badge key={`knowledge-${i}`} variant={k.type === 'soft' ? 'outline' : 'default'}>
-                {k.name}
-              </Badge>
-            ))}
+            <Progress className="mb-4" value={ml.value} color={ml.color} />
           </div>
+        ))}
+        {/*Tools & Soft skills*/}
+        <h3 className="text-base lg:text-xl mb-6 mt-10 font-semibold underline-offset-8 underline decoration-yellow-400">
+          Tools & Soft-skills
+        </h3>
+        <div className="flex flex-wrap gap-2 lg:gap-3 justify-evenly lg:justify-normal">
+          {knowledge.map((k, i) => (
+            <Badge key={`knowledge-${i}`} variant={k.type === 'soft' ? 'outline' : 'default'}>
+              {k.name}
+            </Badge>
+          ))}
         </div>
       </section>
     </article>

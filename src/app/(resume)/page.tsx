@@ -1,4 +1,8 @@
 import Image from 'next/image';
+import { ExperienceItem } from '@/components/resume/experience/ExperienceItem';
+import type { ExperienceType, Language } from '@/interfaces';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Languages } from 'lucide-react';
 
 export const metadata = {
   title: 'Resume',
@@ -24,6 +28,44 @@ const stack = [
   },
 ];
 
+const education: ExperienceType[] = [
+  {
+    start_date: 'November 2021',
+    end_date: '',
+    enterprise: '',
+    isRecent: true,
+    project: 'Certification',
+    role: 'Boot-camp Node JS - Ruta N Corporation - Ceiba Software S.A.S - Globant',
+  },
+  {
+    start_date: '2010',
+    end_date: '2016',
+    enterprise: '',
+    isRecent: true,
+    project: 'Professional degree',
+    role: 'Software Engineering - Politécnico Colombiano Jaime Isaza Cadavid',
+  },
+  {
+    start_date: '2009',
+    end_date: '',
+    enterprise: '',
+    isRecent: true,
+    project: "Bachelor's degree",
+    role: 'Colegio Paula Montal',
+  },
+];
+
+const language: Language[] = [
+  {
+    title: 'Spanish',
+    subtitle: 'Native (C2)',
+  },
+  {
+    title: 'English',
+    subtitle: 'Proficient (B2)',
+  },
+];
+
 export default function MainPage() {
   return (
     <>
@@ -33,11 +75,12 @@ export default function MainPage() {
           <h1 className="text-4xl lg:text-6xl mb-5">
             Hi, I&#39;m <strong>José Duque.</strong>
           </h1>
-          <p>
+          <p className="text-justify">
             Colombian Software Engineer with more than 8 years of experience in web application
             development.
           </p>
-          <p>
+          <br />
+          <p className="text-justify">
             I am focused on guaranteeing quality solutions based on good practices with technologies
             on <b>monolithic architectures</b> as well as <b>microservices architectures</b>.
           </p>
@@ -64,7 +107,7 @@ export default function MainPage() {
           />
         </picture>
       </section>
-      <section className="flex flex-col mx-8 my-8 gap-x-10 gap-y-2 lg:px-2">
+      <section className="flex flex-col m-8 gap-x-10 gap-y-2 lg:px-2">
         <h2 className="text-lg lg:text-xl mb-3 font-semibold underline-offset-4 underline decoration-primary">
           What have I done?
         </h2>
@@ -81,7 +124,7 @@ export default function MainPage() {
           <br />
           With <strong>software factories</strong> I have had the opportunity to work for{' '}
           <strong>Educational Startups</strong> with great regional reach, as well as for the{' '}
-          <strong>Banking</strong> sector, <strong>Insurance</strong> and <strong>Health</strong>,
+          <strong>Banking</strong> sector, <strong>Insurances</strong> and <strong>Health</strong>,
           which have allowed us to expand knowledge and comply with the rigidity of the policies of
           said market.
           <br />
@@ -98,6 +141,39 @@ export default function MainPage() {
           this in search of profiling myself as a competent Full Stack developer for the needs of
           the current market.
         </p>
+      </section>
+      <section className="flex flex-col lg:flex-row gap-x-10 m-8">
+        <div className="basis-full">
+          {/*Education*/}
+          <h3 className="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
+            Academic studies & Certifications
+          </h3>
+          {education.map((e, i) => (
+            <ExperienceItem key={i} {...e} />
+          ))}
+        </div>
+        <div className="basis-full lg:basis-2/3">
+          {/*Languages*/}
+          <h3 className="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
+            Languages
+          </h3>
+          <div className="grid grid-cols-2 gap-x-6">
+            {language &&
+              language.map((l, i) => (
+                <Card className="flex flex-col justify-center items-center" key={`language-${i}`}>
+                  <CardHeader>
+                    <Languages size={40} strokeWidth={1} className="dark:text-primary" />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="mt-3 lg:mt-0 text-center text-muted-foreground leading-tight">
+                      <b>{l.title}</b>
+                      <small className="block mt-1">{l.subtitle}</small>
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+          </div>
+        </div>
       </section>
     </>
   );

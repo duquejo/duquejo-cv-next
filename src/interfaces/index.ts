@@ -3,3 +3,5 @@ export * from './menu-items.interface';
 export * from './main-languages.interface';
 export * from './services.interface';
 export * from './knowledge.interface';
+export * from './languages.interface';
+export * from './social.interface';

@@ -1,13 +1,20 @@
 import type { ExperienceType } from '@/interfaces';
 import { ExperienceItem } from '@/components/resume/experience/ExperienceItem';
+import { Metadata } from 'next';
+import { generateStandardTitle } from '@/lib/utils';
+
+export const metadata: Metadata = {
+  title: generateStandardTitle('Projects'),
+  description: 'Latest projects where I had been contributed',
+};
 
 const experiences: ExperienceType[] = [
   {
     start_date: '2023',
     end_date: 'Present',
-    enterprise: 'SURA Insurance - Ceiba Software S.A.S',
+    enterprise: 'SURA Seguros - Ceiba Software S.A.S',
     isRecent: true,
-    project: 'SURA Insurance - Integrations Team Bus',
+    project: 'SURA Seguros - Integrations Team Bus',
     role: 'Backend developer',
     resume: [
       'Design and creation of serverless services for the Azure Cloud',
@@ -202,7 +209,7 @@ const experiences: ExperienceType[] = [
   {
     start_date: '14/12/2019',
     end_date: '04/05/2021',
-    enterprise: 'SURA Insurances - Colombia - SM Digital',
+    enterprise: 'SURA Seguros - Colombia - SM Digital',
     isRecent: false,
     project: 'SURA Advisors Intranet',
     role: 'Full-Stack developer',
@@ -356,13 +363,9 @@ export default function ProjectsPage() {
     <article className="flex flex-col mt-5 lg:mt-0 px-8 pt-5 pb-10">
       <section>
         <h1 className="text-4xl lg:text-6xl mb-5 leading-tight mt-10 text-center font-semibold underline underline-offset-8 decoration-yellow-400">
-          Projects
+          Latest projects
         </h1>
-        <section>
-          <h2 className="text-lg lg:text-2xl mb-3 hidden md:block font-semibold underline-offset-4 underline decoration-yellow-400">
-            Last projects
-          </h2>
-          <p className="mb-5">This is my development experience through this years.</p>
+        <section className="mt-10">
           {experiences.map((experience, i) => (
             <ExperienceItem key={i} {...experience} />
           ))}
