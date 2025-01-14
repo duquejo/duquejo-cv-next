@@ -2,6 +2,17 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { ReactNode } from 'react';
+import { ThemeProvider } from '@/components/general/theme-provider';
+import {
+  Sheet as SheetProvider,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from '@/components/ui/sheet';
+import { SidebarProvider } from '@/components/ui/sidebar';
+import { AppSidebar } from '@/components/general/app-sidebar';
+import { AppOptionsSidebar } from '@/components/general/app-options-sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,8 +27,32 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={`${inter.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SidebarProvider>
+            <SheetProvider>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle>Are you absolutely sure?</SheetTitle>
+                  <SheetDescription>
+                    This action cannot be undone. This will permanently delete your account and
+                    remove your data from our servers.
+                  </SheetDescription>
+                </SheetHeader>
+              </SheetContent>
+              <AppSidebar />
+              {children}
+              <AppOptionsSidebar />
+            </SheetProvider>
+          </SidebarProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

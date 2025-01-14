@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import type { ExperienceType } from '@/interfaces/experience';
+import type { ExperienceType } from '@/interfaces/experience.interface';
 import {
   Card,
   CardContent,

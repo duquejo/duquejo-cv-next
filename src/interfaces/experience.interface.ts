@@ -8,5 +8,3 @@ export interface ExperienceType {
   resume?: string[];
   additional_info?: string;
 }
-
-export type Sizes = 'small' | 'large' | 'medium';
