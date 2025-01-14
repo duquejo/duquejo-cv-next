@@ -56,7 +56,7 @@ export default function MainPage() {
         </div>
         <picture className="w-full order-1 lg:basis-1/2 lg:order-2 overflow-hidden">
           <Image
-            className="shadow transition-all duration-500"
+            className="shadow rounded"
             alt="José Miguel Duque"
             width="1400"
             height="1197"
