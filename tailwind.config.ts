@@ -55,6 +55,9 @@ export default {
           '50%': { transform: 'none', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' },
         },
       },
+      transitionDuration: {
+        slow: '10000ms',
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -107,10 +110,17 @@ export default {
           ring: 'hsl(var(--sidebar-ring))',
         },
       },
+      boxShadow: {
+        'inset-image': 'inset 0 0 10px rgba(0, 0, 0, 0.5)',
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      backgroundImage: {
+        'hero-img': "url('https://picsum.photos/1920/1920/?random')",
+        'body-img': "url('https://picsum.photos/1600/1600/?random')",
       },
     },
   },

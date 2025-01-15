@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import { LucideIcon } from 'lucide-react';
 
 export interface Services {
   title: string;
   subtitle: string;
-  icon: ReactNode;
+  icon: LucideIcon;
   description: string;
 }

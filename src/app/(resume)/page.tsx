@@ -1,77 +1,20 @@
 import Image from 'next/image';
 import { ExperienceItem } from '@/components/resume/experience/ExperienceItem';
-import type { ExperienceType, Language } from '@/interfaces';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Languages } from 'lucide-react';
-
-export const metadata = {
-  title: 'Resume',
-  description: 'CV Resume',
-};
-
-const stack = [
-  {
-    icon: '/static/svg/typescript.svg',
-    title: 'Typescript',
-  },
-  {
-    icon: '/static/svg/nodejs.svg',
-    title: 'Node JS',
-  },
-  {
-    icon: '/static/svg/vue.svg',
-    title: 'Vue JS',
-  },
-  {
-    icon: '/static/svg/react.svg',
-    title: 'React JS',
-  },
-];
-
-const education: ExperienceType[] = [
-  {
-    start_date: 'November 2021',
-    end_date: '',
-    enterprise: '',
-    isRecent: true,
-    project: 'Certification',
-    role: 'Boot-camp Node JS - Ruta N Corporation - Ceiba Software S.A.S - Globant',
-  },
-  {
-    start_date: '2010',
-    end_date: '2016',
-    enterprise: '',
-    isRecent: true,
-    project: 'Professional degree',
-    role: 'Software Engineering - Politécnico Colombiano Jaime Isaza Cadavid',
-  },
-  {
-    start_date: '2009',
-    end_date: '',
-    enterprise: '',
-    isRecent: true,
-    project: "Bachelor's degree",
-    role: 'Colegio Paula Montal',
-  },
-];
-
-const language: Language[] = [
-  {
-    title: 'Spanish',
-    subtitle: 'Native (C2)',
-  },
-  {
-    title: 'English',
-    subtitle: 'Proficient (B2)',
-  },
-];
+import {
+  ACADEMIC_DATA as academic,
+  LANGUAGE_DATA as language,
+  STACK_DATA as stack,
+} from '@/lib/constants';
+import { HeroImage } from '@/components/resume/hero-image/HeroImage';
 
 export default function MainPage() {
   return (
     <>
-      <section className="flex flex-row items-center mx-0 mt-0 px-0">
-        <div className="order-2 lg:basis-1/2 lg:order-1 px-8 pt-8 lg:m-auto">
-          <span className="text-gray-500 text-lg font-light">Full-Stack developer</span>
+      <section className="flex flex-row items-center mx-0 mt-10 relative">
+        <div className="order-2 lg:basis-3/5 lg:order-1 px-10 pb-0">
+          <span className="text-gray-500 text-lg font-light mt-10">Full-Stack developer</span>
           <h1 className="text-4xl lg:text-6xl mb-5">
             Hi, I&#39;m <strong>José Duque.</strong>
           </h1>
@@ -84,7 +27,7 @@ export default function MainPage() {
             I am focused on guaranteeing quality solutions based on good practices with technologies
             on <b>monolithic architectures</b> as well as <b>microservices architectures</b>.
           </p>
-          <div className="flex justify-between gap-2 mt-8 mb-4 lg:my-8 w-full lg:w-auto">
+          <div className="flex justify-evenly gap-2 mt-8 mb-4 lg:my-8 w-full lg:w-auto">
             {stack.map((s) => (
               <Image
                 className="hover:animate-wiggle"
@@ -97,15 +40,7 @@ export default function MainPage() {
             ))}
           </div>
         </div>
-        <picture className="w-full order-1 lg:basis-1/2 lg:order-2 overflow-hidden">
-          <Image
-            className="shadow rounded"
-            alt="José Miguel Duque"
-            width="1400"
-            height="1197"
-            src="/static/img/avatar_w_1400.webp"
-          />
-        </picture>
+        <HeroImage className="order-1 flex-1 lg:order-2 px-10" />
       </section>
       <section className="flex flex-col m-8 gap-x-10 gap-y-2 lg:px-2">
         <h2 className="text-lg lg:text-xl mb-3 font-semibold underline-offset-4 underline decoration-primary">
@@ -115,7 +50,7 @@ export default function MainPage() {
           During my working life, I have had the opportunity to have a broad view of the client
           specific needs to solve any technological challenge that arises; I have played roles as
           advisor and coordinator in development teams for public sector companies such as the{' '}
-          <strong>Alcaldia de Itagüí</strong>, <strong>Alcaldía de Bogotá</strong>,{' '}
+          <strong>Alcaldía de Itagüí</strong>, <strong>Alcaldía de Bogotá</strong>,{' '}
           <strong>Ministerio de Educación Nacional</strong> and <strong>EAFIT University</strong>. I
           have also participated in custom development projects and website development with{' '}
           <strong>Marketing agencies</strong> full-time and alternatively as a{' '}
@@ -148,8 +83,8 @@ export default function MainPage() {
           <h3 className="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
             Academic studies & Certifications
           </h3>
-          {education.map((e, i) => (
-            <ExperienceItem key={i} {...e} />
+          {academic.map((a, i) => (
+            <ExperienceItem key={i} {...a} />
           ))}
         </div>
         <div className="basis-full lg:basis-2/3">

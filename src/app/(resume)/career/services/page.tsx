@@ -1,88 +1,15 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, CodeXml, Computer, Database } from 'lucide-react';
-import type { Knowledge } from '@/interfaces';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { MainLanguage } from '@/interfaces/main-languages.interface';
-import { Services } from '@/interfaces/services.interface';
 import { Metadata } from 'next';
 import { generateStandardTitle } from '@/lib/utils';
+import { KNOWLEDGE_DATA as knowledge, SERVICES_DATA as services } from '@/lib/constants';
+import { MainLanguage } from '@/interfaces';
 
 export const metadata: Metadata = {
   title: generateStandardTitle('Services'),
   description: 'Backend, Frontend, Full-stack or consulting services at glance',
 };
-
-const knowledge: Knowledge[] = [
-  { name: 'AWS', type: 'hard' },
-  { name: 'Azure', type: 'hard' },
-  { name: 'CSS3', type: 'hard' },
-  { name: 'Tailwind', type: 'hard' },
-  { name: 'HTML5', type: 'hard' },
-  { name: 'DDD Architecture', type: 'soft' },
-  { name: 'Laravel', type: 'hard' },
-  { name: 'React.js', type: 'hard' },
-  { name: 'Vue.js', type: 'hard' },
-  { name: 'WordPress', type: 'hard' },
-  { name: 'RabbitMQ', type: 'hard' },
-  { name: 'Redis', type: 'hard' },
-  { name: 'MySQL', type: 'hard' },
-  { name: 'MongoDB', type: 'hard' },
-  { name: 'PostgreSQL', type: 'hard' },
-  { name: 'Distributed architectures', type: 'soft' },
-  { name: 'Monolithic architectures', type: 'soft' },
-  { name: 'Clean Code', type: 'soft' },
-  { name: 'Terraform', type: 'hard' },
-  { name: 'Serverless framework', type: 'hard' },
-  { name: 'Storybook', type: 'hard' },
-  { name: 'Design Systems', type: 'soft' },
-  { name: 'i18n', type: 'soft' },
-  { name: 'Responsive design', type: 'soft' },
-  { name: 'Docker', type: 'hard' },
-  { name: 'Bootstrap', type: 'hard' },
-  { name: 'Kanban', type: 'soft' },
-  { name: 'Jenkins', type: 'hard' },
-  { name: 'Node JS', type: 'hard' },
-  { name: 'SpringBoot', type: 'hard' },
-  { name: 'SpringCloud', type: 'hard' },
-  { name: 'Nest JS', type: 'hard' },
-  { name: 'Agile development', type: 'soft' },
-  { name: 'OOP', type: 'soft' },
-  { name: 'Time-management', type: 'soft' },
-  { name: 'Time flexibility', type: 'soft' },
-  { name: 'JWT', type: 'hard' },
-  { name: 'Github actions', type: 'hard' },
-  { name: "ORM's", type: 'soft' },
-  { name: "ODM's", type: 'soft' },
-  { name: 'Monitoring', type: 'soft' },
-  { name: 'Observability', type: 'soft' },
-  { name: 'Jest', type: 'hard' },
-  { name: 'Playwright', type: 'hard' },
-  { name: 'Cypress', type: 'hard' },
-  { name: 'SonarQube', type: 'hard' },
-  { name: 'Unit tests', type: 'hard' },
-  { name: 'Vitest', type: 'hard' },
-  { name: 'Integration tests', type: 'hard' },
-  { name: 'e2e tests', type: 'hard' },
-  { name: 'SASS', type: 'hard' },
-  { name: 'Datadog', type: 'hard' },
-  { name: 'Microservices resiliency', type: 'soft' },
-  { name: 'Redux', type: 'hard' },
-  { name: 'Pinia', type: 'hard' },
-  { name: 'VueX', type: 'hard' },
-  { name: 'TanStack Query', type: 'hard' },
-  { name: 'jQuery', type: 'hard' },
-  { name: 'Wordpress Plugin Development', type: 'hard' },
-  { name: 'CircleCI', type: 'hard' },
-  { name: 'SEO', type: 'soft' },
-  { name: 'Next JS', type: 'hard' },
-  { name: 'Zustand', type: 'hard' },
-  { name: 'Accessibility', type: 'soft' },
-  { name: 'SSR', type: 'soft' },
-  { name: 'Quasar', type: 'hard' },
-  { name: 'Kubernetes', type: 'hard' },
-  { name: 'Hexagonal architecture', type: 'soft' },
-];
 
 const mainLanguages: MainLanguage[] = [
   {
@@ -107,37 +34,6 @@ const mainLanguages: MainLanguage[] = [
   },
 ];
 
-const services: Services[] = [
-  {
-    title: 'Backend development',
-    subtitle: 'General backend development services.',
-    icon: <Database size={70} strokeWidth={1} />,
-    description:
-      'Server-side logic programming, databases, API programming, third-party integrations, architecture definitions and continuous deployment based on good development practices.',
-  },
-  {
-    title: 'Frontend development',
-    subtitle: 'General frontend development services.',
-    icon: <Computer size={70} strokeWidth={1} />,
-    description:
-      'Client-side logic programming, based on semantic structuring practices, adaptability, accessibility and maintainability.',
-  },
-  {
-    title: 'Website development',
-    subtitle: 'Complete website development services.',
-    icon: <CodeXml size={70} strokeWidth={1} />,
-    description:
-      'Creation and maintenance of custom websites, informational sites, E-Commerces, Funnels, Courses and development of custom plugins for WordPress.',
-  },
-  {
-    title: 'Consulting & Mentoring',
-    subtitle: 'Customized development mentoring service.',
-    icon: <BookOpen size={70} strokeWidth={1} />,
-    description:
-      'Mentoring and consulting services in general topics, like optimization, security and good development practices.',
-  },
-];
-
 export default function ServicesPage() {
   return (
     <article className="flex flex-col mt-5 lg:mt-0 px-8 pt-5 pb-10">
@@ -157,7 +53,7 @@ export default function ServicesPage() {
                 <CardDescription>{service.subtitle}</CardDescription>
               </CardHeader>
               <CardContent className="flex items-center justify-between">
-                {service.icon}
+                <service.icon size="70" strokeWidth="1" />
                 <div className="basis-3/4 mt-3 lg:mt-0">
                   <p className="text-sm text-justify text-muted-foreground">
                     {service.description}
@@ -175,9 +71,9 @@ export default function ServicesPage() {
         </h3>
         {mainLanguages.map((ml) => (
           <div key={ml.tag}>
-            <div className="flex justify-between mb-2">
-              <strong className="text-xs">{ml.tag}</strong>
-              <strong className="text-xs">{ml.value}%</strong>
+            <div className="flex justify-between mb-2 text-xs">
+              <strong>{ml.tag}</strong>
+              <strong>{ml.value}%</strong>
             </div>
             <Progress className="mb-4" value={ml.value} color={ml.color} />
           </div>
