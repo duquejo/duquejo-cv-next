@@ -15,12 +15,17 @@ export default {
         caret: 'typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s',
         wiggle: 'wiggle 1s ease-in infinite',
         'bounce-subtle': 'bounce-subtle 1s 10',
+        entrance: 'entrance .5s ease-in-out',
       },
       transitionTimingFunction: {
         'in-bezier': 'cubic-bezier(0.8,0,1,1)',
         'out-bezier': 'cubic-bezier(0,0,0.2,1)',
       },
       keyframes: {
+        entrance: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
         typewriter: {
           to: {
             left: '100%',

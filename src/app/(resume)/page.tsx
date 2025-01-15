@@ -14,8 +14,10 @@ export default function MainPage() {
     <>
       <section className="flex flex-col lg:flex-row lg:justify-center items-center mx-0 mt-5 py-10 relative">
         <div className="order-2 lg:basis-3/5 lg:order-1 px-10 pb-0 pt-5 lg:pt-0">
-          <span className="text-foreground font-light mt-10">Full-Stack developer</span>
-          <h1 className="text-4xl lg:text-6xl mb-5">
+          <span className="text-foreground font-light mt-10 animate-entrance duration-1000">
+            Full-Stack developer
+          </span>
+          <h1 className="text-4xl lg:text-6xl mb-5 animate-entrance duration-1000">
             Hi, I&#39;m <strong>José Duque.</strong>
           </h1>
           <p className="text-justify">
