@@ -28,7 +28,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SidebarProvider>
+          <SidebarProvider className="justify-between">
             <AppSidebar />
             {children}
             <AppOptionsSidebar />
