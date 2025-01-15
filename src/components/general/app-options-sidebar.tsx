@@ -6,9 +6,9 @@ import { Lightbulb } from 'lucide-react';
 
 export const AppOptionsSidebar = () => {
   return (
-    <nav className="w-14 h-screen relative ">
-      <div className="border-l p-2 flex flex-col justify-between items-center fixed top-0 bottom-0 gap-y-2">
-        <div className="flex flex-col gap-y-2">
+    <nav className="lg:w-14 lg:h-screen lg:relative w-full fixed">
+      <div className="lg:border-l p-2 flex flex-row lg:flex-col lg:justify-between lg:items-center lg:fixed top-0 bottom-0 gap-2">
+        <div className="flex flex-row lg:flex-col gap-2">
           <SidebarTrigger variant="secondary" className="h-10 w-10" title="Toggle sidebar" />
           <ThemeToggle />
         </div>

@@ -52,7 +52,7 @@ export default function ServicesPage() {
                 <CardTitle>{service.title}</CardTitle>
                 <CardDescription>{service.subtitle}</CardDescription>
               </CardHeader>
-              <CardContent className="flex items-center justify-between">
+              <CardContent className="flex lg:flex-row flex-col items-center justify-between">
                 <service.icon size="70" strokeWidth="1" />
                 <div className="basis-3/4 mt-3 lg:mt-0">
                   <p className="text-sm text-justify text-muted-foreground">

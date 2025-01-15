@@ -38,18 +38,18 @@ export const ExperienceItem = ({
         <span
           data-test="time"
           className={cn(
-            'lg:inline-flex border-2 rounded px-2 py-1 font-semibold text-xs text-center',
+            'lg:inline-flex items-center border-2 rounded px-2 py-1 font-semibold text-xs text-center',
             isRecent ? 'border-yellow-400' : 'border-secondary',
           )}
         >
-          <time className="block">{start_date}</time>
+          {start_date && <time className="block">{start_date}</time>}
           {end_date && (
-            <time className="block mt-1 lg:mt-0 lg:before:content-['-'] lg:before:mx-1">
-              {end_date}
-            </time>
+            <time className="block lg:before:content-['-'] lg:before:mx-1">{end_date}</time>
           )}
         </span>
-        <span className="text-xs font-normal ml-2 text-right lg:text-left">{enterprise}</span>
+        {enterprise && (
+          <span className="text-xs font-normal ml-2 text-right lg:text-left">{enterprise}</span>
+        )}
       </div>
       <Card className="ms-4">
         <CardHeader>
@@ -62,7 +62,7 @@ export const ExperienceItem = ({
         {additional_info && (
           <CardFooter className="flex flex-col items-start gap-y-2 pt-5">
             <div className="font-semibold text-base">Skills</div>
-            <div className="flex gap-1 flex-wrap">
+            <div className="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around">
               {additional_info.map((info) => (
                 <Badge variant="secondary" key={info}>
                   {info}

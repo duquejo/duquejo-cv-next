@@ -2,7 +2,7 @@ import { SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/compo
 
 export const AppSheet = () => {
   return (
-    <SheetContent>
+    <SheetContent side="right">
       <SheetHeader>
         <SheetTitle>Are you absolutely sure?</SheetTitle>
         <SheetDescription>

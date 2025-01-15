@@ -30,14 +30,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SidebarProvider>
-            <SheetProvider>
+          <SheetProvider>
+            <SidebarProvider>
               <AppSheet />
               <AppSidebar />
               {children}
               <AppOptionsSidebar />
-            </SheetProvider>
-          </SidebarProvider>
+            </SidebarProvider>
+          </SheetProvider>
         </ThemeProvider>
       </body>
     </html>

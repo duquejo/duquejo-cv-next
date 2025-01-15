@@ -12,8 +12,8 @@ import { HeroImage } from '@/components/resume/hero-image/HeroImage';
 export default function MainPage() {
   return (
     <>
-      <section className="flex flex-row items-center mx-0 mt-10 relative">
-        <div className="order-2 lg:basis-3/5 lg:order-1 px-10 pb-0">
+      <section className="flex flex-col lg:flex-row items-center mx-0 mt-10 relative">
+        <div className="order-2 lg:basis-3/5 lg:order-1 px-10 pb-0 pt-5 lg:pt-0">
           <span className="text-gray-500 text-lg font-light mt-10">Full-Stack developer</span>
           <h1 className="text-4xl lg:text-6xl mb-5">
             Hi, I&#39;m <strong>José Duque.</strong>
@@ -40,9 +40,9 @@ export default function MainPage() {
             ))}
           </div>
         </div>
-        <HeroImage className="order-1 flex-1 lg:order-2 px-10" />
+        <HeroImage className="order-1 flex-1 lg:order-2 px-10 lg:mt-0" />
       </section>
-      <section className="flex flex-col m-8 gap-x-10 gap-y-2 lg:px-2">
+      <section className="flex flex-col m-10 gap-x-10 gap-y-2">
         <h2 className="text-lg lg:text-xl mb-3 font-semibold underline-offset-4 underline decoration-primary">
           What have I done?
         </h2>
@@ -77,7 +77,7 @@ export default function MainPage() {
           the current market.
         </p>
       </section>
-      <section className="flex flex-col lg:flex-row gap-x-10 m-8">
+      <section className="flex flex-col lg:flex-row gap-x-10 m-10">
         <div className="basis-full">
           {/*Education*/}
           <h3 className="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
@@ -89,7 +89,7 @@ export default function MainPage() {
         </div>
         <div className="basis-full lg:basis-2/3">
           {/*Languages*/}
-          <h3 className="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
+          <h3 className="text-base lg:text-xl mt-5 lg:mt-0 mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
             Languages
           </h3>
           <div className="grid grid-cols-2 gap-x-6">
