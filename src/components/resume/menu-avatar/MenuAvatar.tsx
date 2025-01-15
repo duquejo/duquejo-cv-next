@@ -9,7 +9,7 @@ export const MenuAvatar = () => {
 
   return (
     <>
-      <picture className="mt-10 w-6 lg:w-auto">
+      <picture className="mt-10 peer-data-[active=true]/menu-button:w-6 max-w-32 lg:w-auto">
         <Image
           className="object-cover rounded"
           src="/static/img/avatar-small.webp"

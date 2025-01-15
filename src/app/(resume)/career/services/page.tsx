@@ -36,13 +36,11 @@ const mainLanguages: MainLanguage[] = [
 
 export default function ServicesPage() {
   return (
-    <article className="flex flex-col mt-5 lg:mt-0 px-8 pt-5 pb-10">
-      <section className="mt-10">
-        <h1 className="text-4xl lg:text-6xl mb-5 leading-tight text-center font-semibold underline underline-offset-8 decoration-yellow-400">
-          Services & <br />
-          Technology stack
-        </h1>
-      </section>
+    <article className="mt-5 lg:mt-0 px-8 pt-5 pb-10">
+      <h1 className="main-title">
+        Services & <br />
+        Technology stack
+      </h1>
       {/*General Services*/}
       <section className="pt-5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
@@ -84,7 +82,7 @@ export default function ServicesPage() {
         </h3>
         <div className="flex flex-wrap gap-2 lg:gap-3 justify-evenly lg:justify-normal">
           {knowledge.map((k, i) => (
-            <Badge key={`knowledge-${i}`} variant={k.type === 'soft' ? 'outline' : 'default'}>
+            <Badge key={`knowledge-${i}`} variant={k.type === 'soft' ? 'outline' : 'secondary'}>
               {k.name}
             </Badge>
           ))}

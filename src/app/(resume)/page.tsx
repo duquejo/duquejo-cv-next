@@ -12,9 +12,9 @@ import { HeroImage } from '@/components/resume/hero-image/HeroImage';
 export default function MainPage() {
   return (
     <>
-      <section className="flex flex-col lg:flex-row items-center mx-0 mt-10 relative">
+      <section className="flex flex-col lg:flex-row lg:justify-center items-center mx-0 mt-5 py-10 relative">
         <div className="order-2 lg:basis-3/5 lg:order-1 px-10 pb-0 pt-5 lg:pt-0">
-          <span className="text-gray-500 text-lg font-light mt-10">Full-Stack developer</span>
+          <span className="text-foreground font-light mt-10">Full-Stack developer</span>
           <h1 className="text-4xl lg:text-6xl mb-5">
             Hi, I&#39;m <strong>José Duque.</strong>
           </h1>
@@ -27,7 +27,7 @@ export default function MainPage() {
             I am focused on guaranteeing quality solutions based on good practices with technologies
             on <b>monolithic architectures</b> as well as <b>microservices architectures</b>.
           </p>
-          <div className="flex justify-evenly gap-2 mt-8 mb-4 lg:my-8 w-full lg:w-auto">
+          <div className="flex justify-center gap-x-10 mt-8 w-full lg:w-auto">
             {stack.map((s) => (
               <Image
                 className="hover:animate-wiggle"
@@ -42,11 +42,11 @@ export default function MainPage() {
         </div>
         <HeroImage className="order-1 flex-1 lg:order-2 px-10 lg:mt-0" />
       </section>
-      <section className="flex flex-col m-10 gap-x-10 gap-y-2">
+      <section className="m-10 gap-x-10 gap-y-2">
         <h2 className="text-lg lg:text-xl mb-3 font-semibold underline-offset-4 underline decoration-primary">
           What have I done?
         </h2>
-        <p>
+        <p className="text-justify">
           During my working life, I have had the opportunity to have a broad view of the client
           specific needs to solve any technological challenge that arises; I have played roles as
           advisor and coordinator in development teams for public sector companies such as the{' '}

@@ -10,14 +10,14 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
-import { Sheet, SheetContent } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar:state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
-const SIDEBAR_WIDTH = '16rem';
-const SIDEBAR_WIDTH_MOBILE = '18rem';
+const SIDEBAR_WIDTH = '18rem';
+const SIDEBAR_WIDTH_MOBILE = '19rem';
 const SIDEBAR_WIDTH_ICON = '3rem';
 const SIDEBAR_KEYBOARD_SHORTCUT = 'b';
 
@@ -183,11 +183,16 @@ const Sidebar = React.forwardRef<
     }
 
     if (isMobile) {
+      /**
+       * @see https://github.com/shadcn-ui/ui/issues/5746
+       **/
       return (
         <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
+          <SheetTitle className="sr-only" />
           <SheetContent
             data-sidebar="sidebar"
             data-mobile="true"
+            aria-describedby=""
             className="w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
             style={
               {
@@ -250,7 +255,7 @@ const Sidebar = React.forwardRef<
 Sidebar.displayName = 'Sidebar';
 
 const SidebarTrigger = React.forwardRef<
-  React.ComponentRef<typeof Button>,
+  React.ElementRef<typeof Button>,
   React.ComponentProps<typeof Button>
 >(({ className, onClick, ...props }, ref) => {
   const { toggleSidebar } = useSidebar();
@@ -321,7 +326,7 @@ const SidebarInset = React.forwardRef<HTMLDivElement, React.ComponentProps<'main
 SidebarInset.displayName = 'SidebarInset';
 
 const SidebarInput = React.forwardRef<
-  React.ComponentRef<typeof Input>,
+  React.ElementRef<typeof Input>,
   React.ComponentProps<typeof Input>
 >(({ className, ...props }, ref) => {
   return (
@@ -367,7 +372,7 @@ const SidebarFooter = React.forwardRef<HTMLDivElement, React.ComponentProps<'div
 SidebarFooter.displayName = 'SidebarFooter';
 
 const SidebarSeparator = React.forwardRef<
-  React.ComponentRef<typeof Separator>,
+  React.ElementRef<typeof Separator>,
   React.ComponentProps<typeof Separator>
 >(({ className, ...props }, ref) => {
   return (

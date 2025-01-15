@@ -44,15 +44,22 @@ export default {
           },
         },
         wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
+          '0%, 100%': {
+            transform: 'rotate(-3deg)',
+          },
+          '50%': {
+            transform: 'rotate(3deg)',
+          },
         },
         'bounce-subtle': {
           '0%, 100%': {
             transform: 'translateY(-5%)',
             animationTimingFunction: 'cubic-bezier(0.8,0,1,1)',
           },
-          '50%': { transform: 'none', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' },
+          '50%': {
+            transform: 'none',
+            animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
+          },
         },
       },
       transitionDuration: {
@@ -117,10 +124,6 @@ export default {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
-      },
-      backgroundImage: {
-        'hero-img': "url('https://picsum.photos/1920/1920/?random')",
-        'body-img': "url('https://picsum.photos/1600/1600/?random')",
       },
     },
   },

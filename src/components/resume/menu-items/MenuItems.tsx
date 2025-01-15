@@ -18,10 +18,7 @@ export const MenuItems = ({ items, size = 'default' }: Props) => {
       {items.map((item) => (
         <SidebarMenuItem key={item.title}>
           <SidebarMenuButton asChild isActive={pathName === item.url} size={size}>
-            <Link
-              href={item.url}
-              className="data-[active=true]:decoration-primary data-[active=true]:underline data-[active=true]:underline-offset-4"
-            >
+            <Link href={item.url}>
               {item.icon}
               <span>{item.title}</span>
             </Link>

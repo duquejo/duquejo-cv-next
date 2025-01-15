@@ -19,7 +19,7 @@ export const SOCIAL_DATA: Social[] = [
 
 export const AppFooter = () => {
   return (
-    <footer className="border-t flex p-3 items-center justify-center gap-x-8">
+    <footer className="flex items-center justify-center gap-x-5 py-3">
       {SOCIAL_DATA.map((social) => (
         <Link
           href={social.link}
@@ -31,7 +31,9 @@ export const AppFooter = () => {
           {social.icon}
         </Link>
       ))}
-      <span className="font-semibold text-sm">© {new Date().getFullYear()} José Duque</span>
+      <span className="border-l pl-5 font-semibold text-xs">
+        © {new Date().getFullYear()} José Duque
+      </span>
     </footer>
   );
 };

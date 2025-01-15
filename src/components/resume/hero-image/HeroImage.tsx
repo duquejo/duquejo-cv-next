@@ -8,7 +8,7 @@ interface Props {
 
 export const HeroImage = ({ className }: Props) => {
   return (
-    <picture className={cn('overflow-hidden relative', className)}>
+    <picture className={cn('overflow-hidden relative max-w-md', className)}>
       <Music
         className="absolute top-0 text-primary/50 animate-bounce-subtle repeat-infinite z-10"
         strokeWidth="3"
@@ -31,12 +31,19 @@ export const HeroImage = ({ className }: Props) => {
       />
 
       {/*Right*/}
-      <Circle className="absolute right-32 top-10 text-primary/50" strokeWidth="5" size={40} />
+      <Circle
+        className="absolute right-32 top-10 text-primary/50 animate-pulse duration-slow"
+        strokeWidth="5"
+        size={40}
+      />
       {/*Left*/}
-      <Circle className="absolute left-20 bottom-24 text-primary/50" strokeWidth="5" size={20} />
+      <Circle
+        className="absolute left-20 bottom-24 text-primary/50 animate-pulse duration-slow delay-150"
+        strokeWidth="5"
+        size={20}
+      />
 
       <Image
-        // className="rounded-tl-3xl rounded-tr rounded-bl rounded-br-3xl"
         className="rounded-full backdrop-blur-sm bg-primary/5 shadow-inner object-cover"
         alt="José Miguel Duque"
         width="950"

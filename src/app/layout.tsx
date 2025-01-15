@@ -3,11 +3,9 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { ReactNode } from 'react';
 import { ThemeProvider } from '@/components/general/theme-provider';
-import { Sheet as SheetProvider } from '@/components/ui/sheet';
 import { SidebarProvider } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/general/app-sidebar';
 import { AppOptionsSidebar } from '@/components/general/app-options-sidebar';
-import { AppSheet } from '@/components/general/app-sheet';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,14 +28,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SheetProvider>
-            <SidebarProvider>
-              <AppSheet />
-              <AppSidebar />
-              {children}
-              <AppOptionsSidebar />
-            </SidebarProvider>
-          </SheetProvider>
+          <SidebarProvider>
+            <AppSidebar />
+            {children}
+            <AppOptionsSidebar />
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>

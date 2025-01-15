@@ -8,14 +8,8 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <div>
-      <article className="flex flex-col mt-5 lg:mt-0 px-8 pt-5 pb-10">
-        <section>
-          <h1 className="text-4xl lg:text-6xl mb-5 leading-tight mt-10 text-center font-semibold underline underline-offset-8 decoration-yellow-400">
-            Blog
-          </h1>
-        </section>
-      </article>
-    </div>
+    <article className="mt-5 lg:mt-0 px-8 pt-5 pb-10">
+      <h1 className="main-title">Blog</h1>
+    </article>
   );
 }

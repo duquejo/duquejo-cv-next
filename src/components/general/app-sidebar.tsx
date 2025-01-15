@@ -8,28 +8,25 @@ import {
   SidebarMenu,
   SidebarSeparator,
 } from '@/components/ui/sidebar';
+import { MenuItem } from '@/interfaces';
 import { Calendar, Gamepad, Inbox, Music, Pencil, Projector, Send } from 'lucide-react';
 import { MenuAvatar } from '@/components/resume/menu-avatar/MenuAvatar';
-import type { MenuItem } from '@/interfaces';
 import { MenuItems } from '@/components/resume/menu-items/MenuItems';
 
 // Menu items.
-const aboutMeItems: MenuItem[] = [
+const professionalItems: MenuItem[] = [
   {
     title: 'Resumeé',
     url: '/',
     icon: <Inbox />,
   },
-];
-
-const serviceItems: MenuItem[] = [
   {
     title: 'Services',
     url: '/career/services',
     icon: <Calendar />,
   },
   {
-    title: 'Projects',
+    title: 'Latest projects',
     url: '/career/projects',
     icon: <Projector />,
   },
@@ -63,37 +60,22 @@ const hobbiesItems: MenuItem[] = [
 
 export const AppSidebar = () => {
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="icon" variant="floating">
       <SidebarHeader>
         <div className="flex flex-col place-items-center gap-y-2">
           <MenuAvatar />
         </div>
       </SidebarHeader>
-      <SidebarSeparator orientation="horizontal" />
       <SidebarContent className="justify-between">
         <div>
-          <SidebarGroup>
-            <SidebarGroupLabel>About me</SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                <MenuItems items={aboutMeItems} />
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-
-          <SidebarSeparator orientation="horizontal" />
-
           <SidebarGroup>
             <SidebarGroupLabel>Professional career</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                <MenuItems items={serviceItems} />
+                <MenuItems items={professionalItems} />
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
-
-          <SidebarSeparator orientation="horizontal" />
-
           <SidebarGroup>
             <SidebarGroupLabel>Hobbies</SidebarGroupLabel>
             <SidebarGroupContent>
@@ -103,16 +85,16 @@ export const AppSidebar = () => {
             </SidebarGroupContent>
           </SidebarGroup>
         </div>
-
-        <SidebarSeparator orientation="horizontal" />
-
-        <SidebarGroup>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              <MenuItems items={lastItems} size="sm" />
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+        <div>
+          <SidebarSeparator />
+          <SidebarGroup>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                <MenuItems size="sm" items={lastItems} />
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        </div>
       </SidebarContent>
     </Sidebar>
   );

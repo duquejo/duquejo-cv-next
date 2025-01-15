@@ -15,7 +15,7 @@ export const ExperienceContent = ({ resume, screenshot, url }: Partial<Experienc
           <div className="flex-auto">
             <span className="font-semibold text-base">Responsibilities</span>
             {resume.length > 1 ? (
-              <ol className="list-disc ml-4 text-justify marker:text-primary-foreground">
+              <ol className="list-disc ml-4 text-justify marker:text-secondary">
                 {resume.map((r, i) => (
                   <li key={`resume-${i}`} className="my-1 text-sm text-justify">
                     {r}
