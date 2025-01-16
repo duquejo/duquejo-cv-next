@@ -1,0 +1,165 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<ThemeToggle /> tests > Should match the snapshot with a given args 1`] = `
+<div>
+  <button
+    aria-expanded="false"
+    aria-haspopup="menu"
+    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-secondary-foreground shadow-sm hover:bg-secondary/80 h-10 w-10 bg-color-red"
+    data-state="closed"
+    id="radix-:r2:"
+    title="Testing toggle"
+    type="button"
+  >
+    <svg
+      aria-label="Light mode"
+      aria-selected="true"
+      class="lucide lucide-sun h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="4"
+      />
+      <path
+        d="M12 2v2"
+      />
+      <path
+        d="M12 20v2"
+      />
+      <path
+        d="m4.93 4.93 1.41 1.41"
+      />
+      <path
+        d="m17.66 17.66 1.41 1.41"
+      />
+      <path
+        d="M2 12h2"
+      />
+      <path
+        d="M20 12h2"
+      />
+      <path
+        d="m6.34 17.66-1.41 1.41"
+      />
+      <path
+        d="m19.07 4.93-1.41 1.41"
+      />
+    </svg>
+    <svg
+      aria-label="Dark mode"
+      aria-selected="false"
+      class="lucide lucide-moon absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"
+      />
+    </svg>
+    <span
+      class="sr-only"
+    >
+      Testing toggle
+    </span>
+  </button>
+</div>
+`;
+
+exports[`<ThemeToggle /> tests > Should match the snapshot with the default args 1`] = `
+<div>
+  <button
+    aria-expanded="false"
+    aria-haspopup="menu"
+    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 w-10"
+    data-state="closed"
+    id="radix-:r0:"
+    title="Toggle theme"
+    type="button"
+  >
+    <svg
+      aria-label="Light mode"
+      aria-selected="true"
+      class="lucide lucide-sun h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="4"
+      />
+      <path
+        d="M12 2v2"
+      />
+      <path
+        d="M12 20v2"
+      />
+      <path
+        d="m4.93 4.93 1.41 1.41"
+      />
+      <path
+        d="m17.66 17.66 1.41 1.41"
+      />
+      <path
+        d="M2 12h2"
+      />
+      <path
+        d="M20 12h2"
+      />
+      <path
+        d="m6.34 17.66-1.41 1.41"
+      />
+      <path
+        d="m19.07 4.93-1.41 1.41"
+      />
+    </svg>
+    <svg
+      aria-label="Dark mode"
+      aria-selected="false"
+      class="lucide lucide-moon absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"
+      />
+    </svg>
+    <span
+      class="sr-only"
+    >
+      Toggle theme
+    </span>
+  </button>
+</div>
+`;

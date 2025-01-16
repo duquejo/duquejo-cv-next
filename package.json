@@ -10,7 +10,8 @@
     "format:silent": "prettier --check . --log-level silent",
     "format": "prettier --write .",
     "test:silent": "vitest run --silent",
-    "test": "vitest"
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",
@@ -38,6 +39,7 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.6.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
