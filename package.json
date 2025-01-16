@@ -9,6 +9,7 @@
     "lint": "next lint",
     "format:silent": "prettier --check . --log-level silent",
     "format": "prettier --write .",
+    "test:silent": "vitest run --silent",
     "test": "vitest"
   },
   "dependencies": {
