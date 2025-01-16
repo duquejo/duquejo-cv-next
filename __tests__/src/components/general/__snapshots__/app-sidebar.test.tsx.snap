@@ -1,0 +1,463 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<AppSidebar /> tests > Should match the snapshot 1`] = `
+<div>
+  <div
+    class="group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar"
+    style="--sidebar-width: 18rem; --sidebar-width-icon: 3rem;"
+  >
+    <div
+      class="group peer hidden md:block text-sidebar-foreground"
+      data-collapsible=""
+      data-side="left"
+      data-state="expanded"
+      data-variant="floating"
+    >
+      <div
+        class="duration-200 relative h-svh w-[--sidebar-width] bg-transparent transition-[width] ease-linear group-data-[collapsible=offcanvas]:w-0 group-data-[side=right]:rotate-180 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_theme(spacing.4))]"
+      />
+      <div
+        class="duration-200 fixed inset-y-0 z-10 hidden h-svh w-[--sidebar-width] transition-[left,right,width] ease-linear md:flex left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_theme(spacing.4)_+2px)]"
+      >
+        <div
+          class="flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow"
+          data-sidebar="sidebar"
+        >
+          <div
+            class="flex flex-col gap-2 p-2"
+            data-sidebar="header"
+          >
+            <div
+              class="flex flex-col place-items-center gap-y-2"
+            >
+              <picture
+                class="mt-10 peer-data-[active=true]/menu-button:w-6 max-w-32 lg:w-auto"
+              >
+                <img
+                  alt="José Miguel Duque"
+                  class="object-cover rounded"
+                  data-nimg="1"
+                  decoding="async"
+                  height="146"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fstatic%2Fimg%2Favatar-small.webp&w=384&q=75"
+                  srcset="/_next/image?url=%2Fstatic%2Fimg%2Favatar-small.webp&w=256&q=75 1x, /_next/image?url=%2Fstatic%2Fimg%2Favatar-small.webp&w=384&q=75 2x"
+                  style="color: transparent;"
+                  width="160"
+                />
+              </picture>
+              <div
+                class="text-center"
+              >
+                <span
+                  class="relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:opacity-80 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-primary  after:ml-0.5 font-light text-base"
+                >
+                  @duquejo
+                </span>
+                <div
+                  class="text-xl font-bold"
+                >
+                  José Duque
+                </div>
+                <div
+                  class="font-light text-sm"
+                >
+                  FullStack developer
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden justify-between"
+            data-sidebar="content"
+          >
+            <div>
+              <div
+                class="relative flex w-full min-w-0 flex-col p-2"
+                data-sidebar="group"
+              >
+                <div
+                  class="duration-200 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium text-sidebar-foreground/70 outline-none ring-sidebar-ring transition-[margin,opa] ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0"
+                  data-sidebar="group-label"
+                >
+                  Professional career
+                </div>
+                <div
+                  class="w-full text-sm"
+                  data-sidebar="group-content"
+                >
+                  <ul
+                    class="flex w-full min-w-0 flex-col gap-1"
+                    data-sidebar="menu"
+                  >
+                    <ul
+                      class="flex w-full min-w-0 flex-col gap-1"
+                      data-sidebar="menu"
+                    >
+                      <li
+                        class="group/menu-item relative"
+                        data-sidebar="menu-item"
+                      >
+                        <a
+                          class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-none ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm"
+                          data-active="false"
+                          data-sidebar="menu-button"
+                          data-size="default"
+                          href="/"
+                        >
+                          <svg
+                            class="lucide lucide-inbox"
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <polyline
+                              points="22 12 16 12 14 15 10 15 8 12 2 12"
+                            />
+                            <path
+                              d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+                            />
+                          </svg>
+                          <span>
+                            Resumeé
+                          </span>
+                        </a>
+                      </li>
+                      <li
+                        class="group/menu-item relative"
+                        data-sidebar="menu-item"
+                      >
+                        <a
+                          class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-none ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm"
+                          data-active="false"
+                          data-sidebar="menu-button"
+                          data-size="default"
+                          href="/career/services"
+                        >
+                          <svg
+                            class="lucide lucide-calendar"
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 2v4"
+                            />
+                            <path
+                              d="M16 2v4"
+                            />
+                            <rect
+                              height="18"
+                              rx="2"
+                              width="18"
+                              x="3"
+                              y="4"
+                            />
+                            <path
+                              d="M3 10h18"
+                            />
+                          </svg>
+                          <span>
+                            Services
+                          </span>
+                        </a>
+                      </li>
+                      <li
+                        class="group/menu-item relative"
+                        data-sidebar="menu-item"
+                      >
+                        <a
+                          class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-none ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm"
+                          data-active="false"
+                          data-sidebar="menu-button"
+                          data-size="default"
+                          href="/career/projects"
+                        >
+                          <svg
+                            class="lucide lucide-projector"
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M5 7 3 5"
+                            />
+                            <path
+                              d="M9 6V3"
+                            />
+                            <path
+                              d="m13 7 2-2"
+                            />
+                            <circle
+                              cx="9"
+                              cy="13"
+                              r="3"
+                            />
+                            <path
+                              d="M11.83 12H20a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2.17"
+                            />
+                            <path
+                              d="M16 16h2"
+                            />
+                          </svg>
+                          <span>
+                            Latest projects
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="relative flex w-full min-w-0 flex-col p-2"
+                data-sidebar="group"
+              >
+                <div
+                  class="duration-200 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium text-sidebar-foreground/70 outline-none ring-sidebar-ring transition-[margin,opa] ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0"
+                  data-sidebar="group-label"
+                >
+                  Hobbies
+                </div>
+                <div
+                  class="w-full text-sm"
+                  data-sidebar="group-content"
+                >
+                  <ul
+                    class="flex w-full min-w-0 flex-col gap-1"
+                    data-sidebar="menu"
+                  >
+                    <ul
+                      class="flex w-full min-w-0 flex-col gap-1"
+                      data-sidebar="menu"
+                    >
+                      <li
+                        class="group/menu-item relative"
+                        data-sidebar="menu-item"
+                      >
+                        <a
+                          class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-none ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm"
+                          data-active="false"
+                          data-sidebar="menu-button"
+                          data-size="default"
+                          href="/hobbies/music-production"
+                        >
+                          <svg
+                            class="lucide lucide-music"
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9 18V5l12-2v13"
+                            />
+                            <circle
+                              cx="6"
+                              cy="18"
+                              r="3"
+                            />
+                            <circle
+                              cx="18"
+                              cy="16"
+                              r="3"
+                            />
+                          </svg>
+                          <span>
+                            Music production
+                          </span>
+                        </a>
+                      </li>
+                      <li
+                        class="group/menu-item relative"
+                        data-sidebar="menu-item"
+                      >
+                        <a
+                          class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-none ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm"
+                          data-active="false"
+                          data-sidebar="menu-button"
+                          data-size="default"
+                          href="/hobbies/game-development"
+                        >
+                          <svg
+                            class="lucide lucide-gamepad"
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <line
+                              x1="6"
+                              x2="10"
+                              y1="12"
+                              y2="12"
+                            />
+                            <line
+                              x1="8"
+                              x2="8"
+                              y1="10"
+                              y2="14"
+                            />
+                            <line
+                              x1="15"
+                              x2="15.01"
+                              y1="13"
+                              y2="13"
+                            />
+                            <line
+                              x1="18"
+                              x2="18.01"
+                              y1="11"
+                              y2="11"
+                            />
+                            <rect
+                              height="12"
+                              rx="2"
+                              width="20"
+                              x="2"
+                              y="6"
+                            />
+                          </svg>
+                          <span>
+                            Game development
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="shrink-0 h-[1px] mx-2 w-auto bg-sidebar-border"
+                data-orientation="horizontal"
+                data-sidebar="separator"
+                role="none"
+              />
+              <div
+                class="relative flex w-full min-w-0 flex-col p-2"
+                data-sidebar="group"
+              >
+                <div
+                  class="w-full text-sm"
+                  data-sidebar="group-content"
+                >
+                  <ul
+                    class="flex w-full min-w-0 flex-col gap-1"
+                    data-sidebar="menu"
+                  >
+                    <ul
+                      class="flex w-full min-w-0 flex-col gap-1"
+                      data-sidebar="menu"
+                    >
+                      <li
+                        class="group/menu-item relative"
+                        data-sidebar="menu-item"
+                      >
+                        <a
+                          class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-none ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-7 text-xs"
+                          data-active="false"
+                          data-sidebar="menu-button"
+                          data-size="sm"
+                          href="/blog"
+                        >
+                          <svg
+                            class="lucide lucide-pencil"
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
+                            />
+                            <path
+                              d="m15 5 4 4"
+                            />
+                          </svg>
+                          <span>
+                            My blog
+                          </span>
+                        </a>
+                      </li>
+                      <li
+                        class="group/menu-item relative"
+                        data-sidebar="menu-item"
+                      >
+                        <a
+                          class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-none ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-7 text-xs"
+                          data-active="false"
+                          data-sidebar="menu-button"
+                          data-size="sm"
+                          href="/contact"
+                        >
+                          <svg
+                            class="lucide lucide-send"
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"
+                            />
+                            <path
+                              d="m21.854 2.147-10.94 10.939"
+                            />
+                          </svg>
+                          <span>
+                            Contact
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

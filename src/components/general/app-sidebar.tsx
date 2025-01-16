@@ -14,7 +14,7 @@ import { MenuAvatar } from '@/components/resume/menu-avatar/MenuAvatar';
 import { MenuItems } from '@/components/resume/menu-items/MenuItems';
 
 // Menu items.
-const professionalItems: MenuItem[] = [
+export const professionalItems: MenuItem[] = [
   {
     title: 'Resumeé',
     url: '/',
@@ -32,7 +32,7 @@ const professionalItems: MenuItem[] = [
   },
 ];
 
-const lastItems: MenuItem[] = [
+export const lastItems: MenuItem[] = [
   {
     title: 'My blog',
     url: '/blog',
@@ -45,7 +45,7 @@ const lastItems: MenuItem[] = [
   },
 ];
 
-const hobbiesItems: MenuItem[] = [
+export const hobbiesItems: MenuItem[] = [
   {
     title: 'Music production',
     url: '/hobbies/music-production',

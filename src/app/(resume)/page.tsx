@@ -82,18 +82,18 @@ export default function MainPage() {
       <section className="flex flex-col lg:flex-row gap-x-10 m-10">
         <div className="basis-full">
           {/*Education*/}
-          <h3 className="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
+          <h2 className="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
             Academic studies & Certifications
-          </h3>
+          </h2>
           {academic.map((a, i) => (
             <ExperienceItem key={i} {...a} />
           ))}
         </div>
         <div className="basis-full lg:basis-2/3">
           {/*Languages*/}
-          <h3 className="text-base lg:text-xl mt-5 lg:mt-0 mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
+          <h2 className="text-base lg:text-xl mt-5 lg:mt-0 mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
             Languages
-          </h3>
+          </h2>
           <div className="grid grid-cols-2 gap-x-6">
             {language &&
               language.map((l, i) => (

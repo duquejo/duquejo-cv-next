@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { ThemeToggle } from '@/components/general/theme-toggle';
-import userEvent from '@testing-library/user-event';
+import userEvent, { type UserEvent } from '@testing-library/user-event';
 import { useTheme, type UseThemeProps } from 'next-themes';
 
 vi.mock('next-themes', () => ({
@@ -9,6 +9,7 @@ vi.mock('next-themes', () => ({
 
 describe('<ThemeToggle /> tests', () => {
   const setThemeMock = vi.fn();
+  let user: UserEvent;
 
   const mockThemeArgs: UseThemeProps = {
     theme: 'light',
@@ -20,6 +21,8 @@ describe('<ThemeToggle /> tests', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.mocked(useTheme).mockReturnValue({ ...mockThemeArgs });
+
+    user = userEvent.setup();
   });
 
   it('Should match the snapshot with the default args', () => {
@@ -71,7 +74,7 @@ describe('<ThemeToggle /> tests', () => {
     const selectedTheme = screen.getByLabelText('Dark mode');
     expect(selectedTheme).toHaveAttribute('aria-selected', 'true');
 
-    await userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
 
     await waitFor(() => {
       const selectedThemeOption = screen.getByText('System');
@@ -91,7 +94,7 @@ describe('<ThemeToggle /> tests', () => {
     const selectedTheme = screen.getByLabelText('Light mode');
     expect(selectedTheme).toHaveAttribute('aria-selected', 'true');
 
-    await userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
 
     await waitFor(() => {
       const selectedThemeOption = screen.getByText('Light');
@@ -115,7 +118,7 @@ describe('<ThemeToggle /> tests', () => {
     const selectedTheme = screen.getByLabelText('Dark mode');
     expect(selectedTheme).toHaveAttribute('aria-selected', 'true');
 
-    await userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
 
     await waitFor(() => {
       const selectedThemeOption = screen.getByText('Dark');
@@ -133,7 +136,7 @@ describe('<ThemeToggle /> tests', () => {
     const button = screen.getByRole('button');
     const buttonWrapper = button.parentElement!;
 
-    await userEvent.click(button);
+    await user.click(button);
 
     expect(button).toHaveAttribute('data-state', 'open');
     expect(button).toHaveAttribute('aria-expanded', 'true');

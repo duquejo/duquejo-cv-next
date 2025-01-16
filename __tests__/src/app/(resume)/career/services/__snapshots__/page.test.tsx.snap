@@ -1,0 +1,718 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<ServicesPage /> tests > should match the snapshot 1`] = `
+<div>
+  <article
+    class="mt-5 lg:mt-0 px-8 pt-5 pb-10"
+  >
+    <h1
+      class="main-title"
+    >
+      Services & 
+      <br />
+      Technology stack
+    </h1>
+    <section
+      class="pt-5"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6"
+      >
+        <div
+          class="rounded-xl border bg-card text-card-foreground shadow"
+        >
+          <div
+            class="flex flex-col space-y-1.5 p-6"
+          >
+            <div
+              class="font-semibold leading-none tracking-tight"
+            >
+              Backend development
+            </div>
+            <div
+              class="text-sm text-muted-foreground"
+            >
+              General backend development services.
+            </div>
+          </div>
+          <div
+            class="p-6 pt-0 flex lg:flex-row flex-col items-center justify-between"
+          >
+            <svg
+              class="lucide lucide-database"
+              fill="none"
+              height="70"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              width="70"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <ellipse
+                cx="12"
+                cy="5"
+                rx="9"
+                ry="3"
+              />
+              <path
+                d="M3 5V19A9 3 0 0 0 21 19V5"
+              />
+              <path
+                d="M3 12A9 3 0 0 0 21 12"
+              />
+            </svg>
+            <div
+              class="basis-3/4 mt-3 lg:mt-0"
+            >
+              <p
+                class="text-sm text-justify text-muted-foreground"
+              >
+                Server-side logic programming, databases, API programming, third-party integrations, architecture definitions and continuous deployment based on good development practices.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="rounded-xl border bg-card text-card-foreground shadow"
+        >
+          <div
+            class="flex flex-col space-y-1.5 p-6"
+          >
+            <div
+              class="font-semibold leading-none tracking-tight"
+            >
+              Frontend development
+            </div>
+            <div
+              class="text-sm text-muted-foreground"
+            >
+              General frontend development services.
+            </div>
+          </div>
+          <div
+            class="p-6 pt-0 flex lg:flex-row flex-col items-center justify-between"
+          >
+            <svg
+              class="lucide lucide-computer"
+              fill="none"
+              height="70"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              width="70"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                height="8"
+                rx="2"
+                width="14"
+                x="5"
+                y="2"
+              />
+              <rect
+                height="8"
+                rx="2"
+                width="20"
+                x="2"
+                y="14"
+              />
+              <path
+                d="M6 18h2"
+              />
+              <path
+                d="M12 18h6"
+              />
+            </svg>
+            <div
+              class="basis-3/4 mt-3 lg:mt-0"
+            >
+              <p
+                class="text-sm text-justify text-muted-foreground"
+              >
+                Client-side logic programming, based on semantic structuring practices, adaptability, accessibility and maintainability.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="rounded-xl border bg-card text-card-foreground shadow"
+        >
+          <div
+            class="flex flex-col space-y-1.5 p-6"
+          >
+            <div
+              class="font-semibold leading-none tracking-tight"
+            >
+              Website development
+            </div>
+            <div
+              class="text-sm text-muted-foreground"
+            >
+              Complete website development services.
+            </div>
+          </div>
+          <div
+            class="p-6 pt-0 flex lg:flex-row flex-col items-center justify-between"
+          >
+            <svg
+              class="lucide lucide-code-xml"
+              fill="none"
+              height="70"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              width="70"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m18 16 4-4-4-4"
+              />
+              <path
+                d="m6 8-4 4 4 4"
+              />
+              <path
+                d="m14.5 4-5 16"
+              />
+            </svg>
+            <div
+              class="basis-3/4 mt-3 lg:mt-0"
+            >
+              <p
+                class="text-sm text-justify text-muted-foreground"
+              >
+                Creation and maintenance of custom websites, informational sites, E-Commerces, Funnels, Courses and development of custom plugins for WordPress.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="rounded-xl border bg-card text-card-foreground shadow"
+        >
+          <div
+            class="flex flex-col space-y-1.5 p-6"
+          >
+            <div
+              class="font-semibold leading-none tracking-tight"
+            >
+              Consulting & Mentoring
+            </div>
+            <div
+              class="text-sm text-muted-foreground"
+            >
+              Customized development mentoring service.
+            </div>
+          </div>
+          <div
+            class="p-6 pt-0 flex lg:flex-row flex-col items-center justify-between"
+          >
+            <svg
+              class="lucide lucide-book-open"
+              fill="none"
+              height="70"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              width="70"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7v14"
+              />
+              <path
+                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+              />
+            </svg>
+            <div
+              class="basis-3/4 mt-3 lg:mt-0"
+            >
+              <p
+                class="text-sm text-justify text-muted-foreground"
+              >
+                Mentoring and consulting services in general topics, like optimization, security and good development practices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="mt-10 flex flex-col gap-x-10"
+    >
+      <h2
+        class="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400"
+      >
+        Main tech languages
+      </h2>
+      <div>
+        <div
+          class="flex justify-between mb-2 text-xs"
+        >
+          <strong>
+            Typescript
+          </strong>
+          <strong>
+            93
+            %
+          </strong>
+        </div>
+        <div
+          aria-valuemax="100"
+          aria-valuemin="0"
+          class="relative h-2 w-full overflow-hidden rounded-full bg-secondary mb-4"
+          data-max="100"
+          data-state="indeterminate"
+          role="progressbar"
+        >
+          <div
+            class="h-full w-full flex-1 transition-all bg-sky-700"
+            data-max="100"
+            data-state="indeterminate"
+            style="transform: translateX(-100%);"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          class="flex justify-between mb-2 text-xs"
+        >
+          <strong>
+            Javascript
+          </strong>
+          <strong>
+            95
+            %
+          </strong>
+        </div>
+        <div
+          aria-valuemax="100"
+          aria-valuemin="0"
+          class="relative h-2 w-full overflow-hidden rounded-full bg-secondary mb-4"
+          data-max="100"
+          data-state="indeterminate"
+          role="progressbar"
+        >
+          <div
+            class="h-full w-full flex-1 transition-all bg-yellow-500"
+            data-max="100"
+            data-state="indeterminate"
+            style="transform: translateX(-100%);"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          class="flex justify-between mb-2 text-xs"
+        >
+          <strong>
+            PHP
+          </strong>
+          <strong>
+            75
+            %
+          </strong>
+        </div>
+        <div
+          aria-valuemax="100"
+          aria-valuemin="0"
+          class="relative h-2 w-full overflow-hidden rounded-full bg-secondary mb-4"
+          data-max="100"
+          data-state="indeterminate"
+          role="progressbar"
+        >
+          <div
+            class="h-full w-full flex-1 transition-all bg-purple-700"
+            data-max="100"
+            data-state="indeterminate"
+            style="transform: translateX(-100%);"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          class="flex justify-between mb-2 text-xs"
+        >
+          <strong>
+            Java
+          </strong>
+          <strong>
+            51
+            %
+          </strong>
+        </div>
+        <div
+          aria-valuemax="100"
+          aria-valuemin="0"
+          class="relative h-2 w-full overflow-hidden rounded-full bg-secondary mb-4"
+          data-max="100"
+          data-state="indeterminate"
+          role="progressbar"
+        >
+          <div
+            class="h-full w-full flex-1 transition-all bg-orange-500"
+            data-max="100"
+            data-state="indeterminate"
+            style="transform: translateX(-100%);"
+          />
+        </div>
+      </div>
+      <h2
+        class="text-base lg:text-xl mb-6 mt-10 font-semibold underline-offset-8 underline decoration-yellow-400"
+      >
+        Tools & Soft-skills
+      </h2>
+      <div
+        class="flex flex-wrap gap-2 lg:gap-3 justify-evenly lg:justify-normal"
+      >
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          AWS
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Azure
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          CSS3
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Tailwind
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          HTML5
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          DDD Architecture
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Laravel
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          React.js
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Vue.js
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          WordPress
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          RabbitMQ
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Redis
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          MySQL
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          MongoDB
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          PostgreSQL
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Distributed architectures
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Monolithic architectures
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Clean Code
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Terraform
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Serverless framework
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Storybook
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Design Systems
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          i18n
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Responsive design
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Docker
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Bootstrap
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Kanban
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Jenkins
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Node JS
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          SpringBoot
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          SpringCloud
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Nest JS
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Agile development
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          OOP
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Time-management
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Time flexibility
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          JWT
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Github actions
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          ORM's
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          ODM's
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Monitoring
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Observability
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Jest
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Playwright
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Cypress
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          SonarQube
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Unit tests
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Vitest
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Integration tests
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          e2e tests
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          SASS
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Datadog
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Microservices resiliency
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Redux
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Pinia
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          VueX
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          TanStack Query
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          jQuery
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Wordpress Plugin Development
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          CircleCI
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          SEO
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Next JS
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Zustand
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Accessibility
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          SSR
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Quasar
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        >
+          Kubernetes
+        </div>
+        <div
+          class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+        >
+          Hexagonal architecture
+        </div>
+      </div>
+    </section>
+  </article>
+</div>
+`;

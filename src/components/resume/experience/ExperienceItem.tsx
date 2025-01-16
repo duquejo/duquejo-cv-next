@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExperienceContent } from '@/components/resume/experience/ExperienceContent';
+import { ExperienceItemContent } from '@/components/resume/experience/ExperienceItemContent';
 
 export const ExperienceItem = ({
   start_date,
@@ -26,7 +26,7 @@ export const ExperienceItem = ({
   return (
     <ol className="first-of-type:pt-0 pt-5 relative border-s border-gray-200">
       <div
-        data-test="detail"
+        data-testid="detail"
         className={cn(
           'absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-gray-400',
           isRecent ? 'bg-primary' : 'bg-secondary',
@@ -36,13 +36,13 @@ export const ExperienceItem = ({
       {/*Aligned content*/}
       <div className="pb-2 ms-4 flex items-center justify-between lg:justify-normal">
         <span
-          data-test="time"
+          data-testid="time"
           className={cn(
             'lg:inline-flex items-center border-2 rounded px-2 py-1 font-semibold text-xs text-center',
             isRecent ? 'border-yellow-400' : 'border-secondary',
           )}
         >
-          {start_date && <time className="block">{start_date}</time>}
+          <time className="block">{start_date}</time>
           {end_date && (
             <time className="block lg:before:content-['-'] lg:before:mx-1">{end_date}</time>
           )}
@@ -57,7 +57,7 @@ export const ExperienceItem = ({
           <CardDescription>{role}</CardDescription>
         </CardHeader>
         <CardContent className="py-0">
-          <ExperienceContent resume={resume} screenshot={screenshot} url={url} />
+          <ExperienceItemContent resume={resume} screenshot={screenshot} url={url} />
         </CardContent>
         {additional_info && (
           <CardFooter className="flex flex-col items-start gap-y-2 pt-5">

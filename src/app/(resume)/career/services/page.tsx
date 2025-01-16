@@ -64,9 +64,9 @@ export default function ServicesPage() {
       </section>
       <section className="mt-10 flex flex-col gap-x-10">
         {/*Tech Languages*/}
-        <h3 className="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
+        <h2 className="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
           Main tech languages
-        </h3>
+        </h2>
         {mainLanguages.map((ml) => (
           <div key={ml.tag}>
             <div className="flex justify-between mb-2 text-xs">
@@ -77,9 +77,9 @@ export default function ServicesPage() {
           </div>
         ))}
         {/*Tools & Soft skills*/}
-        <h3 className="text-base lg:text-xl mb-6 mt-10 font-semibold underline-offset-8 underline decoration-yellow-400">
+        <h2 className="text-base lg:text-xl mb-6 mt-10 font-semibold underline-offset-8 underline decoration-yellow-400">
           Tools & Soft-skills
-        </h3>
+        </h2>
         <div className="flex flex-wrap gap-2 lg:gap-3 justify-evenly lg:justify-normal">
           {knowledge.map((k, i) => (
             <Badge key={`knowledge-${i}`} variant={k.type === 'soft' ? 'outline' : 'secondary'}>

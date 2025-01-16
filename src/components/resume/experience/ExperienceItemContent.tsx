@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ExperienceType } from '@/interfaces';
+import Link from 'next/link';
 
-export const ExperienceContent = ({ resume, screenshot, url }: Partial<ExperienceType>) => {
+export const ExperienceItemContent = ({ resume, screenshot, url }: Partial<ExperienceType>) => {
   return (
     <div className="flex flex-col lg:flex-row">
       {resume && (
@@ -27,15 +28,17 @@ export const ExperienceContent = ({ resume, screenshot, url }: Partial<Experienc
             )}
           </div>
           {url && (
-            <Button className="mt-5 lg:flex-shrink lg:w-auto w-full" variant="secondary">
-              Project&#39;s link
+            <Button className="mt-5 lg:flex-shrink lg:w-auto w-full" variant="secondary" asChild>
+              <Link href={url} target="_blank">
+                Project&#39;s link
+              </Link>
             </Button>
           )}
         </div>
       )}
       {screenshot && (
         <picture className="order-1 lg:order-2 flex flex-grow flex-col px-0 lg:px-4 pt-0 mb-5 lg:mb-0">
-          <div className="aspect-video rounded-xl bg-muted/50" />
+          <div role="img" className="aspect-video rounded-xl bg-muted/50" />
         </picture>
       )}
     </div>
