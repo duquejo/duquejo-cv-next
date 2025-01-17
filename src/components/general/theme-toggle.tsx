@@ -19,7 +19,7 @@ interface Props {
 }
 
 export function ThemeToggle({ className, variant, title = 'Toggle theme' }: Props) {
-  const { setTheme, theme, systemTheme } = useTheme();
+  const { setTheme, theme } = useTheme();
 
   return (
     <DropdownMenu>
@@ -27,12 +27,10 @@ export function ThemeToggle({ className, variant, title = 'Toggle theme' }: Prop
         <Button variant={variant} size="icon" className={cn('h-10 w-10', className)} title={title}>
           <Sun
             className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-            aria-selected={theme === 'light' || (theme === 'system' && systemTheme === 'light')}
             aria-label="Light mode"
           />
           <Moon
             className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-            aria-selected={theme === 'dark' || (theme === 'system' && systemTheme === 'dark')}
             aria-label="Dark mode"
           />
           <span className="sr-only">{title}</span>

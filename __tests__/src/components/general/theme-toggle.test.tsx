@@ -14,7 +14,6 @@ describe('<ThemeToggle /> tests', () => {
   const mockThemeArgs: UseThemeProps = {
     theme: 'light',
     themes: ['light', 'dark', 'system'],
-    systemTheme: 'light',
     setTheme: setThemeMock,
   };
 
@@ -71,8 +70,7 @@ describe('<ThemeToggle /> tests', () => {
 
     render(<ThemeToggle variant="secondary" />);
 
-    const selectedTheme = screen.getByLabelText('Dark mode');
-    expect(selectedTheme).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByLabelText('Dark mode')).toBeInTheDocument();
 
     await user.click(screen.getByRole('button'));
 
@@ -91,8 +89,7 @@ describe('<ThemeToggle /> tests', () => {
 
     render(<ThemeToggle />);
 
-    const selectedTheme = screen.getByLabelText('Light mode');
-    expect(selectedTheme).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByLabelText('Light mode')).toBeInTheDocument();
 
     await user.click(screen.getByRole('button'));
 
@@ -114,9 +111,6 @@ describe('<ThemeToggle /> tests', () => {
     });
 
     render(<ThemeToggle />);
-
-    const selectedTheme = screen.getByLabelText('Dark mode');
-    expect(selectedTheme).toHaveAttribute('aria-selected', 'true');
 
     await user.click(screen.getByRole('button'));
 
