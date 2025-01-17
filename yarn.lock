@@ -964,6 +964,13 @@
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
+"@playwright/test@^1.49.1":
+  version "1.49.1"
+  resolved "https://registry.yarnpkg.com/@playwright/test/-/test-1.49.1.tgz#55fa360658b3187bfb6371e2f8a64f50ef80c827"
+  integrity sha512-Ky+BVzPz8pL6PQxHqNRW1k3mIyv933LML7HktS8uik0bUXNCdPhoS/kLihiO1tMf/egaJb4IutXd7UywvXEW+g==
+  dependencies:
+    playwright "1.49.1"
+
 "@polka/url@^1.0.0-next.24":
   version "1.0.0-next.28"
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.28.tgz#d45e01c4a56f143ee69c54dd6b12eade9e270a73"
@@ -3102,6 +3109,11 @@ fs-extra@^11.1.0:
     jsonfile "^6.0.1"
     universalify "^2.0.0"
 
+fsevents@2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
+  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
+
 fsevents@~2.3.2, fsevents@~2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
@@ -4485,6 +4497,20 @@ pirates@^4.0.1:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/pirates/-/pirates-4.0.6.tgz#3018ae32ecfcff6c29ba2267cbf21166ac1f36b9"
   integrity sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==
+
+playwright-core@1.49.1:
+  version "1.49.1"
+  resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.49.1.tgz#32c62f046e950f586ff9e35ed490a424f2248015"
+  integrity sha512-BzmpVcs4kE2CH15rWfzpjzVGhWERJfmnXmniSyKeRZUs9Ws65m+RGIi7mjJK/euCegfn3i7jvqWeWyHe9y3Vgg==
+
+playwright@1.49.1:
+  version "1.49.1"
+  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.49.1.tgz#830266dbca3008022afa7b4783565db9944ded7c"
+  integrity sha512-VYL8zLoNTBxVOrJBbDuRgDWa3i+mfQgDTrL8Ah9QXZ7ax4Dsj0MSq5bYgytRnDVVe+njoKnfsYkH3HzqVj5UZA==
+  dependencies:
+    playwright-core "1.49.1"
+  optionalDependencies:
+    fsevents "2.3.2"
 
 possible-typed-array-names@^1.0.0:
   version "1.0.0"

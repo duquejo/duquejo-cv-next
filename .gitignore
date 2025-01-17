@@ -43,3 +43,11 @@ next-env.d.ts
 # Editor config
 .vscode/
 .idea/
+node_modules/
+
+# Playwright
+/tests-examples/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

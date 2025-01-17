@@ -10,7 +10,9 @@
     "format:silent": "prettier --check . --log-level silent",
     "format": "prettier --write .",
     "test:silent": "vitest run --silent",
-    "test": "vitest",
+    "test": "vitest --pool=threads",
+    "test:e2e": "playwright test",
+    "test:e2e-report": "playwright show-report",
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {
@@ -36,6 +38,7 @@
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.49.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
