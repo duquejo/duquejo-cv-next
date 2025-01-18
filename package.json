@@ -12,7 +12,6 @@
     "test:silent": "vitest run --silent",
     "test": "vitest --pool=threads",
     "test:e2e": "playwright test",
-    "test:e2e-report": "playwright show-report",
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {

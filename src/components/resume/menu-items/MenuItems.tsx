@@ -23,7 +23,12 @@ export const MenuItems = ({ items, size = 'default' }: Props) => {
     <SidebarMenu>
       {items.map((item) => (
         <SidebarMenuItem key={item.title}>
-          <SidebarMenuButton asChild isActive={pathName === item.url} size={size}>
+          <SidebarMenuButton
+            asChild
+            isActive={pathName === item.url}
+            size={size}
+            className="focus-visible:ring-primary focus-visible:ring-1"
+          >
             <Link href={item.url} onClick={() => setOpenMobile(false)}>
               {item.icon}
               <span>{item.title}</span>

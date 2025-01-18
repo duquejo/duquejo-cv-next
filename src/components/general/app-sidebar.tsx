@@ -60,7 +60,7 @@ export const hobbiesItems: MenuItem[] = [
 
 export const AppSidebar = () => {
   return (
-    <Sidebar collapsible="icon" variant="floating">
+    <Sidebar collapsible="icon" variant="floating" role="navigation" tabIndex={0}>
       <SidebarHeader>
         <div className="flex flex-col place-items-center gap-y-2">
           <MenuAvatar />
