@@ -1,19 +1,19 @@
 import { expect, test } from '@playwright/test';
 import { metatag } from './utils';
 
-test('should navigate to the home page', async ({ page, isMobile }) => {
-  await page.goto('/');
+test('should navigate to the blog page', async ({ page, isMobile }) => {
+  await page.goto('/blog');
 
-  await expect(page).toHaveTitle('Resumeé | José Duque');
+  await expect(page).toHaveTitle('Blog | José Duque');
 
   await expect(metatag(page, 'description').getAttribute('content')).resolves.toBe(
-    'Web developer from Colombia',
+    'Discover the latest news, tips and interesting tech & lifestyle articles',
   );
 
   const mainWrapper = page.getByRole('main');
 
   await expect(mainWrapper).toBeVisible();
-  await expect(mainWrapper.getByRole('heading', { level: 1 })).toContainText(/Hi, I'm José Duque./);
+  await expect(mainWrapper.getByRole('heading', { level: 1 })).toContainText(/Blog/);
 
   await expect(page.getByRole('complementary')).toBeVisible();
   if (isMobile) {

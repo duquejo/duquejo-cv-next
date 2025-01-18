@@ -1,5 +1,48 @@
-import { ExperienceType, Knowledge, Language, Services } from '@/interfaces';
+import type { Metadata } from 'next';
 import { BookOpen, CodeXml, Computer, Database } from 'lucide-react';
+import { ExperienceType, Knowledge, Language, Services } from '@/interfaces';
+
+type MetadataTypes =
+  | 'default'
+  | 'blog'
+  | 'projects'
+  | 'services'
+  | 'contact'
+  | 'games-development'
+  | 'music-production';
+
+export const METADATA: {
+  [k in MetadataTypes]: Metadata;
+} = {
+  default: {
+    title: 'Resumeé | José Duque',
+    description: 'Web developer from Colombia',
+  },
+  blog: {
+    title: 'Blog | José Duque',
+    description: 'Discover the latest news, tips and interesting tech & lifestyle articles',
+  },
+  projects: {
+    title: 'Projects | José Duque',
+    description: 'Latest projects where I had been contributed',
+  },
+  services: {
+    title: 'Services | José Duque',
+    description: 'Backend, Frontend, Full-stack or consulting services at glance',
+  },
+  contact: {
+    title: 'Contact | José Duque',
+    description: 'Get in touch with me for any inquiries or support. I am here to help you',
+  },
+  'games-development': {
+    title: 'Games development | José Duque',
+    description: 'Some of them are part of the practice that greatly enriches my career',
+  },
+  'music-production': {
+    title: 'Music Production | José Duque',
+    description: 'A beloved hobby which balances everything',
+  },
+};
 
 export const KNOWLEDGE_DATA: Knowledge[] = [
   { name: 'AWS', type: 'hard' },

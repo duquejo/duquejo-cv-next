@@ -53,7 +53,7 @@ export const hobbiesItems: MenuItem[] = [
   },
   {
     title: 'Game development',
-    url: '/hobbies/game-development',
+    url: '/hobbies/games-development',
     icon: <Gamepad />,
   },
 ];

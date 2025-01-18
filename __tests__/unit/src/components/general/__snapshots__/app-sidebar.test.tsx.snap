@@ -302,7 +302,7 @@ exports[`<AppSidebar /> tests > Should match the snapshot 1`] = `
                           data-active="false"
                           data-sidebar="menu-button"
                           data-size="default"
-                          href="/hobbies/game-development"
+                          href="/hobbies/games-development"
                         >
                           <svg
                             class="lucide lucide-gamepad"

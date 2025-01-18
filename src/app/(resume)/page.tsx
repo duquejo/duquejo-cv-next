@@ -5,9 +5,13 @@ import { Languages } from 'lucide-react';
 import {
   ACADEMIC_DATA as academic,
   LANGUAGE_DATA as language,
+  METADATA,
   STACK_DATA as stack,
 } from '@/lib/constants';
 import { HeroImage } from '@/components/resume/hero-image/HeroImage';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = METADATA['default'];
 
 export default function MainPage() {
   return (

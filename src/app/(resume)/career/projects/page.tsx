@@ -1,12 +1,8 @@
 import { ExperienceItem } from '@/components/resume/experience/ExperienceItem';
 import { Metadata } from 'next';
-import { generateStandardTitle } from '@/lib/utils';
-import { EXPERIENCE_DATA as experience } from '@/lib/constants';
+import { EXPERIENCE_DATA as experience, METADATA } from '@/lib/constants';
 
-export const metadata: Metadata = {
-  title: generateStandardTitle('Projects'),
-  description: 'Latest projects where I had been contributed',
-};
+export const metadata: Metadata = METADATA['projects'];
 
 export default function ProjectsPage() {
   return (

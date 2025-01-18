@@ -1,10 +1,7 @@
 import { Metadata } from 'next';
-import { generateStandardTitle } from '@/lib/utils';
+import { METADATA } from '@/lib/constants';
 
-export const metadata: Metadata = {
-  title: generateStandardTitle('Blog'),
-  description: 'Discover the latest news, tips and interesting tech & lifestyle articles',
-};
+export const metadata: Metadata = METADATA['blog'];
 
 export default function BlogPage() {
   return (

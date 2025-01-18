@@ -11,7 +11,7 @@ test.describe('navigation', () => {
     { title: 'My blog', url: '/blog' },
     { title: 'Contact', url: '/contact' },
     { title: 'Music production', url: '/hobbies/music-production' },
-    { title: 'Game development', url: '/hobbies/game-development' },
+    { title: 'Game development', url: '/hobbies/games-development' },
   ];
 
   test.beforeEach(async ({ page }) => {

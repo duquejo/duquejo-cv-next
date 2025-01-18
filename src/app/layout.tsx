@@ -6,13 +6,11 @@ import { ThemeProvider } from '@/components/general/theme-provider';
 import { SidebarProvider } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/general/app-sidebar';
 import { AppOptionsSidebar } from '@/components/general/app-options-sidebar';
+import { METADATA } from '@/lib/constants';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: 'Resumeé | José Duque',
-  description: 'Web developer from Colombia',
-};
+export const metadata: Metadata = METADATA['default'];
 
 export default function RootLayout({
   children,

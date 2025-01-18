@@ -2,14 +2,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Metadata } from 'next';
-import { generateStandardTitle } from '@/lib/utils';
-import { KNOWLEDGE_DATA as knowledge, SERVICES_DATA as services } from '@/lib/constants';
+import { KNOWLEDGE_DATA as knowledge, METADATA, SERVICES_DATA as services } from '@/lib/constants';
 import { MainLanguage } from '@/interfaces';
 
-export const metadata: Metadata = {
-  title: generateStandardTitle('Services'),
-  description: 'Backend, Frontend, Full-stack or consulting services at glance',
-};
+export const metadata: Metadata = METADATA['services'];
 
 const mainLanguages: MainLanguage[] = [
   {
