@@ -13,6 +13,6 @@ export function twitterCard(page: Page, name: string) {
 }
 
 export async function toggleSidebar(page: Page) {
-  await page.getByRole('button', { name: 'Toggle Sidebar' }).click();
+  await page.getByRole('button', { name: /Toggle Sidebar/ }).click();
   await page.locator('[data-sidebar="sidebar"]').waitFor();
 }

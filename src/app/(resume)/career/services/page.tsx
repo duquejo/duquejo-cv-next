@@ -47,7 +47,7 @@ export default function ServicesPage() {
                 <CardDescription>{service.subtitle}</CardDescription>
               </CardHeader>
               <CardContent className="flex lg:flex-row flex-col items-center justify-between">
-                <service.icon size="70" strokeWidth="1" />
+                <service.icon size="70" strokeWidth={1} className="text-primary" />
                 <div className="basis-3/4 mt-3 lg:mt-0">
                   <p className="text-sm text-justify text-muted-foreground">
                     {service.description}
@@ -60,9 +60,7 @@ export default function ServicesPage() {
       </section>
       <section className="mt-10 flex flex-col gap-x-10">
         {/*Tech Languages*/}
-        <h2 className="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
-          Main tech languages
-        </h2>
+        <h2 className="main-subtitle">Main tech languages</h2>
         {mainLanguages.map((ml) => (
           <div key={ml.tag}>
             <div className="flex justify-between mb-2 text-xs">
@@ -73,9 +71,7 @@ export default function ServicesPage() {
           </div>
         ))}
         {/*Tools & Soft skills*/}
-        <h2 className="text-base lg:text-xl mb-6 mt-10 font-semibold underline-offset-8 underline decoration-yellow-400">
-          Tools & Soft-skills
-        </h2>
+        <h2 className="main-subtitle">Tools & Soft-skills</h2>
         <div className="flex flex-wrap gap-2 lg:gap-3 justify-evenly lg:justify-normal">
           {knowledge.map((k, i) => (
             <Badge key={`knowledge-${i}`} variant={k.type === 'soft' ? 'outline' : 'secondary'}>

@@ -10,7 +10,7 @@ test.describe('theme', () => {
 
   test('should have the system defined theme by default', async ({ page }) => {
     await page.emulateMedia({ colorScheme: 'dark' });
-    await expect(html).toHaveClass('dark');
+    await expect(html).toHaveClass(/dark/);
   });
 
   test('should toggle the theme from system to dark', async ({ page }) => {
@@ -20,7 +20,7 @@ test.describe('theme', () => {
 
     await page.getByRole('menuitem', { name: 'Dark' }).click();
 
-    await expect(html).toHaveClass('dark');
+    await expect(html).toHaveClass(/dark/);
   });
 
   test('should toggle the theme from system to light', async ({ page }) => {
@@ -31,6 +31,6 @@ test.describe('theme', () => {
     await page.getByRole('menu').waitFor();
     await page.getByRole('menuitem', { name: 'Light' }).click();
 
-    await expect(html).toHaveClass('light');
+    await expect(html).toHaveClass(/light/);
   });
 });

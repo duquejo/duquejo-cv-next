@@ -32,7 +32,7 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
       />
     </svg>
     <svg
-      class="lucide lucide-gamepad absolute bottom-0 left-5 text-primary/50 animate-wiggle z-10"
+      class="lucide lucide-gamepad absolute bottom-0 left-7 text-primary/50 animate-wiggle z-10"
       fill="none"
       height="70"
       stroke="currentColor"
@@ -76,7 +76,7 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
       />
     </svg>
     <svg
-      class="lucide lucide-loader-circle absolute right-5 text-primary animate-spin duration-slow repeat-infinite z-10"
+      class="lucide lucide-loader-circle absolute right-10 text-primary animate-spin duration-slow repeat-infinite z-10"
       fill="none"
       height="64"
       stroke="currentColor"
@@ -111,7 +111,7 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
       />
     </svg>
     <svg
-      class="lucide lucide-circle absolute right-32 top-10 text-primary/50 animate-pulse duration-slow"
+      class="lucide lucide-circle absolute right-36 top-10 text-primary/50 animate-pulse duration-slow"
       fill="none"
       height="40"
       stroke="currentColor"
@@ -148,11 +148,10 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
     </svg>
     <img
       alt="José Miguel Duque"
-      class="rounded-full backdrop-blur-sm bg-primary/5 shadow-inner object-cover"
+      class="rounded-full backdrop-blur-sm bg-primary/5 shadow-inner object-cover md:max-w-xs"
       data-nimg="1"
       decoding="async"
       height="950"
-      loading="lazy"
       src="/_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1920&q=75"
       srcset="/_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1080&q=75 1x, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1920&q=75 2x"
       style="color: transparent;"

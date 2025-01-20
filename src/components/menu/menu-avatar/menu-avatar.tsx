@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { NameTag } from '@/components/resume/name-tag/NameTag';
+import { NameTag } from '@/components/menu/name-tag/name-tag';
 import { useSidebar } from '@/components/ui/sidebar';
 
 export const MenuAvatar = () => {
@@ -22,7 +22,7 @@ export const MenuAvatar = () => {
         <div className="text-center">
           <NameTag />
           <div className="text-xl font-bold">José Duque</div>
-          <div className="font-light text-sm">FullStack developer</div>
+          <div className="font-light text-sm">Software Engineer</div>
         </div>
       )}
     </>

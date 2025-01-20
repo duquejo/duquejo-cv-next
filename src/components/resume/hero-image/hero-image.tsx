@@ -15,12 +15,12 @@ export const HeroImage = ({ className }: Props) => {
         size={64}
       />
       <Gamepad
-        className="absolute bottom-0 left-5 text-primary/50 animate-wiggle z-10"
+        className="absolute bottom-0 left-7 text-primary/50 animate-wiggle z-10"
         strokeWidth="3"
         size={70}
       />
       <LoaderCircle
-        className="absolute right-5 text-primary animate-spin duration-slow repeat-infinite z-10"
+        className="absolute right-10 text-primary animate-spin duration-slow repeat-infinite z-10"
         strokeWidth="5"
         size={64}
       />
@@ -32,7 +32,7 @@ export const HeroImage = ({ className }: Props) => {
 
       {/*Right*/}
       <Circle
-        className="absolute right-32 top-10 text-primary/50 animate-pulse duration-slow"
+        className="absolute right-36 top-10 text-primary/50 animate-pulse duration-slow"
         strokeWidth="5"
         size={40}
       />
@@ -44,10 +44,11 @@ export const HeroImage = ({ className }: Props) => {
       />
 
       <Image
-        className="rounded-full backdrop-blur-sm bg-primary/5 shadow-inner object-cover"
+        className="rounded-full backdrop-blur-sm bg-primary/5 shadow-inner object-cover md:max-w-xs"
         alt="José Miguel Duque"
         width="950"
         height="950"
+        priority
         src="/static/img/avatar_cropped_950.png"
       />
     </picture>

@@ -52,7 +52,7 @@ exports[`<AppSidebar /> tests > Should match the snapshot 1`] = `
                 class="text-center"
               >
                 <span
-                  class="relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:opacity-80 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-primary  after:ml-0.5 font-light text-base"
+                  class="relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:opacity-80 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-primary  after:ml-0.5 font-light text-base text-primary"
                 >
                   @duquejo
                 </span>
@@ -64,7 +64,7 @@ exports[`<AppSidebar /> tests > Should match the snapshot 1`] = `
                 <div
                   class="font-light text-sm"
                 >
-                  FullStack developer
+                  Software Engineer
                 </div>
               </div>
             </div>
@@ -221,7 +221,7 @@ exports[`<AppSidebar /> tests > Should match the snapshot 1`] = `
                             />
                           </svg>
                           <span>
-                            Latest projects
+                            Projects
                           </span>
                         </a>
                       </li>

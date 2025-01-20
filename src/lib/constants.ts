@@ -173,8 +173,8 @@ export const EXPERIENCE_DATA: ExperienceType[] = [
       'JWT',
       'Scrum',
     ],
-    screenshot: '/static/image/avatar_w_1400.webp',
-    url: '#',
+    screenshot: '/static/img/showcase/sura_motos.webp',
+    url: 'https://ecomm.sura.co/seguros/s/movilidad/motos/cotizador',
   },
   {
     start_date: '11/07/2022',
@@ -184,7 +184,7 @@ export const EXPERIENCE_DATA: ExperienceType[] = [
     project: 'Aval Digital Labs - AV Villas Bank / Credit Card Infrastructure Migration team',
     role: 'Senior backend developer',
     resume: [
-      'Migration of legacy (manually) infrastructure from Amazon Web Services to Infrastructure as Code using Serverless Framework and Terraform guaranteeing enterprise standards and full supervision of the configuration of the application architecture components.',
+      'Migration of legacy infrastructure from Amazon Web Services to Infrastructure as Code using Serverless Framework and Terraform guaranteeing enterprise standards and full supervision of the configuration of the application architecture components.',
       'Refactoring and optimization of the legacy code given to lambdas (Node-JS/Java) and monoliths (Java Springboot) involved in the application',
       'Improved up to a percentage greater than or equal to 85% of the Quality Gates standards against good practices required by the company',
       'Improved in a high percentage the execution performance of lambdas and code associated with step functions used in the application.',
@@ -192,6 +192,8 @@ export const EXPERIENCE_DATA: ExperienceType[] = [
       'Generation of security policies and vulnerability corrections in accordance with the OWASP standard',
       'the results of which adequately responded to the high internal demands of the organization Aval Digital Labs as well as Banco AV Villas.',
     ],
+    screenshot: '/static/img/showcase/avvillas_tc.webp',
+    url: 'https://escueladeclientesnutresa.com/',
     additional_info: [
       'DynamoDB',
       'Node.js',
@@ -229,7 +231,8 @@ export const EXPERIENCE_DATA: ExperienceType[] = [
       'The frontend was built with React JS Webpack and Typescript dividing the core of the business in different microservices through Module Federation and generalizing graphical frontend components through a common NPM library based on good practices from the library.',
       'External applications were connected through microservices such as Mixpanel, Concerto (Educational framework), Hotjar analytics to guarantee UX strategies for the target audience (Teachers and students).',
     ],
-    screenshot: '/static/image/avatar_w_1400.webp',
+    screenshot: '/static/img/showcase/mentu.webp',
+    url: 'https://mentu.co',
     additional_info: [
       'MySQL',
       'MongoDB',
@@ -292,6 +295,8 @@ export const EXPERIENCE_DATA: ExperienceType[] = [
       'Various strategies were used for the frontend and backend highlighting HTML, CSS, JS (jQuery Framework, Angular JS and React JS)',
       'PHP and Node JS respectively for the creation of websites and generation of applications for third parties as well as integrators between unsupported platforms.',
     ],
+    screenshot: '/static/img/showcase/smdigital.webp',
+    url: 'https://smdigital.com.co',
     additional_info: [
       'MySQL',
       'MongoDB',
@@ -328,6 +333,8 @@ export const EXPERIENCE_DATA: ExperienceType[] = [
       'Implemented UX strategies due to the target population (50 years or older)',
       'The delivery of multimedia resources had to be optimized and respond to a high flow of users using AWS S3, AWS CloudFront among others.',
     ],
+    screenshot: '/static/img/showcase/escuela_clientes.webp',
+    url: 'https://escueladeclientesnutresa.com',
     additional_info: [
       'MySQL',
       'Angular JS',
@@ -351,7 +358,6 @@ export const EXPERIENCE_DATA: ExperienceType[] = [
     isRecent: false,
     project: 'SURA Advisors Intranet',
     role: 'Full-Stack developer',
-    screenshot: '/static/image/avatar_w_1400.webp',
     resume: [
       'Full-Stack project where the integration of a SEUS 4 (Active Directory - SAML) was required integrating it with an E-Commerce using WordPress with WooCommerce as CMS.',
       'According to the good practices for WordPress it was required to set up an adaptable plugin based on an MVC architecture which favored the division of its logic and components.',
@@ -476,7 +482,6 @@ export const EXPERIENCE_DATA: ExperienceType[] = [
       'It required managing information dynamically from the frontend using jQuery and Ajax.',
       'Different cloud service structures had to be maintained for its users and collaborators using the AWS suite for this (S3, Glacier, Cloudfront, Route 53, etc.) and administration of Azure and Office 365 Cloud services.',
     ],
-    screenshot: '/static/image/avatar_w_1400.webp',
     additional_info: [
       'MySQL',
       'Bootstrap',

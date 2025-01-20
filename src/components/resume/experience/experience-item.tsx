@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExperienceItemContent } from '@/components/resume/experience/ExperienceItemContent';
+import { ExperienceItemContent } from '@/components/resume/experience/experience-item-content';
 
 export const ExperienceItem = ({
   start_date,
@@ -39,7 +39,7 @@ export const ExperienceItem = ({
           data-testid="time"
           className={cn(
             'lg:inline-flex items-center border-2 rounded px-2 py-1 font-semibold text-xs text-center',
-            isRecent ? 'border-yellow-400' : 'border-secondary',
+            isRecent ? 'border-primary' : 'border-secondary',
           )}
         >
           <time className="block">{start_date}</time>
@@ -57,7 +57,12 @@ export const ExperienceItem = ({
           <CardDescription>{role}</CardDescription>
         </CardHeader>
         <CardContent className="py-0">
-          <ExperienceItemContent resume={resume} screenshot={screenshot} url={url} />
+          <ExperienceItemContent
+            project={project}
+            resume={resume}
+            screenshot={screenshot}
+            url={url}
+          />
         </CardContent>
         {additional_info && (
           <CardFooter className="flex flex-col items-start gap-y-2 pt-5">

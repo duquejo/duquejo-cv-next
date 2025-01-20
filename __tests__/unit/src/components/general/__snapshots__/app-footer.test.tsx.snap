@@ -7,7 +7,7 @@ exports[`<AppFooter /> tests > Should match the snapshot 1`] = `
   >
     <a
       aria-label="GitHub"
-      class="focus-visible:ring-1"
+      class="focus-visible:ring-1 hover:text-primary"
       href="https://github.com/duquejo"
       target="_blank"
       title="GitHub"
@@ -34,7 +34,7 @@ exports[`<AppFooter /> tests > Should match the snapshot 1`] = `
     </a>
     <a
       aria-label="LinkedIn"
-      class="focus-visible:ring-1"
+      class="focus-visible:ring-1 hover:text-primary"
       href="https://www.linkedin.com/in/duquejo/"
       target="_blank"
       title="LinkedIn"

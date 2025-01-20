@@ -7,7 +7,7 @@ export default async function NotFound() {
     <article className="flex justify-center items-center flex-1 h-screen">
       <section className="flex flex-col items-center justify-center">
         <div>
-          <h1 className="text-2xl font-bold underline underline-offset-8 decoration-yellow-400">
+          <h1 className="text-2xl font-bold underline underline-offset-8 decoration-primary">
             Not found
           </h1>
           <p className="my-3">Could not find requested resource</p>

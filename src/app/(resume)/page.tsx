@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ExperienceItem } from '@/components/resume/experience/ExperienceItem';
+import { ExperienceItem } from '@/components/resume/experience/experience-item';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Languages } from 'lucide-react';
 import {
@@ -8,8 +8,9 @@ import {
   METADATA,
   STACK_DATA as stack,
 } from '@/lib/constants';
-import { HeroImage } from '@/components/resume/hero-image/HeroImage';
+import { HeroImage } from '@/components/resume/hero-image/hero-image';
 import type { Metadata } from 'next';
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = METADATA['default'];
 
@@ -19,7 +20,7 @@ export default function MainPage() {
       <section className="flex flex-col lg:flex-row lg:justify-center items-center mx-0 mt-5 py-10 relative">
         <div className="order-2 lg:basis-3/5 lg:order-1 px-10 pb-0 pt-5 lg:pt-0">
           <span className="text-foreground font-light mt-10 animate-entrance duration-1000">
-            Full-Stack developer
+            Software Engineer
           </span>
           <h1 className="text-4xl lg:text-6xl mb-5 animate-entrance duration-1000">
             Hi, I&#39;m <strong>José Duque.</strong>
@@ -33,7 +34,7 @@ export default function MainPage() {
             I am focused on guaranteeing quality solutions based on good practices with technologies
             on <b>monolithic architectures</b> as well as <b>microservices architectures</b>.
           </p>
-          <div className="flex justify-center gap-x-10 mt-8 w-full lg:w-auto">
+          <div className="flex justify-center gap-x-10 mt-8 w-full md:w-auto">
             {stack.map((s) => (
               <Image
                 className="hover:animate-wiggle"
@@ -86,24 +87,20 @@ export default function MainPage() {
       <section className="flex flex-col lg:flex-row gap-x-10 m-10">
         <div className="basis-full">
           {/*Education*/}
-          <h2 className="text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
-            Academic studies & Certifications
-          </h2>
+          <h2 className="main-subtitle">Academic studies & Certifications</h2>
           {academic.map((a, i) => (
             <ExperienceItem key={i} {...a} />
           ))}
         </div>
         <div className="basis-full lg:basis-2/3">
           {/*Languages*/}
-          <h2 className="text-base lg:text-xl mt-5 lg:mt-0 mb-6 font-semibold underline-offset-8 underline decoration-yellow-400">
-            Languages
-          </h2>
+          <h2 className={cn('main-subtitle', 'mt-5 lg:mt-0')}>Languages</h2>
           <div className="grid grid-cols-2 gap-x-6">
             {language &&
               language.map((l, i) => (
                 <Card className="flex flex-col justify-center items-center" key={`language-${i}`}>
                   <CardHeader>
-                    <Languages size={40} strokeWidth={1} className="dark:text-primary" />
+                    <Languages size={40} strokeWidth={1.5} className="text-primary" />
                   </CardHeader>
                   <CardContent>
                     <p className="mt-3 lg:mt-0 text-center text-muted-foreground leading-tight">

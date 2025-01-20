@@ -1,4 +1,4 @@
-import { ExperienceItem } from '@/components/resume/experience/ExperienceItem';
+import { ExperienceItem } from '@/components/resume/experience/experience-item';
 import { Metadata } from 'next';
 import { EXPERIENCE_DATA as experience, METADATA } from '@/lib/constants';
 

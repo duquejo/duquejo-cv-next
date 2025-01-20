@@ -1,9 +1,10 @@
-import { ExperienceItemContent } from '@/components/resume/experience/ExperienceItemContent';
+import { ExperienceItemContent } from '@/components/resume/experience/experience-item-content';
 import { render, screen } from '@testing-library/react';
 import { ExperienceType } from '@/interfaces';
 
 describe('<ExperienceItemContent /> tests', () => {
   const { resume, screenshot, url }: Partial<ExperienceType> = {
+    project: 'foo bar',
     resume: ['foo', 'bar', 'baz'],
     screenshot: '/foo/bar.webp',
     url: 'https://foo.bar',

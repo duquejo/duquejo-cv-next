@@ -24,7 +24,7 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
           class="pb-2 ms-4 flex items-center justify-between lg:justify-normal"
         >
           <span
-            class="lg:inline-flex items-center border-2 rounded px-2 py-1 font-semibold text-xs text-center border-yellow-400"
+            class="lg:inline-flex items-center border-2 rounded px-2 py-1 font-semibold text-xs text-center border-primary"
             data-testid="time"
           >
             <time
@@ -95,18 +95,27 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                 </div>
                 <a
                   class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 mt-5 lg:flex-shrink lg:w-auto w-full"
-                  href="#"
+                  href="https://ecomm.sura.co/seguros/s/movilidad/motos/cotizador"
+                  rel="noopener noreferrer nofollow"
                   target="_blank"
                 >
                   Project's link
                 </a>
               </div>
               <picture
-                class="order-1 lg:order-2 flex flex-grow flex-col px-0 lg:px-4 pt-0 mb-5 lg:mb-0"
+                class="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0"
               >
-                <div
-                  class="aspect-video rounded-xl bg-muted/50"
-                  role="img"
+                <img
+                  alt="SURA Seguros - Integrations Team Bus"
+                  class="rounded object-cover shadow-lg w-auto max-w-xs"
+                  data-nimg="1"
+                  decoding="async"
+                  height="150"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Fsura_motos.webp&w=640&q=75"
+                  srcset="/_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Fsura_motos.webp&w=384&q=75 1x, /_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Fsura_motos.webp&w=640&q=75 2x"
+                  style="color: transparent;"
+                  width="300"
                 />
               </picture>
             </div>
@@ -246,7 +255,7 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
               class="flex flex-col lg:flex-row"
             >
               <div
-                class="flex flex-col order-2 lg:order-1 justify-between items-baseline"
+                class="flex flex-col order-2 lg:order-1 justify-between items-baseline basis-6/12"
               >
                 <div
                   class="flex-auto"
@@ -262,7 +271,7 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     <li
                       class="my-1 text-sm text-justify"
                     >
-                      Migration of legacy (manually) infrastructure from Amazon Web Services to Infrastructure as Code using Serverless Framework and Terraform guaranteeing enterprise standards and full supervision of the configuration of the application architecture components.
+                      Migration of legacy infrastructure from Amazon Web Services to Infrastructure as Code using Serverless Framework and Terraform guaranteeing enterprise standards and full supervision of the configuration of the application architecture components.
                     </li>
                     <li
                       class="my-1 text-sm text-justify"
@@ -296,7 +305,31 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     </li>
                   </ol>
                 </div>
+                <a
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 mt-5 lg:flex-shrink lg:w-auto w-full"
+                  href="https://escueladeclientesnutresa.com/"
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                >
+                  Project's link
+                </a>
               </div>
+              <picture
+                class="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0"
+              >
+                <img
+                  alt="Aval Digital Labs - AV Villas Bank / Credit Card Infrastructure Migration team"
+                  class="rounded object-cover shadow-lg w-auto max-w-xs"
+                  data-nimg="1"
+                  decoding="async"
+                  height="150"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Favvillas_tc.webp&w=640&q=75"
+                  srcset="/_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Favvillas_tc.webp&w=384&q=75 1x, /_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Favvillas_tc.webp&w=640&q=75 2x"
+                  style="color: transparent;"
+                  width="300"
+                />
+              </picture>
             </div>
           </div>
           <div
@@ -509,13 +542,29 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     </li>
                   </ol>
                 </div>
+                <a
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 mt-5 lg:flex-shrink lg:w-auto w-full"
+                  href="https://mentu.co"
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                >
+                  Project's link
+                </a>
               </div>
               <picture
-                class="order-1 lg:order-2 flex flex-grow flex-col px-0 lg:px-4 pt-0 mb-5 lg:mb-0"
+                class="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0"
               >
-                <div
-                  class="aspect-video rounded-xl bg-muted/50"
-                  role="img"
+                <img
+                  alt="Mentu App"
+                  class="rounded object-cover shadow-lg w-auto max-w-xs"
+                  data-nimg="1"
+                  decoding="async"
+                  height="150"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Fmentu.webp&w=640&q=75"
+                  srcset="/_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Fmentu.webp&w=384&q=75 1x, /_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Fmentu.webp&w=640&q=75 2x"
+                  style="color: transparent;"
+                  width="300"
                 />
               </picture>
             </div>
@@ -838,7 +887,7 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
               class="flex flex-col lg:flex-row"
             >
               <div
-                class="flex flex-col order-2 lg:order-1 justify-between items-baseline"
+                class="flex flex-col order-2 lg:order-1 justify-between items-baseline basis-6/12"
               >
                 <div
                   class="flex-auto"
@@ -883,7 +932,31 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     </li>
                   </ol>
                 </div>
+                <a
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 mt-5 lg:flex-shrink lg:w-auto w-full"
+                  href="https://smdigital.com.co"
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                >
+                  Project's link
+                </a>
               </div>
+              <picture
+                class="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0"
+              >
+                <img
+                  alt="SM Digital - Website development & Custom Integrations between third parties"
+                  class="rounded object-cover shadow-lg w-auto max-w-xs"
+                  data-nimg="1"
+                  decoding="async"
+                  height="150"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Fsmdigital.webp&w=640&q=75"
+                  srcset="/_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Fsmdigital.webp&w=384&q=75 1x, /_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Fsmdigital.webp&w=640&q=75 2x"
+                  style="color: transparent;"
+                  width="300"
+                />
+              </picture>
             </div>
           </div>
           <div
@@ -1056,7 +1129,7 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
               class="flex flex-col lg:flex-row"
             >
               <div
-                class="flex flex-col order-2 lg:order-1 justify-between items-baseline"
+                class="flex flex-col order-2 lg:order-1 justify-between items-baseline basis-6/12"
               >
                 <div
                   class="flex-auto"
@@ -1091,7 +1164,31 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     </li>
                   </ol>
                 </div>
+                <a
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 mt-5 lg:flex-shrink lg:w-auto w-full"
+                  href="https://escueladeclientesnutresa.com"
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                >
+                  Project's link
+                </a>
               </div>
+              <picture
+                class="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0"
+              >
+                <img
+                  alt="E-learning Client School for vendors (LMS)"
+                  class="rounded object-cover shadow-lg w-auto max-w-xs"
+                  data-nimg="1"
+                  decoding="async"
+                  height="150"
+                  loading="lazy"
+                  src="/_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Fescuela_clientes.webp&w=640&q=75"
+                  srcset="/_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Fescuela_clientes.webp&w=384&q=75 1x, /_next/image?url=%2Fstatic%2Fimg%2Fshowcase%2Fescuela_clientes.webp&w=640&q=75 2x"
+                  style="color: transparent;"
+                  width="300"
+                />
+              </picture>
             </div>
           </div>
           <div
@@ -1229,7 +1326,7 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
               class="flex flex-col lg:flex-row"
             >
               <div
-                class="flex flex-col order-2 lg:order-1 justify-between items-baseline basis-6/12"
+                class="flex flex-col order-2 lg:order-1 justify-between items-baseline"
               >
                 <div
                   class="flex-auto"
@@ -1265,14 +1362,6 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                   </ol>
                 </div>
               </div>
-              <picture
-                class="order-1 lg:order-2 flex flex-grow flex-col px-0 lg:px-4 pt-0 mb-5 lg:mb-0"
-              >
-                <div
-                  class="aspect-video rounded-xl bg-muted/50"
-                  role="img"
-                />
-              </picture>
             </div>
           </div>
           <div
@@ -1998,7 +2087,7 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
               class="flex flex-col lg:flex-row"
             >
               <div
-                class="flex flex-col order-2 lg:order-1 justify-between items-baseline basis-6/12"
+                class="flex flex-col order-2 lg:order-1 justify-between items-baseline"
               >
                 <div
                   class="flex-auto"
@@ -2034,14 +2123,6 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                   </ol>
                 </div>
               </div>
-              <picture
-                class="order-1 lg:order-2 flex flex-grow flex-col px-0 lg:px-4 pt-0 mb-5 lg:mb-0"
-              >
-                <div
-                  class="aspect-video rounded-xl bg-muted/50"
-                  role="img"
-                />
-              </picture>
             </div>
           </div>
           <div

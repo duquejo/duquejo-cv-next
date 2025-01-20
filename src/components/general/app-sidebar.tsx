@@ -10,8 +10,8 @@ import {
 } from '@/components/ui/sidebar';
 import { MenuItem } from '@/interfaces';
 import { Calendar, Gamepad, Inbox, Music, Pencil, Projector, Send } from 'lucide-react';
-import { MenuAvatar } from '@/components/resume/menu-avatar/MenuAvatar';
-import { MenuItems } from '@/components/resume/menu-items/MenuItems';
+import { MenuAvatar } from '@/components/menu/menu-avatar/menu-avatar';
+import { MenuItems } from '@/components/menu/menu-items/menu-items';
 
 // Menu items.
 export const professionalItems: MenuItem[] = [
@@ -26,7 +26,7 @@ export const professionalItems: MenuItem[] = [
     icon: <Calendar />,
   },
   {
-    title: 'Latest projects',
+    title: 'Projects',
     url: '/career/projects',
     icon: <Projector />,
   },

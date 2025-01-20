@@ -1,4 +1,4 @@
-import { MenuItems } from '@/components/resume/menu-items/MenuItems';
+import { MenuItems } from '@/components/menu/menu-items/menu-items';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MenuItem } from '@/interfaces';
 import { SidebarProvider, useSidebar } from '@/components/ui/sidebar';

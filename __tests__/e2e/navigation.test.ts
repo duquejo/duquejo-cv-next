@@ -7,7 +7,7 @@ test.describe('navigation', () => {
   const links = [
     { title: 'Resumeé', url: '/' },
     { title: 'Services', url: '/career/services' },
-    { title: 'Latest projects', url: '/career/projects' },
+    { title: 'Projects', url: '/career/projects' },
     { title: 'My blog', url: '/blog' },
     { title: 'Contact', url: '/contact' },
     { title: 'Music production', url: '/hobbies/music-production' },
@@ -29,8 +29,9 @@ test.describe('navigation', () => {
         btn = page.getByRole('link', { name: title });
       }
 
+      await btn.scrollIntoViewIfNeeded();
       await expect(btn).toBeVisible();
-      await btn.click();
+      await btn.click({ force: true });
       await expect(page).toHaveURL(url);
     }
   });

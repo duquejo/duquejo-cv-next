@@ -1,4 +1,4 @@
-import { HeroImage } from '@/components/resume/hero-image/HeroImage';
+import { HeroImage } from '@/components/resume/hero-image/hero-image';
 import { render } from '@testing-library/react';
 
 describe('<HeroImage /> tests', () => {

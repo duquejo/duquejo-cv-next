@@ -1,6 +1,6 @@
 import { ExperienceType } from '@/interfaces';
 import { render, screen } from '@testing-library/react';
-import { ExperienceItem } from '@/components/resume/experience/ExperienceItem';
+import { ExperienceItem } from '@/components/resume/experience/experience-item';
 
 describe('<ExperienceItemContent /> tests', () => {
   const data: ExperienceType = {
@@ -50,7 +50,7 @@ describe('<ExperienceItemContent /> tests', () => {
 
     render(<ExperienceItem {...isRecentWithData} />);
 
-    expect(screen.getByTestId('time')).toHaveClass('border-yellow-400');
+    expect(screen.getByTestId('time')).toHaveClass('border-primary');
     expect(screen.getByTestId('detail')).toHaveClass('bg-primary');
   });
 });

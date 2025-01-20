@@ -27,7 +27,7 @@ export const AppFooter = () => {
           target="_blank"
           title={social.name}
           aria-label={social.name}
-          className="focus-visible:ring-1"
+          className="focus-visible:ring-1 hover:text-primary"
         >
           {social.icon}
         </Link>
