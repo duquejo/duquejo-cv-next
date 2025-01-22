@@ -7,6 +7,7 @@ import { SidebarProvider } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/general/app-sidebar';
 import { AppOptionsSidebar } from '@/components/general/app-options-sidebar';
 import { METADATA } from '@/lib/constants';
+import { AppActivityProvider } from '@/components/general/app-activity-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,9 +28,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SidebarProvider className="justify-between">
-            <AppSidebar />
-            {children}
-            <AppOptionsSidebar />
+            <AppActivityProvider>
+              <AppSidebar />
+              {children}
+              <AppOptionsSidebar />
+            </AppActivityProvider>
           </SidebarProvider>
         </ThemeProvider>
       </body>

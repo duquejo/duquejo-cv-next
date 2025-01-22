@@ -15,6 +15,7 @@ export const MenuAvatar = () => {
           src="/static/img/avatar-small.webp"
           width="160"
           height="146"
+          priority={true}
           alt="José Miguel Duque"
         />
       </picture>

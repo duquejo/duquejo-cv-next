@@ -41,7 +41,6 @@ exports[`<AppSidebar /> tests > Should match the snapshot 1`] = `
                   data-nimg="1"
                   decoding="async"
                   height="146"
-                  loading="lazy"
                   src="/_next/image?url=%2Fstatic%2Fimg%2Favatar-small.webp&w=384&q=75"
                   srcset="/_next/image?url=%2Fstatic%2Fimg%2Favatar-small.webp&w=256&q=75 1x, /_next/image?url=%2Fstatic%2Fimg%2Favatar-small.webp&w=384&q=75 2x"
                   style="color: transparent;"

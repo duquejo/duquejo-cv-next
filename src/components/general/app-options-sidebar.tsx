@@ -1,5 +1,8 @@
 import { ThemeToggle } from '@/components/general/theme-toggle';
 import { SidebarTrigger } from '@/components/ui/sidebar';
+import { SheetTrigger } from '@/components/ui/sheet';
+import { Lightbulb } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export const AppOptionsSidebar = () => {
   return (
@@ -18,6 +21,15 @@ export const AppOptionsSidebar = () => {
           className="h-8 w-8 lg:h-10 lg:w-10"
           title="Change color theme"
         />
+        <SheetTrigger asChild>
+          <Button
+            variant="outline"
+            className=" h-8 w-8 lg:h-10 lg:w-10"
+            title="Open latest activity"
+          >
+            <Lightbulb />
+          </Button>
+        </SheetTrigger>
       </div>
     </div>
   );

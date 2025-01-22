@@ -6,26 +6,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #ddd;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #aaa;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #999;
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -96,6 +76,26 @@ body {
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary rounded-xl;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary-foreground;
   }
 }
 

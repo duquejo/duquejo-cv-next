@@ -5,3 +5,5 @@ export * from './services.interface';
 export * from './knowledge.interface';
 export * from './languages.interface';
 export * from './social.interface';
+
+export * from './github-events.interface';
