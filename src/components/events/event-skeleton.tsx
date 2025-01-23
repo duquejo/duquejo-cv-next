@@ -6,7 +6,13 @@ interface Props {
 
 export const EventSkeleton = ({ rounds = 2 }: Props) => {
   return new Array(rounds).fill(0).map((_, i) => (
-    <div key={i} className="flex flex-col space-y-3">
+    <div
+      key={i}
+      aria-hidden="true"
+      aria-busy="true"
+      className="flex flex-col space-y-3"
+      data-testid="loading"
+    >
       <div className="flex items-center justify-between gap-x-3">
         <Skeleton className="flex-1 h-8 w-full" />
         <Skeleton className="h-8 w-[100px]" />

@@ -6,23 +6,32 @@ const GITHUB_URL = process.env.GITHUB_URL || '';
 const GITHUB_SOURCE = process.env.GITHUB_SOURCE || '';
 
 export const getEvents = async () => {
-  const pathParams = new URLSearchParams({
-    per_page: '15',
-    page: '1',
-  });
-
-  const url = new URL(GITHUB_URL);
-  url.search = pathParams.toString();
-
   try {
-    const events = await fetch(url.toString(), {
+    const pathParams = new URLSearchParams({
+      per_page: '15',
+      page: '1',
+    });
+
+    const url = new URL(GITHUB_URL);
+    url.search = pathParams.toString();
+
+    const response = await fetch(url.toString(), {
       method: 'GET',
       headers: {
         Authorization: 'token '.concat(GITHUB_SOURCE),
         accept: 'application/vnd.github+json',
       },
-    }).then((response) => response.json());
-    return filterEventsByType(events);
+      cache: 'force-cache',
+      next: {
+        revalidate: 3600,
+      },
+    });
+
+    if (response.ok) {
+      return filterEventsByType(await response.json());
+    }
+
+    return [];
   } catch (e) {
     console.error(e);
     return [];

@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import type { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 
@@ -25,25 +25,28 @@ export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => 
 
   const toIcon = (iconString: string): ReactNode => {
     const commonCss = 'inline bg-primary rounded-full transition-colors p-1';
-
+    const commonProps = {
+      size: 30,
+      'data-testid': 'event-action',
+    };
     switch (iconString) {
       case EventType.PullRequestEvent:
-        return <GitPullRequest size={30} className={cn(commonCss, 'bg-yellow-400')} />;
+        return <GitPullRequest className={cn(commonCss, 'bg-yellow-400')} {...commonProps} />;
       case EventType.CreateEvent:
-        return <GitBranch size={30} className={cn(commonCss, 'bg-teal-400')} />;
+        return <GitBranch className={cn(commonCss, 'bg-teal-400')} {...commonProps} />;
       case EventType.PushEvent:
-        return <GitMerge size={30} className={cn(commonCss, 'bg-red-400')} />;
+        return <GitMerge className={cn(commonCss, 'bg-red-400')} {...commonProps} />;
       case EventType.WatchEvent:
       case EventType.PullRequestReviewEvent:
-        return <Eye size={30} className={cn(commonCss, 'bg-cyan-300')} />;
+        return <Eye className={cn(commonCss, 'bg-cyan-300')} {...commonProps} />;
       default:
-        return <GitMerge size={30} className={cn(commonCss, 'bg-purple-400')} />;
+        return <GitMerge className={cn(commonCss, 'bg-purple-400')} {...commonProps} />;
     }
   };
 
   return (
     <Card className="lg:max-w-xs">
-      <CardHeader>
+      <CardHeader className="pb-3">
         <CardTitle className="flex items-center text-xs justify-between">
           <time className="text-xs font-extrabold">{toLocaleDateString(created_at)}</time>
           {payload.ref && <Badge variant="secondary">{payload.ref}</Badge>}
@@ -70,7 +73,8 @@ export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => 
       </CardHeader>
       <CardContent className="text-xs leading-relaxed text-left break-words">
         {payload.description && <strong className="font-bold">{payload.description}</strong>}
-        {payload.commits?.length &&
+        {payload.commits &&
+          payload.commits.length > 0 &&
           payload.commits.map(
             (commit) =>
               !['dependabot[bot]'].includes(commit.author.name) && (
