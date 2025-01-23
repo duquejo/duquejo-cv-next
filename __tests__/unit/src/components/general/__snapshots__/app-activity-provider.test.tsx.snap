@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<AppActivityProvider /> tests > should match the snapshot 1`] = `
+<div>
+  <div
+    data-testid="child"
+  >
+    Child Component
+  </div>
+</div>
+`;
+
+exports[`<AppActivityProvider /> tests > should toggle loadEvents state on sheet open 1`] = `
+<div
+  aria-hidden="true"
+  data-aria-hidden="true"
+>
+  <div
+    data-testid="child"
+  >
+    Child Component
+  </div>
+</div>
+`;

@@ -18,9 +18,10 @@ import { EventCard } from '@/components/events/event-card';
 
 interface Props {
   children: ReactNode;
+  defaultOpen?: boolean;
 }
 
-export const AppActivityProvider = ({ children }: Props) => {
+export const AppActivityProvider = ({ children, defaultOpen = false }: Props) => {
   const [loadEvents, setLoadEvents] = useState(false);
 
   const { data, isLoading } = useSWR<Event[]>(loadEvents ? 'events' : null, getEvents);
@@ -33,7 +34,7 @@ export const AppActivityProvider = ({ children }: Props) => {
   };
 
   return (
-    <Sheet key="activity" onOpenChange={onToggleChange}>
+    <Sheet key="activity" onOpenChange={onToggleChange} defaultOpen={defaultOpen}>
       {children}
       <SheetContent className="flex flex-col justify-between w-10/12">
         <SheetHeader>

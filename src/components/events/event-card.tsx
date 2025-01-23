@@ -16,11 +16,7 @@ import { cn } from '@/lib/utils';
 
 export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => {
   const toLocaleDateString = (dateString: string) => {
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) {
-      return false;
-    }
-    return date.toLocaleString();
+    return new Date(dateString).toLocaleString();
   };
 
   const toIcon = (iconString: string): ReactNode => {

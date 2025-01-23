@@ -1,6 +1,6 @@
 export interface Event {
   id: string;
-  type: EventType;
+  type: EventType | string;
   actor: Actor;
   repo: EventRepo;
   payload: Payload;
