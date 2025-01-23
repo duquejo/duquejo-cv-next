@@ -559,13 +559,13 @@ exports[`<MainPage /> tests > Should match the snapshot 1`] = `
             class="p-6 pt-0"
           >
             <p
-              class="mt-3 lg:mt-0 text-center text-muted-foreground leading-tight"
+              class="mt-3 lg:mt-0 text-center leading-tight"
             >
               <b>
                 Spanish
               </b>
               <small
-                class="block mt-1"
+                class="block mt-1 text-muted-foreground"
               >
                 Native (C2)
               </small>
@@ -614,13 +614,13 @@ exports[`<MainPage /> tests > Should match the snapshot 1`] = `
             class="p-6 pt-0"
           >
             <p
-              class="mt-3 lg:mt-0 text-center text-muted-foreground leading-tight"
+              class="mt-3 lg:mt-0 text-center leading-tight"
             >
               <b>
                 English
               </b>
               <small
-                class="block mt-1"
+                class="block mt-1 text-muted-foreground"
               >
                 Proficient (B2)
               </small>

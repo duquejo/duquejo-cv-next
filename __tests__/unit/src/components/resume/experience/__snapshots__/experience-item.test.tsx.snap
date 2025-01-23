@@ -1,0 +1,205 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<ExperienceItemContent /> tests > Should match the snapshot with the available args 1`] = `
+<div>
+  <ol
+    class="first-of-type:pt-0 pt-5 relative border-s border-gray-200"
+  >
+    <div
+      class="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-secondary"
+      data-testid="detail"
+    />
+    <div
+      class="pb-2 ms-4 flex items-center justify-between lg:justify-normal"
+    >
+      <span
+        class="lg:inline-flex items-center border-2 rounded px-2 py-1 font-semibold text-xs text-center border-secondary"
+        data-testid="time"
+      >
+        <time
+          class="block"
+        >
+          2025-01-01
+        </time>
+        <time
+          class="block lg:before:content-['-'] lg:before:mx-1"
+        >
+          2025-01-02
+        </time>
+      </span>
+      <span
+        class="text-xs font-normal ml-2 text-right lg:text-left"
+      >
+        John Doe
+      </span>
+    </div>
+    <div
+      class="rounded-xl border bg-card text-card-foreground shadow ms-4"
+    >
+      <div
+        class="flex flex-col space-y-1.5 p-6"
+      >
+        <div
+          class="font-semibold leading-none tracking-tight"
+        >
+          Foo-Bar Baz Inc.
+        </div>
+        <div
+          class="text-sm text-muted-foreground"
+        >
+          Software analyst
+        </div>
+      </div>
+      <div
+        class="p-6 py-0"
+      >
+        <div
+          class="flex flex-col lg:flex-row"
+        >
+          <div
+            class="flex flex-col order-2 lg:order-1 justify-between items-baseline basis-6/12"
+          >
+            <div
+              class="flex-auto"
+            >
+              <span
+                class="font-semibold text-base"
+              >
+                Responsibilities
+              </span>
+              <ol
+                class="list-disc ml-4 text-justify marker:text-secondary"
+              >
+                <li
+                  class="my-1 text-sm text-justify"
+                >
+                  foo
+                </li>
+                <li
+                  class="my-1 text-sm text-justify"
+                >
+                  bar
+                </li>
+                <li
+                  class="my-1 text-sm text-justify"
+                >
+                  baz
+                </li>
+              </ol>
+            </div>
+            <a
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 mt-5 lg:flex-shrink lg:w-auto w-full"
+              href="https://foo.bar"
+              rel="noopener noreferrer nofollow"
+              target="_blank"
+            >
+              Project's link
+            </a>
+          </div>
+          <picture
+            class="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0"
+          >
+            <img
+              alt="Foo-Bar Baz Inc."
+              class="rounded object-cover shadow-lg w-auto max-w-xs"
+              data-nimg="1"
+              decoding="async"
+              height="150"
+              loading="lazy"
+              src="/_next/image?url=%2Ffoo%2Fbar.webp&w=640&q=75"
+              srcset="/_next/image?url=%2Ffoo%2Fbar.webp&w=384&q=75 1x, /_next/image?url=%2Ffoo%2Fbar.webp&w=640&q=75 2x"
+              style="color: transparent;"
+              width="300"
+            />
+          </picture>
+        </div>
+      </div>
+      <div
+        class="p-6 flex flex-col items-start gap-y-2 pt-5"
+      >
+        <div
+          class="font-semibold text-base"
+        >
+          Skills
+        </div>
+        <div
+          class="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around"
+        >
+          <div
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+          >
+            Next JS
+          </div>
+          <div
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+          >
+            React
+          </div>
+          <div
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+          >
+            Vitest
+          </div>
+        </div>
+      </div>
+    </div>
+  </ol>
+</div>
+`;
+
+exports[`<ExperienceItemContent /> tests > Should match the snapshot with the default args 1`] = `
+<div>
+  <ol
+    class="first-of-type:pt-0 pt-5 relative border-s border-gray-200"
+  >
+    <div
+      class="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-secondary"
+      data-testid="detail"
+    />
+    <div
+      class="pb-2 ms-4 flex items-center justify-between lg:justify-normal"
+    >
+      <span
+        class="lg:inline-flex items-center border-2 rounded px-2 py-1 font-semibold text-xs text-center border-secondary"
+        data-testid="time"
+      >
+        <time
+          class="block"
+        >
+          2025-01-01
+        </time>
+      </span>
+      <span
+        class="text-xs font-normal ml-2 text-right lg:text-left"
+      >
+        John Doe
+      </span>
+    </div>
+    <div
+      class="rounded-xl border bg-card text-card-foreground shadow ms-4"
+    >
+      <div
+        class="flex flex-col space-y-1.5 p-6"
+      >
+        <div
+          class="font-semibold leading-none tracking-tight"
+        >
+          Foo-Bar Baz Inc.
+        </div>
+        <div
+          class="text-sm text-muted-foreground"
+        >
+          Software analyst
+        </div>
+      </div>
+      <div
+        class="p-6 py-0"
+      >
+        <div
+          class="flex flex-col lg:flex-row"
+        />
+      </div>
+    </div>
+  </ol>
+</div>
+`;

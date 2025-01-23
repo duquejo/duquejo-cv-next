@@ -21,6 +21,13 @@ Thank you for visiting, and I look forward to connecting with you!
 
 ## Installation
 
+Copy the `.env.example` file and fill the remaining fields:
+
+```dotenv
+GITHUB_URL='Github feed source'
+GITHUB_SOURCE='Github token'
+```
+
 ## Screenshots
 
 ## Support
