@@ -103,7 +103,7 @@ export default function MainPage() {
                     <Languages size={40} strokeWidth={1.5} className="text-primary" />
                   </CardHeader>
                   <CardContent>
-                    <p className="mt-3 lg:mt-0 text-center leading-tight">
+                    <p className="lg:mt-0 text-center leading-tight">
                       <b>{l.title}</b>
                       <small className="block mt-1 text-muted-foreground">{l.subtitle}</small>
                     </p>

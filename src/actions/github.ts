@@ -5,7 +5,7 @@ import { type Event, EventType } from '@/interfaces';
 const GITHUB_URL = process.env.GITHUB_URL || '';
 const GITHUB_SOURCE = process.env.GITHUB_SOURCE || '';
 
-export const getEvents = async () => {
+export async function getEvents() {
   try {
     const pathParams = new URLSearchParams({
       per_page: '15',
@@ -36,7 +36,7 @@ export const getEvents = async () => {
     console.error(e);
     return [];
   }
-};
+}
 
 const filterEventsByType = (events: Event[]): Event[] => {
   return events.filter(
@@ -46,6 +46,6 @@ const filterEventsByType = (events: Event[]): Event[] => {
         EventType.WatchEvent,
         EventType.PullRequestReviewEvent,
         EventType.CreateEvent,
-      ].includes(event.type),
+      ].includes(event.type as EventType),
   );
 };

@@ -557,3 +557,5 @@ export const LANGUAGE_DATA: Language[] = [
     subtitle: 'Proficient (B2)',
   },
 ];
+
+export const START_ADVENTURE_YEAR = 2017;
