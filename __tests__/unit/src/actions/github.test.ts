@@ -1,8 +1,6 @@
 import { beforeEach, type Mock } from 'vitest';
 import { getEvents } from '@/actions/github';
 
-vi.mock('node-fetch');
-
 describe('Github action', () => {
   const payload = [
     {

@@ -3,6 +3,8 @@ import { SidebarTrigger } from '@/components/ui/sidebar';
 import { SheetTrigger } from '@/components/ui/sheet';
 import { Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import * as React from 'react';
+import { PdfGeneratorToggle } from '@/components/general/pdf-toggle';
 
 export const AppOptionsSidebar = () => {
   return (
@@ -15,6 +17,11 @@ export const AppOptionsSidebar = () => {
           variant="outline"
           className="h-8 w-8 lg:h-10 lg:w-10"
           title="Toggle sidebar"
+        />
+        <PdfGeneratorToggle
+          variant="outline"
+          className="h-8 w-8 lg:h-10 lg:w-10"
+          title="Download CV"
         />
         <ThemeToggle
           variant="outline"

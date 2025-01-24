@@ -82,12 +82,12 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     class="list-disc ml-4 text-justify marker:text-secondary"
                   >
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Design and creation of serverless services for the Azure Cloud
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Implemented event-oriented architectures (RabbitMQ / ServiceBus) and HTTP/REST feature services aimed at solving all the required integrations between Salesforce Industries and SURA Colombia in the sales and shipping process vehicle insurance business.
                     </li>
@@ -269,37 +269,37 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     class="list-disc ml-4 text-justify marker:text-secondary"
                   >
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Migration of legacy infrastructure from Amazon Web Services to Infrastructure as Code using Serverless Framework and Terraform guaranteeing enterprise standards and full supervision of the configuration of the application architecture components.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Refactoring and optimization of the legacy code given to lambdas (Node-JS/Java) and monoliths (Java Springboot) involved in the application
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Improved up to a percentage greater than or equal to 85% of the Quality Gates standards against good practices required by the company
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Improved in a high percentage the execution performance of lambdas and code associated with step functions used in the application.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Generation of new components with business logic added to support the work cell in parallel to production activities. migration, allowing flexibility between migration loads.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Generation of security policies and vulnerability corrections in accordance with the OWASP standard
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       the results of which adequately responded to the high internal demands of the organization Aval Digital Labs as well as Banco AV Villas.
                     </li>
@@ -511,32 +511,32 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     class="list-disc ml-4 text-justify marker:text-secondary"
                   >
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Development of a learning platform for primary and secondary school, starting from a hexagonal architecture oriented to microservices and using Serverless Framework with AWS Node JS (Typescript) AWS Lambdas where SOLID principles were favored.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Maintainability and optimization of resources guaranteeing high availability and high persistence of information through AWS DocumentDB using Mongoose as ODM for the final application and TypeORM for AWS RDS relational databases of external Postgres and MySQL services.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       With the Serverless framework, strategies were made available with AWS Cloudformation to decentralize each Lambda to correspond to the desired Datalake connecting Amazon Web Services services, such as API Gateway, S3 (hooks), SNS, SQS, among others.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       An ETL was made available that delivers standardized and optimized information for the Metabase platform generating updated and complete information through AWS Eventbridge.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       The frontend was built with React JS Webpack and Typescript dividing the core of the business in different microservices through Module Federation and generalizing graphical frontend components through a common NPM library based on good practices from the library.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       External applications were connected through microservices such as Mixpanel, Concerto (Educational framework), Hotjar analytics to guarantee UX strategies for the target audience (Teachers and students).
                     </li>
@@ -718,12 +718,12 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     class="list-disc ml-4 text-justify marker:text-secondary"
                   >
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       A hexagonal architecture was defined and developed where domain orientation where solid principles and maintainability of the projects are favored. all this under a continuous integration process with static code analysis and execution of tests that guarantee the quality of the developed project.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       It was possible to build front implemented under a core which shared the feature architecture with management of this global using Redux.
                     </li>
@@ -901,32 +901,32 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     class="list-disc ml-4 text-justify marker:text-secondary"
                   >
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Custom Website development using WordPress as CMS modularization of business logic functionalities through good practices via Plugins
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Custom themes creation from scratch, guaranteeing fully responsive and optimized for the web, designed with the aim of optimizing profits and generate customer visibility through Marketing strategies.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Implementation of virtual stores and integrations with third parties such as payment gateways like ERP's, CRM's  and specialized platforms for collecting leads used in Marketing in addition implementation of SSO (Single Sign-On) services with social networks such as Facebook/Twitter/Instagram among others.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Implementation of customized automated messaging strategies for platforms via WhatsApp using authorized APIs for the business which made it possible to communicate reports to lists of authorized clients in a simple way.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Various strategies were used for the frontend and backend highlighting HTML, CSS, JS (jQuery Framework, Angular JS and React JS)
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       PHP and Node JS respectively for the creation of websites and generation of applications for third parties as well as integrators between unsupported platforms.
                     </li>
@@ -1143,22 +1143,22 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     class="list-disc ml-4 text-justify marker:text-secondary"
                   >
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Full-Stack project developed from scratch which had to be built under the WordPress CMS framework which exposed REST services to be consumed from the application client.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       The frontend had to be built with Angular JS and the use of libraries was allowed for the manipulation of multimedia content.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Implemented UX strategies due to the target population (50 years or older)
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       The delivery of multimedia resources had to be optimized and respond to a high flow of users using AWS S3, AWS CloudFront among others.
                     </li>
@@ -1340,22 +1340,22 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     class="list-disc ml-4 text-justify marker:text-secondary"
                   >
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Full-Stack project where the integration of a SEUS 4 (Active Directory - SAML) was required integrating it with an E-Commerce using WordPress with WooCommerce as CMS.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       According to the good practices for WordPress it was required to set up an adaptable plugin based on an MVC architecture which favored the division of its logic and components.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       The application had to have custom reports generated via CSV which come from different sources such as Google Docs and external REST APIs.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       The project was completed by complying with the functional requirements and the quality of the software advocated by the client.
                     </li>
@@ -1520,7 +1520,7 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     Responsibilities
                   </span>
                   <p
-                    class="my-1 text-justify text-sm"
+                    class="my-1 text-justify text-xs leading-normal"
                   >
                     Interactive Frontend project developed from scratch with Angular 7 technology under the architecture recommended by the Angular style guide. It sought to satisfy the principles of maintainability respecting concepts of clean code and design patterns suggested by the framework.
                   </p>
@@ -1652,17 +1652,17 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     class="list-disc ml-4 text-justify marker:text-secondary"
                   >
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Full-Stack interactive project developed from scratch under the WordPress CMS Framework.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Due to the infrastructure suggested by the client it was necessary to use jQuery and libraries focused on manipulating the DOM.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       The project required respecting very specific brand directives directly related to the functional requirements.
                     </li>
@@ -1805,17 +1805,17 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     class="list-disc ml-4 text-justify marker:text-secondary"
                   >
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Frontend project developed from scratch which required using entirely JavaScript (Vanilla) language.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       This quote used very precise calculations that are carried out in detail due to the company's quality policies therefore that the interaction with the client had to be constant
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       The continuous deployment process was properly configured through scheduled tasks on a remote server in the cloud.
                     </li>
@@ -1938,17 +1938,17 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     class="list-disc ml-4 text-justify marker:text-secondary"
                   >
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Full-Stack project developed from scratch with PHP technologies and using the Framework for WordPress web pages.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       In accordance with the good practices of the Wordpress CMS it was required to build entirely using a plugin implementing a MVC architecture.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       It was important for the client to respond clearly to the functional requirements whose importance lay in the calculation the evaluation of results and their deployment (PDF - Email) which were used for strategies of Marketing and Digital Guidelines. It was essential that it be fully manageable and configurable.
                     </li>
@@ -2101,22 +2101,22 @@ exports[`<ProjectsPage /> tests > should match the snapshot 1`] = `
                     class="list-disc ml-4 text-justify marker:text-secondary"
                   >
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Full-Stack project developed from scratch under the WordPress CMS Framework (PHP).
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       It required using good CMS practices for its construction so its modules were developed under the Kernel architecture /Plugin common in CMS such as WordPress.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       It required managing information dynamically from the frontend using jQuery and Ajax.
                     </li>
                     <li
-                      class="my-1 text-sm text-justify"
+                      class="my-1 text-xs text-justify leading-normal"
                     >
                       Different cloud service structures had to be maintained for its users and collaborators using the AWS suite for this (S3, Glacier, Cloudfront, Route 53, etc.) and administration of Azure and Office 365 Cloud services.
                     </li>

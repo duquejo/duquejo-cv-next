@@ -1,0 +1,7 @@
+### Download PDF Request
+POST http://localhost:3000/api/v1/pdf
+Origin: http://localhost:3000
+
+### Download PDF Request (Preflight)
+OPTIONS http://localhost:3000/api/v1/pdf
+Origin: http://localhost:3000
