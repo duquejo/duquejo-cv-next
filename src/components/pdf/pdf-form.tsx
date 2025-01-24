@@ -20,7 +20,7 @@ export const PdfForm = ({ onSubmitFinish }: Props) => {
       });
 
       if (response.status !== 200) {
-        console.error(response.status, response.statusText);
+        throw new Error('Request failed with status code ' + response.status);
       }
 
       const blob = await response.blob();
@@ -33,8 +33,11 @@ export const PdfForm = ({ onSubmitFinish }: Props) => {
 
       window.URL.revokeObjectURL(url);
       onSubmitFinish();
-    } catch (error) {
-      console.error('Error:', error);
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        console.error(e.message);
+        return;
+      }
     } finally {
       setIsLoading(false);
     }

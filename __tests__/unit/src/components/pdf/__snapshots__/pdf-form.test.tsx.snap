@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<PdfForm /> tests > should match the snapshot 1`] = `
+<div>
+  <form
+    class="flex flex-col"
+  >
+    <div
+      class="shrink-0 bg-border h-[1px] w-full mt-2 mb-3"
+      data-orientation="horizontal"
+      role="none"
+    />
+    <button
+      class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
+      type="submit"
+    >
+      Generate
+    </button>
+  </form>
+</div>
+`;

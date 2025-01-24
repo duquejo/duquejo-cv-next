@@ -1,4 +1,4 @@
-import { Template } from '@pdfme/common';
+import type { Template } from '@pdfme/common';
 import { calculateYears } from '@/lib/utils';
 
 export const BASE_PDF =
