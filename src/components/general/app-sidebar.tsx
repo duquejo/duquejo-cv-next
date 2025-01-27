@@ -8,79 +8,35 @@ import {
   SidebarMenu,
   SidebarSeparator,
 } from '@/components/ui/sidebar';
-import { MenuItem } from '@/interfaces';
-import { Calendar, Gamepad, Inbox, Music, Pencil, Projector, Send } from 'lucide-react';
 import { MenuAvatar } from '@/components/menu/menu-avatar/menu-avatar';
 import { MenuItems } from '@/components/menu/menu-items/menu-items';
-
-// Menu items.
-export const professionalItems: MenuItem[] = [
-  {
-    title: 'Resumeé',
-    url: '/',
-    icon: <Inbox />,
-  },
-  {
-    title: 'Services',
-    url: '/career/services',
-    icon: <Calendar />,
-  },
-  {
-    title: 'Projects',
-    url: '/career/projects',
-    icon: <Projector />,
-  },
-];
-
-export const lastItems: MenuItem[] = [
-  {
-    title: 'My blog',
-    url: '/blog',
-    icon: <Pencil />,
-  },
-  {
-    title: 'Contact',
-    url: '/contact',
-    icon: <Send />,
-  },
-];
-
-export const hobbiesItems: MenuItem[] = [
-  {
-    title: 'Music production',
-    url: '/hobbies/music-production',
-    icon: <Music />,
-  },
-  {
-    title: 'Game development',
-    url: '/hobbies/games-development',
-    icon: <Gamepad />,
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export const AppSidebar = () => {
+  const t = useTranslations('Sidebar');
+
   return (
     <Sidebar collapsible="icon" variant="floating" role="navigation" tabIndex={0}>
       <SidebarHeader>
         <div className="flex flex-col place-items-center gap-y-2">
-          <MenuAvatar />
+          <MenuAvatar role={t('role')} />
         </div>
       </SidebarHeader>
       <SidebarContent className="justify-between">
         <div>
           <SidebarGroup>
-            <SidebarGroupLabel>Professional career</SidebarGroupLabel>
+            <SidebarGroupLabel>{t('professional.title')}</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                <MenuItems items={professionalItems} />
+                <MenuItems items={t.raw('professional.links')} />
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
           <SidebarGroup>
-            <SidebarGroupLabel>Hobbies</SidebarGroupLabel>
+            <SidebarGroupLabel>{t('hobbies.title')}</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                <MenuItems items={hobbiesItems} />
+                <MenuItems items={t.raw('hobbies.links')} />
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
@@ -90,7 +46,7 @@ export const AppSidebar = () => {
           <SidebarGroup>
             <SidebarGroupContent>
               <SidebarMenu>
-                <MenuItems size="sm" items={lastItems} />
+                <MenuItems size="sm" items={t.raw('footer.links')} />
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>

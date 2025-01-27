@@ -1,15 +1,15 @@
 'use client';
 
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import * as ProgressPrimitive from '@radix-ui/react-progress';
 
 import { cn } from '@/lib/utils';
-import { useEffect, useState } from 'react';
 
 const Progress = React.forwardRef<
   React.ComponentRef<typeof ProgressPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
->(({ className, value = 0, color = 'bg-primary', ...props }, ref) => {
+>(({ className, value = 0, color = '#000', ...props }, ref) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -37,8 +37,8 @@ const Progress = React.forwardRef<
       {...props}
     >
       <ProgressPrimitive.Indicator
-        className={cn('h-full w-full flex-1 transition-all', color)}
-        style={{ transform: `translateX(-${100 - (progress || 0)}%)` }}
+        className="h-full w-full flex-1 transition-all"
+        style={{ backgroundColor: color, transform: `translateX(-${100 - (progress || 0)}%)` }}
       />
     </ProgressPrimitive.Root>
   );

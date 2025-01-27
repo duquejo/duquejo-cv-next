@@ -8,7 +8,7 @@ interface Props {
 export default function ResumeLayout({ children }: Props): ReactNode {
   return (
     <main className="container flex flex-1 h-screen">
-      <div className="flex-1 mt-5 lg:mt-0 relative">
+      <div className="flex-1 relative">
         {children}
         <AppFooter />
       </div>

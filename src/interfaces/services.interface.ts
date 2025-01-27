@@ -1,8 +1,6 @@
-import { LucideIcon } from 'lucide-react';
-
-export interface Services {
+export interface ServicesType {
   title: string;
   subtitle: string;
-  icon: LucideIcon;
+  icon: string;
   description: string;
 }

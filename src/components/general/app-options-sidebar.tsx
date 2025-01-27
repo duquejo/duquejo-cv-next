@@ -5,8 +5,11 @@ import { Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import * as React from 'react';
 import { PdfGeneratorToggle } from '@/components/general/pdf-toggle';
+import { useTranslations } from 'next-intl';
 
 export const AppOptionsSidebar = () => {
+  const t = useTranslations('Sidebar.complementary');
+
   return (
     <div
       role="complementary"
@@ -16,23 +19,29 @@ export const AppOptionsSidebar = () => {
         <SidebarTrigger
           variant="outline"
           className="h-8 w-8 lg:h-10 lg:w-10"
-          title="Toggle sidebar"
+          title={t('sidebar.title')}
         />
         <PdfGeneratorToggle
           variant="outline"
           className="h-8 w-8 lg:h-10 lg:w-10"
-          title="Download CV"
+          title={t('pdf.title')}
+          description={t('pdf.description')}
+          button={t('pdf.button')}
+          buttonLoading={t('pdf.loading')}
         />
         <ThemeToggle
           variant="outline"
           className="h-8 w-8 lg:h-10 lg:w-10"
-          title="Change color theme"
+          title={t('theme.title')}
+          light={t('theme.light')}
+          dark={t('theme.dark')}
+          system={t('theme.system')}
         />
         <SheetTrigger asChild>
           <Button
             variant="outline"
             className=" h-8 w-8 lg:h-10 lg:w-10"
-            title="Open latest activity"
+            title={t('activity.title')}
           >
             <Lightbulb />
           </Button>

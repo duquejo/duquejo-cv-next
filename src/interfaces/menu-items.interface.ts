@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { Pathnames } from '@/i18n/routing';
 
 export interface MenuItem {
   title: string;
-  url: string;
-  icon: ReactNode;
+  url: Pathnames;
+  icon: string;
 }

@@ -9,11 +9,21 @@ import { useState } from 'react';
 
 interface Props {
   className?: string;
+  title: string;
+  description: string;
+  button: string;
+  buttonLoading: string;
   variant?: ButtonProps['variant'];
-  title?: string;
 }
 
-export const PdfGeneratorToggle = ({ className, variant, title = 'Download CV' }: Props) => {
+export const PdfGeneratorToggle = ({
+  description,
+  button,
+  title,
+  buttonLoading,
+  className,
+  variant,
+}: Props) => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
 
   return (
@@ -26,7 +36,7 @@ export const PdfGeneratorToggle = ({ className, variant, title = 'Download CV' }
           title={title}
           onClick={() => setIsPopoverOpen(true)}
         >
-          <ImageDown className="h-8 w-8 lg:h-10 lg:w-10" aria-label="Download CV settings" />
+          <ImageDown className="h-8 w-8 lg:h-10 lg:w-10" aria-label={title} />
           <span className="sr-only">{title}</span>
         </Button>
       </PopoverTrigger>
@@ -34,11 +44,13 @@ export const PdfGeneratorToggle = ({ className, variant, title = 'Download CV' }
         onInteractOutside={() => setIsPopoverOpen(false)}
         onEscapeKeyDown={() => setIsPopoverOpen(false)}
       >
-        <h4 className="font-medium leading-none text-sm mb-2">{title}</h4>
-        <p className="text-xs text-muted-foreground">
-          Download my resume as a PDF and explore my skills and achievements 🌟
-        </p>
-        <PdfForm onSubmitFinish={() => setIsPopoverOpen(false)} />
+        <h4 className="font-medium leading-none mb-2">{title}</h4>
+        <p className="text-sm text-muted-foreground">{description}</p>
+        <PdfForm
+          onSubmitFinish={() => setIsPopoverOpen(false)}
+          button={button}
+          buttonLoading={buttonLoading}
+        />
       </PopoverContent>
     </Popover>
   );

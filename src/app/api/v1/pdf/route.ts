@@ -1,6 +1,5 @@
-import { generateInputs, getBaseTemplate } from '@/lib/pdf';
-import { generate } from '@pdfme/generator';
 import { NextRequest, NextResponse } from 'next/server';
+import { generatePdf } from '@/actions/pdf';
 
 const allowedOrigins = ['https://duquejo.com', 'http://localhost:8081'];
 
@@ -27,10 +26,7 @@ export async function POST(request: NextRequest): Promise<Response> {
     concatOptions['Access-Control-Allow-Origin'] = origin;
   }
 
-  const template = getBaseTemplate;
-  const inputs = generateInputs();
-
-  const pdfBuffer = await generate({ inputs, template });
+  const pdfBuffer = await generatePdf();
 
   return new Response(pdfBuffer, {
     status: 200,

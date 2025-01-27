@@ -7,3 +7,4 @@ export * from './languages.interface';
 export * from './social.interface';
 
 export * from './github-events.interface';
+export * from './metadata.interface';

@@ -4,7 +4,11 @@ import Image from 'next/image';
 import { NameTag } from '@/components/menu/name-tag/name-tag';
 import { useSidebar } from '@/components/ui/sidebar';
 
-export const MenuAvatar = () => {
+interface Props {
+  role: string;
+}
+
+export const MenuAvatar = ({ role }: Props) => {
   const { state } = useSidebar();
 
   return (
@@ -23,7 +27,7 @@ export const MenuAvatar = () => {
         <div className="text-center">
           <NameTag />
           <div className="text-xl font-bold">José Duque</div>
-          <div className="font-light text-sm">Software Engineer</div>
+          <div className="font-light text-sm">{role}</div>
         </div>
       )}
     </>
