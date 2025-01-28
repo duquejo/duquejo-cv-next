@@ -2,11 +2,22 @@ import { MenuItems } from '@/components/menu/menu-items/menu-items';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MenuItem } from '@/interfaces';
 import { SidebarProvider, useSidebar } from '@/components/ui/sidebar';
+import type { Pathnames } from '@/i18n/routing';
 
 // Partial mocking
 vi.mock('@/components/ui/sidebar', async (importOriginal) => ({
   ...(await importOriginal()),
   useSidebar: vi.fn(),
+}));
+
+vi.mock('@/i18n/routing', () => ({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Link: ({ children, href, onClick, ...props }: any) => (
+    <a href={href} onClick={onClick} {...props}>
+      {children}
+    </a>
+  ),
+  usePathname: vi.fn(() => '/home'),
 }));
 
 describe('<MenuItems /> tests', () => {
@@ -15,13 +26,11 @@ describe('<MenuItems /> tests', () => {
   const mockItems: MenuItem[] = [
     {
       title: 'Foo',
-      url: 'foo.bar',
-      icon: <svg />,
+      url: '/home' as Pathnames,
     },
     {
       title: 'Bar',
-      url: 'bar.baz',
-      icon: <svg />,
+      url: '/about' as Pathnames,
     },
   ];
 

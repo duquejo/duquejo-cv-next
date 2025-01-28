@@ -12,7 +12,7 @@ exports[`<PdfGeneratorToggle /> tests > Should match the snapshot with a given a
     type="button"
   >
     <svg
-      aria-label="Download CV settings"
+      aria-label="Testing PDF"
       class="lucide lucide-image-down h-8 w-8 lg:h-10 lg:w-10"
       fill="none"
       height="24"
@@ -56,11 +56,11 @@ exports[`<PdfGeneratorToggle /> tests > Should match the snapshot with the defau
     aria-haspopup="dialog"
     class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 w-10"
     data-state="closed"
-    title="Download CV"
+    title="mocked title"
     type="button"
   >
     <svg
-      aria-label="Download CV settings"
+      aria-label="mocked title"
       class="lucide lucide-image-down h-8 w-8 lg:h-10 lg:w-10"
       fill="none"
       height="24"
@@ -90,7 +90,7 @@ exports[`<PdfGeneratorToggle /> tests > Should match the snapshot with the defau
     <span
       class="sr-only"
     >
-      Download CV
+      mocked title
     </span>
   </button>
 </div>

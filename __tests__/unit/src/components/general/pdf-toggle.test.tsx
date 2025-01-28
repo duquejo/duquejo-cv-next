@@ -5,14 +5,36 @@ import userEvent, { type UserEvent } from '@testing-library/user-event';
 describe('<PdfGeneratorToggle /> tests', () => {
   let user: UserEvent;
 
+  const props = {
+    title: 'mocked title',
+    description: 'mocked description',
+    button: 'mocked button',
+    buttonLoading: 'mocked loading',
+  };
+
   beforeEach(() => {
     vi.clearAllMocks();
 
     user = userEvent.setup();
   });
 
+  const openButtonTriggerEvt = async (): Promise<HTMLElement> => {
+    render(<PdfGeneratorToggle {...props} />);
+
+    const button = screen.getByRole('button');
+
+    await user.click(button);
+
+    await waitFor(() => screen.getByRole('button', { name: props.button }));
+
+    expect(button).toHaveAttribute('data-state', 'open');
+    expect(button).toHaveAttribute('aria-expanded', 'true');
+
+    return button;
+  };
+
   it('Should match the snapshot with the default args', () => {
-    const { container } = render(<PdfGeneratorToggle />);
+    const { container } = render(<PdfGeneratorToggle {...props} />);
 
     const button = screen.getByRole('button');
 
@@ -21,14 +43,21 @@ describe('<PdfGeneratorToggle /> tests', () => {
     expect(button).toBeInTheDocument();
     expect(button).toHaveAttribute('data-state', 'closed');
     expect(button).toHaveAttribute('aria-expanded', 'false');
-    expect(button).toHaveAttribute('title', 'Download CV');
-    expect(button).toHaveTextContent('Download CV');
+    expect(button).toHaveAttribute('title', props.title);
+    expect(button).toHaveTextContent(props.title);
     expect(button).toHaveClass('text-primary-foreground', 'hover:bg-primary/90');
   });
 
   it('Should match the snapshot with a given args', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { title, ...rest } = props;
     const { container } = render(
-      <PdfGeneratorToggle variant="secondary" title="Testing PDF" className="bg-color-red" />,
+      <PdfGeneratorToggle
+        variant="secondary"
+        title="Testing PDF"
+        className="bg-color-red"
+        {...rest}
+      />,
     );
 
     const button = screen.getByRole('button');
@@ -46,16 +75,7 @@ describe('<PdfGeneratorToggle /> tests', () => {
   });
 
   it('Should handle the outside popover click', async () => {
-    render(<PdfGeneratorToggle />);
-
-    const button = screen.getByRole('button');
-
-    await user.click(button);
-
-    await waitFor(() => screen.getByRole('button', { name: /Generate/ }));
-
-    expect(button).toHaveAttribute('data-state', 'open');
-    expect(button).toHaveAttribute('aria-expanded', 'true');
+    const button = await openButtonTriggerEvt();
 
     await user.click(document.body); // Outside click
 
@@ -64,16 +84,7 @@ describe('<PdfGeneratorToggle /> tests', () => {
   });
 
   it('Should handle the keydown event', async () => {
-    render(<PdfGeneratorToggle />);
-
-    const button = screen.getByRole('button');
-
-    await user.click(button);
-
-    await waitFor(() => screen.getByRole('button', { name: /Generate/ }));
-
-    expect(button).toHaveAttribute('data-state', 'open');
-    expect(button).toHaveAttribute('aria-expanded', 'true');
+    const button = await openButtonTriggerEvt();
 
     fireEvent.keyDown(document.body, {
       key: 'Escape',

@@ -1,12 +1,17 @@
 import { NextRequest } from 'next/server';
 import { OPTIONS, POST } from '@/app/api/v1/pdf/route';
-import { generate } from '@pdfme/generator';
+import { generatePdf } from '@/actions/pdf';
+import { beforeEach } from 'vitest';
 
-vi.mock('@pdfme/generator', () => ({
-  generate: vi.fn(() => new Promise<Buffer>((resolve) => resolve(Buffer.from('PDF content')))),
+vi.mock('@/actions/pdf', () => ({
+  generatePdf: vi.fn(() => new Promise<Buffer>((resolve) => resolve(Buffer.from('PDF content')))),
 }));
 
 describe('PDF Route handler unit tests', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
   it('should work as expected - POST', async () => {
     const request = new NextRequest('http://localhost:3000', {
       method: 'POST',
@@ -25,10 +30,7 @@ describe('PDF Route handler unit tests', () => {
     expect(response.headers.get('Access-Control-Allow-Origin')).toBe('https://duquejo.com');
     expect(await response.text()).toBe('PDF content');
 
-    expect(generate).toHaveBeenCalledWith({
-      inputs: expect.any(Array),
-      template: expect.any(Object),
-    });
+    expect(generatePdf).toHaveBeenCalled();
   });
 
   it('should not set Access-Control-Allow-Origin for disallowed origins - POST', async () => {
@@ -40,6 +42,8 @@ describe('PDF Route handler unit tests', () => {
 
     expect(response.status).toBe(200);
     expect(response.headers.get('Access-Control-Allow-Origin')).toBeNull();
+
+    expect(generatePdf).toHaveBeenCalled();
   });
 
   it('should work as expected - OPTIONS (Preflight)', async () => {

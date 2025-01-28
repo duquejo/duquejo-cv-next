@@ -12,7 +12,7 @@ exports[`<ThemeToggle /> tests > Should match the snapshot with a given args 1`]
     type="button"
   >
     <svg
-      aria-label="Light mode"
+      aria-label="Claro"
       class="lucide lucide-sun h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
       fill="none"
       height="24"
@@ -55,7 +55,7 @@ exports[`<ThemeToggle /> tests > Should match the snapshot with a given args 1`]
       />
     </svg>
     <svg
-      aria-label="Dark mode"
+      aria-label="Oscuro"
       class="lucide lucide-moon absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
       fill="none"
       height="24"
@@ -88,11 +88,11 @@ exports[`<ThemeToggle /> tests > Should match the snapshot with the default args
     class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 w-10"
     data-state="closed"
     id="radix-:r0:"
-    title="Toggle theme"
+    title="mocked title"
     type="button"
   >
     <svg
-      aria-label="Light mode"
+      aria-label="Claro"
       class="lucide lucide-sun h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
       fill="none"
       height="24"
@@ -135,7 +135,7 @@ exports[`<ThemeToggle /> tests > Should match the snapshot with the default args
       />
     </svg>
     <svg
-      aria-label="Dark mode"
+      aria-label="Oscuro"
       class="lucide lucide-moon absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
       fill="none"
       height="24"
@@ -154,7 +154,7 @@ exports[`<ThemeToggle /> tests > Should match the snapshot with the default args
     <span
       class="sr-only"
     >
-      Toggle theme
+      mocked title
     </span>
   </button>
 </div>

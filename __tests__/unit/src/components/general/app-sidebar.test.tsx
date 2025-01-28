@@ -1,11 +1,47 @@
 import { render, screen } from '@testing-library/react';
-import {
-  AppSidebar,
-  hobbiesItems,
-  lastItems,
-  professionalItems,
-} from '@/components/general/app-sidebar';
+import { AppSidebar } from '@/components/general/app-sidebar';
 import { SidebarProvider } from '@/components/ui/sidebar';
+
+const professionalItems = [
+  { title: 'Home', url: '/home' },
+  { title: 'About', url: '/about' },
+];
+
+const hobbiesItems = [
+  { title: 'Reading', url: '/reading' },
+  { title: 'Gaming', url: '/gaming' },
+];
+
+const footerItems = [{ title: 'Contact', url: '/contact' }];
+
+vi.mock('@/i18n/routing', () => ({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Link: ({ children, href, onClick, ...props }: any) => (
+    <a href={href} onClick={onClick} {...props}>
+      {children}
+    </a>
+  ),
+  usePathname: vi.fn(() => '/home'),
+}));
+
+vi.mock('next-intl', () => ({
+  useTranslations: () => {
+    const translations: Record<string, unknown> = {
+      role: 'User Role',
+      'professional.title': 'Professional Links',
+      'hobbies.title': 'Hobbies',
+      'professional.links': professionalItems,
+      'hobbies.links': hobbiesItems,
+      'footer.links': footerItems,
+    };
+
+    const t = (key: string) => translations[key];
+
+    t.raw = (key: string) => translations[key];
+
+    return t;
+  },
+}));
 
 describe('<AppSidebar /> tests', () => {
   beforeEach(() => {
@@ -39,7 +75,7 @@ describe('<AppSidebar /> tests', () => {
       </SidebarProvider>,
     );
 
-    expect(screen.getByText('Professional career')).toBeInTheDocument();
+    expect(screen.getByText('Professional Links')).toBeInTheDocument();
     expect(screen.getByText('Hobbies')).toBeInTheDocument();
     expect(screen.getByRole('img')).toBeInTheDocument();
 
@@ -57,7 +93,7 @@ describe('<AppSidebar /> tests', () => {
       expect(screenItem).toHaveAttribute('href', url);
     });
 
-    lastItems.forEach(({ title, url }) => {
+    footerItems.forEach(({ title, url }) => {
       const screenItem = screen.getByRole('link', { name: title });
       expect(screenItem).toBeInTheDocument();
       expect(screenItem).toHaveTextContent(title);

@@ -1,9 +1,18 @@
-import { ExperienceType } from '@/interfaces';
+import type { ExperienceType } from '@/interfaces';
 import { render, screen } from '@testing-library/react';
 import { ExperienceItem } from '@/components/resume/experience/experience-item';
 
+vi.mock('next-intl', () => ({
+  useTranslations: () => (key: string) =>
+    ({
+      subtitle: 'subtitle',
+      button: 'button',
+      footer: 'footer',
+    })[key],
+}));
+
 describe('<ExperienceItemContent /> tests', () => {
-  const data: ExperienceType = {
+  const data: Required<ExperienceType> = {
     resume: ['foo', 'bar', 'baz'],
     screenshot: '/foo/bar.webp',
     url: 'https://foo.bar',
@@ -24,7 +33,7 @@ describe('<ExperienceItemContent /> tests', () => {
 
     expect(container).toMatchSnapshot();
 
-    expect(screen.getByTestId('time')).not.toHaveTextContent(data.end_date!);
+    expect(screen.getByTestId('time')).not.toHaveTextContent(end_date);
     expect(screen.getByTestId('time')).not.toHaveClass('border-yellow-400');
 
     expect(screen.getByTestId('detail')).not.toHaveClass('bg-primary');
@@ -35,11 +44,13 @@ describe('<ExperienceItemContent /> tests', () => {
 
     expect(container).toMatchSnapshot();
 
-    expect(screen.getByText('Skills')).toBeInTheDocument();
-    data.additional_info!.forEach((item) => expect(screen.getByText(item)).toBeInTheDocument());
+    expect(screen.getByText('subtitle')).toBeInTheDocument();
+    data.additional_info.forEach((item: string) =>
+      expect(screen.getByText(item)).toBeInTheDocument(),
+    );
 
     expect(screen.getByTestId('time')).toHaveTextContent(data.start_date);
-    expect(screen.getByTestId('time')).toHaveTextContent(data.end_date!);
+    expect(screen.getByTestId('time')).toHaveTextContent(data.end_date);
   });
 
   it('Should stylize the time tags if the parameter "isRecent" is truthy', () => {

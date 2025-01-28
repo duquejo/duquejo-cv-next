@@ -30,11 +30,11 @@ export function ThemeToggle({ className, variant, title, dark, system, light }: 
         <Button variant={variant} size="icon" className={cn('h-10 w-10', className)} title={title}>
           <Sun
             className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-            aria-label={`${light}-control`}
+            aria-label={light}
           />
           <Moon
             className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-            aria-label={`${dark}-control`}
+            aria-label={dark}
           />
           <span className="sr-only">{title}</span>
         </Button>
