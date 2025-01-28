@@ -1,3 +1,5 @@
+import { EventType } from '@/interfaces/general-interface';
+
 export interface Event {
   id: string;
   type: EventType | string;
@@ -228,12 +230,4 @@ export interface EventRepo {
   id: number;
   name: string;
   url: string;
-}
-
-export enum EventType {
-  CreateEvent = 'CreateEvent',
-  PullRequestEvent = 'PullRequestEvent',
-  PushEvent = 'PushEvent',
-  WatchEvent = 'WatchEvent',
-  PullRequestReviewEvent = 'PullRequestReviewEvent',
 }
