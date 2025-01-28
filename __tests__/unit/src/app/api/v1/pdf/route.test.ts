@@ -12,15 +12,33 @@ describe('PDF Route handler unit tests', () => {
     vi.clearAllMocks();
   });
 
-  it('should work as expected - POST', async () => {
-    const request = new NextRequest('http://localhost:3000', {
+  const testBaseUrl = 'http://localhost:3000';
+
+  const postRequest = (headers = new Headers()): Promise<Response> => {
+    const request = new NextRequest(testBaseUrl, {
       method: 'POST',
-      headers: new Headers({
-        origin: 'https://duquejo.com',
-      }),
+      headers,
     });
 
-    const response = await POST(request);
+    return POST(request);
+  };
+
+  const optionsRequest = (headers = new Headers()): Promise<Response> => {
+    const request = new NextRequest(testBaseUrl, {
+      method: 'OPTIONS',
+      headers,
+    });
+
+    return OPTIONS(request);
+  };
+
+  it('should work as expected - POST', async () => {
+    const customHeaders = new Headers({
+      origin: 'https://duquejo.com',
+    });
+
+    const response = await postRequest(customHeaders);
+    const textResponse = await response.text();
 
     expect(response.status).toBe(200);
     expect(response.headers.get('Content-Type')).toBe('application/pdf');
@@ -28,17 +46,13 @@ describe('PDF Route handler unit tests', () => {
       'attachment; filename=cv_jose_duque.pdf',
     );
     expect(response.headers.get('Access-Control-Allow-Origin')).toBe('https://duquejo.com');
-    expect(await response.text()).toBe('PDF content');
+    expect(textResponse).toBe('PDF content');
 
     expect(generatePdf).toHaveBeenCalled();
   });
 
   it('should not set Access-Control-Allow-Origin for disallowed origins - POST', async () => {
-    const request = new NextRequest('http://localhost:3000', {
-      method: 'POST',
-    });
-
-    const response = await POST(request);
+    const response = await postRequest();
 
     expect(response.status).toBe(200);
     expect(response.headers.get('Access-Control-Allow-Origin')).toBeNull();
@@ -47,14 +61,11 @@ describe('PDF Route handler unit tests', () => {
   });
 
   it('should work as expected - OPTIONS (Preflight)', async () => {
-    const request = new NextRequest('http://localhost:3000', {
-      method: 'OPTIONS',
-      headers: new Headers({
-        origin: 'https://duquejo.com',
-      }),
+    const customHeaders = new Headers({
+      origin: 'https://duquejo.com',
     });
 
-    const response = await OPTIONS(request);
+    const response = await optionsRequest(customHeaders);
 
     expect(response.headers.get('Access-Control-Allow-Origin')).toBe('https://duquejo.com');
     expect(response.headers.get('Access-Control-Allow-Methods')).toBe('POST, OPTIONS');
@@ -65,11 +76,7 @@ describe('PDF Route handler unit tests', () => {
   });
 
   it('should not set Access-Control-Allow-Origin for disallowed origins - OPTIONS (Preflight)', async () => {
-    const request = new NextRequest('http://localhost:3000', {
-      method: 'OPTIONS',
-    });
-
-    const response = await OPTIONS(request);
+    const response = await optionsRequest();
 
     expect(response.headers.get('Access-Control-Allow-Origin')).toBeNull();
     expect(response.headers.get('Access-Control-Allow-Methods')).toBe('POST, OPTIONS');

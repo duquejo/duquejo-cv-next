@@ -1,11 +1,11 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import { EventCard } from '@/components/events/event-card';
-import { type Event, EventType } from '@/interfaces';
+import type { Event } from '@/interfaces';
 
 describe('<EventCard /> tests', () => {
   const args: Event = {
     id: '123',
-    type: EventType.PushEvent,
+    type: 'PushEvent',
     actor: {
       id: 123,
       url: 'https://foo.bar',
@@ -74,23 +74,23 @@ describe('<EventCard /> tests', () => {
   it('should render the event icon conditionally', () => {
     const events = [
       {
-        type: EventType.CreateEvent,
+        type: 'CreateEvent',
         expectedColor: 'bg-teal-400',
       },
       {
-        type: EventType.PullRequestEvent,
+        type: 'PullRequestEvent',
         expectedColor: 'bg-yellow-400',
       },
       {
-        type: EventType.PushEvent,
+        type: 'PushEvent',
         expectedColor: 'bg-red-400',
       },
       {
-        type: EventType.WatchEvent,
+        type: 'WatchEvent',
         expectedColor: 'bg-cyan-300',
       },
       {
-        type: EventType.PullRequestReviewEvent,
+        type: 'PullRequestReviewEvent',
         expectedColor: 'bg-cyan-300',
       },
       {

@@ -24,10 +24,11 @@ export const AppOptionsSidebar = () => {
         <PdfGeneratorToggle
           variant="outline"
           className="h-8 w-8 lg:h-10 lg:w-10"
-          title={t('pdf.title')}
-          description={t('pdf.description')}
-          button={t('pdf.button')}
-          buttonLoading={t('pdf.loading')}
+          buttonTitle={t('pdf.title')}
+          formTitle={t('pdf.dialog.title')}
+          formDescription={t('pdf.dialog.description')}
+          formButtonText={t('pdf.dialog.button')}
+          formButtonTextLoading={t('pdf.dialog.loading')}
         />
         <ThemeToggle
           variant="outline"
@@ -44,6 +45,7 @@ export const AppOptionsSidebar = () => {
             title={t('activity.title')}
           >
             <Lightbulb />
+            <span className="sr-only">{t('activity.title')}</span>
           </Button>
         </SheetTrigger>
       </div>

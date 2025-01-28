@@ -1,4 +1,4 @@
-import { generateMetadata } from '@/lib/utils';
+import { generateMetadata } from '@/lib';
 
 export async function metadata() {
   return generateMetadata('MusicProduction');

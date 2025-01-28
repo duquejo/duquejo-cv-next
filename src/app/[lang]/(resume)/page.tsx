@@ -2,9 +2,8 @@ import Image from 'next/image';
 import { ExperienceItem } from '@/components/resume/experience/experience-item';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Languages } from 'lucide-react';
-import { STACK_DATA as stack } from '@/lib/constants';
+import { calculateYears, cn, STACK_DATA as stack } from '@/lib';
 import { HeroImage } from '@/components/resume/hero-image/hero-image';
-import { calculateYears, cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { useCallback } from 'react';
 import { RichText } from '@/components/general/rich-text';
@@ -48,15 +47,10 @@ export default function MainPage() {
       </section>
       <section className="m-10 gap-x-10 gap-y-2">
         <h2 className="text-lg lg:text-xl mb-3 font-semibold underline-offset-4 underline decoration-primary">
-          {t.rich('resume.description.title', {
-            b: (chunks) => <b>{chunks}</b>,
-          })}
+          <RichText>{(tags) => t.rich('resume.description.title', tags)}</RichText>
         </h2>
         <p className="text-justify">
-          {t.rich('resume.description.content', {
-            b: (chunks) => <b>{chunks}</b>,
-            br: () => <br />,
-          })}
+          <RichText>{(tags) => t.rich('resume.description.content', tags)}</RichText>
         </p>
       </section>
       <section className="flex flex-col lg:flex-row gap-x-10 m-10">

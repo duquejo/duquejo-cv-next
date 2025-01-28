@@ -38,7 +38,7 @@ export const AppActivityProvider = ({ children, defaultOpen = false }: Props) =>
   return (
     <Sheet key="activity" onOpenChange={onToggleChange} defaultOpen={defaultOpen}>
       {children}
-      <SheetContent className="flex flex-col justify-between w-10/12">
+      <SheetContent role="dialog" className="flex flex-col justify-between w-10/12">
         <SheetHeader>
           <SheetTitle>{t('title')}</SheetTitle>
           <SheetDescription>{t('description')}</SheetDescription>
@@ -47,7 +47,7 @@ export const AppActivityProvider = ({ children, defaultOpen = false }: Props) =>
           {isLoading ? (
             <EventSkeleton rounds={2} />
           ) : (
-            <div className="flex flex-col gap-2 overflow-y-auto">
+            <div role="list" className="flex flex-col gap-2 overflow-y-auto list-none">
               {data?.map((event) => <EventCard key={event.id} {...event} />)}
             </div>
           )}

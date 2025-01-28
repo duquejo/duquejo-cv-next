@@ -46,7 +46,12 @@ export const PdfForm = ({ onSubmitFinish, button, buttonLoading }: Props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col"
+      aria-labelledby="formpdf-title"
+      aria-describedby="formpdf-description"
+    >
       <Separator orientation="horizontal" className="mt-2 mb-3" />
       <Button type="submit" size="sm" disabled={isLoading}>
         {isLoading ? buttonLoading : button}

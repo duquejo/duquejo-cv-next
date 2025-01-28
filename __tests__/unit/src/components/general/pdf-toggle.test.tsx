@@ -6,10 +6,11 @@ describe('<PdfGeneratorToggle /> tests', () => {
   let user: UserEvent;
 
   const props = {
-    title: 'mocked title',
-    description: 'mocked description',
-    button: 'mocked button',
-    buttonLoading: 'mocked loading',
+    buttonTitle: 'mocked title',
+    formTitle: 'mocked form title',
+    formDescription: 'mocked description',
+    formButtonText: 'mocked button',
+    formButtonTextLoading: 'mocked loading',
   };
 
   beforeEach(() => {
@@ -25,7 +26,7 @@ describe('<PdfGeneratorToggle /> tests', () => {
 
     await user.click(button);
 
-    await waitFor(() => screen.getByRole('button', { name: props.button }));
+    await waitFor(() => screen.getByRole('button', { name: props.formButtonText }));
 
     expect(button).toHaveAttribute('data-state', 'open');
     expect(button).toHaveAttribute('aria-expanded', 'true');
@@ -43,18 +44,17 @@ describe('<PdfGeneratorToggle /> tests', () => {
     expect(button).toBeInTheDocument();
     expect(button).toHaveAttribute('data-state', 'closed');
     expect(button).toHaveAttribute('aria-expanded', 'false');
-    expect(button).toHaveAttribute('title', props.title);
-    expect(button).toHaveTextContent(props.title);
+    expect(button).toHaveTextContent(props.buttonTitle);
     expect(button).toHaveClass('text-primary-foreground', 'hover:bg-primary/90');
   });
 
   it('Should match the snapshot with a given args', async () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { title, ...rest } = props;
+    const { buttonTitle, ...rest } = props;
     const { container } = render(
       <PdfGeneratorToggle
         variant="secondary"
-        title="Testing PDF"
+        buttonTitle="Testing PDF"
         className="bg-color-red"
         {...rest}
       />,
@@ -65,7 +65,6 @@ describe('<PdfGeneratorToggle /> tests', () => {
     expect(container).toMatchSnapshot();
 
     expect(button).toBeInTheDocument();
-    expect(button).toHaveAttribute('title', 'Testing PDF');
     expect(button).toHaveTextContent('Testing PDF');
     expect(button).toHaveClass(
       'text-secondary-foreground',

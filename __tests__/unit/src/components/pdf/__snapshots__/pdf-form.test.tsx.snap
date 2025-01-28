@@ -3,6 +3,8 @@
 exports[`<PdfForm /> tests > should match the snapshot 1`] = `
 <div>
   <form
+    aria-describedby="formpdf-description"
+    aria-labelledby="formpdf-title"
     class="flex flex-col"
   >
     <div

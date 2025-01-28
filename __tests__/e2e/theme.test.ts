@@ -1,6 +1,6 @@
 import { expect, type Locator, test } from '@playwright/test';
 
-test.describe('theme', () => {
+test.describe('theme switcher', () => {
   let html: Locator;
 
   test.beforeEach(async ({ page }) => {

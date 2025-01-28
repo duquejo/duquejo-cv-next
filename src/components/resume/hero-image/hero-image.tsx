@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib';
 import { Circle, Gamepad, LoaderCircle, Music, Send } from 'lucide-react';
 
 interface Props {

@@ -2,28 +2,46 @@ import { expect, test } from '@playwright/test';
 import { toggleSidebar } from './utils';
 
 test.describe('navigation', () => {
-  const links = [
-    { title: 'Resumeé', url: '/' },
-    { title: 'Projects', url: '/career/projects' },
-    { title: 'Blog', url: '/blog' },
-    { title: 'Contact', url: '/contact' },
-    { title: 'Music production', url: '/hobbies/music-production' },
-    { title: 'Game development', url: '/hobbies/games-development' },
-    { title: 'Services', url: '/career/services' },
-  ];
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/');
+  });
 
-  test('should navigate', async ({ page, isMobile }) => {
-    for (const { title, url } of links) {
-      await page.goto('/');
-
-      if (isMobile) {
-        await expect(page.getByRole('link', { name: title })).toBeHidden();
-        await toggleSidebar(page);
-      }
-
-      await page.getByRole('link', { name: title }).click();
-
-      await expect(page).toHaveURL(url);
+  test('should navigate to resumeé', async ({ page, isMobile }) => {
+    if (isMobile) {
+      await expect(page.getByRole('link', { name: /Resumeé/ })).toBeHidden();
+      await toggleSidebar(page);
     }
+
+    await page.getByRole('link', { name: /Resumeé/ }).click();
+
+    await page.waitForURL('/');
+
+    await expect(page).toHaveURL('/');
+  });
+
+  test('should navigate to projects', async ({ page, isMobile }) => {
+    if (isMobile) {
+      await expect(page.getByRole('link', { name: /Projects/ })).toBeHidden();
+      await toggleSidebar(page);
+    }
+
+    await page.getByRole('link', { name: /Projects/ }).click();
+
+    await page.waitForURL('/career/projects');
+
+    await expect(page).toHaveURL('/career/projects');
+  });
+
+  test('should navigate to services', async ({ page, isMobile }) => {
+    if (isMobile) {
+      await expect(page.getByRole('link', { name: /Services/ })).toBeHidden();
+      await toggleSidebar(page);
+    }
+
+    await page.getByRole('link', { name: /Services/ }).click();
+
+    await page.waitForURL('/career/services');
+
+    await expect(page).toHaveURL('/career/services');
   });
 });

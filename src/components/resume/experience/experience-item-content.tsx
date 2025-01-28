@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib';
 import { Button } from '@/components/ui/button';
 import { ExperienceType } from '@/interfaces';
 import Link from 'next/link';

@@ -8,7 +8,7 @@ import { AppOptionsSidebar } from '@/components/general/app-options-sidebar';
 import { AppActivityProvider } from '@/components/general/app-activity-provider';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
-import { generateMetadata } from '@/lib/utils';
+import { generateMetadata } from '@/lib';
 
 const inter = Inter({ subsets: ['latin'] });
 

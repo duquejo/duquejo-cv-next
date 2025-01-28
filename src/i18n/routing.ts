@@ -12,11 +12,6 @@ export const routing = defineRouting({
     '/': '/',
     '/blog': '/blog',
 
-    '/career/services': {
-      en: '/career/services',
-      es: '/carrera/servicios',
-    },
-
     '/career/projects': {
       en: '/career/projects',
       es: '/carrera/proyectos',
@@ -32,6 +27,11 @@ export const routing = defineRouting({
       es: '/hobbies/desarrollo-de-juegos',
     },
 
+    '/career/services': {
+      en: '/career/services',
+      es: '/carrera/servicios',
+    },
+
     '/contact': {
       en: '/contact',
       es: '/contacto',
@@ -40,6 +40,11 @@ export const routing = defineRouting({
 });
 
 export type Pathnames = keyof typeof routing.pathnames;
-export type Locale = (typeof routing.locales)[number];
 
-export const { Link, getPathname, redirect, usePathname, useRouter } = createNavigation(routing);
+export const {
+  // getPathname,
+  // redirect,
+  // useRouter
+  Link,
+  usePathname,
+} = createNavigation(routing);

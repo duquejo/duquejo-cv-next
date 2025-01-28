@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { RichText } from '@/components/general/rich-text';
 import { DynamicIcon } from '@/components/general/dynamic-icon';
 import { Progress } from '@/components/ui/progress';
-import { generateMetadata } from '@/lib/utils';
+import { generateMetadata } from '@/lib';
 
 export async function metadata() {
   return generateMetadata('Services');
@@ -60,9 +60,9 @@ export default function ServicesPage() {
           </div>
         ))}
         {/*Tools & Soft skills*/}
-        <h2 className="main-subtitle">Tools & Soft-skills</h2>
+        <h2 className="main-subtitle">{t('badges.title')}</h2>
         <div className="flex flex-wrap gap-2 lg:gap-3 justify-evenly lg:justify-normal">
-          {t.raw('badges').map((k: KnowledgeType) => (
+          {t.raw('badges.content')?.map((k: KnowledgeType) => (
             <Badge key={k.name} variant={k.type === 'soft' ? 'outline' : 'secondary'}>
               {k.name}
             </Badge>
