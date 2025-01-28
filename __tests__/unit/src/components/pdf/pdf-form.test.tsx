@@ -11,6 +11,12 @@ vi.mock('next/router', () => ({
 describe('<PdfForm /> tests', () => {
   const mockedCallback = vi.fn();
 
+  const args = {
+    button: 'Mocked button',
+    buttonLoading: 'Mocked loading',
+    onSubmitFinish: mockedCallback,
+  };
+
   beforeEach(() => {
     vi.clearAllMocks();
 
@@ -27,17 +33,17 @@ describe('<PdfForm /> tests', () => {
   });
 
   it('should match the snapshot', () => {
-    const { container } = render(<PdfForm onSubmitFinish={mockedCallback} />);
+    const { container } = render(<PdfForm {...args} />);
 
     expect(container).toMatchSnapshot();
 
-    expect(screen.getByRole('button', { name: /Generate/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: args.button })).toBeInTheDocument();
   });
 
   it('should execute the form handlers when its submitted', async () => {
-    render(<PdfForm onSubmitFinish={mockedCallback} />);
+    render(<PdfForm {...args} />);
 
-    fireEvent.click(screen.getByRole('button', { name: /Generate/ }));
+    fireEvent.click(screen.getByRole('button', { name: args.button }));
 
     await waitFor(() => expect(mockedCallback).toHaveBeenCalledOnce());
 
@@ -49,18 +55,18 @@ describe('<PdfForm /> tests', () => {
   });
 
   it('should disable the button when loading', async () => {
-    render(<PdfForm onSubmitFinish={mockedCallback} />);
+    render(<PdfForm {...args} />);
 
-    const button = screen.getByRole('button', { name: /generate/i });
+    const button = screen.getByRole('button', { name: args.button });
     fireEvent.click(button);
 
     expect(button).toBeDisabled();
-    expect(button).toHaveTextContent('Generating...');
+    expect(button).toHaveTextContent(args.buttonLoading);
 
     await waitFor(() => expect(mockedCallback).toHaveBeenCalledOnce());
 
     expect(button).not.toBeDisabled();
-    expect(button).toHaveTextContent('Generate');
+    expect(button).toHaveTextContent(args.button);
   });
 
   it('should handle fetch errors gracefully', async () => {
@@ -72,9 +78,9 @@ describe('<PdfForm /> tests', () => {
     ) as Mock;
 
     const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => vi.fn());
-    render(<PdfForm onSubmitFinish={mockedCallback} />);
+    render(<PdfForm {...args} />);
 
-    fireEvent.click(screen.getByRole('button', { name: /generate/i }));
+    fireEvent.click(screen.getByRole('button', { name: args.button }));
 
     await waitFor(() =>
       expect(consoleSpy).toHaveBeenCalledWith('Request failed with status code 500'),

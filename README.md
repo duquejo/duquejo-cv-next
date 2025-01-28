@@ -26,6 +26,8 @@ Copy the `.env.example` file and fill the remaining fields:
 ```dotenv
 GITHUB_URL='Github feed source'
 GITHUB_SOURCE='Github token'
+PDF_EMAIL='PDF final email'
+PDF_WEBSITE='Website footer source url'
 ```
 
 ## Screenshots

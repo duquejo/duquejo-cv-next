@@ -1,4 +1,4 @@
-import { type Event, EventType } from '@/interfaces';
+import type { Event } from '@/interfaces';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Eye, GitBranch, Github, GitMerge, GitPullRequest } from 'lucide-react';
@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import { ReactNode } from 'react';
 import { Badge } from '@/components/ui/badge';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib';
 
 export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => {
   const toLocaleDateString = (dateString: string) => {
@@ -26,14 +26,14 @@ export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => 
       'data-testid': 'event-action',
     };
     switch (iconString) {
-      case EventType.PullRequestEvent:
+      case 'PullRequestEvent':
         return <GitPullRequest className={cn(commonCss, 'bg-yellow-400')} {...commonProps} />;
-      case EventType.CreateEvent:
+      case 'CreateEvent':
         return <GitBranch className={cn(commonCss, 'bg-teal-400')} {...commonProps} />;
-      case EventType.PushEvent:
+      case 'PushEvent':
         return <GitMerge className={cn(commonCss, 'bg-red-400')} {...commonProps} />;
-      case EventType.WatchEvent:
-      case EventType.PullRequestReviewEvent:
+      case 'WatchEvent':
+      case 'PullRequestReviewEvent':
         return <Eye className={cn(commonCss, 'bg-cyan-300')} {...commonProps} />;
       default:
         return <GitMerge className={cn(commonCss, 'bg-purple-400')} {...commonProps} />;
@@ -41,7 +41,7 @@ export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => 
   };
 
   return (
-    <Card className="lg:max-w-xs">
+    <Card role="listitem" className="lg:max-w-xs">
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center text-xs justify-between">
           <time className="text-xs font-extrabold">{toLocaleDateString(created_at)}</time>
@@ -76,7 +76,7 @@ export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => 
               !['dependabot[bot]'].includes(commit.author.name) && (
                 <div key={commit.sha}>
                   <p className="inline text-muted-foreground">{commit.message}</p>
-                  {type === EventType.PushEvent && (
+                  {type === 'PushEvent' && (
                     <Link
                       href={`${commit.url.replace('https://api.github.com/repos', 'https://github.com')}`}
                       className="inline font-semibold"

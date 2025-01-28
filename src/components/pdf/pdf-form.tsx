@@ -4,9 +4,11 @@ import { FormEvent, useState } from 'react';
 
 interface Props {
   onSubmitFinish: () => void;
+  button: string;
+  buttonLoading: string;
 }
 
-export const PdfForm = ({ onSubmitFinish }: Props) => {
+export const PdfForm = ({ onSubmitFinish, button, buttonLoading }: Props) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (event: FormEvent) => {
@@ -44,10 +46,15 @@ export const PdfForm = ({ onSubmitFinish }: Props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col"
+      aria-labelledby="formpdf-title"
+      aria-describedby="formpdf-description"
+    >
       <Separator orientation="horizontal" className="mt-2 mb-3" />
       <Button type="submit" size="sm" disabled={isLoading}>
-        {isLoading ? 'Generating...' : 'Generate'}
+        {isLoading ? buttonLoading : button}
       </Button>
     </form>
   );

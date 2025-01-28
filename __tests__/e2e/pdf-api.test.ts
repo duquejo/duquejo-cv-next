@@ -15,9 +15,7 @@ test.describe('PDF API Endpoint test', () => {
     'x-frame-options': 'SAMEORIGIN',
   };
 
-  test('should handle the preflight (options) requests', async ({ request, isMobile }) => {
-    test.skip(isMobile, 'Skipped for mobile');
-
+  test('should handle the preflight (options) requests', async ({ request }) => {
     const response = await request.fetch('/api/v1/pdf', {
       method: 'OPTIONS',
     });
@@ -31,10 +29,7 @@ test.describe('PDF API Endpoint test', () => {
 
   test('should handle the preflight (options) requests with the origin header', async ({
     request,
-    isMobile,
   }) => {
-    test.skip(isMobile, 'Skipped for mobile');
-
     const response = await request.fetch('/api/v1/pdf', {
       method: 'OPTIONS',
       headers: {
@@ -51,8 +46,7 @@ test.describe('PDF API Endpoint test', () => {
     expect(response.headers()).toHaveProperty('access-control-allow-origin', expectedOrigin);
   });
 
-  test('should handle the POST request - Generate PDF', async ({ request, isMobile }) => {
-    test.skip(isMobile, 'Skipped for mobile');
+  test('should handle the POST request - Generate PDF', async ({ request }) => {
     const response = await request.post('/api/v1/pdf');
 
     expect(response.status()).toBe(200);
@@ -75,9 +69,7 @@ test.describe('PDF API Endpoint test', () => {
 
   test('should handle the POST request - Generate PDF with the origin header', async ({
     request,
-    isMobile,
   }) => {
-    test.skip(isMobile, 'Skipped for mobile');
     const response = await request.post('/api/v1/pdf', {
       headers: {
         Origin: expectedOrigin,

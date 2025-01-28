@@ -32,6 +32,8 @@ export default defineConfig({
     trace: 'on-first-retry',
 
     colorScheme: 'light',
+
+    locale: 'en-US',
   },
 
   /* Configure projects for major browsers */

@@ -1,18 +1,21 @@
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
+import { useTranslations } from 'next-intl';
 
 export default function NotFound() {
+  const t = useTranslations('General.404');
+
   return (
     <article className="flex justify-center items-center flex-1 h-screen">
       <section className="flex flex-col items-center justify-center">
         <div>
           <h1 className="text-2xl font-bold underline underline-offset-8 decoration-primary">
-            Not found
+            {t('title')}
           </h1>
-          <p className="my-3">Could not find requested resource</p>
+          <p className="my-3">{t('subtitle')}</p>
           <Button variant="secondary" asChild>
-            <Link href="/">Take me back</Link>
+            <Link href="/">{t('button')}</Link>
           </Button>
         </div>
       </section>

@@ -11,6 +11,13 @@ describe('<ThemeToggle /> tests', () => {
   const setThemeMock = vi.fn();
   let user: UserEvent;
 
+  const props = {
+    title: 'mocked title',
+    light: 'Claro',
+    dark: 'Oscuro',
+    system: 'Sistema',
+  };
+
   const mockThemeArgs: UseThemeProps = {
     theme: 'light',
     themes: ['light', 'dark', 'system'],
@@ -25,7 +32,7 @@ describe('<ThemeToggle /> tests', () => {
   });
 
   it('Should match the snapshot with the default args', () => {
-    const { container } = render(<ThemeToggle />);
+    const { container } = render(<ThemeToggle {...props} />);
 
     const button = screen.getByRole('button');
 
@@ -34,14 +41,16 @@ describe('<ThemeToggle /> tests', () => {
     expect(button).toBeInTheDocument();
     expect(button).toHaveAttribute('data-state', 'closed');
     expect(button).toHaveAttribute('aria-expanded', 'false');
-    expect(button).toHaveAttribute('title', 'Toggle theme');
-    expect(button).toHaveTextContent('Toggle theme');
+    expect(button).toHaveAttribute('title', props.title);
+    expect(button).toHaveTextContent(props.title);
     expect(button).toHaveClass('text-primary-foreground', 'hover:bg-primary/90');
   });
 
   it('Should match the snapshot with a given args', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { title, ...rest } = props;
     const { container } = render(
-      <ThemeToggle variant="secondary" title="Testing toggle" className="bg-color-red" />,
+      <ThemeToggle variant="secondary" title="Testing toggle" className="bg-color-red" {...rest} />,
     );
 
     const button = screen.getByRole('button');
@@ -68,14 +77,14 @@ describe('<ThemeToggle /> tests', () => {
       systemTheme: 'dark',
     });
 
-    render(<ThemeToggle variant="secondary" />);
+    render(<ThemeToggle variant="secondary" {...props} />);
 
-    expect(screen.getByLabelText('Dark mode')).toBeInTheDocument();
+    expect(screen.getByLabelText(props.light)).toBeInTheDocument();
 
     await user.click(screen.getByRole('button'));
 
     await waitFor(() => {
-      const selectedThemeOption = screen.getByText('System');
+      const selectedThemeOption = screen.getByText(props.system);
       expect(selectedThemeOption).toHaveClass('bg-accent');
 
       fireEvent.click(selectedThemeOption);
@@ -87,14 +96,14 @@ describe('<ThemeToggle /> tests', () => {
   it('Should handle the light theme', async () => {
     vi.mocked(useTheme).mockReturnValue({ ...mockThemeArgs });
 
-    render(<ThemeToggle />);
+    render(<ThemeToggle {...props} />);
 
-    expect(screen.getByLabelText('Light mode')).toBeInTheDocument();
+    expect(screen.getByLabelText(props.light)).toBeInTheDocument();
 
     await user.click(screen.getByRole('button'));
 
     await waitFor(() => {
-      const selectedThemeOption = screen.getByText('Light');
+      const selectedThemeOption = screen.getByText(props.light);
       expect(selectedThemeOption).toHaveClass('bg-accent');
 
       fireEvent.click(selectedThemeOption);
@@ -110,12 +119,12 @@ describe('<ThemeToggle /> tests', () => {
       systemTheme: 'dark',
     });
 
-    render(<ThemeToggle />);
+    render(<ThemeToggle {...props} />);
 
     await user.click(screen.getByRole('button'));
 
     await waitFor(() => {
-      const selectedThemeOption = screen.getByText('Dark');
+      const selectedThemeOption = screen.getByText(props.dark);
       expect(selectedThemeOption).toHaveClass('bg-accent');
 
       fireEvent.click(selectedThemeOption);
@@ -125,7 +134,11 @@ describe('<ThemeToggle /> tests', () => {
   });
 
   it('Should trigger the button click events', async () => {
-    render(<ThemeToggle variant="secondary" title="Testing toggle" className="bg-color-red" />);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { title, ...rest } = props;
+    render(
+      <ThemeToggle variant="secondary" title="Testing toggle" className="bg-color-red" {...rest} />,
+    );
 
     const button = screen.getByRole('button');
     const buttonWrapper = button.parentElement!;

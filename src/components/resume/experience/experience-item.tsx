@@ -1,5 +1,6 @@
-import { cn } from '@/lib/utils';
-import type { ExperienceType } from '@/interfaces/experience.interface';
+import { cn } from '@/lib';
+import type { ExperienceType } from '@/interfaces';
+
 import {
   Card,
   CardContent,
@@ -10,6 +11,7 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ExperienceItemContent } from '@/components/resume/experience/experience-item-content';
+import { useTranslations } from 'next-intl';
 
 export const ExperienceItem = ({
   start_date,
@@ -23,6 +25,8 @@ export const ExperienceItem = ({
   screenshot,
   url,
 }: ExperienceType) => {
+  const t = useTranslations('Experience');
+
   return (
     <ol className="first-of-type:pt-0 pt-5 relative border-s border-gray-200">
       <div
@@ -58,6 +62,8 @@ export const ExperienceItem = ({
         </CardHeader>
         <CardContent className="py-0">
           <ExperienceItemContent
+            contentTitle={t('subtitle')}
+            button={t('button')}
             project={project}
             resume={resume}
             screenshot={screenshot}
@@ -66,7 +72,7 @@ export const ExperienceItem = ({
         </CardContent>
         {additional_info && (
           <CardFooter className="flex flex-col items-start gap-y-2 pt-5">
-            <div className="font-semibold text-base">Skills</div>
+            <div className="font-semibold text-base">{t('footer')}</div>
             <div className="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around">
               {additional_info.map((info) => (
                 <Badge variant="secondary" key={info}>

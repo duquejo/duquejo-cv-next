@@ -10,15 +10,18 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib';
 
 interface Props {
   className?: string;
   variant?: ButtonProps['variant'];
-  title?: string;
+  title: string;
+  light: string;
+  dark: string;
+  system: string;
 }
 
-export function ThemeToggle({ className, variant, title = 'Toggle theme' }: Props) {
+export function ThemeToggle({ className, variant, title, dark, system, light }: Props) {
   const { setTheme, theme } = useTheme();
 
   return (
@@ -27,36 +30,36 @@ export function ThemeToggle({ className, variant, title = 'Toggle theme' }: Prop
         <Button variant={variant} size="icon" className={cn('h-10 w-10', className)} title={title}>
           <Sun
             className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-            aria-label="Light mode"
+            aria-label={light}
           />
           <Moon
             className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-            aria-label="Dark mode"
+            aria-label={dark}
           />
           <span className="sr-only">{title}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem
-          aria-label="light"
+          aria-label={light}
           className={cn('text-xs', theme === 'light' && 'bg-accent')}
           onClick={() => setTheme('light')}
         >
-          Light
+          {light}
         </DropdownMenuItem>
         <DropdownMenuItem
-          aria-label="dark"
+          aria-label={dark}
           className={cn('text-xs', theme === 'dark' && 'bg-accent')}
           onClick={() => setTheme('dark')}
         >
-          Dark
+          {dark}
         </DropdownMenuItem>
         <DropdownMenuItem
-          aria-label="system"
+          aria-label={system}
           className={cn('text-xs', theme === 'system' && 'bg-accent')}
           onClick={() => setTheme('system')}
         >
-          System
+          {system}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -2,6 +2,14 @@ import { render, screen } from '@testing-library/react';
 import { AppActivityProvider } from '@/components/general/app-activity-provider';
 import { SWRConfig } from 'swr';
 
+vi.mock('next-intl', () => ({
+  useTranslations: () => (key: string) =>
+    ({
+      title: 'title',
+      description: 'description',
+    })[key],
+}));
+
 describe('<AppActivityProvider /> tests', () => {
   it('should match the snapshot', () => {
     const { container } = render(

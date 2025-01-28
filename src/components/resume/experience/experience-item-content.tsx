@@ -1,15 +1,22 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib';
 import { Button } from '@/components/ui/button';
 import { ExperienceType } from '@/interfaces';
 import Link from 'next/link';
 import Image from 'next/image';
 
+interface Props extends Partial<ExperienceType> {
+  contentTitle: string;
+  button: string;
+}
+
 export const ExperienceItemContent = ({
   project = 'Image',
   resume,
+  button,
   screenshot,
   url,
-}: Partial<ExperienceType>) => {
+  contentTitle,
+}: Props) => {
   return (
     <div className="flex flex-col lg:flex-row">
       {resume && (
@@ -20,7 +27,7 @@ export const ExperienceItemContent = ({
           )}
         >
           <div className="flex-auto">
-            <span className="font-semibold text-base">Responsibilities</span>
+            <span className="font-semibold text-base">{contentTitle}</span>
             {resume.length > 1 ? (
               <ol className="list-disc ml-4 text-justify marker:text-secondary">
                 {resume.map((r, i) => (
@@ -34,9 +41,14 @@ export const ExperienceItemContent = ({
             )}
           </div>
           {url && (
-            <Button className="mt-5 lg:flex-shrink lg:w-auto w-full" variant="secondary" asChild>
+            <Button
+              size="sm"
+              className="mt-5 lg:flex-shrink lg:w-auto w-full"
+              variant="secondary"
+              asChild
+            >
               <Link href={url} target="_blank" rel="noopener noreferrer nofollow">
-                Project&#39;s link
+                {button}
               </Link>
             </Button>
           )}
@@ -50,7 +62,7 @@ export const ExperienceItemContent = ({
             height="150"
             loading="lazy"
             alt={project}
-            className="rounded object-cover shadow-lg w-auto max-w-xs"
+            className="rounded object-cover shadow-lg w-auto lg:max-w-xs"
           />
         </picture>
       )}

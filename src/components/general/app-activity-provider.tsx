@@ -15,6 +15,7 @@ import useSWR from 'swr';
 import { getEvents } from '@/actions/github';
 import { Event } from '@/interfaces';
 import { EventCard } from '@/components/events/event-card';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   children: ReactNode;
@@ -22,6 +23,7 @@ interface Props {
 }
 
 export const AppActivityProvider = ({ children, defaultOpen = false }: Props) => {
+  const t = useTranslations('Sidebar.complementary.activity.dialog');
   const [loadEvents, setLoadEvents] = useState(false);
 
   const { data, isLoading } = useSWR<Event[]>(loadEvents ? 'events' : null, getEvents);
@@ -36,18 +38,16 @@ export const AppActivityProvider = ({ children, defaultOpen = false }: Props) =>
   return (
     <Sheet key="activity" onOpenChange={onToggleChange} defaultOpen={defaultOpen}>
       {children}
-      <SheetContent className="flex flex-col justify-between w-10/12">
+      <SheetContent role="dialog" className="flex flex-col justify-between w-10/12">
         <SheetHeader>
-          <SheetTitle>Latest Activity Feed Updates</SheetTitle>
-          <SheetDescription>
-            Here you will find the most recent and quick updates from my personal projects or news.
-          </SheetDescription>
+          <SheetTitle>{t('title')}</SheetTitle>
+          <SheetDescription>{t('description')}</SheetDescription>
         </SheetHeader>
         <div className="flex-1 flex flex-col gap-2 overflow-y-auto">
           {isLoading ? (
             <EventSkeleton rounds={2} />
           ) : (
-            <div className="flex flex-col gap-2 overflow-y-auto">
+            <div role="list" className="flex flex-col gap-2 overflow-y-auto list-none">
               {data?.map((event) => <EventCard key={event.id} {...event} />)}
             </div>
           )}
@@ -58,7 +58,7 @@ export const AppActivityProvider = ({ children, defaultOpen = false }: Props) =>
             target="_blank"
             className="text-xs text-muted-foreground"
           >
-            See more activity in GitHub
+            {t('button')}
           </Link>
         </SheetFooter>
       </SheetContent>

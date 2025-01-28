@@ -1,0 +1,903 @@
+{
+  "Sidebar": {
+    "role": "Ingeniero Informático",
+    "professional": {
+      "title": "Carrera profesional",
+      "links": [
+        {
+          "title": "Resumen",
+          "url": "/"
+        },
+        {
+          "title": "Servicios",
+          "url": "/carrera/servicios"
+        },
+        {
+          "title": "Proyectos",
+          "url": "/carrera/proyectos"
+        }
+      ]
+    },
+    "hobbies": {
+      "title": "Aficiones",
+      "links": [
+        {
+          "title": "Producción musical",
+          "url": "/hobbies/produccion-musical"
+        },
+        {
+          "title": "Desarrollo de juegos",
+          "url": "/hobbies/desarrollo-de-juegos"
+        }
+      ]
+    },
+    "footer": {
+      "links": [
+        {
+          "title": "Blog",
+          "url": "/blog"
+        },
+        {
+          "title": "Contacto",
+          "url": "/contacto"
+        }
+      ]
+    },
+    "complementary": {
+      "sidebar": {
+        "title": "Abrir/Cerrar menú"
+      },
+      "pdf": {
+        "title": "Descargar HV",
+        "dialog": {
+          "title": "Descargar Hoja de vida",
+          "description": "Descarga mi hoja de vida en formato PDF \uD83C\uDF1F",
+          "button": "Generar",
+          "loading": "Generando..."
+        }
+      },
+      "theme": {
+        "title": "Cambiar colores del tema",
+        "light": "Claro",
+        "dark": "Oscuro",
+        "system": "Sistema"
+      },
+      "activity": {
+        "title": "Abrir actividad reciente",
+        "dialog": {
+          "title": "Últimas actualizaciones",
+          "description": "Encontrarás actividad reciente o actualizaciones al instante sobre proyectos o noticias de interés",
+          "button": "Ver más en Github"
+        }
+      }
+    }
+  },
+  "General": {
+    "metadata": {
+      "title": "Resumen | José Duque",
+      "description": "Desarrollador web de Colombia"
+    },
+    "role": "Ingeniero Informático",
+    "resume": {
+      "greetings": "Hola, soy ",
+      "excerpt1": "Ingeniero informático de Colombia con más de {years} años de experiencia en desarrollo de aplicaciones para la web.",
+      "excerpt2": "Estoy enfocado en garantizar soluciones de calidad basadas en buenas prácticas con tecnologías sobre <b>arquitecturas monolíticas</b> así como <b>arquitecturas de microservicios</b>.",
+      "description": {
+        "title": "¿Qué he realizado?",
+        "content": "Durante mi vida laboral, he tenido la oportunidad poder tener una vista amplia de las necesidades puntuales del cliente para resolver cualquier reto tecnológico que se presente; he desempeñado roles como asesor y coordinador en equipos de desarrollo para empresas del sector público como la <b>Alcaldía de Itagüí</b>, <b>Alcaldía de Bogotá</b>, <b>Ministerio de Educación Nacional</b> y la <b>Universidad EAFIT</b>. También he participado en proyectos de desarrollos a la medida y desarrollo de sitios web con <b>agencias de Marketing</b> a tiempo completo y alternativamente como <b>Freelancer</b> a tiempo parcial.<br></br><br></br>Con <b>fábricas de software</b> he tenido la oportunidad de trabajar para <b>Startups educativas</b> con gran alcance regional, así como para el sector <b>Banca</b>, <b>Seguros</b> y <b>Salud</b>, los cuales han permitido expandir conocimientos e ir acorde a la rigidez de las políticas de dicho mercado.<br></br><br></br>Conforme a la búsqueda de una orientación más especializada a las tecnologías más populares, he participado sesiones de aprendizaje intensivo nacionales de <b>Node JS</b> y realizado de manera individual estudios sobre tecnologías Frontend como <b>React JS</b>, <b>Vue JS</b>, así como otros acercamientos básicos en <b>Angular</b>.<br></br><br></br>Desde el Backend, estudios en <b>arquitecturas basadas en microservicios</b> usando <b>Amazon Web Services</b> y <b>Azure DevOps</b>, esto en búsqueda de perfilarme como un desarrollador Full Stack competente para las necesidades del mercado actual."
+      }
+    },
+    "education": {
+      "title": "Estudios académicos y certificaciones",
+      "content": [
+        {
+          "start_date": "Noviembre 2021",
+          "end_date": "",
+          "enterprise": "",
+          "isRecent": true,
+          "project": "Certificación",
+          "role": "Boot-camp Node JS - Corporación Ruta N - Ceiba Software S.A.S - Globant"
+        },
+        {
+          "start_date": "2010",
+          "end_date": "2016",
+          "enterprise": "",
+          "isRecent": true,
+          "project": "Grados profesionales",
+          "role": "Ingeniería Informática - Politécnico Colombiano Jaime Isaza Cadavid"
+        },
+        {
+          "start_date": "2009",
+          "end_date": "",
+          "enterprise": "",
+          "isRecent": true,
+          "project": "Educación Primaria/Secundaria",
+          "role": "Colegio Paula Montal"
+        }
+      ]
+    },
+    "services": {
+      "title": "Servicios",
+      "title2": "Stack de tecnologías",
+      "subtitle": "Servicios generales",
+      "download_button": "Descargar resumen",
+      "experience": {
+        "title": "Experiencia"
+      },
+      "languages": {
+        "title": "Idiomas"
+      },
+      "tech_languages": {
+        "title": "Lenguajes"
+      },
+      "framelibs": {
+        "title": "Librerías & Frameworks"
+      },
+      "knowledges": {
+        "title": "Herramientas & Habilidades blandas"
+      },
+      "certifications": {
+        "title": "Certificaciones"
+      }
+    },
+    "languages": {
+      "title": "Lenguajes",
+      "content": [
+        {
+          "title": "Español",
+          "subtitle": "Nativo - C2"
+        },
+        {
+          "title": "Inglés",
+          "subtitle": "Básico profesional - B2"
+        }
+      ]
+    },
+    "404": {
+      "title": "No encontrado",
+      "subtitle": "No se ha encontrado el recurso solicitado",
+      "button": "Llévame atrás"
+    }
+  },
+  "Experience": {
+    "metadata": {
+      "title": "Proyectos | José Duque",
+      "description": "Proyectos donde recientemente he contribuído"
+    },
+    "title": "Proyectos recientes",
+    "subtitle": "Responsabilidades",
+    "button": "Enlace externo",
+    "footer": "Aptitudes",
+    "content": [
+      {
+        "start_date": "2023",
+        "end_date": "Actualidad",
+        "enterprise": "SURA Seguros - Ceiba Software S.A.S",
+        "isRecent": true,
+        "project": "SURA - Bus de integraciones",
+        "role": "Desarrollador Backend",
+        "resume": [
+          "Diseño y creación de servicios serverless para la nube utilizando Azure DevOps",
+          "Se implementaron arquitecturas orientadas a eventos (RabbitMQ / ServiceBus) y servicios de características HTTP/REST con el objetivo de solucionar todas las integraciones requeridas entre Suratech (Salesforce) y SURA Colombia en el proceso de venta y expedición de seguros para vehículos"
+        ],
+        "additional_info": [
+          "Azure Functions",
+          "Azure Service Bus",
+          "CosmoDB",
+          "Terraform",
+          "Microservicios",
+          "Node.js",
+          "JMeter",
+          "Pruebas unitarias",
+          "Pruebas de integración",
+          "SonarQube",
+          "Git Flow",
+          "JWT",
+          "Scrum"
+        ],
+        "screenshot": "/static/img/showcase/sura_motos.webp",
+        "url": "https://ecomm.sura.co/seguros/s/movilidad/motos/cotizador"
+      },
+      {
+        "start_date": "11/07/2022",
+        "end_date": "28/04/2023",
+        "enterprise": "Aval Digital Labs - Grupo Aval AV Villas - Ceiba Software S.A.S",
+        "isRecent": false,
+        "project": "Aval Digital Labs - Migración infraestructura Banco AV Villas Tarjeta de crédito",
+        "role": "Desarrollador Backend Senior",
+        "resume": [
+          "Migración de infraestructura legada creada manualmente desde Amazon Web Services a recursos de Infraestructura como código usando Serverless Framework y Terraform garantizando estándares de empresa y total supervisión de la configuración de los componentes de la arquitectura de la aplicación",
+          "Refactorización y optimización de código legado otorgado a lambdas (Node JS/Java) y monolitos (Java Springboot) intervinientes en la aplicación, mejorando hasta un porcentaje mayor o igual al 85% de los estándares Quality Gates frente a buenas prácticas requeridas por la compañía",
+          "Mejora de rendimiento de ejecución de lambdas y código asociado a Step functions utilizados en el aplicativo",
+          "Generación de nuevos componentes con lógica de negocio agregada en calidad de apoyo a la célula de trabajo en pararelo a actividades de migración, permitiendo flexibilidad entre las cargas de la migración",
+          "Generación de políticas de seguridad y correcciones de vulnerabilidades conforme al estándar OWASP, cuyos resultados respondieron adecuadamente a las altas exigencias internas de la organización Aval Digital Labs tanto como al Banco AV Villas"
+        ],
+        "additional_info": [
+          "DynamoDB",
+          "Node.js",
+          "Spring Framework",
+          "AWS",
+          "Terraform",
+          "Serverless framework",
+          "Gradle",
+          "Jira",
+          "Maven",
+          "JMeter",
+          "Jenkins",
+          "Docker",
+          "Pruebas unitarias",
+          "AWS Cognito",
+          "Microservicios",
+          "Git Flow",
+          "JWT"
+        ],
+        "screenshot": "/static/img/showcase/avvillas_tc.webp",
+        "url": "https://www.avvillas.com.co/solicitar-tarjeta-credito/inicio"
+      },
+      {
+        "start_date": "07/02/2022",
+        "end_date": "06/07/2022",
+        "enterprise": "Aval Digital Labs & Colegio los Nogales - MentuApp - Ceiba Software S.A.S",
+        "isRecent": false,
+        "project": "Mentu App",
+        "role": "Desarrollador Full-Stack",
+        "resume": [
+          "Desarrollo de una plataforma de aprendizaje para primaria y secundaria, partiendo de una arquitectura hexagonal, orientada a microservicios y usando Serverless Framework con AWS Node JS (Typescript) AWS Lambdas, el cual favoreció principios de mantenibilidad, alta disponibilidad y resiliencia a errores.",
+          "Usando Serverless framework, se disponibilizaron estrategias con AWS Cloudformation para descentralizar cada Lambda para corresponder al Datalake deseado, conectando servicios de Amazon Web Services, tales como API Gateway, S3 (hooks), SNS, SQS, entre otros",
+          "Se disponibilizó una ETL que entrega información estandarizada y optimizada para la plataforma Metabase, generando a través de AWS Eventbridge información actualizada e íntegra",
+          "El frontend se construyó con React JS, Webpack y Typescript, dividiendo el core del negocio en diferentes microservicios a través de Module Federation y generalizando componentes gráficos del frontend a través de una librería común expuesta a través de Storybook, basados enteramente en buenas prácticas",
+          "Se conectaron aplicaciones externas como Mixpanel, Concerto, Hotjar, Google Analytics, entre otros para garantizar estrategias para el público objetivo (Profesores y estudiantes)"
+        ],
+        "additional_info": [
+          "MySQL",
+          "MongoDB",
+          "PostgresSQL",
+          "Nest JS",
+          "AWS SQS",
+          "Node.js",
+          "HTML",
+          "CSS",
+          "React.js",
+          "Microfrontend",
+          "Storybook",
+          "Sistemas de diseño",
+          "Tailwind",
+          "AWS Cognito",
+          "Typescript",
+          "Serverless Framework"
+        ],
+        "screenshot": "/static/img/showcase/mentu.webp",
+        "url": "https://mentu.co"
+      },
+      {
+        "start_date": "12/12/2021",
+        "end_date": "27/12/2021",
+        "enterprise": "Ceiba Software S.A.S",
+        "isRecent": false,
+        "project": "ADN Ceiba",
+        "role": "Arquitecto Desarrollador",
+        "resume": [
+          "Se definió y elaboró una arquitectura hexagonal en donde se favorece la orientación al dominio, principios solid y mantenibilidad de los proyectos. Todo esto bajo un proceso de integración continua con análisis estático de código y ejecución de pruebas que garantizan la calidad de el proyecto desarrollado",
+          "Se logró construir front implementado bajo una arquitectura core, share y feature, con manejo de esta global usando redux."
+        ],
+        "additional_info": [
+          "MySQL",
+          "SASS",
+          "HTML",
+          "CSS3",
+          "React.js",
+          "TypeScript",
+          "Redux",
+          "Nest JS",
+          "JMeter",
+          "NPM",
+          "Jenkins",
+          "Sonar",
+          "Git",
+          "Pruebas unitarias",
+          "Pruebas de integración",
+          "Pruebas E2E"
+        ]
+      },
+      {
+        "start_date": "05/05/2021",
+        "end_date": "10/12/2021",
+        "enterprise": "SM Digital",
+        "isRecent": false,
+        "project": "SM Digital - Creación de sitios web e integraciones entre terceros",
+        "role": "Líder técnico",
+        "resume": [
+          "Creación de diversos sitios web empleando WordPress como CMS, modularización de funcionalidades de la lógica del negocio a través de buenas prácticas vía Plugins",
+          "Creación de temas a la medida, totalmente responsivos y optimizados para la web, ideados con el ánimo de optimizar ganancias y generar visibilidad de los clientes a través de estrategias de Marketing",
+          "Implementación de tiendas virtuales e integraciones con terceros, como pasarelas de pago, ERP, CRM, especializados para la recolección de leads usados en Marketing, además implementación de servicios SSO (Single Sign-On) con redes sociales como Facebook/Twitter/Instagram, entre otros",
+          "Implementación de estrategias de mensajería automatizada a la medida para plataformas vía WhatsApp, usando APIs autorizadas para el negocio, el cual permitieron comunicar informes a listados de clientes autorizados de manera sencilla",
+          "Se utilizaron diversas estrategias para el frontend y backend, resaltando HTML, CSS, JS (Frameworks jQuery, Angular JS y React JS), PHP y Node JS respectivamente para la creación de sitios web y generación de aplicaciones para terceros, así como integradores entre plataformas no compatibles"
+        ],
+        "screenshot": "/static/img/showcase/smdigital.webp",
+        "url": "https://smdigital.com.co",
+        "additional_info": [
+          "MySQL",
+          "MongoDB",
+          "jQuery",
+          "Node.js",
+          "Express",
+          "React.js",
+          "Bootstrap",
+          "SASS",
+          "HTML5",
+          "CSS3",
+          "Jira",
+          "Trello",
+          "WordPress CMS",
+          "WooCommerce",
+          "JavaScript",
+          "TypeScript",
+          "PHP",
+          "Auth0",
+          "JWT",
+          "Laravel"
+        ]
+      },
+      {
+        "start_date": "05/04/2020",
+        "end_date": "29/11/2020",
+        "enterprise": "Grupo Nutresa - SM Digital",
+        "isRecent": false,
+        "project": "E-learning Escuela de clientes",
+        "role": "Desarrollador Full-Stack",
+        "resume": [
+          "Proyecto Full-Stack desarrollado desde cero, que debía ser construído bajo el framework del CMS WordPress el cual exponía servicios REST para ser consumidos desde el cliente del aplicativo",
+          "El frontend debía ser construído con Angular JS y se permitía el uso de librerías para la manipulación de contenidos multimedia",
+          "Implementar estrategias UX debido a la población objetivo (50 años o más)",
+          "Debía optimizar la entrega de los recursos multimedia y responder a un flujo elevado de usuarios, empleando AWS S3, AWS CloudFront, entre otros"
+        ],
+        "screenshot": "/static/img/showcase/escuela_clientes.webp",
+        "url": "https://escueladeclientesnutresa.com",
+        "additional_info": [
+          "MySQL",
+          "Angular JS",
+          "Bootstrap",
+          "SASS",
+          "HTML",
+          "CSS3",
+          "AWS",
+          "Jira",
+          "Trello",
+          "Git",
+          "Javascript",
+          "PHP",
+          "MVC"
+        ]
+      },
+      {
+        "start_date": "14/12/2019",
+        "end_date": "04/05/2021",
+        "enterprise": "SURA Seguros - Colombia - SM Digital",
+        "isRecent": false,
+        "project": "SURA Asesores - Colombia - SM Digital",
+        "role": "Programador Full-Stack",
+        "resume": [
+          "Proyecto Full-Stack donde se requería la integración de un directorio activo SEUS 4 (Asesores de Seguros SURA - SAML) integrándolo con un E-Commerce usando WordPress con WooCommerce como CMS",
+          "Conforme a las buenas prácticas para WordPress, se requirió montar un plugin adaptable, basado en una arquitectura MVC, el cual favoreció la división de la lógica y componentes del mismo",
+          "El aplicativo debía contar con reportes a la medida, generados vía CSV el cual provienen de diferentes fuentes tales como Google Docs y REST API externos",
+          "Se logró culminar el proyecto acatando los requerimientos funcionales y la calidad del software que abogaba el cliente"
+        ],
+        "additional_info": [
+          "SASS",
+          "CSS3",
+          "jQuery",
+          "Bootstrap",
+          "Wordpress",
+          "WooCommerce",
+          "NPM",
+          "Jira",
+          "Trello",
+          "SAML",
+          "PHP",
+          "MySQL",
+          "Git",
+          "JavaScript."
+        ]
+      },
+      {
+        "start_date": "16/05/2019",
+        "end_date": "23/06/2019",
+        "enterprise": "Alimentos cárnicos Zenú",
+        "isRecent": false,
+        "project": "Zenú corporativo - Juego ¡Avanza y aprende!",
+        "role": "Programador Frontend",
+        "resume": [
+          "Proyecto Frontend interactivo desarrollado desde cero, con la tecnología Angular 7 bajo la arquitectura recomendada por la guía de estilos de Angular, buscaba satisfacer los principios de mantenibilidad, respetando conceptos de código limpio y patrones de diseño sugeridos por el framework"
+        ],
+        "additional_info": [
+          "Angular JS",
+          "AWS",
+          "Jira",
+          "Trello",
+          "PHP",
+          "JavaScript",
+          "TypeScript",
+          "Pruebas funcionales"
+        ]
+      },
+      {
+        "start_date": "16/05/2019",
+        "end_date": "23/06/2019",
+        "enterprise": "Grupo Familia",
+        "isRecent": false,
+        "project": ">Grupo familia - Simulador de servilletas",
+        "role": "Programador Full-Stack",
+        "resume": [
+          "Proyecto Full-Stack de carácter interactivo desarrollado desde cero, bajo el Framework del CMS WordPress",
+          "Debido a la infraestructura sugerida por el cliente, era necesario utilizar jQuery y librerías enfocadas para la manipulación del DOM",
+          "El proyecto exigía respetar directivas muy específicas de la marca directamente relacionadas con los requerimientos funcionales"
+        ],
+        "additional_info": [
+          "MySQL",
+          "Bootstrap",
+          "SASS",
+          "HTML",
+          "Jira",
+          "Trello",
+          "WordPress",
+          "PHP",
+          "MVC",
+          "jQuery"
+        ]
+      },
+      {
+        "start_date": "14/12/2019",
+        "end_date": "04/05/2021",
+        "enterprise": "COLGAS",
+        "isRecent": false,
+        "project": "Insa (NORGAS) - Cotizador energético",
+        "role": "Programador Frontend",
+        "resume": [
+          "Proyecto frontend desarrollado desde cero, que exigía usar enteramente la tecnología JavaScript (Vanilla)",
+          "Dicho cotizador empleaba unos cálculos muy precisos que son cumplidos en detalle debido a políticas de calidad de la compañía, por lo que la interacción con el cliente debía ser constante",
+          "Se configuró debidamente el proceso de despliegue contínuo mediante tareas programadas un servidor remoto en la nube"
+        ],
+        "additional_info": ["MySQL", "Bootstrap", "SASS", "HTML", "Jira", "JavaScript"]
+      },
+      {
+        "start_date": "03/02/2019",
+        "end_date": "12/06/2021",
+        "enterprise": "Grupo Presente Éxito",
+        "isRecent": false,
+        "project": "Cotizador de centros vacacionales",
+        "role": "Programador Full-Stack",
+        "resume": [
+          "Proyecto Full-Stack desarrollado desde cero, con las tecnologías PHP y usando el Framework para páginas web WordPress",
+          "Conforme a las buenas prácticas del CMS Wordpress, se requería construir enteramente mediante un plugin, implementando una arquitectura MVC",
+          "Era importante para el cliente responder claramente a los requerimientos funcionales, cuya importancia radicaba en el cálculo, la evaluación de resultados y despliegue de los mismos (PDF - Email), el cual eran utilizadas para estrategias de Marketing y Pauta digital. Era imprescindible que fuera totalmente administrable y configurable"
+        ],
+        "additional_info": [
+          "MySQL",
+          "Bootstrap",
+          "SASS",
+          "HTML",
+          "CSS",
+          "WordPress",
+          "Jira",
+          "JavaScript",
+          "MVC",
+          "Trello",
+          "PHP",
+          "jQuery"
+        ]
+      },
+      {
+        "start_date": "07/11/2017",
+        "end_date": "10/10/2018",
+        "enterprise": "Universidad EAFIT",
+        "isRecent": false,
+        "project": "Universidad EAFIT - Plataforma Línea en Informática Educativa (Imaginar futuros)",
+        "role": "Programador Full-Stack",
+        "resume": [
+          "Proyecto Full-Stack desarrollado desde cero, bajo el Framework del CMS WordPress (PHP)",
+          "Requería emplear buenas prácticas del CMS para su construcción, por lo que sus módulos se desarrollaron bajo la arquitectura Kernel/Plugin, común en CMS como WordPress",
+          "Requería manejar información dinámicamente desde el frontend usando jQuery y Ajax",
+          "Debían mantenerse diferentes estructuras de servicios en la nube para sus usuarios y colaboradores, empleando la suite de AWS para ello. (S3, Glacier, Cloudfront, Route 53, etc) y administración de servicios Cloud de Azure y Office 365"
+        ],
+        "additional_info": [
+          "MySQL",
+          "Bootstrap",
+          "SASS",
+          "HTML",
+          "CSS",
+          "WordPress",
+          "Jira",
+          "JavaScript",
+          "AWS",
+          "MVC",
+          "Trello",
+          "PHP",
+          "jQuery",
+          "Office 365"
+        ]
+      }
+    ]
+  },
+  "Services": {
+    "metadata": {
+      "title": "Servicios | José Duque",
+      "description": "Backend, Frontend, Full-stack o consultoría a su servicio"
+    },
+    "title": "Servicios &<br></br>Stack tecnológico",
+    "content": [
+      {
+        "icon": "Database",
+        "title": "Desarrollo Backend",
+        "subtitle": "Servicios generales de desarrollo backend",
+        "description": "Implementación de lógica del lado del servidor, bases de datos, programación de APIs, integraciones con terceros, definiciones de arquitectura y despliegue contínuo basado en buenas prácticas de desarrollo."
+      },
+      {
+        "icon": "Computer",
+        "title": "Desarrollo Frontend",
+        "subtitle": "Servicios generales de desarrollo frontend",
+        "description": "Programación de lógica del lado del cliente, basado en prácticas de estructuración semántica, adaptabilidad, accesibilidad y mantenibilidad."
+      },
+      {
+        "icon": "CodeXml",
+        "title": "Programación de sitios web",
+        "subtitle": "Servicios completos de desarrollo de sitios web",
+        "description": "Creación y mantenimiento de Sitios Web a la medida, sitios informativos, E-Commerces, Funnels, Cursos y desarrollo de complementos personalizados para WordPress."
+      },
+      {
+        "icon": "BookOpen",
+        "title": "Mentoría & Asesoría",
+        "subtitle": "Mentoría & Asesoría en desarrollo",
+        "description": "Mentorías y asesorías en maquetación, optimización, seguridad y buenas prácticas de desarrollo desde sus diferentes frentes en general."
+      }
+    ],
+    "badges": {
+      "title": "Herramientas & Habilidades blandas",
+      "content": [
+        {
+          "name": "AWS",
+          "type": "hard"
+        },
+        {
+          "name": "Azure",
+          "type": "hard"
+        },
+        {
+          "name": "CSS3",
+          "type": "hard"
+        },
+        {
+          "name": "Tailwind",
+          "type": "hard"
+        },
+        {
+          "name": "HTML5",
+          "type": "hard"
+        },
+        {
+          "name": "Arquitectura DDD",
+          "type": "soft"
+        },
+        {
+          "name": "Laravel",
+          "type": "hard"
+        },
+        {
+          "name": "React.js",
+          "type": "hard"
+        },
+        {
+          "name": "Vue.js",
+          "type": "hard"
+        },
+        {
+          "name": "WordPress",
+          "type": "hard"
+        },
+        {
+          "name": "RabbitMQ",
+          "type": "hard"
+        },
+        {
+          "name": "Redis",
+          "type": "hard"
+        },
+        {
+          "name": "MySQL",
+          "type": "hard"
+        },
+        {
+          "name": "MongoDB",
+          "type": "hard"
+        },
+        {
+          "name": "PostgreSQL",
+          "type": "hard"
+        },
+        {
+          "name": "Arquitectura distribuída",
+          "type": "soft"
+        },
+        {
+          "name": "Arquitectura monolítica",
+          "type": "soft"
+        },
+        {
+          "name": "Código limpio",
+          "type": "soft"
+        },
+        {
+          "name": "Terraform",
+          "type": "hard"
+        },
+        {
+          "name": "Serverless framework",
+          "type": "hard"
+        },
+        {
+          "name": "Storybook",
+          "type": "hard"
+        },
+        {
+          "name": "Sistemas de diseño",
+          "type": "soft"
+        },
+        {
+          "name": "i18n",
+          "type": "soft"
+        },
+        {
+          "name": "Diseño responsivo",
+          "type": "soft"
+        },
+        {
+          "name": "Docker",
+          "type": "hard"
+        },
+        {
+          "name": "Bootstrap",
+          "type": "hard"
+        },
+        {
+          "name": "Kanban",
+          "type": "soft"
+        },
+        {
+          "name": "Jenkins",
+          "type": "hard"
+        },
+        {
+          "name": "Node JS",
+          "type": "hard"
+        },
+        {
+          "name": "SpringBoot",
+          "type": "hard"
+        },
+        {
+          "name": "SpringCloud",
+          "type": "hard"
+        },
+        {
+          "name": "Nest JS",
+          "type": "hard"
+        },
+        {
+          "name": "Desarrollo ágil",
+          "type": "soft"
+        },
+        {
+          "name": "OOP",
+          "type": "soft"
+        },
+        {
+          "name": "Administración de tiempo",
+          "type": "soft"
+        },
+        {
+          "name": "Flexibilidad de tiempo",
+          "type": "soft"
+        },
+        {
+          "name": "JWT",
+          "type": "hard"
+        },
+        {
+          "name": "Github actions",
+          "type": "hard"
+        },
+        {
+          "name": "ORM's",
+          "type": "soft"
+        },
+        {
+          "name": "ODM's",
+          "type": "soft"
+        },
+        {
+          "name": "Monitoreo",
+          "type": "soft"
+        },
+        {
+          "name": "Observabilidad",
+          "type": "soft"
+        },
+        {
+          "name": "Jest",
+          "type": "hard"
+        },
+        {
+          "name": "Playwright",
+          "type": "hard"
+        },
+        {
+          "name": "Cypress",
+          "type": "hard"
+        },
+        {
+          "name": "SonarQube",
+          "type": "hard"
+        },
+        {
+          "name": "Pruebas unitarias",
+          "type": "hard"
+        },
+        {
+          "name": "Vitest",
+          "type": "hard"
+        },
+        {
+          "name": "Pruebas de integración",
+          "type": "hard"
+        },
+        {
+          "name": "e2e tests",
+          "type": "hard"
+        },
+        {
+          "name": "SASS",
+          "type": "hard"
+        },
+        {
+          "name": "Datadog",
+          "type": "hard"
+        },
+        {
+          "name": "Resiliencia en microservicios",
+          "type": "soft"
+        },
+        {
+          "name": "Redux",
+          "type": "hard"
+        },
+        {
+          "name": "Pinia",
+          "type": "hard"
+        },
+        {
+          "name": "VueX",
+          "type": "hard"
+        },
+        {
+          "name": "TanStack Query",
+          "type": "hard"
+        },
+        {
+          "name": "jQuery",
+          "type": "hard"
+        },
+        {
+          "name": "Desarrollo de plugins para Wordpress",
+          "type": "hard"
+        },
+        {
+          "name": "CircleCI",
+          "type": "hard"
+        },
+        {
+          "name": "SEO",
+          "type": "soft"
+        },
+        {
+          "name": "Next JS",
+          "type": "hard"
+        },
+        {
+          "name": "Zustand",
+          "type": "hard"
+        },
+        {
+          "name": "Accesibilidad",
+          "type": "soft"
+        },
+        {
+          "name": "SSR",
+          "type": "soft"
+        },
+        {
+          "name": "Quasar",
+          "type": "hard"
+        },
+        {
+          "name": "Kubernetes",
+          "type": "hard"
+        },
+        {
+          "name": "Arquitectura Hexagonal",
+          "type": "soft"
+        }
+      ]
+    },
+    "languages": {
+      "title": "Lenguajes de desarrollo principales",
+      "content": [
+        {
+          "color": "#0369a1",
+          "tag": "Typescript",
+          "value": 93
+        },
+        {
+          "color": "#facc15",
+          "tag": "Javascript",
+          "value": 95
+        },
+        {
+          "color": "#7e22ce",
+          "tag": "PHP",
+          "value": 75
+        },
+        {
+          "color": "#c2410c",
+          "tag": "Java",
+          "value": 35
+        }
+      ]
+    }
+  },
+  "GamesDevelopment": {
+    "metadata": {
+      "title": "Desarrollo de juegos | José Duque",
+      "description": "Parte de la práctica que enriquece enormemente mi carrera"
+    }
+  },
+  "MusicProduction": {
+    "metadata": {
+      "title": "Producción musical | José Duque",
+      "description": "Un querido pasatiempo que equilibra todo"
+    }
+  },
+  "Contact": {
+    "metadata": {
+      "title": "Contacto | José Duque",
+      "description": "Ponte en contacto conmigo para cualquier consulta o apoyo"
+    }
+  },
+  "Blog": {
+    "metadata": {
+      "title": "Blog | José Duque",
+      "description": "Descubre las últimas noticias, consejos y artículos interesantes sobre tecnología y estilo de vida"
+    }
+  },
+  "Pdf": {
+    "introduction": "Me considero una persona con un perfil basado en la responsabilidad, soy activo, recursivo, creativo y ordenado. Tengo conocimientos en TypeScript, Javascript y PHP con UML, XML, SQL/NoSQL.\nMe gusta la programación web y me interesa desarrollar un perfil Full-Stack. Tengo un gusto especial por aprender nuevas tecnologías y dar el 110% en cada proyecto.",
+    "databases": "MongoDB, PostgreSQL, MySQL, Redis.",
+    "cicd": "Jenkins, Github Actions, SonarQube, Docker, CircleCI.",
+    "backend": "Nest JS, Node JS, Express, Spring Boot, RabbitMQ, Azure Service Bus, Amazon SQS, Laravel, Next JS",
+    "programming_languages": "JavaScript, TypeScript, PHP, Java.",
+    "frontend": "HTML, CSS, React JS, , Vue JS, SASS, Tailwind, Redux, Pinia",
+    "cloud": "Amazon Web Services, Azure Cloud, Terraform, Serverless framework",
+    "security": "JWT, Auth0, Cognito.",
+    "architecture": "Arquitectura Hexagonal, CQRS, MVC, Microservicios, Arquitectura orientada a eventos.",
+    "methodologies": "SCRUM, Kanban.",
+    "experience": "{years} años",
+    "languages": [
+      {
+        "title": "Español",
+        "subtitle": "Nativo - C2"
+      },
+      {
+        "title": "Inglés",
+        "subtitle": "Sobresaliente - B2"
+      }
+    ]
+  }
+}

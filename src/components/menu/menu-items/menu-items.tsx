@@ -6,9 +6,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import type { MenuItem } from '@/interfaces';
+import { Link, usePathname } from '@/i18n/routing';
 
 interface Props {
   items: MenuItem[];
@@ -30,7 +29,6 @@ export const MenuItems = ({ items, size = 'default' }: Props) => {
             className="focus-visible:ring-primary focus-visible:ring-1"
           >
             <Link href={item.url} onClick={() => setOpenMobile(false)}>
-              {item.icon}
               <span>{item.title}</span>
             </Link>
           </SidebarMenuButton>

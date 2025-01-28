@@ -65,7 +65,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
               <span
                 class="font-semibold text-base"
               >
-                Responsibilities
+                subtitle
               </span>
               <ol
                 class="list-disc ml-4 text-justify marker:text-secondary"
@@ -88,12 +88,12 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
               </ol>
             </div>
             <a
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 mt-5 lg:flex-shrink lg:w-auto w-full"
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-8 rounded-md px-3 text-xs mt-5 lg:flex-shrink lg:w-auto w-full"
               href="https://foo.bar"
               rel="noopener noreferrer nofollow"
               target="_blank"
             >
-              Project's link
+              button
             </a>
           </div>
           <picture
@@ -101,7 +101,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
           >
             <img
               alt="Foo-Bar Baz Inc."
-              class="rounded object-cover shadow-lg w-auto max-w-xs"
+              class="rounded object-cover shadow-lg w-auto lg:max-w-xs"
               data-nimg="1"
               decoding="async"
               height="150"
@@ -120,7 +120,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
         <div
           class="font-semibold text-base"
         >
-          Skills
+          footer
         </div>
         <div
           class="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around"

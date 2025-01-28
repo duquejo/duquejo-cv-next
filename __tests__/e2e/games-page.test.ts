@@ -7,7 +7,7 @@ test('should navigate to the games development page', async ({ page, isMobile })
   await expect(page).toHaveTitle('Games development | José Duque');
 
   await expect(metatag(page, 'description').getAttribute('content')).resolves.toBe(
-    'Some of them are part of the practice that greatly enriches my career',
+    'Part of the practice that greatly enriches my career',
   );
 
   const mainWrapper = page.getByRole('main');

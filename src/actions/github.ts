@@ -1,6 +1,6 @@
 'use server';
 
-import { type Event, EventType } from '@/interfaces';
+import type { Event, EventType } from '@/interfaces';
 
 const GITHUB_URL = process.env.GITHUB_URL || '';
 const GITHUB_SOURCE = process.env.GITHUB_SOURCE || '';
@@ -41,11 +41,8 @@ export async function getEvents() {
 const filterEventsByType = (events: Event[]): Event[] => {
   return events.filter(
     (event: Event) =>
-      ![
-        EventType.PullRequestEvent,
-        EventType.WatchEvent,
-        EventType.PullRequestReviewEvent,
-        EventType.CreateEvent,
-      ].includes(event.type as EventType),
+      !['PullRequestEvent', 'WatchEvent', 'PullRequestReviewEvent', 'CreateEvent'].includes(
+        event.type as EventType,
+      ),
   );
 };
