@@ -17,11 +17,11 @@ export default function MainPage() {
   return (
     <>
       <section className="flex flex-col lg:flex-row lg:justify-center items-center mx-0 mt-5 py-10 relative">
-        <div className="order-2 lg:basis-3/5 lg:order-1 px-10 pb-0 pt-5 lg:pt-0">
+        <div className="order-2 lg:basis-3/5 lg:order-1 lg:px-10 px-5 pb-0 pt-5 lg:pt-0">
           <span className="text-foreground font-light mt-10 animate-entrance duration-1000">
             {t('role')}
           </span>
-          <h1 className="text-4xl lg:text-6xl mb-5 animate-entrance duration-1000">
+          <h1 className="text-4xl lg:text-6xl md:text-5xl mb-5 animate-entrance duration-1000 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-primary">
             {t('resume.greetings')}
             <strong>José Duque.</strong>
           </h1>
@@ -43,7 +43,7 @@ export default function MainPage() {
             ))}
           </div>
         </div>
-        <HeroImage className="order-1 flex-1 lg:order-2 px-10 lg:mt-0" />
+        <HeroImage className="order-1 flex-1 lg:order-2 lg:px-10 px-5 lg:mt-0 max-w-xs lg:max-w-md" />
       </section>
       <section className="m-10 gap-x-10 gap-y-2">
         <h2 className="text-lg lg:text-xl mb-3 font-semibold underline-offset-4 underline decoration-primary">

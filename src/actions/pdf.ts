@@ -36,5 +36,5 @@ export async function generatePdf() {
       },
     ],
     template: getBaseTemplate,
-  }).catch((reason) => console.error(reason));
+  });
 }

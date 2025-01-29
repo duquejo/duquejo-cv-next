@@ -48,7 +48,13 @@ export const AppActivityProvider = ({ children, defaultOpen = false }: Props) =>
             <EventSkeleton rounds={2} />
           ) : (
             <div role="list" className="flex flex-col gap-2 overflow-y-auto list-none">
-              {data?.map((event) => <EventCard key={event.id} {...event} />)}
+              {!data || data.length === 0 ? (
+                <p data-testid="empty" className="text-muted-foreground text-sm">
+                  {t('empty')}
+                </p>
+              ) : (
+                data.map((event) => <EventCard key={event.id} {...event} />)
+              )}
             </div>
           )}
         </div>

@@ -8,7 +8,7 @@ interface Props {
 
 export const HeroImage = ({ className }: Props) => {
   return (
-    <picture className={cn('overflow-hidden relative max-w-md', className)}>
+    <div data-testid="hero-image" className={cn('overflow-hidden relative', className)}>
       <Music
         className="absolute top-0 text-primary/50 animate-bounce-subtle repeat-infinite z-10"
         strokeWidth="3"
@@ -42,15 +42,16 @@ export const HeroImage = ({ className }: Props) => {
         strokeWidth="5"
         size={20}
       />
-
-      <Image
-        className="rounded-full backdrop-blur-sm bg-primary/5 shadow-inner object-cover md:max-w-xs"
-        alt="José Miguel Duque"
-        width="950"
-        height="950"
-        priority
-        src="/static/img/avatar_cropped_950.png"
-      />
-    </picture>
+      <picture className="object-cover">
+        <Image
+          className="rounded-full backdrop-blur-sm bg-primary/10 shadow-inner"
+          alt="José Miguel Duque"
+          width="950"
+          height="950"
+          priority
+          src="/static/img/avatar_cropped_950.png"
+        />
+      </picture>
+    </div>
   );
 };

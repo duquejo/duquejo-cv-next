@@ -34,7 +34,7 @@ describe('PDF Route handler unit tests', () => {
 
   it('should work as expected - POST', async () => {
     const customHeaders = new Headers({
-      origin: 'https://duquejo.com',
+      origin: 'http://abc.xyz',
     });
 
     const response = await postRequest(customHeaders);
@@ -42,10 +42,8 @@ describe('PDF Route handler unit tests', () => {
 
     expect(response.status).toBe(200);
     expect(response.headers.get('Content-Type')).toBe('application/pdf');
-    expect(response.headers.get('Content-Disposition')).toBe(
-      'attachment; filename=cv_jose_duque.pdf',
-    );
-    expect(response.headers.get('Access-Control-Allow-Origin')).toBe('https://duquejo.com');
+    expect(response.headers.get('Content-Disposition')).toBe('attachment; filename=foo.pdf');
+    expect(response.headers.get('Access-Control-Allow-Origin')).toBe('http://abc.xyz');
     expect(textResponse).toBe('PDF content');
 
     expect(generatePdf).toHaveBeenCalled();
@@ -62,12 +60,12 @@ describe('PDF Route handler unit tests', () => {
 
   it('should work as expected - OPTIONS (Preflight)', async () => {
     const customHeaders = new Headers({
-      origin: 'https://duquejo.com',
+      origin: 'http://abc.xyz',
     });
 
     const response = await optionsRequest(customHeaders);
 
-    expect(response.headers.get('Access-Control-Allow-Origin')).toBe('https://duquejo.com');
+    expect(response.headers.get('Access-Control-Allow-Origin')).toBe('http://abc.xyz');
     expect(response.headers.get('Access-Control-Allow-Methods')).toBe('POST, OPTIONS');
     expect(response.headers.get('Access-Control-Allow-Headers')).toBe(
       'Origin, X-Requested-With, Content-Type, Accept, Authorization',

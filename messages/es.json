@@ -67,7 +67,8 @@
         "dialog": {
           "title": "Últimas actualizaciones",
           "description": "Encontrarás actividad reciente o actualizaciones al instante sobre proyectos o noticias de interés",
-          "button": "Ver más en Github"
+          "button": "Visita mi perfil de Github",
+          "empty": "No hay actividad reciente, inténtalo después."
         }
       }
     }

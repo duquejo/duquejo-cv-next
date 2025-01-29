@@ -15,7 +15,7 @@ exports[`<EventCard /> tests > should match the snapshot 1`] = `
         <time
           class="text-xs font-extrabold"
         >
-          23/1/2024, 11:16:53
+          1/23/2024, 11:16:53 AM
         </time>
       </div>
       <div
@@ -109,7 +109,7 @@ exports[`<EventCard /> tests > should render the optional fields if they are giv
         <time
           class="text-xs font-extrabold"
         >
-          23/1/2024, 11:16:53
+          1/23/2024, 11:16:53 AM
         </time>
         <div
           class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"

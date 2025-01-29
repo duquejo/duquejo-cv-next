@@ -21,13 +21,15 @@ Thank you for visiting, and I look forward to connecting with you!
 
 ## Installation
 
-Copy the `.env.example` file and fill the remaining fields:
+Copy `.env.example` and rename it to `.env` filling this fields:
 
 ```dotenv
 GITHUB_URL='Github feed source'
 GITHUB_SOURCE='Github token'
 PDF_EMAIL='PDF final email'
 PDF_WEBSITE='Website footer source url'
+PDF_FILENAME='PDF download filename'
+ALLOWED_ORIGINS='Comma separated allowed origins'
 ```
 
 ## Screenshots

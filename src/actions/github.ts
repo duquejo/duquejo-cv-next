@@ -2,10 +2,12 @@
 
 import type { Event, EventType } from '@/interfaces';
 
-const GITHUB_URL = process.env.GITHUB_URL || '';
-const GITHUB_SOURCE = process.env.GITHUB_SOURCE || '';
+const GITHUB_URL = process.env.GITHUB_URL;
+const GITHUB_SOURCE = process.env.GITHUB_SOURCE;
 
 export async function getEvents() {
+  if (!(GITHUB_URL && GITHUB_SOURCE)) return [];
+
   try {
     const pathParams = new URLSearchParams({
       per_page: '15',

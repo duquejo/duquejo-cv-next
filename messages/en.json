@@ -67,7 +67,8 @@
         "dialog": {
           "title": "Latest Activity Feed Updates",
           "description": "Here you will find the most recent and quick updates from my personal projects or news.",
-          "button": "See more activity in GitHub"
+          "button": "Check my Github profile",
+          "empty": "There is not recent activity, try later."
         }
       }
     }

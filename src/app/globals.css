@@ -121,6 +121,6 @@ body {
   }
 
   .main-subtitle {
-    @apply text-base lg:text-xl mb-6 font-semibold underline-offset-8 underline decoration-primary;
+    @apply text-base lg:text-xl mt-10 mb-6 font-semibold underline-offset-8 underline decoration-primary first:mt-5;
   }
 }

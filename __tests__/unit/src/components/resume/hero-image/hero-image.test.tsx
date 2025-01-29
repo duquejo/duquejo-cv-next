@@ -1,5 +1,5 @@
 import { HeroImage } from '@/components/resume/hero-image/hero-image';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 describe('<HeroImage /> tests', () => {
   it('Should match the snapshot with the default args', () => {
@@ -9,9 +9,9 @@ describe('<HeroImage /> tests', () => {
   });
 
   it('Should add the given css classes if they are given', () => {
-    const { container } = render(<HeroImage className="bg-red-500" />);
+    render(<HeroImage className="bg-red-500" />);
 
-    expect(container.querySelector('picture')).toBeInTheDocument();
-    expect(container.querySelector('picture')).toHaveClass('bg-red-500');
+    expect(screen.getByTestId('hero-image')).toBeInTheDocument();
+    expect(screen.getByTestId('hero-image')).toHaveClass('bg-red-500');
   });
 });

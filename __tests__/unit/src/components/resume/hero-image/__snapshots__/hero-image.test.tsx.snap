@@ -2,8 +2,9 @@
 
 exports[`<HeroImage /> tests > Should match the snapshot with the default args 1`] = `
 <div>
-  <picture
-    class="overflow-hidden relative max-w-md"
+  <div
+    class="overflow-hidden relative"
+    data-testid="hero-image"
   >
     <svg
       class="lucide lucide-music absolute top-0 text-primary/50 animate-bounce-subtle repeat-infinite z-10"
@@ -146,17 +147,21 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
         r="10"
       />
     </svg>
-    <img
-      alt="José Miguel Duque"
-      class="rounded-full backdrop-blur-sm bg-primary/5 shadow-inner object-cover md:max-w-xs"
-      data-nimg="1"
-      decoding="async"
-      height="950"
-      src="/_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1920&q=75"
-      srcset="/_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1080&q=75 1x, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1920&q=75 2x"
-      style="color: transparent;"
-      width="950"
-    />
-  </picture>
+    <picture
+      class="object-cover"
+    >
+      <img
+        alt="José Miguel Duque"
+        class="rounded-full backdrop-blur-sm bg-primary/10 shadow-inner"
+        data-nimg="1"
+        decoding="async"
+        height="950"
+        src="/_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1920&q=75"
+        srcset="/_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1080&q=75 1x, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1920&q=75 2x"
+        style="color: transparent;"
+        width="950"
+      />
+    </picture>
+  </div>
 </div>
 `;
