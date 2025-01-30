@@ -9,25 +9,23 @@ export async function getEvents() {
   if (!(GITHUB_URL && GITHUB_SOURCE)) return [];
 
   try {
-    const pathParams = new URLSearchParams({
-      per_page: '15',
-      page: '1',
-    });
-
-    const url = new URL(GITHUB_URL);
-    url.search = pathParams.toString();
-
-    const response = await fetch(url.toString(), {
-      method: 'GET',
-      headers: {
-        Authorization: 'token '.concat(GITHUB_SOURCE),
-        accept: 'application/vnd.github+json',
+    const response = await fetch(
+      buildUrl(GITHUB_URL, {
+        per_page: '15',
+        page: '1',
+      }),
+      {
+        method: 'GET',
+        headers: {
+          Authorization: 'token '.concat(GITHUB_SOURCE),
+          accept: 'application/vnd.github+json',
+        },
+        cache: 'force-cache',
+        next: {
+          revalidate: 3600,
+        },
       },
-      cache: 'force-cache',
-      next: {
-        revalidate: 3600,
-      },
-    });
+    );
 
     if (response.ok) {
       return filterEventsByType(await response.json());
@@ -39,6 +37,15 @@ export async function getEvents() {
     return [];
   }
 }
+
+const buildUrl = (url: string, queryParams = {}): string => {
+  const params = new URLSearchParams(queryParams);
+
+  const finalUrl = new URL(url);
+  finalUrl.search = params.toString();
+
+  return finalUrl.toString();
+};
 
 const filterEventsByType = (events: Event[]): Event[] => {
   return events.filter(

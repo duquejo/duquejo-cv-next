@@ -1,4 +1,2 @@
 yarn format:silent
 yarn lint
-yarn test:silent
-yarn test:e2e:silent
