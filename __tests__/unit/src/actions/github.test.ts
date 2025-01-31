@@ -29,7 +29,7 @@ describe('Github action', () => {
       ok: true,
       json: () => Promise.resolve(payload),
     };
-    global.fetch = vi.fn(() => Promise.resolve(mockedResponse)) as Mock;
+    global.fetch = vi.fn().mockImplementation(() => Promise.resolve(mockedResponse)) as Mock;
 
     const response = await getEvents();
 
@@ -41,7 +41,7 @@ describe('Github action', () => {
     const mockedResponse = {
       ok: false,
     };
-    global.fetch = vi.fn(() => Promise.resolve(mockedResponse)) as Mock;
+    global.fetch = vi.fn().mockImplementation(() => Promise.resolve(mockedResponse)) as Mock;
 
     const response = await getEvents();
 
@@ -61,7 +61,7 @@ describe('Github action', () => {
       ok: true,
       json: () => Promise.resolve(payloadWithoutFilters),
     };
-    global.fetch = vi.fn(() => Promise.resolve(mockedResponse)) as Mock;
+    global.fetch = vi.fn().mockImplementation(() => Promise.resolve(mockedResponse)) as Mock;
 
     const response = await getEvents();
 
@@ -71,7 +71,7 @@ describe('Github action', () => {
   });
 
   it('should return empty if the request failed', async () => {
-    global.fetch = vi.fn(() => Promise.reject('Something happened')) as Mock;
+    global.fetch = vi.fn().mockImplementation(() => Promise.reject('Something happened')) as Mock;
 
     const response = await getEvents();
 
