@@ -20,7 +20,7 @@ describe('<PdfForm /> tests', () => {
   beforeEach(() => {
     vi.clearAllMocks();
 
-    global.fetch = vi.fn(() =>
+    global.fetch = vi.fn().mockImplementation(() =>
       Promise.resolve({
         status: 200,
         blob: () => Promise.resolve(new Blob(['testing'], { type: 'application/pdf' })),
@@ -70,7 +70,7 @@ describe('<PdfForm /> tests', () => {
   });
 
   it('should handle fetch errors gracefully', async () => {
-    global.fetch = vi.fn(() =>
+    global.fetch = vi.fn().mockImplementation(() =>
       Promise.resolve({
         status: 500,
         statusText: 'Internal Server Error',
