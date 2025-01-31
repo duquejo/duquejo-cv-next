@@ -1,4 +1,4 @@
-import { beforeEach, type Mock } from 'vitest';
+import { beforeEach, afterEach, type Mock } from 'vitest';
 import { getEvents } from '@/actions/github';
 
 describe('Github action', () => {
@@ -21,32 +21,34 @@ describe('Github action', () => {
   const consoleMock = vi.spyOn(console, 'error');
 
   beforeEach(() => {
+    global.fetch = vi.fn();
+  });
+
+  afterEach(() => {
     vi.clearAllMocks();
   });
 
   it('should retrieve the Github events', async () => {
-    const mockedResponse = {
+    (global.fetch as Mock).mockResolvedValueOnce({
       ok: true,
       json: () => Promise.resolve(payload),
-    };
-    global.fetch = vi.fn().mockImplementation(() => Promise.resolve(mockedResponse)) as Mock;
+    });
 
     const response = await getEvents();
 
     expect(response).toEqual(payload);
-    expect(fetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
+    expect(global.fetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
   });
 
   it('should retrieve empty if the request fails', async () => {
-    const mockedResponse = {
+    (global.fetch as Mock).mockResolvedValueOnce({
       ok: false,
-    };
-    global.fetch = vi.fn().mockImplementation(() => Promise.resolve(mockedResponse)) as Mock;
+    });
 
     const response = await getEvents();
 
     expect(response).toEqual([]);
-    expect(fetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
+    expect(global.fetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
   });
 
   it('should filter the non-required events', async () => {
@@ -57,26 +59,25 @@ describe('Github action', () => {
         type: 'CreateEvent',
       },
     ];
-    const mockedResponse = {
+    (global.fetch as Mock).mockResolvedValueOnce({
       ok: true,
       json: () => Promise.resolve(payloadWithoutFilters),
-    };
-    global.fetch = vi.fn().mockImplementation(() => Promise.resolve(mockedResponse)) as Mock;
+    });
 
     const response = await getEvents();
 
     expect(response).not.toEqual(payloadWithoutFilters);
     expect(response).toHaveLength(1);
-    expect(fetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
+    expect(global.fetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
   });
 
   it('should return empty if the request failed', async () => {
-    global.fetch = vi.fn().mockImplementation(() => Promise.reject('Something happened')) as Mock;
+    (global.fetch as Mock).mockRejectedValueOnce('Something happened');
 
     const response = await getEvents();
 
     expect(response).toEqual([]);
     expect(consoleMock).toHaveBeenCalledWith('Something happened');
-    expect(fetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
+    expect(global.fetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
   });
 });
