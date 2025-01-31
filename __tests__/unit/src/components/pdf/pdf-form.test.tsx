@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { PdfForm } from '@/components/pdf/pdf-form';
-import { beforeEach, type Mock, vi } from 'vitest';
+import { beforeEach, afterEach, type Mock, vi } from 'vitest';
 
 vi.mock('next/router', () => ({
   useRouter: () => ({
@@ -18,18 +18,21 @@ describe('<PdfForm /> tests', () => {
   };
 
   beforeEach(() => {
-    vi.clearAllMocks();
+    global.fetch = vi.fn();
 
-    global.fetch = vi.fn().mockImplementation(() =>
+    (global.fetch as Mock).mockImplementation(() =>
       Promise.resolve({
         status: 200,
         blob: () => Promise.resolve(new Blob(['testing'], { type: 'application/pdf' })),
       }),
-    ) as Mock;
-
+    );
     global.URL.createObjectURL = vi.fn();
     global.URL.revokeObjectURL = vi.fn();
     HTMLAnchorElement.prototype.click = vi.fn(); // Mock anchor DOM element
+  });
+
+  afterEach(() => {
+    vi.clearAllMocks();
   });
 
   it('should match the snapshot', () => {
