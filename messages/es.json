@@ -18,31 +18,6 @@
         }
       ]
     },
-    "hobbies": {
-      "title": "Aficiones",
-      "links": [
-        {
-          "title": "Producción musical",
-          "url": "/hobbies/produccion-musical"
-        },
-        {
-          "title": "Desarrollo de juegos",
-          "url": "/hobbies/desarrollo-de-juegos"
-        }
-      ]
-    },
-    "footer": {
-      "links": [
-        {
-          "title": "Blog",
-          "url": "/blog"
-        },
-        {
-          "title": "Contacto",
-          "url": "/contacto"
-        }
-      ]
-    },
     "complementary": {
       "sidebar": {
         "title": "Abrir/Cerrar menú"

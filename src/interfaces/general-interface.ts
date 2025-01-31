@@ -1,5 +1,5 @@
 import type { Pathnames } from '@/i18n/routing';
-import type { ReactNode } from 'react';
+import { LucideIcon } from 'lucide-react';
 
 export type EventType =
   | 'CreateEvent'
@@ -61,5 +61,5 @@ export interface ServicesType {
 export interface Social {
   name: string;
   link: string;
-  icon: ReactNode;
+  icon: LucideIcon;
 }

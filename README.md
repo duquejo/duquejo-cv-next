@@ -14,27 +14,49 @@ Thank you for visiting, and I look forward to connecting with you!
 - [Technologies & Tools](#technologies)
 - [Installation](#installation)
 - [Live Screenshots](#screenshots)
-- [Support](#support)
-- [Contributing](#contributing)
+- [Support & Contributing](#contributing)
 
 ## Technologies
 
+- Typescript
+- React JS
+- Next JS
+- SWR (React hooks for data fetching)
+- ShadcnUI
+- Tailwind
+- Negotiator (HTTP Content language)
+- Vitest (Unit tests)
+- React Testing library
+- Playwright (Integration & e2e tests)
+- Next intl (Internationalization)
+- Eslint / Prettier (Code standards)
+- Husky & Commitlint / Gitmoji (Commit standards)
+- Vercel (Deployment & Statistics)
+
 ## Installation
 
-Copy `.env.example` and rename it to `.env` filling this fields:
+Download the project directory and follow the next steps:
+
+1. Copy the `.env.sample` file, rename it as `.env`, and complete the local environment variables for the Github connection and the site translation features.
 
 ```dotenv
-GITHUB_URL='Github feed source'
-GITHUB_SOURCE='Github token'
-PDF_EMAIL='PDF final email'
-PDF_WEBSITE='Website footer source url'
-PDF_FILENAME='PDF download filename'
-ALLOWED_ORIGINS='Comma separated allowed origins'
+ GITHUB_URL="Github feed source"
+ GITHUB_SOURCE="Github token"
+ PDF_EMAIL="PDF final email"
+ PDF_WEBSITE="Website footer source url"
+ PDF_FILENAME="PDF download filename"
+ ALLOWED_ORIGINS="Comma separated allowed origins"
 ```
+
+2. Install the packages using `yarn install`.
+3. Run `yarn dev` for start the vite development environment or `yarn build` to start the production bundling package process.
 
 ## Screenshots
 
-## Support
+<div style="display: block; text-align: center;"> 
+  <img src="desktop.png" width="73%" />
+  <img src="mobile.png" width="25%" />
+</div>
 
 ## Contributing
 

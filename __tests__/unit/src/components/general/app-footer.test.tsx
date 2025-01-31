@@ -1,5 +1,6 @@
 import { render, type RenderResult, screen } from '@testing-library/react';
-import { AppFooter, SOCIAL_DATA as social } from '@/components/general/app-footer';
+import { AppFooter } from '@/components/general/app-footer';
+import { SOCIAL_DATA as social } from '@/components/social/social-items';
 
 describe('<AppFooter /> tests', () => {
   let component: RenderResult;

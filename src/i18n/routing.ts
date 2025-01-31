@@ -10,31 +10,15 @@ export const routing = defineRouting({
 
   pathnames: {
     '/': '/',
-    '/blog': '/blog',
 
     '/career/projects': {
       en: '/career/projects',
       es: '/carrera/proyectos',
     },
 
-    '/hobbies/music-production': {
-      en: '/hobbies/music-production',
-      es: '/hobbies/produccion-musical',
-    },
-
-    '/hobbies/games-development': {
-      en: '/hobbies/games-development',
-      es: '/hobbies/desarrollo-de-juegos',
-    },
-
     '/career/services': {
       en: '/career/services',
       es: '/carrera/servicios',
-    },
-
-    '/contact': {
-      en: '/contact',
-      es: '/contacto',
     },
   },
 });

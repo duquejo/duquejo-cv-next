@@ -7,13 +7,6 @@ const professionalItems = [
   { title: 'About', url: '/about' },
 ];
 
-const hobbiesItems = [
-  { title: 'Reading', url: '/reading' },
-  { title: 'Gaming', url: '/gaming' },
-];
-
-const footerItems = [{ title: 'Contact', url: '/contact' }];
-
 vi.mock('@/i18n/routing', () => ({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Link: ({ children, href, onClick, ...props }: any) => (
@@ -29,10 +22,7 @@ vi.mock('next-intl', () => ({
     const translations: Record<string, unknown> = {
       role: 'User Role',
       'professional.title': 'Professional Links',
-      'hobbies.title': 'Hobbies',
       'professional.links': professionalItems,
-      'hobbies.links': hobbiesItems,
-      'footer.links': footerItems,
     };
 
     const t = (key: string) => translations[key];
@@ -68,7 +58,7 @@ describe('<AppSidebar /> tests', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("should render the required sections 'Avatar', 'Professional career', 'Hobbies' and misc.", () => {
+  it("should render the required sections 'Avatar', 'Professional career'", () => {
     render(
       <SidebarProvider>
         <AppSidebar />
@@ -76,24 +66,9 @@ describe('<AppSidebar /> tests', () => {
     );
 
     expect(screen.getByText('Professional Links')).toBeInTheDocument();
-    expect(screen.getByText('Hobbies')).toBeInTheDocument();
     expect(screen.getByRole('img')).toBeInTheDocument();
 
     professionalItems.forEach(({ title, url }) => {
-      const screenItem = screen.getByRole('link', { name: title });
-      expect(screenItem).toBeInTheDocument();
-      expect(screenItem).toHaveTextContent(title);
-      expect(screenItem).toHaveAttribute('href', url);
-    });
-
-    hobbiesItems.forEach(({ title, url }) => {
-      const screenItem = screen.getByRole('link', { name: title });
-      expect(screenItem).toBeInTheDocument();
-      expect(screenItem).toHaveTextContent(title);
-      expect(screenItem).toHaveAttribute('href', url);
-    });
-
-    footerItems.forEach(({ title, url }) => {
       const screenItem = screen.getByRole('link', { name: title });
       expect(screenItem).toBeInTheDocument();
       expect(screenItem).toHaveTextContent(title);

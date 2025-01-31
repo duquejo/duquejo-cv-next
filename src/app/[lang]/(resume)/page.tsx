@@ -33,7 +33,7 @@ export default function MainPage() {
           <div className="flex justify-center gap-x-10 mt-8 w-full md:w-auto">
             {stack.map((s) => (
               <Image
-                className="hover:animate-wiggle"
+                className="hover:animate-wiggle max-w-12 lg:w-full"
                 key={s.title}
                 src={s.icon}
                 alt={s.title}

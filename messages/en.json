@@ -18,31 +18,6 @@
         }
       ]
     },
-    "hobbies": {
-      "title": "Hobbies",
-      "links": [
-        {
-          "title": "Music production",
-          "url": "/hobbies/music-production"
-        },
-        {
-          "title": "Game development",
-          "url": "/hobbies/games-development"
-        }
-      ]
-    },
-    "footer": {
-      "links": [
-        {
-          "title": "Blog",
-          "url": "/blog"
-        },
-        {
-          "title": "Contact",
-          "url": "/contact"
-        }
-      ]
-    },
     "complementary": {
       "sidebar": {
         "title": "Toggle sidebar"
@@ -558,74 +533,278 @@
     "badges": {
       "title": "Tools & Soft-skills",
       "content": [
-        { "name": "AWS", "type": "hard" },
-        { "name": "Azure", "type": "hard" },
-        { "name": "CSS3", "type": "hard" },
-        { "name": "Tailwind", "type": "hard" },
-        { "name": "HTML5", "type": "hard" },
-        { "name": "DDD Architecture", "type": "soft" },
-        { "name": "Laravel", "type": "hard" },
-        { "name": "React.js", "type": "hard" },
-        { "name": "Vue.js", "type": "hard" },
-        { "name": "WordPress", "type": "hard" },
-        { "name": "RabbitMQ", "type": "hard" },
-        { "name": "Redis", "type": "hard" },
-        { "name": "MySQL", "type": "hard" },
-        { "name": "MongoDB", "type": "hard" },
-        { "name": "PostgreSQL", "type": "hard" },
-        { "name": "Distributed architectures", "type": "soft" },
-        { "name": "Monolithic architectures", "type": "soft" },
-        { "name": "Clean Code", "type": "soft" },
-        { "name": "Terraform", "type": "hard" },
-        { "name": "Serverless framework", "type": "hard" },
-        { "name": "Storybook", "type": "hard" },
-        { "name": "Design Systems", "type": "soft" },
-        { "name": "i18n", "type": "soft" },
-        { "name": "Responsive design", "type": "soft" },
-        { "name": "Docker", "type": "hard" },
-        { "name": "Bootstrap", "type": "hard" },
-        { "name": "Kanban", "type": "soft" },
-        { "name": "Jenkins", "type": "hard" },
-        { "name": "Node JS", "type": "hard" },
-        { "name": "SpringBoot", "type": "hard" },
-        { "name": "SpringCloud", "type": "hard" },
-        { "name": "Nest JS", "type": "hard" },
-        { "name": "Agile development", "type": "soft" },
-        { "name": "OOP", "type": "soft" },
-        { "name": "Time-management", "type": "soft" },
-        { "name": "Time flexibility", "type": "soft" },
-        { "name": "JWT", "type": "hard" },
-        { "name": "Github actions", "type": "hard" },
-        { "name": "ORM's", "type": "soft" },
-        { "name": "ODM's", "type": "soft" },
-        { "name": "Monitoring", "type": "soft" },
-        { "name": "Observability", "type": "soft" },
-        { "name": "Jest", "type": "hard" },
-        { "name": "Playwright", "type": "hard" },
-        { "name": "Cypress", "type": "hard" },
-        { "name": "SonarQube", "type": "hard" },
-        { "name": "Unit tests", "type": "hard" },
-        { "name": "Vitest", "type": "hard" },
-        { "name": "Integration tests", "type": "hard" },
-        { "name": "e2e tests", "type": "hard" },
-        { "name": "SASS", "type": "hard" },
-        { "name": "Datadog", "type": "hard" },
-        { "name": "Microservices resiliency", "type": "soft" },
-        { "name": "Redux", "type": "hard" },
-        { "name": "Pinia", "type": "hard" },
-        { "name": "VueX", "type": "hard" },
-        { "name": "TanStack Query", "type": "hard" },
-        { "name": "jQuery", "type": "hard" },
-        { "name": "Wordpress Plugin Development", "type": "hard" },
-        { "name": "CircleCI", "type": "hard" },
-        { "name": "SEO", "type": "soft" },
-        { "name": "Next JS", "type": "hard" },
-        { "name": "Zustand", "type": "hard" },
-        { "name": "Accessibility", "type": "soft" },
-        { "name": "SSR", "type": "soft" },
-        { "name": "Quasar", "type": "hard" },
-        { "name": "Kubernetes", "type": "hard" },
-        { "name": "Hexagonal architecture", "type": "soft" }
+        {
+          "name": "AWS",
+          "type": "hard"
+        },
+        {
+          "name": "Azure",
+          "type": "hard"
+        },
+        {
+          "name": "CSS3",
+          "type": "hard"
+        },
+        {
+          "name": "Tailwind",
+          "type": "hard"
+        },
+        {
+          "name": "HTML5",
+          "type": "hard"
+        },
+        {
+          "name": "DDD Architecture",
+          "type": "soft"
+        },
+        {
+          "name": "Laravel",
+          "type": "hard"
+        },
+        {
+          "name": "React.js",
+          "type": "hard"
+        },
+        {
+          "name": "Vue.js",
+          "type": "hard"
+        },
+        {
+          "name": "WordPress",
+          "type": "hard"
+        },
+        {
+          "name": "RabbitMQ",
+          "type": "hard"
+        },
+        {
+          "name": "Redis",
+          "type": "hard"
+        },
+        {
+          "name": "MySQL",
+          "type": "hard"
+        },
+        {
+          "name": "MongoDB",
+          "type": "hard"
+        },
+        {
+          "name": "PostgreSQL",
+          "type": "hard"
+        },
+        {
+          "name": "Distributed architectures",
+          "type": "soft"
+        },
+        {
+          "name": "Monolithic architectures",
+          "type": "soft"
+        },
+        {
+          "name": "Clean Code",
+          "type": "soft"
+        },
+        {
+          "name": "Terraform",
+          "type": "hard"
+        },
+        {
+          "name": "Serverless framework",
+          "type": "hard"
+        },
+        {
+          "name": "Storybook",
+          "type": "hard"
+        },
+        {
+          "name": "Design Systems",
+          "type": "soft"
+        },
+        {
+          "name": "i18n",
+          "type": "soft"
+        },
+        {
+          "name": "Responsive design",
+          "type": "soft"
+        },
+        {
+          "name": "Docker",
+          "type": "hard"
+        },
+        {
+          "name": "Bootstrap",
+          "type": "hard"
+        },
+        {
+          "name": "Kanban",
+          "type": "soft"
+        },
+        {
+          "name": "Jenkins",
+          "type": "hard"
+        },
+        {
+          "name": "Node JS",
+          "type": "hard"
+        },
+        {
+          "name": "SpringBoot",
+          "type": "hard"
+        },
+        {
+          "name": "SpringCloud",
+          "type": "hard"
+        },
+        {
+          "name": "Nest JS",
+          "type": "hard"
+        },
+        {
+          "name": "Agile development",
+          "type": "soft"
+        },
+        {
+          "name": "OOP",
+          "type": "soft"
+        },
+        {
+          "name": "Time-management",
+          "type": "soft"
+        },
+        {
+          "name": "Time flexibility",
+          "type": "soft"
+        },
+        {
+          "name": "JWT",
+          "type": "hard"
+        },
+        {
+          "name": "Github actions",
+          "type": "hard"
+        },
+        {
+          "name": "ORM's",
+          "type": "soft"
+        },
+        {
+          "name": "ODM's",
+          "type": "soft"
+        },
+        {
+          "name": "Monitoring",
+          "type": "soft"
+        },
+        {
+          "name": "Observability",
+          "type": "soft"
+        },
+        {
+          "name": "Jest",
+          "type": "hard"
+        },
+        {
+          "name": "Playwright",
+          "type": "hard"
+        },
+        {
+          "name": "Cypress",
+          "type": "hard"
+        },
+        {
+          "name": "SonarQube",
+          "type": "hard"
+        },
+        {
+          "name": "Unit tests",
+          "type": "hard"
+        },
+        {
+          "name": "Vitest",
+          "type": "hard"
+        },
+        {
+          "name": "Integration tests",
+          "type": "hard"
+        },
+        {
+          "name": "e2e tests",
+          "type": "hard"
+        },
+        {
+          "name": "SASS",
+          "type": "hard"
+        },
+        {
+          "name": "Datadog",
+          "type": "hard"
+        },
+        {
+          "name": "Microservices resiliency",
+          "type": "soft"
+        },
+        {
+          "name": "Redux",
+          "type": "hard"
+        },
+        {
+          "name": "Pinia",
+          "type": "hard"
+        },
+        {
+          "name": "VueX",
+          "type": "hard"
+        },
+        {
+          "name": "TanStack Query",
+          "type": "hard"
+        },
+        {
+          "name": "jQuery",
+          "type": "hard"
+        },
+        {
+          "name": "Wordpress Plugin Development",
+          "type": "hard"
+        },
+        {
+          "name": "CircleCI",
+          "type": "hard"
+        },
+        {
+          "name": "SEO",
+          "type": "soft"
+        },
+        {
+          "name": "Next JS",
+          "type": "hard"
+        },
+        {
+          "name": "Zustand",
+          "type": "hard"
+        },
+        {
+          "name": "Accessibility",
+          "type": "soft"
+        },
+        {
+          "name": "SSR",
+          "type": "soft"
+        },
+        {
+          "name": "Quasar",
+          "type": "hard"
+        },
+        {
+          "name": "Kubernetes",
+          "type": "hard"
+        },
+        {
+          "name": "Hexagonal architecture",
+          "type": "soft"
+        }
       ]
     },
     "languages": {
