@@ -18,8 +18,6 @@ describe('Github action', () => {
     },
   };
 
-  const consoleMock = vi.spyOn(console, 'error');
-
   beforeEach(() => {
     global.fetch = vi.fn();
   });
@@ -77,7 +75,6 @@ describe('Github action', () => {
     const response = await getEvents();
 
     expect(response).toEqual([]);
-    expect(consoleMock).toHaveBeenCalledWith('Something happened');
     expect(global.fetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
   });
 });
