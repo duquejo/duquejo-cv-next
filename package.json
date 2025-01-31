@@ -12,7 +12,7 @@
     "format": "prettier --write .",
     "test": "vitest --pool=threads",
     "test:e2e": "playwright test",
-    "test:coverage": "vitest --coverage",
+    "test:coverage": "vitest --coverage -u",
     "analize": "cross-env ANALIZE=true next build"
   },
   "dependencies": {
