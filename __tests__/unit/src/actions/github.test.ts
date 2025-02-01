@@ -30,7 +30,7 @@ describe('Github action', () => {
     (global.fetch as Mock).mockResolvedValueOnce({
       ok: true,
       json: () => Promise.resolve(payload),
-    });
+    } as Response);
 
     const response = await getEvents();
 
@@ -41,7 +41,7 @@ describe('Github action', () => {
   it('should retrieve empty if the request fails', async () => {
     (global.fetch as Mock).mockResolvedValueOnce({
       ok: false,
-    });
+    } as Response);
 
     const response = await getEvents();
 
@@ -57,10 +57,11 @@ describe('Github action', () => {
         type: 'CreateEvent',
       },
     ];
+
     (global.fetch as Mock).mockResolvedValueOnce({
       ok: true,
       json: () => Promise.resolve(payloadWithoutFilters),
-    });
+    } as Response);
 
     const response = await getEvents();
 
