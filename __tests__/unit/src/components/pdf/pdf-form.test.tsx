@@ -8,6 +8,9 @@ vi.mock('next/router', () => ({
   }),
 }));
 
+const mockFetch = vi.fn();
+vi.stubGlobal('fetch', mockFetch);
+
 describe('<PdfForm /> tests', () => {
   const mockedCallback = vi.fn();
 
@@ -18,14 +21,10 @@ describe('<PdfForm /> tests', () => {
   };
 
   beforeEach(() => {
-    global.fetch = vi.fn();
-
-    (global.fetch as Mock).mockImplementation(() =>
-      Promise.resolve({
-        status: 200,
-        blob: () => Promise.resolve(new Blob(['testing'], { type: 'application/pdf' })),
-      }),
-    );
+    mockFetch.mockResolvedValue({
+      status: 200,
+      blob: () => Promise.resolve(new Blob(['testing'], { type: 'application/pdf' })),
+    });
     global.URL.createObjectURL = vi.fn();
     global.URL.revokeObjectURL = vi.fn();
     HTMLAnchorElement.prototype.click = vi.fn(); // Mock anchor DOM element
@@ -73,12 +72,10 @@ describe('<PdfForm /> tests', () => {
   });
 
   it('should handle fetch errors gracefully', async () => {
-    global.fetch = vi.fn().mockImplementation(() =>
-      Promise.resolve({
-        status: 500,
-        statusText: 'Internal Server Error',
-      }),
-    ) as Mock;
+    mockFetch.mockResolvedValueOnce({
+      status: 500,
+      statusText: 'Internal Server Error',
+    });
 
     const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => vi.fn());
     render(<PdfForm {...args} />);
