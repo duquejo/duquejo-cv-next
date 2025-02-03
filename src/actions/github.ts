@@ -2,22 +2,22 @@
 
 import type { Event, EventType } from '@/interfaces';
 
-const GITHUB_URL = process.env.GITHUB_URL;
-const GITHUB_SOURCE = process.env.GITHUB_SOURCE;
+const EVENT_GITHUB_URL = process.env.EVENT_GITHUB_URL;
+const EVENT_GITHUB_SOURCE = process.env.EVENT_GITHUB_SOURCE;
 
 export async function getEvents() {
-  if (!(GITHUB_URL && GITHUB_SOURCE)) return [];
+  if (!(EVENT_GITHUB_URL && EVENT_GITHUB_SOURCE)) return [];
 
   try {
     const response = await fetch(
-      buildUrl(GITHUB_URL, {
+      buildUrl(EVENT_GITHUB_URL, {
         per_page: '15',
         page: '1',
       }),
       {
         method: 'GET',
         headers: {
-          Authorization: 'token '.concat(GITHUB_SOURCE),
+          Authorization: 'token '.concat(EVENT_GITHUB_SOURCE),
           accept: 'application/vnd.github+json',
         },
         cache: 'force-cache',
