@@ -1,4 +1,4 @@
-import { beforeEach, afterEach, type Mock } from 'vitest';
+import { beforeEach } from 'vitest';
 import { getEvents } from '@/actions/github';
 
 const mockFetch = vi.fn();

@@ -40,8 +40,8 @@ Download the project directory and follow the next steps:
 1. Copy the `.env.sample` file, rename it as `.env`, and complete the local environment variables for the Github connection and the site translation features.
 
 ```dotenv
- GITHUB_URL="Github feed source"
- GITHUB_SOURCE="Github token"
+ EVENT_GITHUB_URL="Github feed source"
+ EVENT_GITHUB_SOURCE="Github token"
  PDF_EMAIL="PDF final email"
  PDF_WEBSITE="Website footer source url"
  PDF_FILENAME="PDF download filename"
