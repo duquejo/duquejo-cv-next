@@ -28,7 +28,9 @@ export async function getEvents() {
     );
 
     if (response.ok) {
-      return filterEventsByType(await response.json());
+      const data = await response.json();
+      console.warn(data);
+      return filterEventsByType(data);
     }
 
     return [];

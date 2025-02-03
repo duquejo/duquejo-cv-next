@@ -1,12 +1,15 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { PdfForm } from '@/components/pdf/pdf-form';
-import { beforeEach, type Mock, vi } from 'vitest';
+import { beforeEach, afterEach, type Mock, vi } from 'vitest';
 
 vi.mock('next/router', () => ({
   useRouter: () => ({
     push: vi.fn(),
   }),
 }));
+
+const mockFetch = vi.fn();
+vi.stubGlobal('fetch', mockFetch);
 
 describe('<PdfForm /> tests', () => {
   const mockedCallback = vi.fn();
@@ -18,18 +21,17 @@ describe('<PdfForm /> tests', () => {
   };
 
   beforeEach(() => {
-    vi.clearAllMocks();
-
-    global.fetch = vi.fn(() =>
-      Promise.resolve({
-        status: 200,
-        blob: () => Promise.resolve(new Blob(['testing'], { type: 'application/pdf' })),
-      }),
-    ) as Mock;
-
+    mockFetch.mockResolvedValue({
+      status: 200,
+      blob: () => Promise.resolve(new Blob(['testing'], { type: 'application/pdf' })),
+    });
     global.URL.createObjectURL = vi.fn();
     global.URL.revokeObjectURL = vi.fn();
     HTMLAnchorElement.prototype.click = vi.fn(); // Mock anchor DOM element
+  });
+
+  afterEach(() => {
+    vi.clearAllMocks();
   });
 
   it('should match the snapshot', () => {
@@ -70,12 +72,10 @@ describe('<PdfForm /> tests', () => {
   });
 
   it('should handle fetch errors gracefully', async () => {
-    global.fetch = vi.fn(() =>
-      Promise.resolve({
-        status: 500,
-        statusText: 'Internal Server Error',
-      }),
-    ) as Mock;
+    mockFetch.mockResolvedValueOnce({
+      status: 500,
+      statusText: 'Internal Server Error',
+    });
 
     const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => vi.fn());
     render(<PdfForm {...args} />);
