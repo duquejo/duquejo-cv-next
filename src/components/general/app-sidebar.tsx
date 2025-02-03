@@ -29,7 +29,9 @@ export const AppSidebar = () => {
       </SidebarHeader>
       <SidebarContent className="justify-between">
         <SidebarGroup>
-          <SidebarGroupLabel className="font-semibold">{t('professional.title')}</SidebarGroupLabel>
+          <SidebarGroupLabel className="font-semibold tracking-wider text-foreground">
+            {t('professional.title')}
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <MenuItems items={t.raw('professional.links')} />
           </SidebarGroupContent>
@@ -38,7 +40,7 @@ export const AppSidebar = () => {
       <SidebarFooter className="sm:hidden">
         <SidebarSeparator />
         <SidebarGroup>
-          <SidebarGroupLabel className="font-semibold">
+          <SidebarGroupLabel className="font-semibold tracking-wider text-foreground">
             {t('footer.mobile.title')}
           </SidebarGroupLabel>
           <SidebarGroupContent>
