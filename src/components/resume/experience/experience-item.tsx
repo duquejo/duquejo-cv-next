@@ -28,17 +28,15 @@ export const ExperienceItem = ({
   const t = useTranslations('Experience');
 
   return (
-    <ol className="first-of-type:pt-0 pt-5 relative border-s border-gray-200">
-      <div
+    <li className="first-of-type:pt-0 pt-5 relative border-s border-gray-200 list-none">
+      <span
         data-testid="detail"
         className={cn(
           'absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-gray-400',
           isRecent ? 'bg-primary' : 'bg-secondary',
         )}
       />
-
-      {/*Aligned content*/}
-      <div className="pb-2 ms-4 flex items-center justify-between lg:justify-normal">
+      <span className="pb-2 ms-4 flex items-center justify-between lg:justify-normal">
         <span
           data-testid="time"
           className={cn(
@@ -54,7 +52,7 @@ export const ExperienceItem = ({
         {enterprise && (
           <span className="text-xs font-normal ml-2 text-right lg:text-left">{enterprise}</span>
         )}
-      </div>
+      </span>
       <Card className="ms-4">
         <CardHeader>
           <CardTitle>{project}</CardTitle>
@@ -72,7 +70,7 @@ export const ExperienceItem = ({
         </CardContent>
         {additional_info && (
           <CardFooter className="flex flex-col items-start gap-y-2 pt-5">
-            <div className="font-semibold text-base">{t('footer')}</div>
+            <span className="font-semibold text-base">{t('footer')}</span>
             <div className="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around">
               {additional_info.map((info) => (
                 <Badge variant="secondary" key={info}>
@@ -83,6 +81,6 @@ export const ExperienceItem = ({
           </CardFooter>
         )}
       </Card>
-    </ol>
+    </li>
   );
 };

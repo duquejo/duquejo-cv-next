@@ -2,14 +2,14 @@
 
 exports[`<ExperienceItemContent /> tests > Should match the snapshot with the available args 1`] = `
 <div>
-  <ol
-    class="first-of-type:pt-0 pt-5 relative border-s border-gray-200"
+  <li
+    class="first-of-type:pt-0 pt-5 relative border-s border-gray-200 list-none"
   >
-    <div
+    <span
       class="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-secondary"
       data-testid="detail"
     />
-    <div
+    <span
       class="pb-2 ms-4 flex items-center justify-between lg:justify-normal"
     >
       <span
@@ -32,7 +32,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
       >
         John Doe
       </span>
-    </div>
+    </span>
     <div
       class="rounded-xl border bg-card text-card-foreground shadow ms-4"
     >
@@ -117,11 +117,11 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
       <div
         class="p-6 flex flex-col items-start gap-y-2 pt-5"
       >
-        <div
+        <span
           class="font-semibold text-base"
         >
           footer
-        </div>
+        </span>
         <div
           class="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around"
         >
@@ -143,20 +143,20 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
         </div>
       </div>
     </div>
-  </ol>
+  </li>
 </div>
 `;
 
 exports[`<ExperienceItemContent /> tests > Should match the snapshot with the default args 1`] = `
 <div>
-  <ol
-    class="first-of-type:pt-0 pt-5 relative border-s border-gray-200"
+  <li
+    class="first-of-type:pt-0 pt-5 relative border-s border-gray-200 list-none"
   >
-    <div
+    <span
       class="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-secondary"
       data-testid="detail"
     />
-    <div
+    <span
       class="pb-2 ms-4 flex items-center justify-between lg:justify-normal"
     >
       <span
@@ -174,7 +174,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the de
       >
         John Doe
       </span>
-    </div>
+    </span>
     <div
       class="rounded-xl border bg-card text-card-foreground shadow ms-4"
     >
@@ -200,6 +200,6 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the de
         />
       </div>
     </div>
-  </ol>
+  </li>
 </div>
 `;

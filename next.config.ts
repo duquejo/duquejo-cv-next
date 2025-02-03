@@ -18,6 +18,12 @@ export default withNextIntl(
           hostname: 'avatars.githubusercontent.com',
         },
       ],
+      localPatterns: [
+        {
+          pathname: '/static/**',
+          search: '',
+        },
+      ],
     },
     headers: async () => [
       {
