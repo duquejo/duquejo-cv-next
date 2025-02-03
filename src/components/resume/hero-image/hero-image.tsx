@@ -49,6 +49,7 @@ export const HeroImage = ({ className }: Props) => {
           alt="José Miguel Duque"
           height={410}
           width={410}
+          priority={true}
           quality={100}
           src={avatarPicture}
         />

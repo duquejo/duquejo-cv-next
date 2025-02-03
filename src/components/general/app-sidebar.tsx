@@ -29,18 +29,18 @@ export const AppSidebar = () => {
       </SidebarHeader>
       <SidebarContent className="justify-between">
         <SidebarGroup>
-          <SidebarGroupLabel>{t('professional.title')}</SidebarGroupLabel>
+          <SidebarGroupLabel className="font-semibold">{t('professional.title')}</SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
-              <MenuItems items={t.raw('professional.links')} />
-            </SidebarMenu>
+            <MenuItems items={t.raw('professional.links')} />
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="sm:hidden">
         <SidebarSeparator />
         <SidebarGroup>
-          <SidebarGroupLabel>{t('footer.mobile.title')}</SidebarGroupLabel>
+          <SidebarGroupLabel className="font-semibold">
+            {t('footer.mobile.title')}
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
