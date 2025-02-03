@@ -51,7 +51,7 @@ exports[`<AppSidebar /> tests > Should match the snapshot 1`] = `
                 class="text-center"
               >
                 <span
-                  class="relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:opacity-80 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-primary  after:ml-0.5 font-light text-base text-primary"
+                  class="relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:opacity-80 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-primary  after:ml-0.5 font-light text-primary tracking-widest"
                 >
                   @duquejo
                 </span>
@@ -67,7 +67,7 @@ exports[`<AppSidebar /> tests > Should match the snapshot 1`] = `
                 </div>
               </div>
               <div
-                class="flex items-center justify-center gap-x-5"
+                class="flex items-center justify-center gap-x-5 group-data-[collapsible=icon]:hidden"
               >
                 <a
                   aria-label="GitHub"
@@ -193,6 +193,227 @@ exports[`<AppSidebar /> tests > Should match the snapshot 1`] = `
                       </a>
                     </li>
                   </ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-2 p-2 sm:hidden"
+            data-sidebar="footer"
+          >
+            <div
+              class="shrink-0 h-[1px] mx-2 w-auto bg-sidebar-border"
+              data-orientation="horizontal"
+              data-sidebar="separator"
+              role="none"
+            />
+            <div
+              class="relative flex w-full min-w-0 flex-col p-2"
+              data-sidebar="group"
+            >
+              <div
+                class="duration-200 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium text-sidebar-foreground/70 outline-none ring-sidebar-ring transition-[margin,opa] ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0"
+                data-sidebar="group-label"
+              >
+                Footer Mobile
+              </div>
+              <div
+                class="w-full text-sm"
+                data-sidebar="group-content"
+              >
+                <ul
+                  class="flex w-full min-w-0 flex-col gap-1"
+                  data-sidebar="menu"
+                >
+                  <li
+                    class="group/menu-item relative"
+                    data-sidebar="menu-item"
+                  >
+                    <div
+                      role="complementary"
+                    >
+                      <div
+                        class="flex flex-row gap-x-2"
+                      >
+                        <button
+                          class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex"
+                          data-sidebar="trigger"
+                        >
+                          <svg
+                            class="lucide lucide-panel-left"
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              height="18"
+                              rx="2"
+                              width="18"
+                              x="3"
+                              y="3"
+                            />
+                            <path
+                              d="M9 3v18"
+                            />
+                          </svg>
+                          <span
+                            class="sr-only"
+                          >
+                            Toggle Sidebar
+                          </span>
+                        </button>
+                        <button
+                          aria-controls="radix-:r3:"
+                          aria-expanded="false"
+                          aria-haspopup="dialog"
+                          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-8 w-8 lg:h-10 lg:w-10"
+                          data-state="closed"
+                          type="button"
+                        >
+                          <svg
+                            class="lucide lucide-image-down h-8 w-8 lg:h-10 lg:w-10"
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10.3 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10l-3.1-3.1a2 2 0 0 0-2.814.014L6 21"
+                            />
+                            <path
+                              d="m14 19 3 3v-5.5"
+                            />
+                            <path
+                              d="m17 22 3-3"
+                            />
+                            <circle
+                              cx="9"
+                              cy="9"
+                              r="2"
+                            />
+                          </svg>
+                          <span
+                            class="sr-only"
+                          />
+                        </button>
+                        <button
+                          aria-expanded="false"
+                          aria-haspopup="menu"
+                          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-8 w-8 lg:h-10 lg:w-10"
+                          data-state="closed"
+                          id="radix-:r4:"
+                          type="button"
+                        >
+                          <svg
+                            class="lucide lucide-sun h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="12"
+                              cy="12"
+                              r="4"
+                            />
+                            <path
+                              d="M12 2v2"
+                            />
+                            <path
+                              d="M12 20v2"
+                            />
+                            <path
+                              d="m4.93 4.93 1.41 1.41"
+                            />
+                            <path
+                              d="m17.66 17.66 1.41 1.41"
+                            />
+                            <path
+                              d="M2 12h2"
+                            />
+                            <path
+                              d="M20 12h2"
+                            />
+                            <path
+                              d="m6.34 17.66-1.41 1.41"
+                            />
+                            <path
+                              d="m19.07 4.93-1.41 1.41"
+                            />
+                          </svg>
+                          <svg
+                            class="lucide lucide-moon absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"
+                            />
+                          </svg>
+                          <span
+                            class="sr-only"
+                          />
+                        </button>
+                        <button
+                          aria-controls="radix-:r0:"
+                          aria-expanded="false"
+                          aria-haspopup="dialog"
+                          class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground px-4 py-2 h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex"
+                          data-state="closed"
+                          type="button"
+                        >
+                          <svg
+                            class="lucide lucide-lightbulb"
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"
+                            />
+                            <path
+                              d="M9 18h6"
+                            />
+                            <path
+                              d="M10 22h4"
+                            />
+                          </svg>
+                          <span
+                            class="sr-only"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>

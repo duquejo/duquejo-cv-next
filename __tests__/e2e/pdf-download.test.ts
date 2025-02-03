@@ -1,16 +1,21 @@
 import { expect, test } from '@playwright/test';
+import { toggleSidebar } from './utils';
 
 test.describe('pdf download dialog', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
   });
 
-  test('should perform a pdf file download', async ({ page }) => {
+  test('should perform a pdf file download', async ({ page, isMobile }) => {
     const dialogName = /Download Curriculum Vitae/;
+
+    if (isMobile) {
+      await toggleSidebar(page);
+    }
 
     await page.getByRole('button', { name: /Download CV/ }).click();
 
-    await page.locator('[role="dialog"]').waitFor();
+    await page.getByRole('dialog', { name: dialogName }).waitFor();
 
     const dialog = page.getByRole('dialog', { name: dialogName });
 

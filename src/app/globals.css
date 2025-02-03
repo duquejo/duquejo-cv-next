@@ -106,16 +106,15 @@ body {
   body {
     @apply bg-background text-foreground text-base selection:bg-ring selection:text-primary-foreground dark:selection:text-secondary;
   }
+  b {
+    @apply font-semibold;
+  }
+  p {
+    @apply text-muted-foreground text-justify;
+  }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-
   .main-title {
     @apply text-4xl lg:text-6xl mb-5 leading-tight mt-10 text-center font-semibold underline decoration-4 underline-offset-8 decoration-primary animate-entrance duration-1000;
   }

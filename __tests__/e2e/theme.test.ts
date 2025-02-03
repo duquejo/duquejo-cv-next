@@ -1,4 +1,5 @@
 import { expect, type Locator, test } from '@playwright/test';
+import { toggleSidebar } from './utils';
 
 test.describe('theme switcher', () => {
   let html: Locator;
@@ -13,7 +14,11 @@ test.describe('theme switcher', () => {
     await expect(html).toHaveClass(/dark/);
   });
 
-  test('should toggle the theme from system to dark', async ({ page }) => {
+  test('should toggle the theme from system to dark', async ({ page, isMobile }) => {
+    if (isMobile) {
+      await toggleSidebar(page);
+    }
+
     await page.getByRole('button', { name: 'Change color theme' }).click();
 
     await page.getByRole('menu').waitFor();
@@ -23,8 +28,12 @@ test.describe('theme switcher', () => {
     await expect(html).toHaveClass(/dark/);
   });
 
-  test('should toggle the theme from system to light', async ({ page }) => {
+  test('should toggle the theme from system to light', async ({ page, isMobile }) => {
     await page.emulateMedia({ colorScheme: 'dark' });
+
+    if (isMobile) {
+      await toggleSidebar(page);
+    }
 
     await page.getByRole('button', { name: 'Change color theme' }).click();
 
