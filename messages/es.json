@@ -46,6 +46,11 @@
           "empty": "No hay actividad reciente, inténtalo después."
         }
       }
+    },
+    "footer": {
+      "mobile": {
+        "title": "Opciones del tema"
+      }
     }
   },
   "General": {

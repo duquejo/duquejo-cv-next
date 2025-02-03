@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Social } from '@/interfaces';
 import { Github, Linkedin } from 'lucide-react';
+import { cn } from '@/lib';
 
 export const SOCIAL_DATA: Social[] = [
   {
@@ -17,11 +18,12 @@ export const SOCIAL_DATA: Social[] = [
 
 interface Props {
   size?: 'sm' | 'md';
+  className?: string;
 }
 
-export const SocialItems = ({ size = 'md' }: Props) => {
+export const SocialItems = ({ size = 'md', className }: Props) => {
   return (
-    <div className="flex items-center justify-center gap-x-5">
+    <div className={cn('flex items-center justify-center gap-x-5', className)}>
       {SOCIAL_DATA.map((social) => (
         <Link
           href={social.link}

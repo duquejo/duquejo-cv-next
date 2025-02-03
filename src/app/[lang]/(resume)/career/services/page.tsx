@@ -15,13 +15,13 @@ export default function ServicesPage() {
   const t = useTranslations('Services');
 
   return (
-    <article className="px-8 pt-5 pb-10">
+    <article className="px-5 pt-5 pb-20 sm:pb-5">
       <h1 className="main-title">
         <RichText>{(tags) => t.rich('title', tags)}</RichText>
       </h1>
       {/*General Services*/}
       <section className="pt-5">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-6">
           {t.raw('content')?.map((service: ServicesType, i: number) => (
             <Card key={`service-${i}`}>
               <CardHeader>

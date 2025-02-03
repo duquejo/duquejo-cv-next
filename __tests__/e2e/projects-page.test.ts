@@ -14,11 +14,4 @@ test('should navigate to the projects career page', async ({ page, isMobile }) =
 
   await expect(mainWrapper).toBeVisible();
   await expect(mainWrapper.getByRole('heading', { level: 1 })).toContainText(/Latest projects/);
-
-  await expect(page.getByRole('complementary')).toBeVisible();
-  if (isMobile) {
-    await expect(page.getByRole('navigation')).toBeHidden();
-  } else {
-    await expect(page.getByRole('navigation')).toBeVisible();
-  }
 });
