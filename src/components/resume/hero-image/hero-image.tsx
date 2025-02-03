@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { cn } from '@/lib';
 import { Circle, Gamepad, LoaderCircle, Music, Send } from 'lucide-react';
+import avatarPicture from '../../../../public/static/img/avatar_410.png';
 
 interface Props {
   className?: string;
@@ -42,20 +43,14 @@ export const HeroImage = ({ className }: Props) => {
         strokeWidth="5"
         size={20}
       />
-      <picture className="object-cover">
+      <picture className="relative">
         <Image
           className="rounded-full backdrop-blur-sm bg-primary/10 shadow-inner"
           alt="José Miguel Duque"
-          width="950"
-          height="950"
-          priority
+          height={410}
+          width={410}
           quality={100}
-          style={{
-            width: '100%',
-            height: 'auto',
-          }}
-          sizes="100vw"
-          src="/static/img/avatar_cropped_950.png"
+          src={avatarPicture}
         />
       </picture>
     </div>

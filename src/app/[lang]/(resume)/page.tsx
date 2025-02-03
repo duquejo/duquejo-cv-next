@@ -16,7 +16,7 @@ export default function MainPage() {
 
   return (
     <>
-      <section className="flex flex-col items-center mx-0 lg:pt-5 mt-5 py-10 relative lg:flex-row lg:justify-center">
+      <section className="flex flex-col items-center mx-0 lg:pt-5 mt-5 py-10 relative lg:flex-row lg:justify-between">
         <div className="order-2 xl:basis-3/5 basis-1/2 lg:order-1 md:ml-5 lg:ml-10 mx-5 pb-0 pt-5 lg:pt-0">
           <span className="font-semibold text-muted-foreground mt-10 animate-entrance duration-1000">
             {t('role')}
@@ -43,7 +43,7 @@ export default function MainPage() {
             ))}
           </div>
         </div>
-        <HeroImage className="order-1 flex-1 px-5 mt-5 max-w-xs lg:max-w-md lg:order-2 lg:mt-0" />
+        <HeroImage className="order-1 flex-1 px-5 mt-5 max-w-[300px] lg:max-w-[380px] lg:order-2 lg:mt-0" />
       </section>
       <section className="px-5 gap-x-10 gap-y-2 lg:px-10">
         <h2 className="text-lg lg:text-xl mb-3 font-semibold underline-offset-4 underline decoration-primary">
@@ -57,9 +57,13 @@ export default function MainPage() {
         <div className="basis-full">
           {/*Education*/}
           <h2 className="main-subtitle">{t('education.title')}</h2>
-          {t
-            .raw('education.content')
-            ?.map((a: ExperienceType, i: number) => <ExperienceItem key={i} {...a} />)}
+          {t.raw('education.content') && (
+            <ul>
+              {t.raw('education.content').map((a: ExperienceType, i: number) => (
+                <ExperienceItem key={i} {...a} />
+              ))}
+            </ul>
+          )}
         </div>
         <div className="basis-full lg:basis-2/3">
           {/*Languages*/}
