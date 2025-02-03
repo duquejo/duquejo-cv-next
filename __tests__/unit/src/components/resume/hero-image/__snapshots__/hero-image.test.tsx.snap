@@ -148,19 +148,19 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
       />
     </svg>
     <picture
-      class="object-cover"
+      class="relative"
     >
       <img
         alt="José Miguel Duque"
         class="rounded-full backdrop-blur-sm bg-primary/10 shadow-inner"
         data-nimg="1"
         decoding="async"
-        height="950"
-        sizes="100vw"
-        src="/_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=3840&q=100"
-        srcset="/_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=640&q=100 640w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=750&q=100 750w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=828&q=100 828w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1080&q=100 1080w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1200&q=100 1200w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1920&q=100 1920w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=2048&q=100 2048w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=3840&q=100 3840w"
-        style="color: transparent; width: 100%; height: auto;"
-        width="950"
+        height="410"
+        loading="lazy"
+        src="/_next/image?url=%2Fpublic%2Fstatic%2Fimg%2Favatar_410.png&w=828&q=100"
+        srcset="/_next/image?url=%2Fpublic%2Fstatic%2Fimg%2Favatar_410.png&w=640&q=100 1x, /_next/image?url=%2Fpublic%2Fstatic%2Fimg%2Favatar_410.png&w=828&q=100 2x"
+        style="color: transparent;"
+        width="410"
       />
     </picture>
   </div>
