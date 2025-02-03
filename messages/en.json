@@ -46,6 +46,11 @@
           "empty": "There is not recent activity, try later."
         }
       }
+    },
+    "footer": {
+      "mobile": {
+        "title": "Theme options"
+      }
     }
   },
   "General": {

@@ -9,13 +9,13 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
     <svg
       class="lucide lucide-music absolute top-0 text-primary/50 animate-bounce-subtle repeat-infinite z-10"
       fill="none"
-      height="64"
+      height="54"
       stroke="currentColor"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="3"
       viewBox="0 0 24 24"
-      width="64"
+      width="54"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -35,13 +35,13 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
     <svg
       class="lucide lucide-gamepad absolute bottom-0 left-7 text-primary/50 animate-wiggle z-10"
       fill="none"
-      height="70"
+      height="60"
       stroke="currentColor"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="3"
       viewBox="0 0 24 24"
-      width="70"
+      width="60"
       xmlns="http://www.w3.org/2000/svg"
     >
       <line
@@ -79,13 +79,13 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
     <svg
       class="lucide lucide-loader-circle absolute right-10 text-primary animate-spin duration-slow repeat-infinite z-10"
       fill="none"
-      height="64"
+      height="44"
       stroke="currentColor"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="5"
       viewBox="0 0 24 24"
-      width="64"
+      width="44"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -156,9 +156,10 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
         data-nimg="1"
         decoding="async"
         height="950"
-        src="/_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1920&q=75"
-        srcset="/_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1080&q=75 1x, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1920&q=75 2x"
-        style="color: transparent;"
+        sizes="100vw"
+        src="/_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=3840&q=100"
+        srcset="/_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=640&q=100 640w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=750&q=100 750w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=828&q=100 828w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1080&q=100 1080w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1200&q=100 1200w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=1920&q=100 1920w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=2048&q=100 2048w, /_next/image?url=%2Fstatic%2Fimg%2Favatar_cropped_950.png&w=3840&q=100 3840w"
+        style="color: transparent; width: 100%; height: auto;"
         width="950"
       />
     </picture>

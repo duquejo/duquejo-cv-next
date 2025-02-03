@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { AppSidebar } from '@/components/general/app-sidebar';
 import { SidebarProvider } from '@/components/ui/sidebar';
+import { Sheet } from '@/components/ui/sheet';
 
 const professionalItems = [
   { title: 'Home', url: '/home' },
@@ -22,6 +23,7 @@ vi.mock('next-intl', () => ({
     const translations: Record<string, unknown> = {
       role: 'User Role',
       'professional.title': 'Professional Links',
+      'footer.mobile.title': 'Footer Mobile',
       'professional.links': professionalItems,
     };
 
@@ -50,9 +52,11 @@ describe('<AppSidebar /> tests', () => {
 
   it('Should match the snapshot', () => {
     const { container } = render(
-      <SidebarProvider>
-        <AppSidebar />
-      </SidebarProvider>,
+      <Sheet>
+        <SidebarProvider>
+          <AppSidebar />
+        </SidebarProvider>
+      </Sheet>,
     );
 
     expect(container).toMatchSnapshot();
@@ -60,9 +64,11 @@ describe('<AppSidebar /> tests', () => {
 
   it("should render the required sections 'Avatar', 'Professional career'", () => {
     render(
-      <SidebarProvider>
-        <AppSidebar />
-      </SidebarProvider>,
+      <Sheet>
+        <SidebarProvider>
+          <AppSidebar />
+        </SidebarProvider>
+      </Sheet>,
     );
 
     expect(screen.getByText('Professional Links')).toBeInTheDocument();

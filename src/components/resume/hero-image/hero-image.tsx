@@ -12,17 +12,17 @@ export const HeroImage = ({ className }: Props) => {
       <Music
         className="absolute top-0 text-primary/50 animate-bounce-subtle repeat-infinite z-10"
         strokeWidth="3"
-        size={64}
+        size={54}
       />
       <Gamepad
         className="absolute bottom-0 left-7 text-primary/50 animate-wiggle z-10"
         strokeWidth="3"
-        size={70}
+        size={60}
       />
       <LoaderCircle
         className="absolute right-10 text-primary animate-spin duration-slow repeat-infinite z-10"
         strokeWidth="5"
-        size={64}
+        size={44}
       />
       <Send
         className="absolute right-8 bottom-5 text-primary animate-bounce-subtle repeat-infinite z-10"
@@ -49,6 +49,12 @@ export const HeroImage = ({ className }: Props) => {
           width="950"
           height="950"
           priority
+          quality={100}
+          style={{
+            width: '100%',
+            height: 'auto',
+          }}
+          sizes="100vw"
           src="/static/img/avatar_cropped_950.png"
         />
       </picture>

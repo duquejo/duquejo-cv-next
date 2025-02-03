@@ -26,7 +26,7 @@ export const routing = defineRouting({
 export type Pathnames = keyof typeof routing.pathnames;
 
 export const {
-  // getPathname,
+  getPathname,
   // redirect,
   // useRouter
   Link,
