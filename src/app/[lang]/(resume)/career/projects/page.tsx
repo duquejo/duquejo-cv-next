@@ -11,7 +11,7 @@ export default function ProjectsPage() {
   const t = useTranslations('Experience');
 
   return (
-    <article className="px-8 pt-5 pb-10">
+    <article className="px-5 pt-5 pb-20 sm:pb-5">
       <h1 className="main-title">{t('title')}</h1>
       <section className="mt-10">
         {t

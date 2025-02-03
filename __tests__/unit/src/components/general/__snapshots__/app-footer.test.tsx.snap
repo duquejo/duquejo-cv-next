@@ -3,7 +3,7 @@
 exports[`<AppFooter /> tests > Should match the snapshot 1`] = `
 <div>
   <footer
-    class="flex items-center justify-center gap-x-5 py-3"
+    class="flex items-center justify-center gap-x-5 py-3 fixed bottom-0 w-full bg-sidebar sm:bg-transparent sm:relative"
   >
     <div
       class="flex items-center justify-center gap-x-5"

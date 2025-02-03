@@ -7,18 +7,20 @@ import * as React from 'react';
 import { PdfGeneratorToggle } from '@/components/general/pdf-toggle';
 import { useTranslations } from 'next-intl';
 
-export const AppOptionsSidebar = () => {
+interface Props {
+  outerClassName?: string;
+  innerClassName?: string;
+}
+
+export const AppOptionsSidebar = ({ outerClassName, innerClassName }: Props) => {
   const t = useTranslations('Sidebar.complementary');
 
   return (
-    <div
-      role="complementary"
-      className="lg:w-14 lg:max-w-14 lg:h-screen lg:relative w-auto fixed right-0 lg:mr-1"
-    >
-      <div className="flex flex-row gap-2 bg-sidebar rounded-lg p-2 m-2 lg:mx-0 lg:mb-2 lg:flex-col lg:fixed lg:bottom-0 lg:border lg:p-1">
+    <div role="complementary" className={outerClassName}>
+      <div className={innerClassName}>
         <SidebarTrigger
           variant="outline"
-          className="h-8 w-8 lg:h-10 lg:w-10"
+          className="h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex"
           title={t('sidebar.title')}
         />
         <PdfGeneratorToggle
@@ -41,7 +43,7 @@ export const AppOptionsSidebar = () => {
         <SheetTrigger asChild>
           <Button
             variant="outline"
-            className=" h-8 w-8 lg:h-10 lg:w-10"
+            className=" h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex"
             title={t('activity.title')}
           >
             <Lightbulb />

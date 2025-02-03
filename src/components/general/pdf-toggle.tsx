@@ -47,10 +47,10 @@ export const PdfGeneratorToggle = ({
         onInteractOutside={() => setIsPopoverOpen(false)}
         onEscapeKeyDown={() => setIsPopoverOpen(false)}
       >
-        <h2 id="formpdf-title" className="font-medium leading-none mb-2">
+        <h2 id="form-title" className="font-medium leading-none mb-2 text-sm">
           {formTitle}
         </h2>
-        <p id="form-description" className="text-sm text-muted-foreground">
+        <p id="form-description" className="text-muted-foreground text-xs">
           {formDescription}
         </p>
         <PdfForm

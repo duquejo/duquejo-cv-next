@@ -49,8 +49,8 @@ export const PdfForm = ({ onSubmitFinish, button, buttonLoading }: Props) => {
     <form
       onSubmit={handleSubmit}
       className="flex flex-col"
-      aria-labelledby="formpdf-title"
-      aria-describedby="formpdf-description"
+      aria-labelledby="form-title"
+      aria-describedby="form-description"
     >
       <Separator orientation="horizontal" className="mt-2 mb-3" />
       <Button type="submit" size="sm" disabled={isLoading}>
