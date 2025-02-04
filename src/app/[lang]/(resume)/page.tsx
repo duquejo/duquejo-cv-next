@@ -18,12 +18,11 @@ export default function MainPage() {
     <>
       <section className="flex flex-col items-center mx-0 lg:pt-5 mt-5 py-10 relative lg:flex-row lg:justify-between">
         <div className="order-2 xl:basis-3/5 basis-1/2 lg:order-1 md:ml-5 lg:ml-10 mx-5 pb-0 pt-5 lg:pt-0">
-          <span className="font-semibold text-muted-foreground mt-10 animate-entrance duration-1000">
-            {t('role')}
-          </span>
-          <h1 className="text-4xl lg:text-6xl md:text-5xl mb-5 animate-entrance duration-1000 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-primary">
+          <h1 className="text-4xl lg:text-6xl md:text-5xl mb-5 animate-entrance duration-1000 font-medium">
             {t('resume.greetings')}
-            <strong>José Duque.</strong>
+            <strong className="mt-2 block bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-primary">
+              José Duque.
+            </strong>
           </h1>
           <p>{t('resume.excerpt1', { years: memoizedYears() })}</p>
           <br />
@@ -45,7 +44,7 @@ export default function MainPage() {
         </div>
         <HeroImage className="order-1 flex-1 px-5 mt-5 max-w-[300px] lg:max-w-[380px] lg:order-2 lg:mt-0" />
       </section>
-      <section className="px-5 gap-x-10 gap-y-2 lg:px-10">
+      <section className=" gap-x-10 gap-y-2 mx-5 px-5 py-5 border-2 border-dashed border-border lg:py-10 lg:px-10 lg:mx-10 rounded">
         <h2 className="text-lg lg:text-xl mb-3 font-semibold underline-offset-4 underline decoration-primary">
           <RichText>{(tags) => t.rich('resume.description.title', tags)}</RichText>
         </h2>
@@ -53,7 +52,7 @@ export default function MainPage() {
           <RichText>{(tags) => t.rich('resume.description.content', tags)}</RichText>
         </p>
       </section>
-      <section className="px-5 flex flex-col gap-x-10 gap-y-2 pb-20 sm:pb-5 lg:flex-row lg:px-10">
+      <section className="px-5 flex flex-col gap-x-10 gap-y-2 pb-20 sm:pb-5 lg:flex-row lg:px-10 lg:mt-5">
         <div className="basis-full">
           {/*Education*/}
           <h2 className="main-subtitle">{t('education.title')}</h2>

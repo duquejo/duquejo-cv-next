@@ -11,7 +11,11 @@ import { generateMetadata } from '@/lib';
 import { AppMobileHeader } from '@/components/mobile/app-mobile-header';
 import { AppOptionsSidebar } from '@/components/general/app-options-sidebar';
 
-const poppins = Poppins({ subsets: ['latin'], weight: ['300', '600', '700'], display: 'swap' });
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '500', '600', '700'],
+  display: 'swap',
+});
 
 export async function metadata() {
   return generateMetadata('General');

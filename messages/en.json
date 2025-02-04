@@ -60,7 +60,7 @@
     },
     "role": "Software Engineer",
     "resume": {
-      "greetings": "Hi, I'm ",
+      "greetings": "Hi!, I'm ",
       "excerpt1": "Colombian Software Engineer with more than {years} years of experience in web application development.",
       "excerpt2": "I am focused on guaranteeing quality solutions based on good practices with technologies on <b>monolithic architectures</b> as well as <b>microservices architectures</b>.",
       "description": {

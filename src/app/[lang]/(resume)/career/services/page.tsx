@@ -50,15 +50,17 @@ export default function ServicesPage() {
       <section className="mt-10 flex flex-col gap-x-10">
         {/*Tech Languages*/}
         <h2 className="main-subtitle">{t('languages.title')}</h2>
-        {t.raw('languages.content')?.map((ml: MainLanguageType) => (
-          <div key={ml.tag}>
-            <div className="flex justify-between mb-2 text-xs">
-              <strong>{ml.tag}</strong>
-              <strong>{ml.value}%</strong>
+        <div className="p-5 lg:p-10 border-2 border-dashed border-border rounded">
+          {t.raw('languages.content')?.map((ml: MainLanguageType) => (
+            <div key={ml.tag} className="mb-4 last:mb-0">
+              <div className="flex justify-between mb-2 text-sm">
+                <b>{ml.tag}</b>
+                <b>{ml.value}%</b>
+              </div>
+              <Progress value={ml.value} color={ml.color} />
             </div>
-            <Progress className="mb-4" value={ml.value} color={ml.color} />
-          </div>
-        ))}
+          ))}
+        </div>
         {/*Tools & Soft skills*/}
         <h2 className="main-subtitle">{t('badges.title')}</h2>
         <div className="flex flex-wrap gap-2 lg:gap-3 justify-evenly lg:justify-normal">
