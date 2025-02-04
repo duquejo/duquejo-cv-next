@@ -6,7 +6,7 @@ import { useSidebar } from '@/components/ui/sidebar';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 
-export const AppMobileHeader = () => {
+export const MobileHeader = () => {
   const { openMobile, toggleSidebar } = useSidebar();
   const t = useTranslations('Sidebar.complementary.sidebar');
 

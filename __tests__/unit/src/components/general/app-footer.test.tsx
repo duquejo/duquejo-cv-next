@@ -1,12 +1,12 @@
 import { render, type RenderResult, screen } from '@testing-library/react';
-import { AppFooter } from '@/components/general/app-footer';
-import { SOCIAL_DATA as social } from '@/components/social/social-items';
+import { Footer } from '@/components/footer/footer';
+import { SOCIAL_DATA as social } from '@/lib/constants';
 
-describe('<AppFooter /> tests', () => {
+describe('<Footer /> tests', () => {
   let component: RenderResult;
 
   beforeEach(() => {
-    component = render(<AppFooter />);
+    component = render(<Footer />);
 
     const copyDate = component.container.querySelector('span');
     if (copyDate) {
@@ -24,14 +24,18 @@ describe('<AppFooter /> tests', () => {
     expect(footer).toHaveTextContent('© 1992 José Duque');
 
     social.map((s) => {
-      const link = screen.getByRole('link', { name: s.name });
+      const link = screen.queryByRole('link', { name: s.name });
 
-      expect(link).toBeInTheDocument();
-      expect(link).toHaveAttribute('href', s.link);
-      expect(link).toHaveAttribute('title', s.name);
-      expect(link).toHaveAttribute('aria-label', s.name);
-      expect(link).toHaveAttribute('target', '_blank');
-      expect(link).toContainHTML('svg');
+      if (!s.isVisibleInFooter) {
+        expect(link).not.toBeInTheDocument();
+      } else {
+        expect(link).toBeInTheDocument();
+        expect(link).toHaveAttribute('href', s.link);
+        expect(link).toHaveAttribute('title', s.name);
+        expect(link).toHaveAttribute('aria-label', s.name);
+        expect(link).toHaveAttribute('target', '_blank');
+        expect(link).toContainHTML('svg');
+      }
     });
   });
 });

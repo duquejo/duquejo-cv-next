@@ -1,6 +1,6 @@
 import type { ExperienceType } from '@/interfaces';
 import { render, screen } from '@testing-library/react';
-import { ExperienceItem } from '@/components/resume/experience/experience-item';
+import { ExperienceItem } from '@/components/resume/experience-item';
 
 vi.mock('next-intl', () => ({
   useTranslations: () => (key: string) =>

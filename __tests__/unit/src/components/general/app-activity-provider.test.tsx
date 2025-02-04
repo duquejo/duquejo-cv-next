@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { AppActivityProvider } from '@/components/general/app-activity-provider';
+import { EventProvider } from '@/components/events/event-provider';
 import { SWRConfig } from 'swr';
 
 vi.mock('next-intl', () => ({
@@ -10,13 +10,13 @@ vi.mock('next-intl', () => ({
     })[key],
 }));
 
-describe('<AppActivityProvider /> tests', () => {
+describe('<EventProvider /> tests', () => {
   it('should match the snapshot', () => {
     const { container } = render(
       <SWRConfig value={{ dedupingInterval: 0, provider: () => new Map() }}>
-        <AppActivityProvider>
+        <EventProvider>
           <div data-testid="child">Child Component</div>
-        </AppActivityProvider>
+        </EventProvider>
       </SWRConfig>,
     );
 
@@ -27,9 +27,9 @@ describe('<AppActivityProvider /> tests', () => {
   it('should toggle loadEvents state on sheet open', async () => {
     const { container } = render(
       <SWRConfig value={{ dedupingInterval: 0, provider: () => new Map() }}>
-        <AppActivityProvider defaultOpen={true}>
+        <EventProvider defaultOpen={true}>
           <div data-testid="child">Child Component</div>
-        </AppActivityProvider>
+        </EventProvider>
       </SWRConfig>,
     );
 

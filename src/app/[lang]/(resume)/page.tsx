@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { ExperienceItem } from '@/components/resume/experience/experience-item';
+import { ExperienceItem } from '@/components/resume/experience-item';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Languages } from 'lucide-react';
 import { calculateYears, cn, STACK_DATA as stack } from '@/lib';
-import { HeroImage } from '@/components/resume/hero-image/hero-image';
+import { HeroImage } from '@/components/resume/hero-image';
 import { useTranslations } from 'next-intl';
 import { useCallback } from 'react';
 import { RichText } from '@/components/general/rich-text';
@@ -18,7 +18,7 @@ export default function MainPage() {
     <>
       <section className="flex flex-col items-center mx-0 lg:pt-5 mt-5 py-10 relative lg:flex-row lg:justify-between">
         <div className="order-2 xl:basis-3/5 basis-1/2 lg:order-1 md:ml-5 lg:ml-10 mx-5 pb-0 pt-5 lg:pt-0">
-          <h1 className="text-4xl lg:text-6xl md:text-5xl mb-5 animate-entrance duration-1000 font-medium">
+          <h1 className="text-4xl lg:text-6xl md:text-5xl mb-5 animate-entrance duration-1000 font-semibold">
             {t('resume.greetings')}
             <strong className="mt-2 block bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-primary">
               José Duque.

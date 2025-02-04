@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { cn } from '@/lib';
 import { Circle, Gamepad, LoaderCircle, Music, Send } from 'lucide-react';
-import avatarPicture from '../../../../public/static/img/avatar_410.png';
+import avatarPicture from '../../../public/static/img/avatar_410.png';
 
 interface Props {
   className?: string;

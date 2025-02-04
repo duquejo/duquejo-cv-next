@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExperienceItemContent } from '@/components/resume/experience/experience-item-content';
+import { ExperienceItemContent } from '@/components/resume/experience-item-content';
 import { useTranslations } from 'next-intl';
 
 export const ExperienceItem = ({
