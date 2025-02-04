@@ -28,11 +28,6 @@ test.describe('activity dialog sidebar', () => {
 
     await dialog.getByRole('listitem').first().or(dialog.getByTestId('empty')).isVisible();
 
-    // // Inner items
-    // if (!(await dialogListItem.isVisible())) {
-    //   await expect(dialog.getByTestId('empty')).toBeVisible();
-    // }
-
     await dialog.getByRole('button', { name: /Close/ }).click();
 
     await expect(dialog).toBeHidden();

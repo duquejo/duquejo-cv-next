@@ -10,13 +10,16 @@
         },
         {
           "title": "Servicios",
-          "url": "/carrera/servicios"
+          "url": "/career/services"
         },
         {
           "title": "Proyectos",
-          "url": "/carrera/proyectos"
+          "url": "/career/projects"
         }
       ]
+    },
+    "contact": {
+      "title": "Información de contacto"
     },
     "complementary": {
       "sidebar": {

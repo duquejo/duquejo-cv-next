@@ -60,6 +60,8 @@ export interface ServicesType {
 
 export interface Social {
   name: string;
+  fullName: string;
   link: string;
   icon: LucideIcon;
+  isVisibleInFooter: boolean;
 }

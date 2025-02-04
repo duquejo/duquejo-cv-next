@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { AppSidebar } from '@/components/general/app-sidebar';
+import { MainSidebar } from '@/components/sidebar/main-sidebar';
 import { SidebarProvider } from '@/components/ui/sidebar';
 import { Sheet } from '@/components/ui/sheet';
 
@@ -35,7 +35,7 @@ vi.mock('next-intl', () => ({
   },
 }));
 
-describe('<AppSidebar /> tests', () => {
+describe('<MainSidebar /> tests', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     window.matchMedia = vi.fn().mockImplementation((query) => ({
@@ -54,7 +54,7 @@ describe('<AppSidebar /> tests', () => {
     const { container } = render(
       <Sheet>
         <SidebarProvider>
-          <AppSidebar />
+          <MainSidebar />
         </SidebarProvider>
       </Sheet>,
     );
@@ -66,7 +66,7 @@ describe('<AppSidebar /> tests', () => {
     render(
       <Sheet>
         <SidebarProvider>
-          <AppSidebar />
+          <MainSidebar />
         </SidebarProvider>
       </Sheet>,
     );

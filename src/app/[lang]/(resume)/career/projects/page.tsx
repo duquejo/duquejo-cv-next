@@ -1,4 +1,4 @@
-import { ExperienceItem } from '@/components/resume/experience/experience-item';
+import { ExperienceItem } from '@/components/resume/experience-item';
 import { useTranslations } from 'next-intl';
 import { ExperienceType } from '@/interfaces';
 import { generateMetadata } from '@/lib';

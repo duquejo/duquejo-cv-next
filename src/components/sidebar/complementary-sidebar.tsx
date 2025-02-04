@@ -1,10 +1,10 @@
-import { ThemeToggle } from '@/components/general/theme-toggle';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { SheetTrigger } from '@/components/ui/sheet';
 import { Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import * as React from 'react';
-import { PdfGeneratorToggle } from '@/components/general/pdf-toggle';
+import { PdfGeneratorToggle } from '@/components/pdf/pdf-toggle';
 import { useTranslations } from 'next-intl';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   innerClassName?: string;
 }
 
-export const AppOptionsSidebar = ({ outerClassName, innerClassName }: Props) => {
+export const ComplementarySidebar = ({ outerClassName, innerClassName }: Props) => {
   const t = useTranslations('Sidebar.complementary');
 
   return (
