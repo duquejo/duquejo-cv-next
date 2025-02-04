@@ -13,5 +13,7 @@ test('should navigate to the home page', async ({ page }) => {
   const mainWrapper = page.getByRole('main');
 
   await expect(mainWrapper).toBeVisible();
-  await expect(mainWrapper.getByRole('heading', { level: 1 })).toContainText(/Hi, I'm José Duque./);
+  await expect(mainWrapper.getByRole('heading', { level: 1 })).toContainText(
+    /Hi!, I'm José Duque./,
+  );
 });

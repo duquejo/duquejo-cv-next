@@ -60,7 +60,7 @@
     },
     "role": "Ingeniero Informático",
     "resume": {
-      "greetings": "Hola, soy ",
+      "greetings": "¡Hola!, soy ",
       "excerpt1": "Ingeniero informático de Colombia con más de {years} años de experiencia en desarrollo de aplicaciones para la web.",
       "excerpt2": "Estoy enfocado en garantizar soluciones de calidad basadas en buenas prácticas con tecnologías sobre <b>arquitecturas monolíticas</b> así como <b>arquitecturas de microservicios</b>.",
       "description": {
