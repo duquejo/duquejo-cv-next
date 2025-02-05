@@ -24,6 +24,7 @@ export const STACK_DATA = [
 ];
 
 export const CSP_HEADERS = `default-src 'self';script-src 'self' 'unsafe-eval' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' blob: data:;font-src 'self';object-src 'none';base-uri 'self';form-action 'self';frame-ancestors 'none';upgrade-insecure-requests;`;
+export const CSP_HEADERS_SAFE = `default-src 'self';script-src 'self';style-src 'self' 'unsafe-inline';img-src 'self' blob: data:;font-src 'self';object-src 'none';base-uri 'self';form-action 'self';frame-ancestors 'none';upgrade-insecure-requests;require-trusted-types-for 'script';`;
 
 export const START_ADVENTURE_YEAR = 2017;
 

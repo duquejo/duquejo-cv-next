@@ -1,5 +1,5 @@
 import createNextIntlPlugin from 'next-intl/plugin';
-import { CSP_HEADERS } from '@/lib/constants';
+import { CSP_HEADERS, CSP_HEADERS_SAFE } from '@/lib/constants';
 
 import createBundleAnalyzer from '@next/bundle-analyzer';
 
@@ -31,7 +31,10 @@ export default withNextIntl(
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: CSP_HEADERS.replace(/\n/g, ''),
+            value:
+              process.env.NODE_ENV !== 'production'
+                ? CSP_HEADERS.replace(/\n/g, '')
+                : CSP_HEADERS_SAFE.replace(/\n/g, ''),
           },
           {
             key: 'Cross-Origin-Opener-Policy',
