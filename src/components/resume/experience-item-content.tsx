@@ -23,7 +23,7 @@ export const ExperienceItemContent = ({
         <div
           className={cn(
             'flex flex-col order-2 lg:order-1 justify-between items-baseline',
-            screenshot && 'basis-6/12',
+            screenshot && 'basis-8/12',
           )}
         >
           <div className="flex-auto">

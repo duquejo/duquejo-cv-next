@@ -22,7 +22,7 @@ interface Props {
   defaultOpen?: boolean;
 }
 
-export const AppActivityProvider = ({ children, defaultOpen = false }: Props) => {
+export const EventProvider = ({ children, defaultOpen = false }: Props) => {
   const t = useTranslations('Sidebar.complementary.activity.dialog');
   const [loadEvents, setLoadEvents] = useState(false);
 

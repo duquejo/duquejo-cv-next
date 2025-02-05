@@ -18,6 +18,9 @@
         }
       ]
     },
+    "contact": {
+      "title": "Contact info"
+    },
     "complementary": {
       "sidebar": {
         "title": "Toggle sidebar"

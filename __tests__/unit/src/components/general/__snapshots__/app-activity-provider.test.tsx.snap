@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<AppActivityProvider /> tests > should match the snapshot 1`] = `
+exports[`<EventProvider /> tests > should match the snapshot 1`] = `
 <div>
   <div
     data-testid="child"
@@ -10,7 +10,7 @@ exports[`<AppActivityProvider /> tests > should match the snapshot 1`] = `
 </div>
 `;
 
-exports[`<AppActivityProvider /> tests > should toggle loadEvents state on sheet open 1`] = `
+exports[`<EventProvider /> tests > should toggle loadEvents state on sheet open 1`] = `
 <div
   aria-hidden="true"
   data-aria-hidden="true"

@@ -1,4 +1,4 @@
-import { PdfGeneratorToggle } from '@/components/general/pdf-toggle';
+import { PdfGeneratorToggle } from '@/components/pdf/pdf-toggle';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
 

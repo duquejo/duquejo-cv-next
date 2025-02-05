@@ -1,4 +1,4 @@
-import { ExperienceItemContent } from '@/components/resume/experience/experience-item-content';
+import { ExperienceItemContent } from '@/components/resume/experience-item-content';
 import { render, screen } from '@testing-library/react';
 import { ExperienceType } from '@/interfaces';
 

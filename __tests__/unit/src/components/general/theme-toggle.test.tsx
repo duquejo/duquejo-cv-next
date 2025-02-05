@@ -1,5 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { ThemeToggle } from '@/components/general/theme-toggle';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
 import { useTheme, type UseThemeProps } from 'next-themes';
 
