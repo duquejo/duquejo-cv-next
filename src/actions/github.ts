@@ -29,24 +29,25 @@ export async function getEvents() {
 
     if (response.ok) {
       const data = await response.json();
-      console.warn(data);
       return filterEventsByType(data);
     }
 
     return [];
-  } catch (e) {
-    console.error(e);
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      console.error(`[error - events]: ${e.message}`);
+    }
     return [];
   }
 }
 
-const buildUrl = (url: string, queryParams = {}): string => {
+const buildUrl = (url: string, queryParams = {}): URL => {
   const params = new URLSearchParams(queryParams);
 
   const finalUrl = new URL(url);
   finalUrl.search = params.toString();
 
-  return finalUrl.toString();
+  return finalUrl;
 };
 
 const filterEventsByType = (events: Event[]): Event[] => {

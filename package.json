@@ -7,12 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install",
+    "prepare": "husky",
     "format:silent": "prettier --check . --log-level silent",
     "format": "prettier --write .",
     "test": "vitest --pool=threads",
     "test:e2e": "playwright test",
-    "test:coverage": "vitest --coverage -u",
+    "test:coverage": "vitest --coverage",
     "analize": "cross-env ANALIZE=true next build"
   },
   "dependencies": {
@@ -44,10 +44,10 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.1.6",
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.1.6",
     "@playwright/test": "^1.49.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -58,7 +58,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^4.3.4",
-    "@vitest/coverage-v8": "2.1.8",
+    "@vitest/coverage-v8": "2.1.9",
     "@vitest/ui": "^2.1.8",
     "commitlint-config-gitmoji": "^2.3.1",
     "cross-env": "^7.0.3",
@@ -67,6 +67,7 @@
     "eslint-config-prettier": "^10.0.1",
     "husky": "^9.1.7",
     "jsdom": "^26.0.0",
+    "msw": "^2.7.0",
     "postcss": "^8",
     "prettier": "^3.4.2",
     "tailwindcss": "^3.4.1",

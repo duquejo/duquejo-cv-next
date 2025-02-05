@@ -1,17 +1,12 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { PdfForm } from '@/components/pdf/pdf-form';
-import { beforeEach, afterEach, type Mock, vi } from 'vitest';
-
-vi.mock('next/router', () => ({
-  useRouter: () => ({
-    push: vi.fn(),
-  }),
-}));
-
-const mockFetch = vi.fn();
-vi.stubGlobal('fetch', mockFetch);
+import { afterEach, beforeEach, MockInstance, vi } from 'vitest';
+import { worker } from '@/msw/worker';
+import { errorHandlers } from '@/msw/handlers';
 
 describe('<PdfForm /> tests', () => {
+  let fetchSpy: MockInstance;
+
   const mockedCallback = vi.fn();
 
   const args = {
@@ -20,11 +15,13 @@ describe('<PdfForm /> tests', () => {
     onSubmitFinish: mockedCallback,
   };
 
+  const expectedServiceCall = {
+    method: 'POST',
+    next: { revalidate: 3600 },
+  };
+
   beforeEach(() => {
-    mockFetch.mockResolvedValue({
-      status: 200,
-      blob: () => Promise.resolve(new Blob(['testing'], { type: 'application/pdf' })),
-    });
+    fetchSpy = vi.spyOn(global, 'fetch');
     global.URL.createObjectURL = vi.fn();
     global.URL.revokeObjectURL = vi.fn();
     HTMLAnchorElement.prototype.click = vi.fn(); // Mock anchor DOM element
@@ -49,10 +46,7 @@ describe('<PdfForm /> tests', () => {
 
     await waitFor(() => expect(mockedCallback).toHaveBeenCalledOnce());
 
-    expect(fetch).toHaveBeenCalledWith('/api/v1/pdf', {
-      method: 'POST',
-      next: { revalidate: 3600 },
-    });
+    expect(fetchSpy).toHaveBeenCalledWith('/api/v1/pdf', expectedServiceCall);
     expect(mockedCallback).toHaveBeenCalled();
   });
 
@@ -69,25 +63,23 @@ describe('<PdfForm /> tests', () => {
 
     expect(button).not.toBeDisabled();
     expect(button).toHaveTextContent(args.button);
+
+    expect(fetchSpy).toHaveBeenCalledWith('/api/v1/pdf', expectedServiceCall);
   });
 
   it('should handle fetch errors gracefully', async () => {
-    mockFetch.mockResolvedValueOnce({
-      status: 500,
-      statusText: 'Internal Server Error',
-    });
+    worker.use(...errorHandlers);
 
-    const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => vi.fn());
+    const consoleSpy = vi.spyOn(console, 'error');
+
     render(<PdfForm {...args} />);
 
     fireEvent.click(screen.getByRole('button', { name: args.button }));
 
-    await waitFor(() =>
-      expect(consoleSpy).toHaveBeenCalledWith('Request failed with status code 500'),
-    );
+    await waitFor(() => expect(consoleSpy).toHaveBeenCalledWith('Failed to fetch'));
 
     expect(mockedCallback).not.toHaveBeenCalled();
 
-    consoleSpy.mockRestore();
+    expect(fetchSpy).toHaveBeenCalledWith('/api/v1/pdf', expectedServiceCall);
   });
 });
