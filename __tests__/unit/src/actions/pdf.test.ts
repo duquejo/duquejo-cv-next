@@ -1,4 +1,4 @@
-import { generate } from '@pdfme/generator';
+import * as pdfMeModule from '@pdfme/generator';
 import { generatePdf } from '@/actions/pdf';
 
 vi.mock('next-intl/server', () => ({
@@ -23,15 +23,13 @@ vi.mock('next-intl/server', () => ({
   },
 }));
 
-vi.mock('@pdfme/generator', () => ({
-  generate: vi.fn(() => new Promise<Buffer>((resolve) => resolve(Buffer.from('PDF content')))),
-}));
-
 describe('PDF action', () => {
   it('should work as expected', async () => {
+    const generateSpy = vi.spyOn(pdfMeModule, 'generate');
+
     await generatePdf();
 
-    expect(generate).toHaveBeenCalledWith({
+    expect(generateSpy).toHaveBeenCalledWith({
       inputs: expect.any(Array),
       template: expect.any(Object),
     });

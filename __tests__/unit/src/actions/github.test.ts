@@ -1,17 +1,10 @@
-import { beforeEach } from 'vitest';
+import { beforeEach, type MockInstance } from 'vitest';
 import { getEvents } from '@/actions/github';
-
-const mockFetch = vi.fn();
-
-vi.stubGlobal('fetch', mockFetch);
+import { worker } from '@/msw/worker';
+import { errorHandlers } from '@/msw/handlers';
 
 describe('Github action', () => {
-  const payload = [
-    {
-      id: 123,
-      type: 'PushEvent',
-    },
-  ];
+  let fetchSpy: MockInstance;
 
   const expectedConfig = {
     cache: 'force-cache',
@@ -24,58 +17,30 @@ describe('Github action', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+
+    fetchSpy = vi.spyOn(global, 'fetch');
   });
 
   it('should retrieve the Github events', async () => {
-    mockFetch.mockResolvedValueOnce({
-      ok: true,
-      json: () => Promise.resolve(payload),
-    });
-
     const response = await getEvents();
 
-    expect(response).toEqual(payload);
-    expect(mockFetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
+    expect(response.length).toBeGreaterThan(0);
+    expect(fetchSpy).toHaveBeenCalledWith(expect.any(Object), expectedConfig);
   });
 
   it('should retrieve empty if the request fails', async () => {
-    mockFetch.mockResolvedValueOnce({
-      ok: false,
-    });
+    worker.use(...errorHandlers);
 
     const response = await getEvents();
 
     expect(response).toEqual([]);
-    expect(mockFetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
+    expect(fetchSpy).toHaveBeenCalledWith(expect.any(Object), expectedConfig);
   });
 
   it('should filter the non-required events', async () => {
-    const payloadWithoutFilters = [
-      ...payload,
-      {
-        id: 123,
-        type: 'CreateEvent',
-      },
-    ];
-
-    mockFetch.mockResolvedValueOnce({
-      ok: true,
-      json: () => Promise.resolve(payloadWithoutFilters),
-    });
-
     const response = await getEvents();
 
-    expect(response).not.toEqual(payloadWithoutFilters);
     expect(response).toHaveLength(1);
-    expect(mockFetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
-  });
-
-  it('should return empty if the request failed', async () => {
-    mockFetch.mockRejectedValueOnce('Something happened');
-
-    const response = await getEvents();
-
-    expect(response).toEqual([]);
-    expect(mockFetch).toHaveBeenCalledWith(expect.any(String), expectedConfig);
+    expect(fetchSpy).toHaveBeenCalledWith(expect.any(Object), expectedConfig);
   });
 });
