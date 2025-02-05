@@ -58,8 +58,19 @@
   },
   "General": {
     "metadata": {
-      "title": "Resumeé | José Duque",
-      "description": "Web developer from Colombia"
+      "title": "Curriculum Vitae | José Duque",
+      "description": "Colombian web developer. Explore my portfolio, expertise, and comprehensive services to elevate your digital presence.",
+      "keywords": [
+        "Web developer",
+        "Backend",
+        "Frontend",
+        "Full-Stack",
+        "Node JS",
+        "React",
+        "Vue",
+        "Javascript",
+        "Typescript"
+      ]
     },
     "role": "Software Engineer",
     "resume": {
@@ -68,7 +79,7 @@
       "excerpt2": "I am focused on guaranteeing quality solutions based on good practices with technologies on <b>monolithic architectures</b> as well as <b>microservices architectures</b>.",
       "description": {
         "title": "What have I done?",
-        "content": "During my working life, I have had the opportunity to have a broad view of the client specific needs to solve any technological challenge that arises; I have played roles as advisor and coordinator in development teams for public sector companies such as the <b>Alcaldía de Itagüí</b>, <b>Alcaldía de Bogotá</b>, <b>Ministerio de Educación Nacional</b> and <b>EAFIT University</b>. I have also participated in custom development projects and websites development with <b>Marketing agencies</b> full-time and alternatively as a part-time <b>Freelancer</b>.<br></br><br></br>With <b>software factories</b> I have had the opportunity to work for <b>Educational Startups</b> with great regional reach, as well as for the <b>Banking</b> sector, <b>Insurances</b> and <b>Health</b>, which have allowed us to expand knowledge and comply with the rigidity of the policies of said market.<br></br><br></br>In accordance with the search for a more specialized orientation to the most popular technologies, I have participated in national intensive learning sessions of <b>Node JS</b> and carried out individual studies on Frontend technologies such as <b>React JS</b>, <b> Vue JS</b>, as well as other basic approaches in <b>Angular</b>.<br></br><br></br>The Backend, studies in <b>architectures based on microservices</b> using <b>Amazon Web Services</b> and <b>Azure DevOps</b>, this in search of profiling myself as a competent Full Stack developer for the needs of the current market."
+        "content": "During my working life, I have had the opportunity to have a broad view of the client specific needs to solve any technological challenge that arises; I have played roles as advisor and coordinator in development teams for <b>public sector</b> companies such as the Alcaldía de Itagüí, Alcaldía de Bogotá, Ministerio de Educación Nacional and EAFIT University. I have also participated in custom development projects and websites development with full-time <b>Marketing agencies</b> and alternatively as a part-time <b>Freelancer</b>.<br></br><br></br><b>With software factories</b> I have had the opportunity to work for Educational Startups with great regional reach, as well as for the Banking sector, Insurances and Health businesses, which have allowed us to expand knowledge and comply with the rigidity of the policies of said market.<br></br><br></br>In accordance with the search for a more specialized orientation to the most popular technologies, I have participated in national intensive learning sessions of Node JS and carried out individual studies on Frontend technologies such as React JS, Vue JS, as well as other basic approaches in Angular.<br></br><br></br>The Backend, studies in architectures based on microservices using Amazon Web Services and Azure DevOps, this in search of profiling myself as a competent Full Stack developer for the needs of the current market."
       }
     },
     "education": {

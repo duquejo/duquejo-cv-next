@@ -7,5 +7,6 @@ export async function generateMetadata(namespace: MetadataTypes): Promise<Metada
   return {
     title: t('metadata.title'),
     description: t('metadata.description'),
+    keywords: t.has('metadata.keywords') ? t.raw('metadata.keywords') : [],
   };
 }
