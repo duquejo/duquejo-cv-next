@@ -58,8 +58,19 @@
   },
   "General": {
     "metadata": {
-      "title": "Resumen | José Duque",
-      "description": "Desarrollador web de Colombia"
+      "title": "Hoja de vida | José Duque",
+      "description": "Desarrollador web Colombiano. Conoce mi portafolio, experiencia y servicios en programación para impulsar marcas.",
+      "keywords": [
+        "Desarrollador Web",
+        "Backend",
+        "Frontend",
+        "Full-Stack",
+        "Node JS",
+        "React",
+        "Vue",
+        "Javascript",
+        "Typescript"
+      ]
     },
     "role": "Ingeniero Informático",
     "resume": {
@@ -68,7 +79,7 @@
       "excerpt2": "Estoy enfocado en garantizar soluciones de calidad basadas en buenas prácticas con tecnologías sobre <b>arquitecturas monolíticas</b> así como <b>arquitecturas de microservicios</b>.",
       "description": {
         "title": "¿Qué he realizado?",
-        "content": "Durante mi vida laboral, he tenido la oportunidad poder tener una vista amplia de las necesidades puntuales del cliente para resolver cualquier reto tecnológico que se presente; he desempeñado roles como asesor y coordinador en equipos de desarrollo para empresas del sector público como la <b>Alcaldía de Itagüí</b>, <b>Alcaldía de Bogotá</b>, <b>Ministerio de Educación Nacional</b> y la <b>Universidad EAFIT</b>. También he participado en proyectos de desarrollos a la medida y desarrollo de sitios web con <b>agencias de Marketing</b> a tiempo completo y alternativamente como <b>Freelancer</b> a tiempo parcial.<br></br><br></br>Con <b>fábricas de software</b> he tenido la oportunidad de trabajar para <b>Startups educativas</b> con gran alcance regional, así como para el sector <b>Banca</b>, <b>Seguros</b> y <b>Salud</b>, los cuales han permitido expandir conocimientos e ir acorde a la rigidez de las políticas de dicho mercado.<br></br><br></br>Conforme a la búsqueda de una orientación más especializada a las tecnologías más populares, he participado sesiones de aprendizaje intensivo nacionales de <b>Node JS</b> y realizado de manera individual estudios sobre tecnologías Frontend como <b>React JS</b>, <b>Vue JS</b>, así como otros acercamientos básicos en <b>Angular</b>.<br></br><br></br>Desde el Backend, estudios en <b>arquitecturas basadas en microservicios</b> usando <b>Amazon Web Services</b> y <b>Azure DevOps</b>, esto en búsqueda de perfilarme como un desarrollador Full Stack competente para las necesidades del mercado actual."
+        "content": "Durante mi vida laboral, he tenido la oportunidad poder tener una vista amplia de las necesidades puntuales del cliente para resolver cualquier reto tecnológico que se presente; he desempeñado roles como asesor y coordinador en equipos de desarrollo para empresas del <b>sector público</b> como la Alcaldía de Itagüí, Alcaldía de Bogotá, Ministerio de Educación Nacional y la Universidad EAFIT. También he participado en proyectos de desarrollos a la medida y desarrollo de sitios web con <b>agencias de Marketing</b> a tiempo completo y alternativamente como <b>Freelancer</b> a tiempo parcial.<br></br><br></br>Con <b>fábricas de software</b> he tenido la oportunidad de trabajar para Startups educativas con gran alcance regional, así como para el sector Banca, Seguros y Salud, los cuales han permitido expandir conocimientos e ir acorde a la rigidez de las políticas de dicho mercado.<br></br><br></br>Conforme a la búsqueda de una orientación más especializada a las tecnologías más populares, he participado sesiones de aprendizaje intensivo nacionales de Node JS y realizado de manera individual estudios sobre tecnologías Frontend como React JS, Vue JS, así como otros acercamientos básicos en Angular.<br></br><br></br>Desde el Backend, estudios en arquitecturas basadas en microservicios usando Amazon Web Services y Azure DevOps, esto en búsqueda de perfilarme como un desarrollador Full Stack competente para las necesidades del mercado actual."
       }
     },
     "education": {
