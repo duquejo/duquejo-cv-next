@@ -13,7 +13,12 @@ import { Badge } from '@/components/ui/badge';
 import { ExperienceItemContent } from '@/components/resume/experience-item-content';
 import { useTranslations } from 'next-intl';
 
+interface Props extends ExperienceType {
+  className?: string;
+}
+
 export const ExperienceItem = ({
+  className,
   start_date,
   end_date,
   enterprise,
@@ -24,17 +29,19 @@ export const ExperienceItem = ({
   additional_info,
   screenshot,
   url,
-}: ExperienceType) => {
+}: Props) => {
   const t = useTranslations('Experience');
 
   return (
-    <li className="first-of-type:pt-0 pt-5 relative border-s border-gray-200 list-none">
+    <li
+      className={cn(
+        'first-of-type:pt-0 pt-5 relative border-s border-gray-200 list-none',
+        className,
+      )}
+    >
       <span
         data-testid="detail"
-        className={cn(
-          'absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-gray-400',
-          isRecent ? 'bg-primary' : 'bg-secondary',
-        )}
+        className="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-gray-400, bg-primary"
       />
       <span className="pb-2 ms-4 flex items-center justify-between lg:justify-normal">
         <span
@@ -73,7 +80,7 @@ export const ExperienceItem = ({
             <span className="font-semibold text-base">{t('footer')}</span>
             <div className="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around">
               {additional_info.map((info) => (
-                <Badge variant="secondary" key={info}>
+                <Badge variant="secondary" className="cursor-pointer" key={info}>
                   {info}
                 </Badge>
               ))}

@@ -18,7 +18,7 @@ export const ExperienceItemContent = ({
   contentTitle,
 }: Props) => {
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:flex-row gap-x-4">
       {resume && (
         <div
           className={cn(
@@ -31,7 +31,7 @@ export const ExperienceItemContent = ({
             {resume.length > 1 ? (
               <ol className="list-disc ml-4 text-justify marker:text-secondary">
                 {resume.map((r, i) => (
-                  <li key={`resume-${i}`} className="my-1 text-xs text-justify leading-normal">
+                  <li key={`resume-${i}`} className="my-2 text-xs text-justify leading-normal">
                     {r}
                   </li>
                 ))}
@@ -55,14 +55,14 @@ export const ExperienceItemContent = ({
         </div>
       )}
       {screenshot && (
-        <picture className="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0">
+        <picture className="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0 lg:max-h-60 lg:max-w-xs overflow-hidden">
           <Image
             src={screenshot}
             width="300"
             height="150"
             loading="lazy"
             alt={project}
-            className="rounded object-cover shadow-lg w-auto lg:max-w-xs"
+            className="rounded object-cover shadow-lg w-auto"
           />
         </picture>
       )}

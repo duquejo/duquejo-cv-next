@@ -1,26 +1,22 @@
-import { ExperienceItem } from '@/components/resume/experience-item';
-import { useTranslations } from 'next-intl';
-import { ExperienceType } from '@/interfaces';
 import { generateMetadata } from '@/lib';
+import { getProjectByFilter, getProjectSkills } from '@/actions/projects';
+import { getTranslations } from 'next-intl/server';
+import ProjectsShowcase from '@/components/projects/projects-showcase';
 
 export async function metadata() {
   return generateMetadata('Experience');
 }
 
-export default function ProjectsPage() {
-  const t = useTranslations('Experience');
+export default async function ProjectsPage() {
+  const t = await getTranslations('Experience');
+
+  const [filters, projects] = await Promise.all([getProjectSkills(), getProjectByFilter()]);
 
   return (
     <article className="px-5 pt-5 pb-20 sm:pb-5">
       <h1 className="main-title">{t('title')}</h1>
       <section className="mt-10">
-        {t.raw('content') && (
-          <ul>
-            {t.raw('content').map((exp: ExperienceType, i: number) => (
-              <ExperienceItem key={i} {...exp} />
-            ))}
-          </ul>
-        )}
+        <ProjectsShowcase initialProjects={projects} availableFilters={filters} />
       </section>
     </article>
   );

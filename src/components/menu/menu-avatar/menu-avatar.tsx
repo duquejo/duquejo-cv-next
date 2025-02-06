@@ -16,12 +16,12 @@ export const MenuAvatar = ({ role }: Props) => {
     <>
       <picture
         className={cn(
-          'mt-10 max-w-32 lg:w-auto border-border border-dashed border-2 rounded',
+          'mt-5 lg:mt-10 max-w-40 lg:w-auto border-border border-dashed border-2 rounded p-2 hover:border-primary/40 transition-colors duration-500',
           state === 'collapsed' && 'border-none mt-0',
         )}
       >
         <Image
-          className={cn('object-cover mt-2 ml-2 mb-2', state === 'collapsed' && 'm-0')}
+          className={cn('object-cover', state === 'collapsed' && 'm-0')}
           src="/static/img/avatar-small.webp"
           width="160"
           height="146"
