@@ -2,25 +2,29 @@
 
 import { getMessages } from 'next-intl/server';
 import type { IntlMessages } from '../../global';
-import { alphabeticallyArraySort, filterProjectsByTags } from '@/lib';
+import { filterProjectsByTags } from '@/lib';
+import type { Skill } from '@/interfaces';
 
-async function retrieveProjects(): Promise<IntlMessages['Experience']['content']> {
+async function getProjectsJSON(): Promise<IntlMessages['Experience']['content']> {
   const intlMessages = (await getMessages()) as unknown as IntlMessages;
   return intlMessages.Experience.content;
 }
 
-export async function getProjectSkills() {
-  const projects = await retrieveProjects();
+export async function getProjectSkills(): Promise<Skill[]> {
+  const projects = await getProjectsJSON();
 
-  const allSkills = projects.reduce<string[]>((acc, { additional_info }) => {
-    return acc.concat(additional_info);
-  }, []);
+  const allSkills = [...new Set(projects.flatMap(({ additional_info }) => additional_info))];
 
-  return alphabeticallyArraySort([...new Set(allSkills)]);
+  return allSkills
+    .sort((a: string, b: string) => a.localeCompare(b))
+    .map((skill) => ({
+      name: skill,
+      value: skill.toLowerCase().replace(/\s+/g, ''),
+    }));
 }
 
-export async function getProjectByFilter(filters: string[] = []) {
-  const projects = await retrieveProjects();
+export async function getProjectByFilters(filters: string[] = []) {
+  const projects = await getProjectsJSON();
 
   if (filters.length === 0) return projects;
 

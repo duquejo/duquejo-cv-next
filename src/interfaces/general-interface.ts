@@ -65,3 +65,8 @@ export interface Social {
   icon: LucideIcon;
   isVisibleInFooter: boolean;
 }
+
+export interface Skill {
+  name: string;
+  value: string;
+}

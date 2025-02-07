@@ -1,46 +1,68 @@
 'use client';
 
-import type { ExperienceType } from '@/interfaces';
+import type { ExperienceType, Skill } from '@/interfaces';
 import { ExperienceItem } from '@/components/resume/experience-item';
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { ProjectsFilter, type ProjectsFilterRef } from '@/components/projects/projects-filter';
 import { Button } from '@/components/ui/button';
 import { X } from 'lucide-react';
 import { filterProjectsByTags } from '@/lib';
+import { usePathname, useRouter } from '@/i18n/routing';
+import { getProjectByFilters } from '@/actions/projects';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   initialProjects?: ExperienceType[];
-  availableFilters: string[];
+  availableFilters: Skill[];
   initialFilters?: string[];
 }
 
 export default function ProjectsShowcase({
+  availableFilters,
   initialProjects = [],
   initialFilters = [],
-  availableFilters,
 }: Props) {
+  const t = useTranslations('Experience.filters');
+
+  const router = useRouter();
+  const pathname = usePathname();
+
   const filterRef = useRef<ProjectsFilterRef>(null);
+
+  const [activeFilters, setActiveFilters] = useState(initialFilters);
   const [projects, setProjects] = useState(initialProjects);
 
-  const onFilterChange = (filters: string[]) => {
-    const filteredProjects = filterProjectsByTags(initialProjects, filters);
-    setProjects(filteredProjects);
-  };
+  const onFilterChange = useCallback(
+    (filters: string[]) => {
+      const filteredProjects = filterProjectsByTags(initialProjects, filters);
+      setProjects(filteredProjects);
+      setActiveFilters(filters);
+    },
+    [initialProjects],
+  );
 
-  const handleSearchClear = () => {
+  const handleSearchClear = useCallback(async () => {
     if (filterRef.current) {
       filterRef.current.resetFilters();
     }
-    setProjects(initialProjects);
-  };
+
+    if (initialFilters.length === 0) {
+      return setProjects(initialProjects);
+    }
+
+    setActiveFilters([]);
+    const projects = await getProjectByFilters();
+    setProjects(projects);
+    router.replace(pathname);
+  }, [initialFilters, initialProjects, router, pathname]);
 
   return (
     <>
       <div className="h-10 inline-flex gap-x-2 w-full justify-between items-center mb-4">
         <ProjectsFilter
           ref={filterRef}
-          title="Skills"
-          initialFilters={new Set<string>(initialFilters)}
+          title={t('title.skill')}
+          initialFilters={new Set<string>(activeFilters)}
           filters={availableFilters}
           onFilterChange={onFilterChange}
           onSearchClear={handleSearchClear}
@@ -51,13 +73,13 @@ export default function ProjectsShowcase({
           className="font-semibold px-2 lg:px-3"
           onClick={() => handleSearchClear()}
         >
-          Reset filters
+          {t('reset')}
           <X />
         </Button>
       </div>
       <ul>
-        {projects.map((exp: ExperienceType, i: number) => (
-          <ExperienceItem className="animate-entrance" key={i} {...exp} />
+        {projects.map((exp: ExperienceType) => (
+          <ExperienceItem className="animate-entrance" key={exp.project} {...exp} />
         ))}
       </ul>
     </>

@@ -6,9 +6,9 @@ export function calculateYears() {
 }
 
 export function filterProjectsByTags(projects: ExperienceType[], tags: string[]) {
-  return projects.filter((project) => tags.every((tag) => project.additional_info.includes(tag)));
-}
-
-export function alphabeticallyArraySort(target: string[]) {
-  return target.toSorted((a: string, b: string) => (a < b ? -1 : 1));
+  return projects.filter((project) =>
+    tags.every((tag) =>
+      project.additional_info.map((skill) => skill.toLowerCase().replace(/\s+/g, '')).includes(tag),
+    ),
+  );
 }

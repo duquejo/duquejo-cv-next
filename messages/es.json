@@ -163,6 +163,15 @@
     "subtitle": "Responsabilidades",
     "button": "Enlace externo",
     "footer": "Aptitudes",
+    "filters": {
+      "title": {
+        "skill": "Aptitudes"
+      },
+      "placeholder": "Filtrar por {filter}",
+      "counter": "{count} filtros seleccionados",
+      "no-results": "No hay resultados",
+      "reset": "Remover filtros"
+    },
     "content": [
       {
         "start_date": "2023",

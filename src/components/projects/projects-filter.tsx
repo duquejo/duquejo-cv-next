@@ -14,13 +14,15 @@ import {
 } from '@/components/ui/command';
 import { cn } from '@/lib';
 import { forwardRef, useCallback, useImperativeHandle, useState } from 'react';
+import type { Skill } from '@/interfaces';
+import { useTranslations } from 'next-intl';
 
 interface ProjectsFilterProps {
   className?: string;
   maxAmount?: number;
   initialFilters?: Set<string>;
   title: string;
-  filters: string[];
+  filters: Skill[];
   onSearchClear: () => void;
   onFilterChange: (filters: string[]) => void;
 }
@@ -42,6 +44,7 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
     },
     ref,
   ) => {
+    const t = useTranslations('Experience.filters');
     const [selectedFilters, setSelectedFilters] = useState<Set<string>>(initialFilters);
 
     const resetFilters = useCallback(() => {
@@ -50,16 +53,15 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
 
     const handleSelect = useCallback(
       (option: string) => {
-        const newSelectedFilters = new Set(selectedFilters);
-        if (newSelectedFilters.has(option)) {
-          newSelectedFilters.delete(option);
+        if (selectedFilters.has(option)) {
+          selectedFilters.delete(option);
         } else {
-          newSelectedFilters.add(option);
+          selectedFilters.add(option);
         }
-        setSelectedFilters(newSelectedFilters);
-        onFilterChange([...newSelectedFilters]);
+        setSelectedFilters(selectedFilters);
+        onFilterChange([...selectedFilters]);
       },
-      [selectedFilters, onFilterChange],
+      [onFilterChange, selectedFilters],
     );
 
     useImperativeHandle(ref, () => ({
@@ -76,19 +78,19 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
               <>
                 <Separator orientation="vertical" className="mx-2 h-4" />
                 <Badge variant="secondary" className="rounded-sm lg:hidden">
-                  {selectedFilters.size} selected
+                  {t('counter', { count: selectedFilters.size })}
                 </Badge>
                 <div className="hidden space-x-2 lg:flex">
                   {selectedFilters.size > maxAmount ? (
                     <Badge variant="secondary" className="rounded-sm">
-                      {selectedFilters.size} selected
+                      {t('counter', { count: selectedFilters.size })}
                     </Badge>
                   ) : (
                     filters
-                      .filter((option) => selectedFilters.has(option))
+                      .filter((option) => selectedFilters.has(option.value))
                       .map((option) => (
-                        <Badge variant="secondary" key={option}>
-                          {option}
+                        <Badge variant="secondary" key={option.value}>
+                          {option.name}
                         </Badge>
                       ))
                   )}
@@ -99,14 +101,14 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
         </PopoverTrigger>
         <PopoverContent className="w-[200px] p-0" align="start">
           <Command>
-            <CommandInput placeholder={`Select ${title}`} />
+            <CommandInput placeholder={t('placeholder', { filter: title })} />
             <CommandList>
-              <CommandEmpty>No results found.</CommandEmpty>
+              <CommandEmpty>{t('no-results')}</CommandEmpty>
               <CommandGroup>
                 {filters.map((option) => {
-                  const isSelected = selectedFilters.has(option);
+                  const isSelected = selectedFilters.has(option.value);
                   return (
-                    <CommandItem key={option} onSelect={() => handleSelect(option)}>
+                    <CommandItem key={option.value} onSelect={() => handleSelect(option.value)}>
                       <div
                         className={cn(
                           'mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary',
@@ -118,7 +120,7 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
                       >
                         <Check />
                       </div>
-                      <span>{option}</span>
+                      <span className="text-xs">{option.name}</span>
                     </CommandItem>
                   );
                 })}
@@ -131,7 +133,7 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
                       onSelect={() => onSearchClear()}
                       className="justify-center text-center text-xs font-semibold"
                     >
-                      Clear filters
+                      {t('reset')}
                     </CommandItem>
                   </CommandGroup>
                 </>

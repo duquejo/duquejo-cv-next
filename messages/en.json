@@ -163,6 +163,15 @@
     "subtitle": "Responsabilities",
     "button": "External URL",
     "footer": "Skills",
+    "filters": {
+      "title": {
+        "skill": "Skills"
+      },
+      "placeholder": "Search by {filter}",
+      "counter": "{count} selected filters",
+      "no-results": "No results found",
+      "reset": "Reset filters"
+    },
     "content": [
       {
         "start_date": "2023",
