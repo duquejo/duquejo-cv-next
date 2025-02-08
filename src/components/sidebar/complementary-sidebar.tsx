@@ -43,7 +43,7 @@ export const ComplementarySidebar = ({ outerClassName, innerClassName }: Props) 
         <SheetTrigger asChild>
           <Button
             variant="outline"
-            className=" h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex"
+            className="h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex"
             title={t('activity.title')}
           >
             <Lightbulb />

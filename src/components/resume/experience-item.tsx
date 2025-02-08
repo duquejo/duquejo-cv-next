@@ -11,10 +11,12 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ExperienceItemContent } from '@/components/resume/experience-item-content';
-import { useTranslations } from 'next-intl';
 
 interface Props extends ExperienceType {
   className?: string;
+  experienceItemTitle: string;
+  experienceItemButtonLabel: string;
+  experienceFooterText: string;
 }
 
 export const ExperienceItem = ({
@@ -28,10 +30,11 @@ export const ExperienceItem = ({
   resume,
   additional_info,
   screenshot,
+  experienceItemTitle,
+  experienceItemButtonLabel,
+  experienceFooterText,
   url,
 }: Props) => {
-  const t = useTranslations('Experience');
-
   return (
     <li
       className={cn(
@@ -62,13 +65,15 @@ export const ExperienceItem = ({
       </span>
       <Card className="ms-4">
         <CardHeader>
-          <CardTitle>{project}</CardTitle>
+          <CardTitle>
+            <h2>{project}</h2>
+          </CardTitle>
           <CardDescription>{role}</CardDescription>
         </CardHeader>
         <CardContent className="py-0">
           <ExperienceItemContent
-            contentTitle={t('subtitle')}
-            button={t('button')}
+            contentTitle={experienceItemTitle}
+            button={experienceItemButtonLabel}
             project={project}
             resume={resume}
             screenshot={screenshot}
@@ -77,7 +82,7 @@ export const ExperienceItem = ({
         </CardContent>
         {additional_info && (
           <CardFooter className="flex flex-col items-start gap-y-2 pt-5">
-            <span className="font-semibold text-base">{t('footer')}</span>
+            <span className="font-semibold text-base">{experienceFooterText}</span>
             <div className="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around">
               {additional_info.map((info) => (
                 <Badge variant="secondary" className="cursor-pointer" key={info}>

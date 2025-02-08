@@ -163,12 +163,13 @@
     "subtitle": "Responsabilidades",
     "button": "Enlace externo",
     "footer": "Aptitudes",
+    "no-results": "No hay proyectos que concuerden con los filtros seleccionados, reintenta nuevamente",
     "filters": {
-      "title": {
-        "skill": "Aptitudes"
-      },
+      "title": "Aptitudes",
       "placeholder": "Filtrar por {filter}",
-      "counter": "{count} filtros seleccionados",
+      "input-placeholder": "Buscar filtros",
+      "max-selection": "+5 filtros",
+      "max-selection-mobile": "+1 filtros",
       "no-results": "No hay resultados",
       "reset": "Remover filtros"
     },

@@ -163,12 +163,13 @@
     "subtitle": "Responsabilities",
     "button": "External URL",
     "footer": "Skills",
+    "no-results": "There are no projects that match the selected filters, try again",
     "filters": {
-      "title": {
-        "skill": "Skills"
-      },
+      "title": "Skills",
       "placeholder": "Search by {filter}",
-      "counter": "{count} selected filters",
+      "input-placeholder": "Search filters",
+      "max-selection": "+5 filters",
+      "max-selection-mobile": "+1 filters",
       "no-results": "No results found",
       "reset": "Reset filters"
     },

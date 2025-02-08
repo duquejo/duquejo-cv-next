@@ -15,16 +15,20 @@ import {
 import { cn } from '@/lib';
 import { forwardRef, useCallback, useImperativeHandle, useState } from 'react';
 import type { Skill } from '@/interfaces';
-import { useTranslations } from 'next-intl';
 
 interface ProjectsFilterProps {
-  className?: string;
-  maxAmount?: number;
-  initialFilters?: Set<string>;
   title: string;
   filters: Skill[];
+  filterResetText: string;
+  filterNoResultsText: string;
+  filterMaxSelection: string;
+  filterInputPlaceholder: string;
   onSearchClear: () => void;
   onFilterChange: (filters: string[]) => void;
+  className?: string;
+  maxAmount?: number;
+  maxAmountMobileText: string;
+  initialFilters?: Set<string>;
 }
 
 interface ProjectsFilterRef {
@@ -34,17 +38,21 @@ interface ProjectsFilterRef {
 const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
   (
     {
-      className,
       title,
       filters,
-      initialFilters = new Set<string>(),
-      maxAmount = 5,
-      onFilterChange,
+      className,
       onSearchClear,
+      onFilterChange,
+      filterResetText,
+      filterMaxSelection,
+      maxAmountMobileText,
+      filterNoResultsText,
+      filterInputPlaceholder,
+      maxAmount = 5,
+      initialFilters = new Set<string>(),
     },
     ref,
   ) => {
-    const t = useTranslations('Experience.filters');
     const [selectedFilters, setSelectedFilters] = useState<Set<string>>(initialFilters);
 
     const resetFilters = useCallback(() => {
@@ -71,25 +79,29 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
     return (
       <Popover>
         <PopoverTrigger asChild>
-          <Button variant="outline" size="sm" className={cn('border-dashed', className)}>
+          <Button variant="outline" size="sm" className={cn('border-dashed px-1', className)}>
             <PlusCircle />
             {title}
             {selectedFilters.size > 0 && (
               <>
                 <Separator orientation="vertical" className="mx-2 h-4" />
                 <Badge variant="secondary" className="rounded-sm lg:hidden">
-                  {t('counter', { count: selectedFilters.size })}
+                  {maxAmountMobileText}
                 </Badge>
                 <div className="hidden space-x-2 lg:flex">
                   {selectedFilters.size > maxAmount ? (
                     <Badge variant="secondary" className="rounded-sm">
-                      {t('counter', { count: selectedFilters.size })}
+                      {filterMaxSelection}
                     </Badge>
                   ) : (
                     filters
                       .filter((option) => selectedFilters.has(option.value))
                       .map((option) => (
-                        <Badge variant="secondary" key={option.value}>
+                        <Badge
+                          variant="secondary"
+                          key={option.value}
+                          data-testid={`icon-${option.value}`}
+                        >
                           {option.name}
                         </Badge>
                       ))
@@ -99,11 +111,11 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-[200px] p-0" align="start">
+        <PopoverContent className="w-[200px] p-0" align="start" title="filters">
           <Command>
-            <CommandInput placeholder={t('placeholder', { filter: title })} />
+            <CommandInput placeholder={filterInputPlaceholder} />
             <CommandList>
-              <CommandEmpty>{t('no-results')}</CommandEmpty>
+              <CommandEmpty>{filterNoResultsText}</CommandEmpty>
               <CommandGroup>
                 {filters.map((option) => {
                   const isSelected = selectedFilters.has(option.value);
@@ -133,7 +145,7 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
                       onSelect={() => onSearchClear()}
                       className="justify-center text-center text-xs font-semibold"
                     >
-                      {t('reset')}
+                      {filterResetText}
                     </CommandItem>
                   </CommandGroup>
                 </>

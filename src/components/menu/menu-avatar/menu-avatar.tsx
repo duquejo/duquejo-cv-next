@@ -16,7 +16,7 @@ export const MenuAvatar = ({ role }: Props) => {
     <>
       <picture
         className={cn(
-          'mt-5 lg:mt-10 max-w-40 lg:w-auto border-border border-dashed border-2 rounded p-2 hover:border-primary/40 transition-colors duration-500',
+          'lg:mt-10 max-w-40 lg:w-auto border-border border-dashed border-2 rounded p-2 hover:border-primary/40 transition-colors duration-500',
           state === 'collapsed' && 'border-none mt-0',
         )}
       >

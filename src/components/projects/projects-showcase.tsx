@@ -9,21 +9,38 @@ import { X } from 'lucide-react';
 import { filterProjectsByTags } from '@/lib';
 import { usePathname, useRouter } from '@/i18n/routing';
 import { getProjectByFilters } from '@/actions/projects';
-import { useTranslations } from 'next-intl';
 
 interface Props {
-  initialProjects?: ExperienceType[];
+  filterTitle: string;
+  filterResetText: string;
+  filterNoResultsText: string;
+  filterMaxSelection: string;
+  filterInputPlaceholder: string;
+  experienceItemTitle: string;
+  experienceItemButtonLabel: string;
+  experienceFooterText: string;
+  noProjectResultsText: string;
+  filterMaxMobileSelection: string;
   availableFilters: Skill[];
+  initialProjects: ExperienceType[];
   initialFilters?: string[];
 }
 
 export default function ProjectsShowcase({
+  filterTitle,
+  filterResetText,
+  filterNoResultsText,
   availableFilters,
+  filterInputPlaceholder,
+  filterMaxSelection,
+  experienceItemTitle,
+  experienceItemButtonLabel,
+  filterMaxMobileSelection,
+  experienceFooterText,
+  noProjectResultsText,
   initialProjects = [],
   initialFilters = [],
 }: Props) {
-  const t = useTranslations('Experience.filters');
-
   const router = useRouter();
   const pathname = usePathname();
 
@@ -61,7 +78,12 @@ export default function ProjectsShowcase({
       <div className="h-10 inline-flex gap-x-2 w-full justify-between items-center mb-4">
         <ProjectsFilter
           ref={filterRef}
-          title={t('title.skill')}
+          title={filterTitle}
+          filterInputPlaceholder={filterInputPlaceholder}
+          filterResetText={filterResetText}
+          maxAmountMobileText={filterMaxMobileSelection}
+          filterMaxSelection={filterMaxSelection}
+          filterNoResultsText={filterNoResultsText}
           initialFilters={new Set<string>(activeFilters)}
           filters={availableFilters}
           onFilterChange={onFilterChange}
@@ -70,18 +92,29 @@ export default function ProjectsShowcase({
         <Button
           variant="ghost"
           size="sm"
-          className="font-semibold px-2 lg:px-3"
+          className="font-semibold px-0 lg:px-3"
           onClick={() => handleSearchClear()}
         >
-          {t('reset')}
+          {filterResetText}
           <X />
         </Button>
       </div>
-      <ul>
-        {projects.map((exp: ExperienceType) => (
-          <ExperienceItem className="animate-entrance" key={exp.project} {...exp} />
-        ))}
-      </ul>
+      {projects.length > 0 ? (
+        <ul>
+          {projects.map((exp: ExperienceType) => (
+            <ExperienceItem
+              experienceItemTitle={experienceItemTitle}
+              experienceItemButtonLabel={experienceItemButtonLabel}
+              experienceFooterText={experienceFooterText}
+              className="animate-entrance"
+              key={exp.project}
+              {...exp}
+            />
+          ))}
+        </ul>
+      ) : (
+        <p data-testid="not-found">{noProjectResultsText}</p>
+      )}
     </>
   );
 }
