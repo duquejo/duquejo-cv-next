@@ -42,11 +42,11 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                   data-sidebar="menu-item"
                 >
                   <picture
-                    class="mt-10 max-w-32 lg:w-auto border-border border-dashed border-2 rounded"
+                    class="lg:mt-10 max-w-40 lg:w-auto border-border border-dashed border-2 rounded p-2 hover:border-primary/40 transition-colors duration-500"
                   >
                     <img
                       alt="José Miguel Duque"
-                      class="object-cover mt-2 ml-2 mb-2"
+                      class="object-cover"
                       data-nimg="1"
                       decoding="async"
                       height="146"
@@ -351,13 +351,13 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
               data-sidebar="group"
             >
               <div
-                class="shrink-0 h-[1px] mx-2 w-auto bg-sidebar-border"
+                class="shrink-0 h-[1px] w-auto bg-sidebar-border mx-0"
                 data-orientation="horizontal"
                 data-sidebar="separator"
                 role="none"
               />
               <div
-                class="duration-200 flex h-8 shrink-0 items-center rounded-md px-2 text-xs outline-none ring-sidebar-ring transition-[margin,opa] ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 font-semibold tracking-wider text-foreground"
+                class="duration-200 flex h-8 shrink-0 items-center rounded-md text-xs outline-none ring-sidebar-ring transition-[margin,opa] ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 px-0 font-semibold tracking-wider text-foreground"
                 data-sidebar="group-label"
               >
                 Footer Mobile

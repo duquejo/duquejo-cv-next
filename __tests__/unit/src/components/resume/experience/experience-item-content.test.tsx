@@ -9,6 +9,7 @@ describe('<ExperienceItemContent /> tests', () => {
     url,
     contentTitle,
     button,
+    project,
   }: Partial<ExperienceType> & { contentTitle: string; button: string } = {
     project: 'foo bar',
     resume: ['foo', 'bar', 'baz'],
@@ -37,6 +38,7 @@ describe('<ExperienceItemContent /> tests', () => {
         contentTitle={contentTitle}
         button={button}
         resume={resume}
+        project={project}
         screenshot={screenshot}
         url={url}
       />,
@@ -54,6 +56,7 @@ describe('<ExperienceItemContent /> tests', () => {
 
     const screenShot = screen.getByRole('img');
     expect(screenShot).toBeInTheDocument();
+    expect(screenShot).toHaveAttribute('alt', project);
   });
 
   it('Should render a single paragraph if the resume array is equal to 1.', () => {

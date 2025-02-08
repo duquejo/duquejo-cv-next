@@ -163,6 +163,16 @@
     "subtitle": "Responsabilidades",
     "button": "Enlace externo",
     "footer": "Aptitudes",
+    "no-results": "No hay proyectos que concuerden con los filtros seleccionados, reintenta nuevamente",
+    "filters": {
+      "title": "Aptitudes",
+      "placeholder": "Filtrar por {filter}",
+      "input-placeholder": "Buscar filtros",
+      "max-selection": "+5 filtros",
+      "max-selection-mobile": "+1 filtros",
+      "no-results": "No hay resultados",
+      "reset": "Remover filtros"
+    },
     "content": [
       {
         "start_date": "2023",
@@ -182,11 +192,11 @@
           "Terraform",
           "Microservicios",
           "Node.js",
-          "JMeter",
+          "J Meter",
           "Pruebas unitarias",
           "Pruebas de integración",
           "SonarQube",
-          "Git Flow",
+          "Git",
           "JWT",
           "Scrum"
         ],
@@ -213,17 +223,17 @@
           "Spring Framework",
           "AWS",
           "Terraform",
-          "Serverless framework",
+          "Serverless Framework",
           "Gradle",
           "Jira",
           "Maven",
-          "JMeter",
+          "J Meter",
           "Jenkins",
           "Docker",
           "Pruebas unitarias",
           "AWS Cognito",
           "Microservicios",
-          "Git Flow",
+          "Git",
           "JWT"
         ],
         "screenshot": "/static/img/showcase/avvillas_tc.webp",
@@ -258,7 +268,7 @@
           "Sistemas de diseño",
           "Tailwind",
           "AWS Cognito",
-          "Typescript",
+          "TypeScript",
           "Serverless Framework"
         ],
         "screenshot": "/static/img/showcase/mentu.webp",
@@ -279,15 +289,15 @@
           "MySQL",
           "SASS",
           "HTML",
-          "CSS3",
+          "CSS",
           "React.js",
           "TypeScript",
           "Redux",
           "Nest JS",
-          "JMeter",
+          "J Meter",
           "NPM",
           "Jenkins",
-          "Sonar",
+          "SonarQube",
           "Git",
           "Pruebas unitarias",
           "Pruebas de integración",
@@ -319,11 +329,11 @@
           "React.js",
           "Bootstrap",
           "SASS",
-          "HTML5",
-          "CSS3",
+          "HTML",
+          "CSS",
           "Jira",
           "Trello",
-          "WordPress CMS",
+          "WordPress",
           "WooCommerce",
           "JavaScript",
           "TypeScript",
@@ -354,12 +364,12 @@
           "Bootstrap",
           "SASS",
           "HTML",
-          "CSS3",
+          "CSS",
           "AWS",
           "Jira",
           "Trello",
           "Git",
-          "Javascript",
+          "JavaScript",
           "PHP",
           "MVC"
         ]
@@ -379,10 +389,10 @@
         ],
         "additional_info": [
           "SASS",
-          "CSS3",
+          "CSS",
           "jQuery",
           "Bootstrap",
-          "Wordpress",
+          "WordPress",
           "WooCommerce",
           "NPM",
           "Jira",
@@ -391,7 +401,7 @@
           "PHP",
           "MySQL",
           "Git",
-          "JavaScript."
+          "JavaScript"
         ]
       },
       {
@@ -420,7 +430,7 @@
         "end_date": "23/06/2019",
         "enterprise": "Grupo Familia",
         "isRecent": false,
-        "project": ">Grupo familia - Simulador de servilletas",
+        "project": "Grupo familia - Simulador de servilletas",
         "role": "Programador Full-Stack",
         "resume": [
           "Proyecto Full-Stack de carácter interactivo desarrollado desde cero, bajo el Framework del CMS WordPress",
@@ -446,6 +456,8 @@
         "enterprise": "COLGAS",
         "isRecent": false,
         "project": "Insa (NORGAS) - Cotizador energético",
+        "screenshot": "/static/img/showcase/simulador_energetico.webp",
+        "url": "https://colgas.com/simulador-energetico-login/",
         "role": "Programador Frontend",
         "resume": [
           "Proyecto frontend desarrollado desde cero, que exigía usar enteramente la tecnología JavaScript (Vanilla)",
@@ -487,13 +499,14 @@
         "enterprise": "Universidad EAFIT",
         "isRecent": false,
         "project": "Universidad EAFIT - Plataforma Línea en Informática Educativa (Imaginar futuros)",
-        "role": "Programador Full-Stack",
+        "role": "Analista de sistemas",
         "resume": [
           "Proyecto Full-Stack desarrollado desde cero, bajo el Framework del CMS WordPress (PHP)",
           "Requería emplear buenas prácticas del CMS para su construcción, por lo que sus módulos se desarrollaron bajo la arquitectura Kernel/Plugin, común en CMS como WordPress",
           "Requería manejar información dinámicamente desde el frontend usando jQuery y Ajax",
           "Debían mantenerse diferentes estructuras de servicios en la nube para sus usuarios y colaboradores, empleando la suite de AWS para ello. (S3, Glacier, Cloudfront, Route 53, etc) y administración de servicios Cloud de Azure y Office 365"
         ],
+        "screenshot": "/static/img/showcase/linea_ie.webp",
         "additional_info": [
           "MySQL",
           "Bootstrap",
@@ -557,7 +570,7 @@
           "type": "hard"
         },
         {
-          "name": "CSS3",
+          "name": "CSS",
           "type": "hard"
         },
         {

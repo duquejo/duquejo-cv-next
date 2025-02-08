@@ -3,7 +3,7 @@
 exports[`<ExperienceItemContent /> tests > Should match the snapshot with the available args - >1 resume items 1`] = `
 <div>
   <div
-    class="flex flex-col lg:flex-row"
+    class="flex flex-col lg:flex-row gap-x-4"
   >
     <div
       class="flex flex-col order-2 lg:order-1 justify-between items-baseline basis-8/12"
@@ -20,17 +20,17 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
           class="list-disc ml-4 text-justify marker:text-secondary"
         >
           <li
-            class="my-1 text-xs text-justify leading-normal"
+            class="my-2 text-xs text-justify leading-normal"
           >
             foo
           </li>
           <li
-            class="my-1 text-xs text-justify leading-normal"
+            class="my-2 text-xs text-justify leading-normal"
           >
             bar
           </li>
           <li
-            class="my-1 text-xs text-justify leading-normal"
+            class="my-2 text-xs text-justify leading-normal"
           >
             baz
           </li>
@@ -46,11 +46,11 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
       </a>
     </div>
     <picture
-      class="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0"
+      class="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0 lg:max-h-60 lg:max-w-xs overflow-hidden"
     >
       <img
-        alt="Image"
-        class="rounded object-cover shadow-lg w-auto lg:max-w-xs"
+        alt="foo bar"
+        class="rounded object-cover shadow-lg w-auto"
         data-nimg="1"
         decoding="async"
         height="150"
@@ -68,7 +68,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
 exports[`<ExperienceItemContent /> tests > Should match the snapshot with the default args 1`] = `
 <div>
   <div
-    class="flex flex-col lg:flex-row"
+    class="flex flex-col lg:flex-row gap-x-4"
   />
 </div>
 `;

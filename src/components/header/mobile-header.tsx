@@ -18,17 +18,21 @@ export const MobileHeader = () => {
     const commonProps = {
       size: 20,
     };
-    return !openMobile ? <Menu {...commonProps} /> : <X {...commonProps} />;
+    return !openMobile ? (
+      <Menu aria-label="open" {...commonProps} />
+    ) : (
+      <X aria-label="close" {...commonProps} />
+    );
   };
 
   return (
-    <div className="fixed top-0 z-20 lg:relative flex justify-between w-full py-2 px-4 md:hidden items-center transition-all bg-sidebar">
+    <header className="fixed top-0 z-20 lg:relative flex justify-between w-full py-2 px-4 md:hidden items-center transition-all bg-sidebar">
       <span className="p-4" />
       <NameTag />
       <Button title={t('title')} variant="ghost" onClick={() => onToggleClick()}>
         <MenuIcon />
         <span className="sr-only">{t('title')}</span>
       </Button>
-    </div>
+    </header>
   );
 };

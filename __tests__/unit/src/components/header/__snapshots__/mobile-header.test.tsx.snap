@@ -1,0 +1,107 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<MobileHeader /> tests > Should render the close icon when the sidebar is truthy 1`] = `
+<div>
+  <header
+    class="fixed top-0 z-20 lg:relative flex justify-between w-full py-2 px-4 md:hidden items-center transition-all bg-sidebar"
+  >
+    <span
+      class="p-4"
+    />
+    <span
+      class="relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:opacity-80 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-secondary-foreground  after:ml-0.5 font-light text-secondary-foreground tracking-widest"
+    >
+      @duquejo
+    </span>
+    <button
+      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2"
+      title="translated-title"
+    >
+      <svg
+        aria-label="close"
+        class="lucide lucide-x"
+        fill="none"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6 6 18"
+        />
+        <path
+          d="m6 6 12 12"
+        />
+      </svg>
+      <span
+        class="sr-only"
+      >
+        translated-title
+      </span>
+    </button>
+  </header>
+</div>
+`;
+
+exports[`<MobileHeader /> tests > should match the snapshot 1`] = `
+<div>
+  <header
+    class="fixed top-0 z-20 lg:relative flex justify-between w-full py-2 px-4 md:hidden items-center transition-all bg-sidebar"
+  >
+    <span
+      class="p-4"
+    />
+    <span
+      class="relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:opacity-80 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-secondary-foreground  after:ml-0.5 font-light text-secondary-foreground tracking-widest"
+    >
+      @duquejo
+    </span>
+    <button
+      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2"
+      title="translated-title"
+    >
+      <svg
+        aria-label="open"
+        class="lucide lucide-menu"
+        fill="none"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="4"
+          x2="20"
+          y1="12"
+          y2="12"
+        />
+        <line
+          x1="4"
+          x2="20"
+          y1="6"
+          y2="6"
+        />
+        <line
+          x1="4"
+          x2="20"
+          y1="18"
+          y2="18"
+        />
+      </svg>
+      <span
+        class="sr-only"
+      >
+        translated-title
+      </span>
+    </button>
+  </header>
+</div>
+`;

@@ -69,7 +69,7 @@
         "React",
         "Vue",
         "Javascript",
-        "Typescript"
+        "TypeScript"
       ]
     },
     "role": "Software Engineer",
@@ -163,6 +163,16 @@
     "subtitle": "Responsabilities",
     "button": "External URL",
     "footer": "Skills",
+    "no-results": "There are no projects that match the selected filters, try again",
+    "filters": {
+      "title": "Skills",
+      "placeholder": "Search by {filter}",
+      "input-placeholder": "Search filters",
+      "max-selection": "+5 filters",
+      "max-selection-mobile": "+1 filters",
+      "no-results": "No results found",
+      "reset": "Reset filters"
+    },
     "content": [
       {
         "start_date": "2023",
@@ -182,11 +192,11 @@
           "Terraform",
           "Microservices",
           "Node.js",
-          "JMeter",
+          "J Meter",
           "Unit Tests",
           "Integration Tests",
           "SonarQube",
-          "Git Flow",
+          "Git",
           "JWT",
           "Scrum"
         ],
@@ -219,13 +229,13 @@
           "Gradle",
           "Jira",
           "Maven",
-          "JMeter",
+          "J Meter",
           "Jenkins",
           "Docker",
-          "Unit tests",
+          "Unit Tests",
           "AWS Cognito",
           "Microservices",
-          "Git Flow",
+          "Git",
           "JWT"
         ],
         "screenshot": "/static/img/showcase/avvillas_tc.webp",
@@ -261,8 +271,8 @@
           "Design systems",
           "Tailwind",
           "AWS Cognito",
-          "Typescript",
-          "Serverless Framework"
+          "TypeScript",
+          "Serverless framework"
         ],
         "screenshot": "/static/img/showcase/mentu.webp",
         "url": "https://mentu.co"
@@ -282,18 +292,18 @@
           "MySQL",
           "SASS",
           "HTML",
-          "CSS3",
+          "CSS",
           "React.js",
           "TypeScript",
           "Redux",
           "Nest JS",
-          "JMeter",
+          "J Meter",
           "NPM",
           "Jenkins",
-          "Sonar",
+          "SonarQube",
           "Git",
-          "Unit test",
-          "Integration test",
+          "Unit Tests",
+          "Integration Tests",
           "E2E Test"
         ]
       },
@@ -323,11 +333,11 @@
           "React.js",
           "Bootstrap",
           "SASS",
-          "HTML5",
-          "CSS3",
+          "HTML",
+          "CSS",
           "Jira",
           "Trello",
-          "WordPress CMS",
+          "WordPress",
           "WooCommerce",
           "JavaScript",
           "TypeScript",
@@ -358,12 +368,12 @@
           "Bootstrap",
           "SASS",
           "HTML",
-          "CSS3",
+          "CSS",
           "AWS",
           "Jira",
           "Trello",
           "Git",
-          "Javascript",
+          "JavaScript",
           "PHP",
           "MVC"
         ]
@@ -383,10 +393,10 @@
         ],
         "additional_info": [
           "SASS",
-          "CSS3",
+          "CSS",
           "jQuery",
           "Bootstrap",
-          "Wordpress",
+          "WordPress",
           "WooCommerce",
           "NPM",
           "Jira",
@@ -395,7 +405,7 @@
           "PHP",
           "MySQL",
           "Git",
-          "JavaScript."
+          "JavaScript"
         ]
       },
       {
@@ -451,6 +461,8 @@
         "isRecent": false,
         "project": "Insa (NORGAS) - Energy quote simulator - SM Digital",
         "role": "Frontend developer",
+        "screenshot": "/static/img/showcase/simulador_energetico.webp",
+        "url": "https://colgas.com/simulador-energetico-login/",
         "resume": [
           "Frontend project developed from scratch which required using entirely JavaScript (Vanilla) language.",
           "This quote used very precise calculations that are carried out in detail due to the company's quality policies therefore that the interaction with the client had to be constant",
@@ -491,13 +503,14 @@
         "enterprise": "EAFIT University",
         "isRecent": false,
         "project": "EAFIT University - Plataforma Línea en Informática Educativa (Imaginar futuros)",
-        "role": "Full-Stack developer",
+        "role": "Systems analyst",
         "resume": [
           "Full-Stack project developed from scratch under the WordPress CMS Framework (PHP).",
           "It required using good CMS practices for its construction so its modules were developed under the Kernel architecture /Plugin common in CMS such as WordPress.",
           "It required managing information dynamically from the frontend using jQuery and Ajax.",
           "Different cloud service structures had to be maintained for its users and collaborators using the AWS suite for this (S3, Glacier, Cloudfront, Route 53, etc.) and administration of Azure and Office 365 Cloud services."
         ],
+        "screenshot": "/static/img/showcase/linea_ie.webp",
         "additional_info": [
           "MySQL",
           "Bootstrap",
@@ -561,7 +574,7 @@
           "type": "hard"
         },
         {
-          "name": "CSS3",
+          "name": "CSS",
           "type": "hard"
         },
         {
