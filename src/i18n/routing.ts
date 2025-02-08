@@ -28,7 +28,7 @@ export type Pathnames = keyof typeof routing.pathnames;
 export const {
   getPathname,
   // redirect,
-  // useRouter
+  useRouter,
   Link,
   usePathname,
 } = createNavigation(routing);

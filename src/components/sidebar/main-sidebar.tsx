@@ -52,8 +52,8 @@ export const MainSidebar = () => {
       </SidebarContent>
       <SidebarFooter>
         <SidebarGroup className="sm:hidden">
-          <SidebarSeparator />
-          <SidebarGroupLabel className="font-semibold tracking-wider text-foreground">
+          <SidebarSeparator className="mx-0" />
+          <SidebarGroupLabel className="px-0 font-semibold tracking-wider text-foreground">
             {t('footer.mobile.title')}
           </SidebarGroupLabel>
           <SidebarGroupContent>

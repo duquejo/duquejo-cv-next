@@ -14,11 +14,11 @@ export interface ExperienceType {
   isRecent: boolean;
   project: string;
   role: string;
+  additional_info: string[];
   url?: string;
   resume?: string[];
   end_date?: string;
   screenshot?: string;
-  additional_info?: string[];
 }
 
 export interface KnowledgeType {
@@ -64,4 +64,9 @@ export interface Social {
   link: string;
   icon: LucideIcon;
   isVisibleInFooter: boolean;
+}
+
+export interface Skill {
+  name: string;
+  value: string;
 }
