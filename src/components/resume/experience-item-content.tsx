@@ -5,8 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 interface Props extends Partial<ExperienceType> {
-  contentTitle: string;
-  button: string;
+  contentTitle?: string;
+  button?: string;
 }
 
 export const ExperienceItemContent = ({
@@ -27,7 +27,7 @@ export const ExperienceItemContent = ({
           )}
         >
           <div className="flex-auto">
-            <span className="font-semibold text-base">{contentTitle}</span>
+            {contentTitle && <span className="font-semibold text-base">{contentTitle}</span>}
             {resume.length > 1 ? (
               <ol className="list-disc ml-4 text-justify marker:text-secondary">
                 {resume.map((r, i) => (
@@ -40,7 +40,7 @@ export const ExperienceItemContent = ({
               <p className="my-1 text-justify text-xs leading-normal">{resume}</p>
             )}
           </div>
-          {url && (
+          {url && button && (
             <Button
               size="sm"
               className="mt-5 lg:flex-shrink lg:w-auto w-full"

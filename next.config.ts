@@ -51,6 +51,15 @@ export default withNextIntl(
           },
         ],
       },
+      {
+        source: '/manifest.webmanifest',
+        headers: [
+          {
+            key: 'cache-control',
+            value: 'public, max-age=3600, immutable',
+          },
+        ],
+      },
     ],
   }),
 );

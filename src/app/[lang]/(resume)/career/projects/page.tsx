@@ -7,12 +7,12 @@ export async function metadata() {
   return generateMetadata('Experience');
 }
 
-interface Props {
-  searchParams?: Promise<{ [key: string]: string[] | string }>;
-}
+type SearchParams = Promise<{
+  [key: string]: string | string[] | undefined;
+}>;
 
-export default async function ProjectsPage({ searchParams }: Props = {}) {
-  const { query } = (await searchParams) || { query: [] };
+export default async function ProjectsPage(props: { searchParams: SearchParams }) {
+  const { query } = (await props?.searchParams) || { query: [] };
 
   const queryFilters = Array.isArray(query) ? query : query ? [query] : [];
 

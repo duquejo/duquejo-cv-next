@@ -14,9 +14,9 @@ import { ExperienceItemContent } from '@/components/resume/experience-item-conte
 
 interface Props extends ExperienceType {
   className?: string;
-  experienceItemTitle: string;
-  experienceItemButtonLabel: string;
-  experienceFooterText: string;
+  experienceItemTitle?: string;
+  experienceItemButtonLabel?: string;
+  experienceFooterText?: string;
 }
 
 export const ExperienceItem = ({

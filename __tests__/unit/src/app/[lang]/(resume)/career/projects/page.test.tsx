@@ -2,6 +2,7 @@ import { render, within } from '@testing-library/react';
 import ProjectsPage from '@/app/[lang]/(resume)/career/projects/page';
 import { beforeEach } from 'vitest';
 import { getProjectByFilters, getProjectSkills } from '@/actions/projects';
+import { SearchParams } from 'next/dist/server/request/search-params';
 
 vi.mock('@/actions/projects', () => ({
   getProjectByFilters: vi.fn(() => Promise.resolve([{ project: 'Test Project' }])),
@@ -39,7 +40,11 @@ describe('<ProjectsPage /> tests', () => {
   });
 
   it('should render the page', async () => {
-    const { container } = render(await ProjectsPage());
+    const searchParams: SearchParams = {
+      query: undefined,
+    };
+    const props = { searchParams: Promise.resolve(searchParams) };
+    const { container } = render(await ProjectsPage(props));
 
     const wrapper = within(container);
 
