@@ -13,7 +13,12 @@ export default defineConfig({
     coverage: {
       include: ['src/**'],
       reporter: ['text', 'html'],
-      exclude: ['**/interfaces/**', '**/e2e/**', ...coverageConfigDefaults.exclude],
+      exclude: [
+        '**/interfaces/**',
+        '**/components/ui/**',
+        '**/e2e/**',
+        ...coverageConfigDefaults.exclude,
+      ],
     },
   },
 });

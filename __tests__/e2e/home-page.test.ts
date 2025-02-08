@@ -11,7 +11,7 @@ test('should navigate to the home page', async ({ page }) => {
   );
 
   await expect(metatag(page, 'keywords').getAttribute('content')).resolves.toBe(
-    'Web developer,Backend,Frontend,Full-Stack,Node JS,React,Vue,Javascript,Typescript',
+    'Web developer,Backend,Frontend,Full-Stack,Node JS,React,Vue,Javascript,TypeScript',
   );
 
   const mainWrapper = page.getByRole('main');

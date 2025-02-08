@@ -6,7 +6,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
     class="first-of-type:pt-0 pt-5 relative border-s border-gray-200 list-none"
   >
     <span
-      class="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-secondary"
+      class="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-gray-400, bg-primary"
       data-testid="detail"
     />
     <span
@@ -42,7 +42,9 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
         <div
           class="font-semibold leading-none tracking-tight"
         >
-          Foo-Bar Baz Inc.
+          <h2>
+            Foo-Bar Baz Inc.
+          </h2>
         </div>
         <div
           class="text-sm text-muted-foreground"
@@ -54,7 +56,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
         class="p-6 py-0"
       >
         <div
-          class="flex flex-col lg:flex-row"
+          class="flex flex-col lg:flex-row gap-x-4"
         >
           <div
             class="flex flex-col order-2 lg:order-1 justify-between items-baseline basis-8/12"
@@ -65,23 +67,23 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
               <span
                 class="font-semibold text-base"
               >
-                subtitle
+                experience item title
               </span>
               <ol
                 class="list-disc ml-4 text-justify marker:text-secondary"
               >
                 <li
-                  class="my-1 text-xs text-justify leading-normal"
+                  class="my-2 text-xs text-justify leading-normal"
                 >
                   foo
                 </li>
                 <li
-                  class="my-1 text-xs text-justify leading-normal"
+                  class="my-2 text-xs text-justify leading-normal"
                 >
                   bar
                 </li>
                 <li
-                  class="my-1 text-xs text-justify leading-normal"
+                  class="my-2 text-xs text-justify leading-normal"
                 >
                   baz
                 </li>
@@ -93,15 +95,15 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
               rel="noopener noreferrer nofollow"
               target="_blank"
             >
-              button
+              experience button label
             </a>
           </div>
           <picture
-            class="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0"
+            class="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0 lg:max-h-60 lg:max-w-xs overflow-hidden"
           >
             <img
               alt="Foo-Bar Baz Inc."
-              class="rounded object-cover shadow-lg w-auto lg:max-w-xs"
+              class="rounded object-cover shadow-lg w-auto"
               data-nimg="1"
               decoding="async"
               height="150"
@@ -120,23 +122,23 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
         <span
           class="font-semibold text-base"
         >
-          footer
+          experience footer text
         </span>
         <div
           class="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around"
         >
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
           >
             Next JS
           </div>
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
           >
             React
           </div>
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
           >
             Vitest
           </div>
@@ -153,7 +155,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the de
     class="first-of-type:pt-0 pt-5 relative border-s border-gray-200 list-none"
   >
     <span
-      class="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-secondary"
+      class="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-gray-400, bg-primary"
       data-testid="detail"
     />
     <span
@@ -184,7 +186,9 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the de
         <div
           class="font-semibold leading-none tracking-tight"
         >
-          Foo-Bar Baz Inc.
+          <h2>
+            Foo-Bar Baz Inc.
+          </h2>
         </div>
         <div
           class="text-sm text-muted-foreground"
@@ -196,8 +200,36 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the de
         class="p-6 py-0"
       >
         <div
-          class="flex flex-col lg:flex-row"
+          class="flex flex-col lg:flex-row gap-x-4"
         />
+      </div>
+      <div
+        class="p-6 flex flex-col items-start gap-y-2 pt-5"
+      >
+        <span
+          class="font-semibold text-base"
+        >
+          experience footer text
+        </span>
+        <div
+          class="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around"
+        >
+          <div
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+          >
+            Next JS
+          </div>
+          <div
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+          >
+            React
+          </div>
+          <div
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+          >
+            Vitest
+          </div>
+        </div>
       </div>
     </div>
   </li>
