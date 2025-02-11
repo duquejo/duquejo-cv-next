@@ -43,7 +43,7 @@ Download the project directory and follow the next steps:
  EVENT_GITHUB_URL="Github feed source"
  EVENT_GITHUB_SOURCE="Github token"
  PDF_EMAIL="PDF final email"
- PDF_WEBSITE="Website footer source url"
+ SITE_URL="Website footer source url"
  PDF_FILENAME="PDF download filename"
  ALLOWED_ORIGINS="Comma separated allowed origins"
 ```

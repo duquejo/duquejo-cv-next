@@ -8,7 +8,6 @@ describe('Robots tests', () => {
       rules: {
         userAgent: '*',
         allow: '/',
-        disallow: '',
       },
       sitemap: 'https://www.duquejo.com/sitemap.xml',
     });

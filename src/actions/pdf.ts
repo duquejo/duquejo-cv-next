@@ -6,7 +6,7 @@ import { calculateYears, getBaseTemplate } from '@/lib';
 const years = calculateYears();
 
 const PDF_EMAIL = process.env.PDF_EMAIL || '';
-const PDF_WEBSITE = process.env.PDF_WEBSITE || '';
+const SITE_URL = process.env.SITE_URL || '';
 
 export async function generatePdf() {
   const [getTranslations, generate] = await Promise.all([
@@ -35,7 +35,7 @@ export async function generatePdf() {
           .map((lang: LanguageType) => `${lang.title} - ${lang.subtitle}`)
           .join('\n'),
         email_bottom: PDF_EMAIL,
-        website_bottom: PDF_WEBSITE,
+        website_bottom: SITE_URL,
       },
     ],
     template: getBaseTemplate,
