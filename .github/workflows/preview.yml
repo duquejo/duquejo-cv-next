@@ -5,7 +5,7 @@ env:
   EVENT_GITHUB_URL: ${{ secrets.EVENT_GITHUB_URL }}
   EVENT_GITHUB_SOURCE: ${{ secrets.EVENT_GITHUB_SOURCE }}
   PDF_EMAIL: ${{ secrets.PDF_EMAIL }}
-  PDF_WEBSITE: ${{ secrets.PDF_WEBSITE }}
+  SITE_URL: ${{ secrets.SITE_URL }}
   PDF_FILENAME: ${{ secrets.PDF_FILENAME }}
   ALLOWED_ORIGINS: ${{ secrets.ALLOWED_ORIGINS }}
 

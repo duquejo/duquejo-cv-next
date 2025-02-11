@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getPathname, routing } from '@/i18n/routing';
 
-const host = 'https://duquejo.com.co';
+const host = process.env.SITE_URL || '';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [getEntry('/'), getEntry('/career/projects'), getEntry('/career/services')];
@@ -23,6 +23,6 @@ function getEntry(href: Href) {
 }
 
 function getUrl(href: Href, locale: (typeof routing.locales)[number]) {
-  const pathname = getPathname({ locale, href });
+  const pathname = getPathname({ locale, href: href.toString().replace(/\/$/, '') as Href });
   return host + pathname;
 }
