@@ -7,6 +7,10 @@ describe('Middleware tests', () => {
 
   it('should have the correct config', () => {
     expect(config).toBeDefined();
-    expect(config.matcher).toEqual(['/', '/(es|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)']);
+    expect(config.matcher).toEqual([
+      '/',
+      '/(es|en)/:path*',
+      '/((?!api|_next|_vercel|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.*\\..*).*)',
+    ]);
   });
 });
