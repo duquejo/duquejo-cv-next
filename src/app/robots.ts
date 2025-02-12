@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: '',
     },
     sitemap: 'https://www.duquejo.com/sitemap.xml',
   };
