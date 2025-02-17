@@ -16,6 +16,7 @@
     "analize": "cross-env ANALIZE=true next build"
   },
   "dependencies": {
+    "@next/third-parties": "^15.1.7",
     "@pdfme/common": "^5.3.5",
     "@pdfme/generator": "^5.3.5",
     "@pdfme/schemas": "^5.3.5",
