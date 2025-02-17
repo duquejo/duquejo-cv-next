@@ -10,6 +10,7 @@ import { getLocale, getMessages } from 'next-intl/server';
 import { generateMetadata } from '@/lib';
 import { MobileHeader } from '@/components/header/mobile-header';
 import { ComplementarySidebar } from '@/components/sidebar/complementary-sidebar';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -28,6 +29,7 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale();
   const messages = await getMessages();
+  const gaId = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_ANALYTICS_ID : null;
 
   return (
     <html lang={locale} className="dark" suppressHydrationWarning>
@@ -52,6 +54,7 @@ export default async function RootLayout({
             </SidebarProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );
