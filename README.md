@@ -46,6 +46,7 @@ Download the project directory and follow the next steps:
  SITE_URL="Website footer source url"
  PDF_FILENAME="PDF download filename"
  ALLOWED_ORIGINS="Comma separated allowed origins"
+ NEXT_PUBLIC_ANALYTICS_ID="Google Analytics Identifier"
 ```
 
 2. Install the packages using `yarn install`.
