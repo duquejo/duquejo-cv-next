@@ -198,7 +198,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                       data-active="false"
                       data-sidebar="menu-button"
                       data-size="sm"
-                      href="mailto:duquejo01@gmail.com"
+                      href="mailto:contact@duquejo.com"
                       target="_blank"
                       title="E-mail"
                     >
@@ -228,7 +228,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                       <span
                         class="peer-data-[active=true]/menu-item:hidden"
                       >
-                        duquejo01@gmail.com
+                        contact@duquejo.com
                       </span>
                     </a>
                   </li>

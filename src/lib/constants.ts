@@ -44,8 +44,8 @@ export const SOCIAL_DATA: Social[] = [
   },
   {
     name: 'E-mail',
-    fullName: 'duquejo01@gmail.com',
-    link: 'mailto:duquejo01@gmail.com',
+    fullName: 'contact@duquejo.com',
+    link: 'mailto:contact@duquejo.com',
     icon: Mail,
     isVisibleInFooter: true,
   },
