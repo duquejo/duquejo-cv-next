@@ -73,7 +73,7 @@ exports[`<Footer /> tests > Should match the snapshot 1`] = `
       <a
         aria-label="E-mail"
         class="focus-visible:ring-1 hover:text-primary"
-        href="mailto:duquejo01@gmail.com"
+        href="mailto:contact@duquejo.com"
         target="_blank"
         title="E-mail"
       >
