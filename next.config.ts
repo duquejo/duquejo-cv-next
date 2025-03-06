@@ -11,6 +11,7 @@ const withBundleAnalizer = createBundleAnalyzer({
 
 export default withNextIntl(
   withBundleAnalizer({
+    devIndicators: false,
     images: {
       remotePatterns: [
         {
