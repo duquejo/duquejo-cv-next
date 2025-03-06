@@ -79,7 +79,11 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
     return (
       <Popover>
         <PopoverTrigger asChild>
-          <Button variant="outline" size="sm" className={cn('border-dashed px-1', className)}>
+          <Button
+            variant="outline"
+            size="sm"
+            className={cn('border-dashed px-2 cursor-pointer', className)}
+          >
             <PlusCircle />
             {title}
             {selectedFilters.size > 0 && (
@@ -123,7 +127,7 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
                     <CommandItem key={option.value} onSelect={() => handleSelect(option.value)}>
                       <div
                         className={cn(
-                          'mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary',
+                          'mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary cursor-pointer',
                           {
                             'bg-primary text-primary-foreground': isSelected,
                             'opacity-50 [&_svg]:invisible': !isSelected,
@@ -132,7 +136,7 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
                       >
                         <Check />
                       </div>
-                      <span className="text-xs">{option.name}</span>
+                      <span className="text-xs cursor-pointer">{option.name}</span>
                     </CommandItem>
                   );
                 })}
@@ -143,7 +147,7 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
                   <CommandGroup>
                     <CommandItem
                       onSelect={() => onSearchClear()}
-                      className="justify-center text-center text-xs font-semibold"
+                      className="justify-center text-center text-xs font-semibold cursor-pointer"
                     >
                       {filterResetText}
                     </CommandItem>
