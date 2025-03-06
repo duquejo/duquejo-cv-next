@@ -34,7 +34,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
       </span>
     </span>
     <div
-      class="rounded-xl border bg-card text-card-foreground shadow ms-4"
+      class="rounded-xl border bg-card text-card-foreground shadow-sm ms-4"
     >
       <div
         class="flex flex-col space-y-1.5 p-6"
@@ -90,7 +90,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
               </ol>
             </div>
             <a
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-8 rounded-md px-3 text-xs mt-5 lg:flex-shrink lg:w-auto w-full"
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 h-8 rounded-md px-3 text-xs mt-5 lg:shrink lg:w-auto w-full"
               href="https://foo.bar"
               rel="noopener noreferrer nofollow"
               target="_blank"
@@ -99,7 +99,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
             </a>
           </div>
           <picture
-            class="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0 lg:max-h-60 lg:max-w-xs overflow-hidden"
+            class="order-1 lg:order-2 flex grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0 lg:max-h-60 lg:max-w-xs overflow-hidden"
           >
             <img
               alt="Foo-Bar Baz Inc."
@@ -128,17 +128,17 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
           class="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around"
         >
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
           >
             Next JS
           </div>
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
           >
             React
           </div>
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
           >
             Vitest
           </div>
@@ -178,7 +178,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the de
       </span>
     </span>
     <div
-      class="rounded-xl border bg-card text-card-foreground shadow ms-4"
+      class="rounded-xl border bg-card text-card-foreground shadow-sm ms-4"
     >
       <div
         class="flex flex-col space-y-1.5 p-6"
@@ -215,17 +215,17 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the de
           class="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around"
         >
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
           >
             Next JS
           </div>
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
           >
             React
           </div>
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
           >
             Vitest
           </div>

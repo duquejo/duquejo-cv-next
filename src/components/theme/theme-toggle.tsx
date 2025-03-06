@@ -22,7 +22,13 @@ interface Props {
 }
 
 export function ThemeToggle({ className, variant, title, dark, system, light }: Props) {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, theme, themes } = useTheme();
+
+  const themeLabels: Record<string, string> = {
+    dark,
+    light,
+    system,
+  };
 
   return (
     <DropdownMenu>
@@ -40,27 +46,16 @@ export function ThemeToggle({ className, variant, title, dark, system, light }: 
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem
-          aria-label={light}
-          className={cn('text-xs', theme === 'light' && 'bg-accent')}
-          onClick={() => setTheme('light')}
-        >
-          {light}
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          aria-label={dark}
-          className={cn('text-xs', theme === 'dark' && 'bg-accent')}
-          onClick={() => setTheme('dark')}
-        >
-          {dark}
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          aria-label={system}
-          className={cn('text-xs', theme === 'system' && 'bg-accent')}
-          onClick={() => setTheme('system')}
-        >
-          {system}
-        </DropdownMenuItem>
+        {themes.map((t: string) => (
+          <DropdownMenuItem
+            key={t}
+            aria-label={themeLabels[t]}
+            className={cn('text-xs cursor-pointer', theme === t && 'bg-accent')}
+            onClick={() => setTheme(t)}
+          >
+            {themeLabels[t]}
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

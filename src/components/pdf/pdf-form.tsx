@@ -53,7 +53,12 @@ export const PdfForm = ({ onSubmitFinish, button, buttonLoading }: Props) => {
       aria-describedby="form-description"
     >
       <Separator orientation="horizontal" className="mt-2 mb-3" />
-      <Button type="submit" size="sm" disabled={isLoading}>
+      <Button
+        type="submit"
+        className="cursor-pointer disabled:cursor-not-allowed"
+        size="sm"
+        disabled={isLoading}
+      >
         {isLoading ? buttonLoading : button}
       </Button>
     </form>

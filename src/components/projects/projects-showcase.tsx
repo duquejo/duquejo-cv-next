@@ -92,7 +92,7 @@ export default function ProjectsShowcase({
         <Button
           variant="ghost"
           size="sm"
-          className="font-semibold px-0 lg:px-3"
+          className="font-semibold px-0 lg:px-3 cursor-pointer"
           onClick={() => handleSearchClear()}
         >
           {filterResetText}

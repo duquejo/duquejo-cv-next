@@ -37,7 +37,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
         </ol>
       </div>
       <a
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-8 rounded-md px-3 text-xs mt-5 lg:flex-shrink lg:w-auto w-full"
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 h-8 rounded-md px-3 text-xs mt-5 lg:shrink lg:w-auto w-full"
         href="https://foo.bar"
         rel="noopener noreferrer nofollow"
         target="_blank"
@@ -46,7 +46,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
       </a>
     </div>
     <picture
-      class="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0 lg:max-h-60 lg:max-w-xs overflow-hidden"
+      class="order-1 lg:order-2 flex grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0 lg:max-h-60 lg:max-w-xs overflow-hidden"
     >
       <img
         alt="foo bar"

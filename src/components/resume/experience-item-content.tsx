@@ -43,7 +43,7 @@ export const ExperienceItemContent = ({
           {url && button && (
             <Button
               size="sm"
-              className="mt-5 lg:flex-shrink lg:w-auto w-full"
+              className="mt-5 lg:shrink lg:w-auto w-full"
               variant="secondary"
               asChild
             >
@@ -55,7 +55,7 @@ export const ExperienceItemContent = ({
         </div>
       )}
       {screenshot && (
-        <picture className="order-1 lg:order-2 flex flex-grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0 lg:max-h-60 lg:max-w-xs overflow-hidden">
+        <picture className="order-1 lg:order-2 flex grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0 lg:max-h-60 lg:max-w-xs overflow-hidden">
           <Image
             src={screenshot}
             width="300"
