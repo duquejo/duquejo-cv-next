@@ -6,7 +6,7 @@ exports[`<PdfGeneratorToggle /> tests > Should match the snapshot with a given a
     aria-controls="radix-:r1:"
     aria-expanded="false"
     aria-haspopup="dialog"
-    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-secondary-foreground shadow-sm hover:bg-secondary/80 h-10 w-10 bg-color-red"
+    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-secondary-foreground shadow-xs hover:bg-secondary/80 h-10 w-10 bg-color-red"
     data-state="closed"
     type="button"
   >
@@ -53,7 +53,7 @@ exports[`<PdfGeneratorToggle /> tests > Should match the snapshot with the defau
     aria-controls="radix-:r0:"
     aria-expanded="false"
     aria-haspopup="dialog"
-    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 w-10"
+    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-10 w-10"
     data-state="closed"
     type="button"
   >

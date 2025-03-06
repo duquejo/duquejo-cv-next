@@ -45,7 +45,7 @@ export const HeroImage = ({ className }: Props) => {
       />
       <picture className="relative">
         <Image
-          className="rounded-full backdrop-blur-sm bg-primary/10 shadow-inner"
+          className="rounded-full backdrop-blur-xs bg-primary/10 shadow-inner"
           alt="José Miguel Duque"
           height={410}
           width={410}

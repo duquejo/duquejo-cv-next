@@ -20,7 +20,7 @@ export default function MainPage() {
         <div className="order-2 xl:basis-3/5 basis-1/2 lg:order-1 md:ml-5 lg:ml-10 mx-5 pb-0 pt-5 lg:pt-0">
           <h1 className="text-4xl lg:text-6xl md:text-5xl mb-5 animate-entrance duration-1000 font-semibold">
             {t('resume.greetings')}
-            <strong className="mt-2 block bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-primary">
+            <strong className="mt-2 block bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-primary">
               José Duque.
             </strong>
           </h1>

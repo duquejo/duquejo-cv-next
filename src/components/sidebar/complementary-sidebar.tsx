@@ -20,12 +20,12 @@ export const ComplementarySidebar = ({ outerClassName, innerClassName }: Props) 
       <div className={innerClassName}>
         <SidebarTrigger
           variant="outline"
-          className="h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex"
+          className="h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex cursor-pointer"
           title={t('sidebar.title')}
         />
         <PdfGeneratorToggle
           variant="outline"
-          className="h-8 w-8 lg:h-10 lg:w-10"
+          className="h-8 w-8 lg:h-10 lg:w-10 cursor-pointer"
           buttonTitle={t('pdf.title')}
           formTitle={t('pdf.dialog.title')}
           formDescription={t('pdf.dialog.description')}
@@ -34,7 +34,7 @@ export const ComplementarySidebar = ({ outerClassName, innerClassName }: Props) 
         />
         <ThemeToggle
           variant="outline"
-          className="h-8 w-8 lg:h-10 lg:w-10"
+          className="h-8 w-8 lg:h-10 lg:w-10 cursor-pointer"
           title={t('theme.title')}
           light={t('theme.light')}
           dark={t('theme.dark')}
@@ -43,7 +43,7 @@ export const ComplementarySidebar = ({ outerClassName, innerClassName }: Props) 
         <SheetTrigger asChild>
           <Button
             variant="outline"
-            className="h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex"
+            className="h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex cursor-pointer"
             title={t('activity.title')}
           >
             <Lightbulb />

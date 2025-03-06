@@ -152,7 +152,7 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
     >
       <img
         alt="José Miguel Duque"
-        class="rounded-full backdrop-blur-sm bg-primary/10 shadow-inner"
+        class="rounded-full backdrop-blur-xs bg-primary/10 shadow-inner"
         data-nimg="1"
         decoding="async"
         height="410"
