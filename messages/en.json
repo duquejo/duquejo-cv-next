@@ -439,7 +439,9 @@
         "resume": [
           "Full-Stack interactive project developed from scratch under the WordPress CMS Framework.",
           "Due to the infrastructure suggested by the client it was necessary to use jQuery and libraries focused on manipulating the DOM.",
-          "The project required respecting very specific brand directives directly related to the functional requirements."
+          "The project required respecting very specific brand directives directly related to the functional requirements.",
+          "The component should also include administrative features to manage the creation, editing, updating, and deletion of custom napkins, allowing for the provision of a user-friendly and intuitive user interface for its use.",
+          "In addition to enabling napkin customization as its primary function, it also allowed the final result to be delivered by email, generating valuable leads for the client."
         ],
         "additional_info": [
           "MySQL",
@@ -452,7 +454,8 @@
           "PHP",
           "MVC",
           "jQuery"
-        ]
+        ],
+        "screenshot": "/static/img/showcase/personalizador_familia.webp"
       },
       {
         "start_date": "14/12/2019",
