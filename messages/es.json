@@ -435,7 +435,9 @@
         "resume": [
           "Proyecto Full-Stack de carácter interactivo desarrollado desde cero, bajo el Framework del CMS WordPress",
           "Debido a la infraestructura sugerida por el cliente, era necesario utilizar jQuery y librerías enfocadas para la manipulación del DOM",
-          "El proyecto exigía respetar directivas muy específicas de la marca directamente relacionadas con los requerimientos funcionales"
+          "El proyecto exigía respetar directivas muy específicas de la marca directamente relacionadas con los requerimientos funcionales",
+          "El componente debía comprender también características administrativas para manejar la creación, edición, actualización y borrado de servilletas personalizadas, permitiendo proveer una interfaz de usuario amigable e intutitiva para su uso.",
+          "Además de permitir la personalización de la servilleta como objetivo principal se permitía la generación del resultado final vía correo electrónico generando valiosos leads para el cliente."
         ],
         "additional_info": [
           "MySQL",
@@ -448,7 +450,8 @@
           "PHP",
           "MVC",
           "jQuery"
-        ]
+        ],
+        "screenshot": "/static/img/showcase/personalizador_familia.webp"
       },
       {
         "start_date": "14/12/2019",

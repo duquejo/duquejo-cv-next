@@ -20,17 +20,17 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
           class="list-disc ml-4 text-justify marker:text-secondary"
         >
           <li
-            class="my-2 text-xs text-justify leading-normal"
+            class="my-2 text-xs text-justify leading-normal text-foreground"
           >
             foo
           </li>
           <li
-            class="my-2 text-xs text-justify leading-normal"
+            class="my-2 text-xs text-justify leading-normal text-foreground"
           >
             bar
           </li>
           <li
-            class="my-2 text-xs text-justify leading-normal"
+            class="my-2 text-xs text-justify leading-normal text-foreground"
           >
             baz
           </li>

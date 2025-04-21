@@ -31,13 +31,16 @@ export const ExperienceItemContent = ({
             {resume.length > 1 ? (
               <ol className="list-disc ml-4 text-justify marker:text-secondary">
                 {resume.map((r, i) => (
-                  <li key={`resume-${i}`} className="my-2 text-xs text-justify leading-normal">
+                  <li
+                    key={`resume-${i}`}
+                    className="my-2 text-xs text-justify leading-normal text-foreground"
+                  >
                     {r}
                   </li>
                 ))}
               </ol>
             ) : (
-              <p className="my-1 text-justify text-xs leading-normal">{resume}</p>
+              <p className="my-1 text-justify text-xs leading-normal text-foreground">{resume}</p>
             )}
           </div>
           {url && button && (
