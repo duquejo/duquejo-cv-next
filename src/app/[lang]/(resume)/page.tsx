@@ -18,7 +18,7 @@ export default function MainPage() {
     <>
       <section className="flex flex-col items-center mx-0 lg:pt-5 mt-5 py-10 relative lg:flex-row lg:justify-between">
         <div className="order-2 xl:basis-3/5 basis-1/2 lg:order-1 md:ml-5 lg:ml-10 mx-5 pb-0 pt-5 lg:pt-0">
-          <h1 className="text-4xl lg:text-6xl md:text-5xl mb-5 animate-entrance duration-1000 font-semibold">
+          <h1 className="text-4xl lg:text-6xl md:text-5xl mb-5 animate-entrance duration-1000 font-bold">
             {t('resume.greetings')}
             <strong className="mt-2 block bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-primary">
               José Duque.

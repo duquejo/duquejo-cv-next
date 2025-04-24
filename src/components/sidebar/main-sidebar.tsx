@@ -7,6 +7,7 @@ import {
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
+  SidebarMenuButton,
   SidebarMenuItem,
   SidebarSeparator,
 } from '@/components/ui/sidebar';
@@ -15,6 +16,7 @@ import { useTranslations } from 'next-intl';
 import { MenuItems } from '@/components/menu/menu-items/menu-items';
 import { ComplementarySidebar } from '@/components/sidebar/complementary-sidebar';
 import { SocialItemsHorizontal } from '@/components/social/social-items-horizontal';
+import { Link } from '@/i18n/routing';
 
 export const MainSidebar = () => {
   const t = useTranslations('Sidebar');
@@ -51,6 +53,20 @@ export const MainSidebar = () => {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
+        <SidebarGroup>
+          <SidebarSeparator className="mx-0" />
+          <SidebarGroupContent>
+            <SidebarMenu className="mt-2">
+              <SidebarMenuItem>
+                <SidebarMenuButton className="focus-visible:ring-primary focus-visible:ring-1">
+                  <Link href="/blog">
+                    <span>Blog</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
         <SidebarGroup className="sm:hidden">
           <SidebarSeparator className="mx-0" />
           <SidebarGroupLabel className="px-0 font-semibold tracking-wider text-foreground">

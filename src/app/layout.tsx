@@ -1,4 +1,4 @@
-import { Poppins } from 'next/font/google';
+import { Raleway } from 'next/font/google';
 import './globals.css';
 import { ReactNode } from 'react';
 import { ThemeProvider } from '@/components/theme/theme-provider';
@@ -12,9 +12,9 @@ import { MobileHeader } from '@/components/header/mobile-header';
 import { ComplementarySidebar } from '@/components/sidebar/complementary-sidebar';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
-const poppins = Poppins({
+const raleway = Raleway({
   subsets: ['latin'],
-  weight: ['300', '600', '700'],
+  weight: ['300', '600', '700', '800'],
   display: 'swap',
 });
 
@@ -33,7 +33,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="dark" suppressHydrationWarning>
-      <body className={`${poppins.className} antialiased relative`}>
+      <body className={`${raleway.className} antialiased relative`}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"

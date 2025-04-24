@@ -251,7 +251,7 @@
 
 @layer base {
   .main-title {
-    @apply text-4xl lg:text-6xl mb-5 leading-tight mt-10 text-center font-semibold underline decoration-4 underline-offset-8 decoration-primary animate-entrance duration-1000;
+    @apply text-4xl lg:text-6xl mb-5 leading-tight mt-10 text-center font-bold underline decoration-4 underline-offset-8 decoration-primary animate-entrance duration-1000;
   }
 
   .main-subtitle {
