@@ -23,7 +23,7 @@ export default function ServicesPage() {
       <section className="pt-5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-6">
           {t.raw('content')?.map((service: ServicesType, i: number) => (
-            <Card key={`service-${i}`}>
+            <Card key={`service-${i}`} className="bg-sidebar/30 rounded-xl border-dashed">
               <CardHeader>
                 <CardTitle>{service.title}</CardTitle>
                 <CardDescription>{service.subtitle}</CardDescription>
@@ -47,10 +47,10 @@ export default function ServicesPage() {
           ))}
         </div>
       </section>
-      <section className="mt-10 flex flex-col gap-x-10">
+      <section className="my-5 flex flex-col">
         {/*Tech Languages*/}
         <h2 className="main-subtitle">{t('languages.title')}</h2>
-        <div className="p-5 lg:p-10 border-2 border-dashed border-border rounded">
+        <div className="p-5 lg:p-10">
           {t.raw('languages.content')?.map((ml: MainLanguageType) => (
             <div key={ml.tag} className="mb-4 last:mb-0">
               <div className="flex justify-between mb-2 text-sm">
@@ -61,6 +61,8 @@ export default function ServicesPage() {
             </div>
           ))}
         </div>
+      </section>
+      <section className="flex flex-col">
         {/*Tools & Soft skills*/}
         <h2 className="main-subtitle">{t('badges.title')}</h2>
         <div className="flex flex-wrap gap-2 lg:gap-3 justify-evenly lg:justify-normal">
