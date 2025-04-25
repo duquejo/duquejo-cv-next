@@ -4,7 +4,7 @@ import { metatag } from './utils';
 test('should navigate to the home page', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page).toHaveTitle('Curriculum Vitae | José Duque');
+  await expect(page).toHaveTitle('About me | José Duque');
 
   await expect(metatag(page, 'description').getAttribute('content')).resolves.toBe(
     'Colombian web developer. Explore my portfolio, expertise, and comprehensive services to elevate your digital presence.',

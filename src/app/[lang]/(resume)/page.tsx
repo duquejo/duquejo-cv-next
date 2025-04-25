@@ -1,13 +1,13 @@
-import Image from 'next/image';
 import { ExperienceItem } from '@/components/resume/experience-item';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Languages } from 'lucide-react';
-import { calculateYears, cn, STACK_DATA as stack } from '@/lib';
+import { calculateYears, cn } from '@/lib';
 import { HeroImage } from '@/components/resume/hero-image';
 import { useTranslations } from 'next-intl';
 import { useCallback } from 'react';
 import { RichText } from '@/components/general/rich-text';
 import type { ExperienceType, LanguageType } from '@/interfaces';
+import { TechMarquee } from '@/components/resume/tech-marquee';
 
 export default function MainPage() {
   const t = useTranslations('General');
@@ -16,9 +16,9 @@ export default function MainPage() {
 
   return (
     <>
-      <section className="flex flex-col items-center mx-0 lg:pt-5 mt-5 py-10 relative lg:flex-row lg:justify-between">
-        <div className="order-2 xl:basis-3/5 basis-1/2 lg:order-1 md:ml-5 lg:ml-10 mx-5 pb-0 pt-5 lg:pt-0">
-          <h1 className="text-4xl lg:text-6xl md:text-5xl mb-5 animate-entrance duration-1000 font-semibold">
+      <section className="flex flex-col items-center justify-center m-5 lg:m-10 relative lg:flex-row lg:justify-between">
+        <div className="order-2 lg:order-1 max-w-full xl:max-w-3/5">
+          <h1 className="text-4xl lg:text-6xl md:text-5xl mb-5 animate-entrance duration-1000 font-semibold text-center lg:text-justify">
             {t('resume.greetings')}
             <strong className="mt-2 block bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-primary">
               José Duque.
@@ -29,22 +29,13 @@ export default function MainPage() {
           <p>
             <RichText>{(tags) => t.rich('resume.excerpt2', tags)}</RichText>
           </p>
-          <div className="flex justify-center gap-x-10 mt-6 lg:mt-8 w-full md:w-auto">
-            {stack.map((s) => (
-              <Image
-                className="hover:animate-wiggle max-w-8 lg:max-w-12 lg:w-full"
-                key={s.title}
-                src={s.icon}
-                alt={s.title}
-                width={50}
-                height={50}
-              />
-            ))}
+          <div className="grid mt-6 lg:mt-8 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+            <TechMarquee />
           </div>
         </div>
-        <HeroImage className="order-1 flex-1 px-5 mt-5 max-w-[300px] lg:max-w-[380px] lg:order-2 lg:mt-0" />
+        <HeroImage className="order-1 px-5 mt-15 mb-5 max-w-[300px] lg:max-w-[380px] lg:order-2 lg:m-0" />
       </section>
-      <section className=" gap-x-10 gap-y-2 mx-5 px-5 py-5 border-2 border-dashed border-border lg:py-10 lg:px-10 lg:mx-10 rounded">
+      <section className="gap-x-10 gap-y-2 mx-5 px-5 py-5 border-2 border-dashed border-border lg:py-10 lg:px-10 lg:mx-10 rounded">
         <h2 className="text-lg lg:text-xl mb-3 font-semibold underline-offset-4 underline decoration-primary">
           <RichText>{(tags) => t.rich('resume.description.title', tags)}</RichText>
         </h2>
