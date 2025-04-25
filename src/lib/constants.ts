@@ -21,6 +21,18 @@ export const STACK_DATA = [
     icon: '/static/svg/react.svg',
     title: 'React JS',
   },
+  {
+    icon: '/static/svg/jest.svg',
+    title: 'Jest',
+  },
+  {
+    icon: '/static/svg/php.svg',
+    title: 'PHP',
+  },
+  {
+    icon: '/static/svg/laravel.svg',
+    title: 'Laravel',
+  },
 ];
 
 export const CSP_HEADERS = `default-src 'self';script-src https://*.googletagmanager.com 'self' 'unsafe-eval' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' blob: data:;font-src 'self';object-src 'none';base-uri 'self';form-action 'self';frame-ancestors 'none';upgrade-insecure-requests;connect-src https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com 'self'`;
