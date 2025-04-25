@@ -35,7 +35,7 @@ export default function MainPage() {
         </div>
         <HeroImage className="order-1 px-5 mt-15 mb-5 max-w-[300px] lg:max-w-[380px] lg:order-2 lg:m-0" />
       </section>
-      <section className="gap-x-10 gap-y-2 mx-5 px-5 py-5 border-2 border-dashed border-border lg:py-10 lg:px-10 lg:mx-10 rounded">
+      <section className="gap-x-10 gap-y-2 mx-5 px-5 py-5 border border-dashed border-border lg:py-10 lg:px-10 lg:mx-10 bg-sidebar/30 rounded-xl">
         <h2 className="text-lg lg:text-xl mb-3 font-semibold underline-offset-4 underline decoration-primary">
           <RichText>{(tags) => t.rich('resume.description.title', tags)}</RichText>
         </h2>
@@ -60,7 +60,10 @@ export default function MainPage() {
           <h2 className={cn('main-subtitle', 'mt-5 lg:mt-0')}>{t('languages.title')}</h2>
           <div className="grid grid-cols-2 gap-x-6">
             {t.raw('languages.content')?.map((l: LanguageType, i: number) => (
-              <Card className="flex flex-col justify-center items-center" key={`language-${i}`}>
+              <Card
+                className="flex flex-col justify-center items-center bg-sidebar/30 rounded-xl border-dashed"
+                key={`language-${i}`}
+              >
                 <CardHeader>
                   <Languages size={40} strokeWidth={1.5} className="text-primary" />
                 </CardHeader>

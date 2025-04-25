@@ -44,7 +44,7 @@ export const ExperienceItem = ({
     >
       <span
         data-testid="detail"
-        className="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-gray-400, bg-primary"
+        className="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-primary"
       />
       <span className="pb-2 ms-4 flex items-center justify-between lg:justify-normal">
         <span
@@ -63,7 +63,7 @@ export const ExperienceItem = ({
           <span className="text-xs font-normal ml-2 text-right lg:text-left">{enterprise}</span>
         )}
       </span>
-      <Card className="ms-4">
+      <Card className="ms-4 bg-sidebar/30 border-dashed">
         <CardHeader>
           <CardTitle>
             <h2>{project}</h2>
