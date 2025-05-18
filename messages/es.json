@@ -813,6 +813,10 @@
           "type": "hard"
         },
         {
+          "name": "React Native",
+          "type": "hard"
+        },
+        {
           "name": "Zustand",
           "type": "hard"
         },
