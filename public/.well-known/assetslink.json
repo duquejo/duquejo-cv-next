@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.duquejo.debtsapp",
+      "sha256_cert_fingerprints": [
+        "2C:FB:18:06:CF:1E:AA:50:17:00:A3:59:16:AB:A0:BF:95:53:66:2A:64:39:49:8D:1B:10:FE:E2:BA:42:7A:40"
+      ]
+    }
+  }
+]

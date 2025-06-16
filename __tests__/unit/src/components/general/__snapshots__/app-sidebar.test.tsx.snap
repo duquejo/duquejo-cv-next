@@ -414,7 +414,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                           </span>
                         </button>
                         <button
-                          aria-controls="radix-:r3:"
+                          aria-controls="radix-«r3»"
                           aria-expanded="false"
                           aria-haspopup="dialog"
                           class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 w-8 lg:h-10 lg:w-10 cursor-pointer"
@@ -457,7 +457,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                           aria-haspopup="menu"
                           class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 w-8 lg:h-10 lg:w-10 cursor-pointer"
                           data-state="closed"
-                          id="radix-:r4:"
+                          id="radix-«r4»"
                           type="button"
                         >
                           <svg
@@ -523,7 +523,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                           />
                         </button>
                         <button
-                          aria-controls="radix-:r0:"
+                          aria-controls="radix-«r0»"
                           aria-expanded="false"
                           aria-haspopup="dialog"
                           class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground px-4 py-2 h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex cursor-pointer"
