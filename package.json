@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@next/third-parties": "^15.1.7",
-    "@pdfme/common": "^5.3.5",
+    "@pdfme/common": "^5.4.1",
     "@pdfme/generator": "^5.3.5",
     "@pdfme/schemas": "^5.3.5",
     "@radix-ui/react-avatar": "^1.1.2",

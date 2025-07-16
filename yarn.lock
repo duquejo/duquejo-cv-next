@@ -1177,15 +1177,15 @@
   dependencies:
     pako "^1.0.10"
 
-"@pdfme/common@^5.3.5":
-  version "5.3.11"
-  resolved "https://registry.yarnpkg.com/@pdfme/common/-/common-5.3.11.tgz#9e5f06cc36576d66fbed05be4d4a93af3190ce66"
-  integrity sha512-8ReUoP1e3npRxp7AaBw1JrZmdOBH9Pu9fbzDe2q0lNxdJrLq1h9q0YHbFjW+lal8YU53ExCgsLN7+8waxNc52A==
+"@pdfme/common@^5.4.1":
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/@pdfme/common/-/common-5.4.1.tgz#6c69cdc05c6a59e4692be0e035d98281e9b78890"
+  integrity sha512-FzmaLVkjvIGeUukVQrsO2YSklFSI3F803ydOvy2QZ1QdFFS2FewUvalQPtoUKJSj8qU3EF9z39KfNOXEnQ8NuA==
   dependencies:
     "@pdfme/pdf-lib" "*"
-    acorn "^8.14.0"
+    acorn "^8.15.0"
     buffer "^6.0.3"
-    zod "^3.20.2"
+    zod "^3.25.67"
 
 "@pdfme/generator@^5.3.5":
   version "5.3.11"
@@ -2132,10 +2132,10 @@ acorn-walk@^8.0.0:
   dependencies:
     acorn "^8.11.0"
 
-acorn@^8.0.4, acorn@^8.11.0, acorn@^8.14.0:
-  version "8.14.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.14.1.tgz#721d5dc10f7d5b5609a891773d47731796935dfb"
-  integrity sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==
+acorn@^8.0.4, acorn@^8.11.0, acorn@^8.14.0, acorn@^8.15.0:
+  version "8.15.0"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.15.0.tgz#a360898bc415edaac46c8241f6383975b930b816"
+  integrity sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==
 
 agent-base@^7.0.2, agent-base@^7.1.0, agent-base@^7.1.2:
   version "7.1.3"
@@ -6544,7 +6544,7 @@ yoctocolors-cjs@^2.1.2:
   resolved "https://registry.yarnpkg.com/yoctocolors-cjs/-/yoctocolors-cjs-2.1.2.tgz#f4b905a840a37506813a7acaa28febe97767a242"
   integrity sha512-cYVsTjKl8b+FrnidjibDWskAv7UKOfcwaVZdp/it9n1s9fU3IkgDbhdIRKCW4JDsAlECJY0ytoVPT3sK6kideA==
 
-zod@^3.20.2:
-  version "3.24.2"
-  resolved "https://registry.yarnpkg.com/zod/-/zod-3.24.2.tgz#8efa74126287c675e92f46871cfc8d15c34372b3"
-  integrity sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==
+zod@^3.20.2, zod@^3.25.67:
+  version "3.25.76"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.25.76.tgz#26841c3f6fd22a6a2760e7ccb719179768471e34"
+  integrity sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==
