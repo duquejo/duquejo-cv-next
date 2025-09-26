@@ -16,8 +16,8 @@ export const HeroImage = ({ className }: Props) => {
           height={410}
           width={410}
           priority={true}
-          quality={100}
           src={avatarPicture}
+          unoptimized
         />
       </picture>
     </div>

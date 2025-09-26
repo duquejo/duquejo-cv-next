@@ -20,5 +20,10 @@ export default defineConfig({
         ...coverageConfigDefaults.exclude,
       ],
     },
+    server: {
+      deps: {
+        inline: ['next-intl'],
+      },
+    },
   },
 });
