@@ -12,7 +12,7 @@ test.describe('PDF API Endpoint test', () => {
       method: 'OPTIONS',
     });
 
-    expect(response.status()).toBe(200);
+    expect(response.status()).toBe(204);
 
     expect(response.headers()).toHaveProperty('content-security-policy');
     expect(response.headers()).toHaveProperty('cross-origin-opener-policy');
@@ -31,7 +31,7 @@ test.describe('PDF API Endpoint test', () => {
       },
     });
 
-    expect(response.status()).toBe(200);
+    expect(response.status()).toBe(204);
     expect(response.headers()).toHaveProperty(
       'access-control-allow-headers',
       'Origin, X-Requested-With, Content-Type, Accept, Authorization',
@@ -54,7 +54,7 @@ test.describe('PDF API Endpoint test', () => {
     expect(response.headers()).toHaveProperty('access-control-allow-methods', 'POST, OPTIONS');
     expect(response.headers()).toHaveProperty(
       'content-disposition',
-      'attachment; filename=cv_jose_duque.pdf',
+      'attachment; filename="cv_jose_duque.pdf"',
     );
     expect(response.headers()).toHaveProperty('content-type', 'application/pdf');
     expect(response.headers()).toHaveProperty(
