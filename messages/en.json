@@ -907,7 +907,7 @@
     "security": "JWT, Auth0, Cognito.",
     "architecture": "Hexagonal Architecture, CQRS, MVC, Microservices, Event Driven Architecture.",
     "methodologies": "SCRUM, Kanban.",
-    "experience": ":years years",
+    "experience": "{years} years",
     "languages": [
       {
         "title": "Spanish",

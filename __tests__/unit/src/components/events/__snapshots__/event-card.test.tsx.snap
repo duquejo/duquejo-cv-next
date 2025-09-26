@@ -57,6 +57,7 @@ exports[`<EventCard /> tests > should match the snapshot 1`] = `
         class="text-background"
       >
         <svg
+          aria-hidden="true"
           class="lucide lucide-git-merge inline rounded-full transition-colors p-1 bg-red-400"
           data-testid="event-action"
           fill="none"
@@ -168,6 +169,7 @@ exports[`<EventCard /> tests > should render the optional fields if they are giv
           title="Link"
         >
           <svg
+            aria-hidden="true"
             class="lucide lucide-github ml-2 inline bg-primary rounded-full p-1 h-5 w-5 text-background transition-colors hover:bg-primary-foreground hover:text-foreground"
             fill="none"
             height="24"
@@ -196,6 +198,7 @@ exports[`<EventCard /> tests > should render the optional fields if they are giv
         class="text-background"
       >
         <svg
+          aria-hidden="true"
           class="lucide lucide-git-merge inline rounded-full transition-colors p-1 bg-red-400"
           data-testid="event-action"
           fill="none"

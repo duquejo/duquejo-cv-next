@@ -16,6 +16,7 @@ exports[`<Footer /> tests > Should match the snapshot 1`] = `
         title="GitHub"
       >
         <svg
+          aria-hidden="true"
           class="lucide lucide-github"
           fill="none"
           height="23"
@@ -43,6 +44,7 @@ exports[`<Footer /> tests > Should match the snapshot 1`] = `
         title="LinkedIn"
       >
         <svg
+          aria-hidden="true"
           class="lucide lucide-linkedin"
           fill="none"
           height="23"
@@ -78,6 +80,7 @@ exports[`<Footer /> tests > Should match the snapshot 1`] = `
         title="E-mail"
       >
         <svg
+          aria-hidden="true"
           class="lucide lucide-mail"
           fill="none"
           height="23"
@@ -89,15 +92,15 @@ exports[`<Footer /> tests > Should match the snapshot 1`] = `
           width="23"
           xmlns="http://www.w3.org/2000/svg"
         >
+          <path
+            d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+          />
           <rect
             height="16"
             rx="2"
             width="20"
             x="2"
             y="4"
-          />
-          <path
-            d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
           />
         </svg>
       </a>

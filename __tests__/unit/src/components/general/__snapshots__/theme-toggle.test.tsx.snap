@@ -7,7 +7,7 @@ exports[`<ThemeToggle /> tests > Should match the snapshot with a given args 1`]
     aria-haspopup="menu"
     class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-secondary-foreground shadow-xs hover:bg-secondary/80 h-10 w-10 bg-color-red"
     data-state="closed"
-    id="radix-:r2:"
+    id="radix-«r2»"
     title="Testing toggle"
     type="button"
   >
@@ -68,7 +68,7 @@ exports[`<ThemeToggle /> tests > Should match the snapshot with a given args 1`]
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"
+        d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
       />
     </svg>
     <span
@@ -87,7 +87,7 @@ exports[`<ThemeToggle /> tests > Should match the snapshot with the default args
     aria-haspopup="menu"
     class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-10 w-10"
     data-state="closed"
-    id="radix-:r0:"
+    id="radix-«r0»"
     title="mocked title"
     type="button"
   >
@@ -148,7 +148,7 @@ exports[`<ThemeToggle /> tests > Should match the snapshot with the default args
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"
+        d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
       />
     </svg>
     <span
