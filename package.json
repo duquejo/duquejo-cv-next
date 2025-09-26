@@ -46,8 +46,8 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.0",
+    "@commitlint/cli": "^20.0.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@eslint/eslintrc": "^3",
     "@next/bundle-analyzer": "^15.1.6",
     "@playwright/test": "^1.49.1",
