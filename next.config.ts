@@ -13,6 +13,7 @@ export default withNextIntl(
   withBundleAnalizer({
     devIndicators: false,
     images: {
+      qualities: [25, 75, 100],
       remotePatterns: [
         {
           protocol: 'https',
