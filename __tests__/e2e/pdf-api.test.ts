@@ -6,25 +6,29 @@ test.use({
 
 test.describe('PDF API Endpoint test', () => {
   const expectedOrigin = 'http://abc.xyz';
+  const endpoint = '/api/v1/pdf';
+
+  const assertCSPHeaders = (headers: Record<string, string>) => {
+    expect(headers).toHaveProperty('content-security-policy');
+    expect(headers).toHaveProperty('cross-origin-opener-policy');
+    expect(headers).toHaveProperty('referrer-policy');
+    expect(headers).toHaveProperty('x-content-type-options');
+    expect(headers).toHaveProperty('x-frame-options');
+  };
 
   test('should handle the preflight (options) requests', async ({ request }) => {
-    const response = await request.fetch('/api/v1/pdf', {
+    const response = await request.fetch(endpoint, {
       method: 'OPTIONS',
     });
 
     expect(response.status()).toBe(204);
-
-    expect(response.headers()).toHaveProperty('content-security-policy');
-    expect(response.headers()).toHaveProperty('cross-origin-opener-policy');
-    expect(response.headers()).toHaveProperty('referrer-policy');
-    expect(response.headers()).toHaveProperty('x-content-type-options');
-    expect(response.headers()).toHaveProperty('x-frame-options');
+    assertCSPHeaders(response.headers());
   });
 
   test('should handle the preflight (options) requests with the origin header', async ({
     request,
   }) => {
-    const response = await request.fetch('/api/v1/pdf', {
+    const response = await request.fetch(endpoint, {
       method: 'OPTIONS',
       headers: {
         Origin: expectedOrigin,
@@ -41,15 +45,10 @@ test.describe('PDF API Endpoint test', () => {
   });
 
   test('should handle the POST request - Generate PDF', async ({ request }) => {
-    const response = await request.post('/api/v1/pdf');
+    const response = await request.post(endpoint);
 
     expect(response.status()).toBe(200);
-
-    expect(response.headers()).toHaveProperty('content-security-policy');
-    expect(response.headers()).toHaveProperty('cross-origin-opener-policy');
-    expect(response.headers()).toHaveProperty('referrer-policy');
-    expect(response.headers()).toHaveProperty('x-content-type-options');
-    expect(response.headers()).toHaveProperty('x-frame-options');
+    assertCSPHeaders(response.headers());
 
     expect(response.headers()).toHaveProperty('access-control-allow-methods', 'POST, OPTIONS');
     expect(response.headers()).toHaveProperty(
@@ -66,7 +65,7 @@ test.describe('PDF API Endpoint test', () => {
   test('should handle the POST request - Generate PDF with the origin header', async ({
     request,
   }) => {
-    const response = await request.post('/api/v1/pdf', {
+    const response = await request.post(endpoint, {
       headers: {
         Origin: expectedOrigin,
       },
