@@ -14,6 +14,7 @@ const PDF_FILENAME = process.env.PDF_FILENAME || 'document';
 
 const applyCorsHeaders = (headers: Headers, origin: string) => {
   if (ALLOWED_ORIGINS.includes(origin)) headers.set('Access-Control-Allow-Origin', origin);
+
   Object.entries(CORS_HEADERS).forEach(([key, value]) => headers.set(key, value));
 };
 
