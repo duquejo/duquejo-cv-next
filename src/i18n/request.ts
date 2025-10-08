@@ -13,7 +13,12 @@ export default getRequestConfig(async () => {
   const availableLocales = routing.locales;
   const defaultLocale = routing.defaultLocale;
 
-  const locale = match(languages, availableLocales, defaultLocale);
+  let locale: string;
+  try {
+    locale = match(languages, availableLocales, defaultLocale);
+  } catch {
+    locale = defaultLocale;
+  }
 
   return {
     locale,
