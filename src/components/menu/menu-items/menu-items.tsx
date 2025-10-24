@@ -28,7 +28,10 @@ export const MenuItems = ({ items, size = 'default' }: Props) => {
             size={size}
             className="focus-visible:ring-primary focus-visible:ring-1"
           >
-            <Link href={item.url} onClick={() => setOpenMobile(false)}>
+            <Link
+              href={item.url as Parameters<typeof Link>['0']['href']}
+              onClick={() => setOpenMobile(false)}
+            >
               <span>{item.title}</span>
             </Link>
           </SidebarMenuButton>
