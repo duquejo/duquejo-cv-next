@@ -29,7 +29,7 @@ export default function MainPage() {
           <p>
             <RichText>{(tags) => t.rich('resume.excerpt2', tags)}</RichText>
           </p>
-          <div className="grid mt-6 lg:mt-8 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+          <div className="grid mt-6 lg:mt-8 mask-[linear-gradient(to_right,transparent_0,black_128px,black_calc(100%-200px),transparent_100%)]">
             <TechMarquee />
           </div>
         </div>
