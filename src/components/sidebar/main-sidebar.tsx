@@ -49,6 +49,14 @@ export const MainSidebar = () => {
             <MenuItems items={t.raw('professional.links')} />
           </SidebarGroupContent>
         </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel className="font-semibold tracking-wider text-foreground">
+            {t('other.title')}
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <MenuItems items={t.raw('other.links')} />
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
         <SidebarGroup className="sm:hidden">

@@ -13,6 +13,8 @@ export const routing = defineRouting({
 
     '/blog': '/blog',
 
+    '/blog/[slug]': '/blog/[slug]',
+
     '/career/projects': {
       en: '/career/projects',
       es: '/carrera/proyectos',

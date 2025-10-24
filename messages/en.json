@@ -15,7 +15,12 @@
         {
           "title": "Projects",
           "url": "/career/projects"
-        },
+        }
+      ]
+    },
+    "other": {
+      "title": "More about me",
+      "links": [
         {
           "title": "Blog",
           "url": "/blog"

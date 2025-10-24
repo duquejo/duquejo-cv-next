@@ -12,6 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Link } from '@/i18n/routing';
 
 export async function metadata() {
   return generateMetadata('Blog');
@@ -123,133 +124,149 @@ export default function BlogPage() {
 
       {/* Featured Post */}
       {featuredPost && (
-        <Card className="mb-10 bg-sidebar/30 border-2 border-primary overflow-hidden animate-entrance">
-          <div className="grid md:grid-cols-5 gap-0">
-            {/* Mock Image Area */}
-            <div className="md:col-span-2 bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center min-h-[250px] md:min-h-full">
-              <div className="text-center p-8">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-4xl">📝</span>
+        <Link
+          href={{
+            pathname: '/blog/[slug]',
+            params: { slug: 'building-modern-web-apps-nextjs-15' },
+          }}
+          className="block"
+        >
+          <Card className="mb-10 bg-sidebar/30 border-2 border-primary overflow-hidden animate-entrance hover:shadow-lg transition-shadow cursor-pointer">
+            <div className="grid md:grid-cols-5 gap-0">
+              {/* Mock Image Area */}
+              <div className="md:col-span-2 bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center min-h-[250px] md:min-h-full">
+                <div className="text-center p-8">
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-4xl">📝</span>
+                  </div>
+                  <Badge variant={getCategoryVariant(featuredPost.category)} className="text-xs">
+                    {t('featured')}
+                  </Badge>
                 </div>
-                <Badge variant={getCategoryVariant(featuredPost.category)} className="text-xs">
-                  {t('featured')}
+              </div>
+
+              {/* Content */}
+              <div className="md:col-span-3 p-6 flex flex-col justify-center">
+                <Badge variant={getCategoryVariant(featuredPost.category)} className="w-fit mb-3">
+                  {featuredPost.category}
                 </Badge>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="md:col-span-3 p-6 flex flex-col justify-center">
-              <Badge variant={getCategoryVariant(featuredPost.category)} className="w-fit mb-3">
-                {featuredPost.category}
-              </Badge>
-              <CardTitle className="text-2xl lg:text-3xl mb-3 leading-tight">
-                {featuredPost.title}
-              </CardTitle>
-              <CardDescription className="text-base mb-4 leading-relaxed">
-                {featuredPost.excerpt}
-              </CardDescription>
-
-              {/* Metadata */}
-              <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
-                <div className="flex items-center gap-1">
-                  <Calendar size={14} />
-                  <span>{featuredPost.publishDate}</span>
-                </div>
-                <Separator orientation="vertical" className="h-4" />
-                <div className="flex items-center gap-1">
-                  <Clock size={14} />
-                  <span>{t('readingTime', { time: featuredPost.readingTime })}</span>
-                </div>
-              </div>
-
-              {/* Tags */}
-              <div className="flex gap-2 flex-wrap mb-4">
-                {featuredPost.tags.map((tag) => (
-                  <Badge key={tag} variant="secondary" className="text-xs">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-
-              <Button variant="default" size="sm" className="w-fit cursor-pointer">
-                {t('readMore')}
-                <ArrowRight className="ml-2" size={16} />
-              </Button>
-            </div>
-          </div>
-        </Card>
-      )}
-
-      {/* Regular Posts Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {regularPosts.map((post, index) => (
-          <Card
-            key={post.id}
-            className="group hover:border-primary transition-colors border-dashed overflow-hidden flex flex-col h-full animate-entrance relative"
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-              <div className="text-9xl opacity-20">
-                {post.category === 'Coding' && '💻'}
-                {post.category === 'Lifestyle' && '🌿'}
-                {post.category === 'Music' && '🎵'}
-                {post.category === 'Gaming' && '🎮'}
-              </div>
-            </div>
-
-            {/* Overlay gradient for better text readability */}
-            <div className="absolute inset-0 bg-linear-to-b from-background/60 via-background/80 to-background/95" />
-
-            {/* Content Container */}
-            <div className="relative z-10 flex flex-col h-full">
-              <CardHeader className="pb-3">
-                <div className="flex justify-end mb-2">
-                  <Badge variant={getCategoryVariant(post.category)} className="text-xs">
-                    {post.category}
-                  </Badge>
-                </div>
-                <CardTitle className="line-clamp-2 text-lg group-hover:text-primary transition-colors">
-                  {post.title}
+                <CardTitle className="text-2xl lg:text-3xl mb-3 leading-tight">
+                  {featuredPost.title}
                 </CardTitle>
-              </CardHeader>
-
-              <CardContent className="flex-1 flex flex-col pt-0">
-                <CardDescription className="line-clamp-3 mb-4 flex-1">
-                  {post.excerpt}
+                <CardDescription className="text-base mb-4 leading-relaxed">
+                  {featuredPost.excerpt}
                 </CardDescription>
 
                 {/* Metadata */}
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <Calendar size={12} />
-                  <span>{post.publishDate}</span>
-                  <Separator orientation="vertical" className="h-3" />
-                  <Clock size={12} />
-                  <span>{t('readingTime', { time: post.readingTime })}</span>
+                <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar size={14} />
+                    <span>{featuredPost.publishDate}</span>
+                  </div>
+                  <Separator orientation="vertical" className="h-4" />
+                  <div className="flex items-center gap-1">
+                    <Clock size={14} />
+                    <span>{t('readingTime', { time: featuredPost.readingTime })}</span>
+                  </div>
                 </div>
-              </CardContent>
 
-              <CardFooter className="flex-col items-start gap-3 pt-0">
                 {/* Tags */}
-                <div className="flex gap-1 flex-wrap">
-                  {post.tags.slice(0, 3).map((tag) => (
+                <div className="flex gap-2 flex-wrap mb-4">
+                  {featuredPost.tags.map((tag) => (
                     <Badge key={tag} variant="secondary" className="text-xs">
                       {tag}
                     </Badge>
                   ))}
                 </div>
 
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  className="w-full transition-colors cursor-pointer"
-                >
+                <Button variant="default" size="sm" className="w-fit cursor-pointer">
                   {t('readMore')}
-                  <ArrowRight className="ml-2" size={14} />
+                  <ArrowRight className="ml-2" size={16} />
                 </Button>
-              </CardFooter>
+              </div>
             </div>
           </Card>
+        </Link>
+      )}
+
+      {/* Regular Posts Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {regularPosts.map((post, index) => (
+          <Link
+            key={post.id}
+            href={{
+              pathname: '/blog/[slug]',
+              params: { slug: 'building-modern-web-apps-nextjs-15' },
+            }}
+            className="block"
+          >
+            <Card
+              className="group hover:border-primary transition-colors border-dashed overflow-hidden flex flex-col h-full animate-entrance relative"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {/* Background Image with Overlay */}
+              <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                <div className="text-9xl opacity-20">
+                  {post.category === 'Coding' && '💻'}
+                  {post.category === 'Lifestyle' && '🌿'}
+                  {post.category === 'Music' && '🎵'}
+                  {post.category === 'Gaming' && '🎮'}
+                </div>
+              </div>
+
+              {/* Overlay gradient for better text readability */}
+              <div className="absolute inset-0 bg-linear-to-b from-background/60 via-background/80 to-background/95" />
+
+              {/* Content Container */}
+              <div className="relative z-10 flex flex-col h-full">
+                <CardHeader className="pb-3">
+                  <div className="flex justify-end mb-2">
+                    <Badge variant={getCategoryVariant(post.category)} className="text-xs">
+                      {post.category}
+                    </Badge>
+                  </div>
+                  <CardTitle className="line-clamp-2 text-lg group-hover:text-primary transition-colors">
+                    {post.title}
+                  </CardTitle>
+                </CardHeader>
+
+                <CardContent className="flex-1 flex flex-col pt-0">
+                  <CardDescription className="line-clamp-3 mb-4 flex-1">
+                    {post.excerpt}
+                  </CardDescription>
+
+                  {/* Metadata */}
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <Calendar size={12} />
+                    <span>{post.publishDate}</span>
+                    <Separator orientation="vertical" className="h-3" />
+                    <Clock size={12} />
+                    <span>{t('readingTime', { time: post.readingTime })}</span>
+                  </div>
+                </CardContent>
+
+                <CardFooter className="flex-col items-start gap-3 pt-0">
+                  {/* Tags */}
+                  <div className="flex gap-1 flex-wrap">
+                    {post.tags.slice(0, 3).map((tag) => (
+                      <Badge key={tag} variant="secondary" className="text-xs">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="justify-end w-full transition-colors group-hover:text-primary hover:text-primary cursor-pointer hover:bg-transparent"
+                  >
+                    {t('readMore')}
+                    <ArrowRight className="ml-2" size={14} />
+                  </Button>
+                </CardFooter>
+              </div>
+            </Card>
+          </Link>
         ))}
       </div>
     </article>
