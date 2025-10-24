@@ -15,12 +15,14 @@ import { useTranslations } from 'next-intl';
 import { MenuItems } from '@/components/menu/menu-items/menu-items';
 import { ComplementarySidebar } from '@/components/sidebar/complementary-sidebar';
 import { SocialItemsHorizontal } from '@/components/social/social-items-horizontal';
+import { SidebarKeyboard } from './sidebar-keyboard';
 
 export const MainSidebar = () => {
   const t = useTranslations('Sidebar');
 
   return (
     <Sidebar collapsible="icon" variant="floating" role="navigation" tabIndex={0}>
+      {/* Top Avatar & Contact */}
       <SidebarHeader>
         <SidebarGroup>
           <SidebarMenu className="gap-y-3">
@@ -40,6 +42,8 @@ export const MainSidebar = () => {
         </SidebarGroup>
         <SidebarSeparator />
       </SidebarHeader>
+
+      {/* Middle links */}
       <SidebarContent className="justify-between">
         <SidebarGroup>
           <SidebarGroupLabel className="font-semibold tracking-wider text-foreground">
@@ -50,17 +54,22 @@ export const MainSidebar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup>
-          <SidebarGroupLabel className="font-semibold tracking-wider text-foreground">
+          <SidebarSeparator className="my-2 group-data-[collapsible=icon]:hidden" />
+          <SidebarGroupLabel className="font-semibold tracking-wider text-foreground group-data-[collapsible=icon]:hidden">
             {t('other.title')}
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <MenuItems items={t.raw('other.links')} />
+            <SidebarSeparator className="sm:flex my-2 group-data-[collapsible=icon]:hidden hidden" />
+            <SidebarKeyboard className="sm:flex group-data-[collapsible=icon]:hidden hidden" />
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter>
-        <SidebarGroup className="sm:hidden">
-          <SidebarSeparator className="mx-0" />
+
+      {/* Mobile */}
+      <SidebarFooter className="sm:hidden">
+        <SidebarGroup>
+          <SidebarSeparator className="mx-0 mb-2" />
           <SidebarGroupLabel className="px-0 font-semibold tracking-wider text-foreground">
             {t('footer.mobile.title')}
           </SidebarGroupLabel>

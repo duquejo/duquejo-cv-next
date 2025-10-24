@@ -67,7 +67,7 @@ export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => 
           </Link>
         </CardDescription>
       </CardHeader>
-      <CardContent className="text-xs leading-relaxed text-left break-words">
+      <CardContent className="text-xs leading-relaxed text-left wrap-break-word">
         {payload.description && <strong className="font-bold">{payload.description}</strong>}
         {payload.commits &&
           payload.commits.length > 0 &&
