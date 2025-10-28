@@ -48,7 +48,7 @@ exports[`<EventCard /> tests > should match the snapshot 1`] = `
       </div>
     </div>
     <div
-      class="p-6 pt-0 text-xs leading-relaxed text-left break-words"
+      class="p-6 pt-0 text-xs leading-relaxed text-left wrap-break-word"
     />
     <div
       class="items-center p-6 pt-0 flex justify-between"
@@ -148,7 +148,7 @@ exports[`<EventCard /> tests > should render the optional fields if they are giv
       </div>
     </div>
     <div
-      class="p-6 pt-0 text-xs leading-relaxed text-left break-words"
+      class="p-6 pt-0 text-xs leading-relaxed text-left wrap-break-word"
     >
       <strong
         class="font-bold"

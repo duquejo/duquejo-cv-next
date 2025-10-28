@@ -1,4 +1,4 @@
-import { generateMetadata as generateMeta } from '@/lib';
+import { createMetadata } from '@/lib';
 import { useTranslations } from 'next-intl';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { CodeBlock } from '@/components/general/code-block';
 
 export async function generateMetadata() {
-  return generateMeta('Blog');
+  return await createMetadata('Blog');
 }
 
 // Mock blog post data

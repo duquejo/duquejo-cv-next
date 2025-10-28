@@ -1,5 +1,5 @@
 import { render, within } from '@testing-library/react';
-import ProjectsPage from '@/app/[lang]/(resume)/career/projects/page';
+import ProjectsPage from '@/app/[lang]/career/projects/page';
 import { beforeEach } from 'vitest';
 import { getProjectByFilters, getProjectSkills } from '@/actions/projects';
 import { SearchParams } from 'next/dist/server/request/search-params';

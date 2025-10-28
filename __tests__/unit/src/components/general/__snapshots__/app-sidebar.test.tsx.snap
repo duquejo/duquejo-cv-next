@@ -345,17 +345,112 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                 </ul>
               </div>
             </div>
-          </div>
-          <div
-            class="flex flex-col gap-2 p-2"
-            data-sidebar="footer"
-          >
             <div
-              class="relative flex w-full min-w-0 flex-col p-2 sm:hidden"
+              class="relative flex w-full min-w-0 flex-col p-2"
               data-sidebar="group"
             >
               <div
-                class="shrink-0 h-[1px] w-auto bg-sidebar-border mx-0"
+                class="shrink-0 h-[1px] mx-2 w-auto bg-sidebar-border my-2 group-data-[collapsible=icon]:hidden"
+                data-orientation="horizontal"
+                data-sidebar="separator"
+                role="none"
+              />
+              <div
+                class="duration-200 flex h-8 shrink-0 items-center rounded-md px-2 text-xs outline-hidden ring-sidebar-ring transition-[margin,opa] ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 font-semibold tracking-wider text-foreground group-data-[collapsible=icon]:hidden"
+                data-sidebar="group-label"
+              />
+              <div
+                class="w-full text-sm"
+                data-sidebar="group-content"
+              >
+                <ul
+                  class="flex w-full min-w-0 flex-col gap-1"
+                  data-sidebar="menu"
+                >
+                  <li
+                    class="group/menu-item relative"
+                    data-sidebar="menu-item"
+                  >
+                    <a
+                      class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm focus-visible:ring-primary focus-visible:ring-1"
+                      data-active="false"
+                      data-sidebar="menu-button"
+                      data-size="default"
+                      href="/contact"
+                    >
+                      <span>
+                        Contact
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    class="group/menu-item relative"
+                    data-sidebar="menu-item"
+                  >
+                    <a
+                      class="peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm focus-visible:ring-primary focus-visible:ring-1"
+                      data-active="false"
+                      data-sidebar="menu-button"
+                      data-size="default"
+                      href="/privacy"
+                    >
+                      <span>
+                        Privacy Policy
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+                <div
+                  class="shrink-0 h-[1px] mx-2 w-auto bg-sidebar-border sm:flex my-2 group-data-[collapsible=icon]:hidden hidden"
+                  data-orientation="horizontal"
+                  data-sidebar="separator"
+                  role="none"
+                />
+                <div
+                  class="flex-col items-center gap-4 sm:flex group-data-[collapsible=icon]:hidden hidden"
+                >
+                  <p
+                    class="text-xs text-muted-foreground"
+                  >
+                    Use
+                     
+                    <kbd
+                      class="inline-flex items-center gap-1"
+                      data-slot="kbd-group"
+                    >
+                      <kbd
+                        class="bg-muted text-muted-foreground pointer-events-none inline-flex h-5 w-fit min-w-5 select-none items-center justify-center gap-1 rounded-sm px-1 font-sans text-xs font-medium [&_svg:not([class*='size-'])]:size-3 in-data-[slot=tooltip-content]:bg-background/20 in-data-[slot=tooltip-content]:text-background dark:in-data-[slot=tooltip-content]:bg-background/10"
+                        data-slot="kbd"
+                      >
+                        Ctrl
+                      </kbd>
+                      <span>
+                        +
+                      </span>
+                      <kbd
+                        class="bg-muted text-muted-foreground pointer-events-none inline-flex h-5 w-fit min-w-5 select-none items-center justify-center gap-1 rounded-sm px-1 font-sans text-xs font-medium [&_svg:not([class*='size-'])]:size-3 in-data-[slot=tooltip-content]:bg-background/20 in-data-[slot=tooltip-content]:text-background dark:in-data-[slot=tooltip-content]:bg-background/10"
+                        data-slot="kbd"
+                      >
+                        B
+                      </kbd>
+                    </kbd>
+                     
+                    to toggle the sidebar
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-2 p-2 sm:hidden"
+            data-sidebar="footer"
+          >
+            <div
+              class="relative flex w-full min-w-0 flex-col p-2"
+              data-sidebar="group"
+            >
+              <div
+                class="shrink-0 h-[1px] w-auto bg-sidebar-border mx-0 mb-2"
                 data-orientation="horizontal"
                 data-sidebar="separator"
                 role="none"

@@ -1,17 +1,13 @@
-import { generateMetadata } from '@/lib';
+import { createMetadata } from '@/lib';
 import { getProjectByFilters, getProjectSkills } from '@/actions/projects';
 import { getTranslations } from 'next-intl/server';
 import ProjectsShowcase from '@/components/projects/projects-showcase';
 
-export async function metadata() {
-  return generateMetadata('Experience');
+export async function generateMetadata() {
+  return await createMetadata('Experience');
 }
 
-type SearchParams = Promise<{
-  [key: string]: string | string[] | undefined;
-}>;
-
-export default async function ProjectsPage(props: { searchParams: SearchParams }) {
+export default async function ProjectsPage(props: PageProps<'/[lang]/career/projects'>) {
   const { query } = (await props?.searchParams) || { query: [] };
 
   const queryFilters = Array.isArray(query) ? query : query ? [query] : [];

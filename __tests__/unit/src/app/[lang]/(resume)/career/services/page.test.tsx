@@ -1,5 +1,5 @@
 import { render, within } from '@testing-library/react';
-import ServicesPage from '@/app/[lang]/(resume)/career/services/page';
+import ServicesPage from '@/app/[lang]/career/services/page';
 import type { ReactNode } from 'react';
 
 vi.mock('next-intl', () => ({
@@ -25,7 +25,7 @@ vi.mock('next-intl', () => ({
 
     const t = (key: string) => translations[key];
     t.raw = (key: string) => translations[key];
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     t.rich = (key: string, tags: ReactNode) => key;
     return t;
   },

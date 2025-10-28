@@ -4,7 +4,7 @@ import { LoaderCircle } from 'lucide-react';
 
 interface Props {
   iconName: string;
-  [key: string]: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
 }
 type LucideIconsModule = Record<string, ComponentType<unknown>>;
 

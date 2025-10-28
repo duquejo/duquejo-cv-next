@@ -1,4 +1,4 @@
-import { generateMetadata } from '@/lib';
+import { createMetadata } from '@/lib';
 import { useTranslations } from 'next-intl';
 import {
   Card,
@@ -14,8 +14,8 @@ import { Separator } from '@/components/ui/separator';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
-export async function metadata() {
-  return generateMetadata('Blog');
+export async function generateMetadata() {
+  return await createMetadata('Blog');
 }
 
 interface BlogPost {

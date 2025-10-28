@@ -5,10 +5,10 @@ import { useTranslations } from 'next-intl';
 import { RichText } from '@/components/general/rich-text';
 import { DynamicIcon } from '@/components/general/dynamic-icon';
 import { Progress } from '@/components/ui/progress';
-import { generateMetadata } from '@/lib';
+import { createMetadata } from '@/lib';
 
-export async function metadata() {
-  return generateMetadata('Services');
+export async function generateMetadata() {
+  return await createMetadata('Services');
 }
 
 export default function ServicesPage() {

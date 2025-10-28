@@ -11,7 +11,6 @@ vi.mock('@/components/ui/sidebar', async (importOriginal) => ({
 }));
 
 vi.mock('@/i18n/routing', () => ({
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Link: ({ children, href, onClick, ...props }: any) => (
     <a href={href} onClick={onClick} {...props}>
       {children}

@@ -1,13 +1,13 @@
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 import { SidebarProvider } from '@/components/ui/sidebar';
 import { MainSidebar } from '@/components/sidebar/main-sidebar';
 import { EventProvider } from '@/components/events/event-provider';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
-import { generateMetadata } from '@/lib';
+import { createMetadata } from '@/lib';
 import { MobileHeader } from '@/components/header/mobile-header';
 import { ComplementarySidebar } from '@/components/sidebar/complementary-sidebar';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -18,17 +18,14 @@ const poppins = Poppins({
   display: 'swap',
 });
 
-export async function metadata() {
-  return generateMetadata('General');
+export async function generateMetadata() {
+  return await createMetadata('General');
 }
 
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
   const locale = await getLocale();
   const messages = await getMessages();
+
   const gaId = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_ANALYTICS_ID : null;
 
   return (

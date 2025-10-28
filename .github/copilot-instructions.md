@@ -40,9 +40,9 @@ import { RichText } from '@/components/general/rich-text';
 <RichText>{(tags) => t.rich('resume.excerpt2', tags)}</RichText>;
 
 // For metadata
-import { generateMetadata } from '@/lib';
+import { createMetadata } from '@/lib';
 export async function metadata() {
-  return generateMetadata('General');
+  return await createMetadata('General');
 }
 ```
 
@@ -82,7 +82,6 @@ return createMiddleware(routing)(request);
 
 ### Route Groups & Layouts
 
-- `src/app/[lang]/(resume)/page.tsx` - Main resume page (route group hides "(resume)" from URL)
 - Dynamic routing uses `[lang]` folder but locale detection is server-side
 - Shared layouts in `src/app/layout.tsx` with `SidebarProvider`, `ThemeProvider`, `EventProvider`
 

@@ -8,8 +8,12 @@ const professionalItems = [
   { title: 'About', url: '/about' },
 ];
 
+const otherItems = [
+  { title: 'Contact', url: '/contact' },
+  { title: 'Privacy Policy', url: '/privacy' },
+];
+
 vi.mock('@/i18n/routing', () => ({
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Link: ({ children, href, onClick, ...props }: any) => (
     <a href={href} onClick={onClick} {...props}>
       {children}
@@ -25,6 +29,7 @@ vi.mock('next-intl', () => ({
       'professional.title': 'Professional Links',
       'footer.mobile.title': 'Footer Mobile',
       'professional.links': professionalItems,
+      'other.links': otherItems,
     };
 
     const t = (key: string) => translations[key];

@@ -2,10 +2,10 @@
 
 import type { Event, EventType } from '@/interfaces';
 
-const EVENT_GITHUB_URL = process.env.EVENT_GITHUB_URL;
-const EVENT_GITHUB_SOURCE = process.env.EVENT_GITHUB_SOURCE;
-
 export async function getEvents() {
+  const EVENT_GITHUB_URL = process.env.EVENT_GITHUB_URL;
+  const EVENT_GITHUB_SOURCE = process.env.EVENT_GITHUB_SOURCE;
+
   if (!(EVENT_GITHUB_URL && EVENT_GITHUB_SOURCE)) return [];
 
   try {

@@ -12,7 +12,7 @@ import { TechMarquee } from '@/components/resume/tech-marquee';
 export default function MainPage() {
   const t = useTranslations('General');
 
-  const memoizedYears = useCallback(calculateYears, []);
+  const memoizedYears = useCallback(() => calculateYears(), []);
 
   return (
     <>

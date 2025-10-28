@@ -6,7 +6,7 @@ interface Props {
   children: ReactNode;
 }
 
-export default function ResumeLayout({ children }: Props) {
+export default function ResumeLayout({ children }: LayoutProps<'/[lang]'>) {
   return (
     <main className="container flex flex-1 h-screen">
       <div className="flex-1">
