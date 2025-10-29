@@ -1,11 +1,13 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 import { CSP_HEADERS } from '@/lib/constants';
+import createMDX from '@next/mdx';
 
 import createBundleAnalyzer from '@next/bundle-analyzer';
 
 const nextConfig: NextConfig = {
   devIndicators: false,
+  pageExtensions: ['mdx', 'ts', 'tsx'],
   images: {
     qualities: [25, 75, 100],
     remotePatterns: [
@@ -59,10 +61,17 @@ const nextConfig: NextConfig = {
   ],
 };
 
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: ['remark-frontmatter', 'remark-mdx-frontmatter'],
+    rehypePlugins: [],
+  },
+});
 const withNextIntl = createNextIntlPlugin();
 
 const withBundleAnalizer = createBundleAnalyzer({
   enabled: process.env.ANALIZE === 'true',
 });
 
-export default withNextIntl(withBundleAnalizer(nextConfig));
+export default withNextIntl(withBundleAnalizer(withMDX(nextConfig)));
