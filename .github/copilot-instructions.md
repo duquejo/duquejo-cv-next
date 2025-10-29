@@ -42,7 +42,7 @@ import { RichText } from '@/components/general/rich-text';
 // For metadata
 import { createMetadata } from '@/lib';
 export async function metadata() {
-  return await createMetadata('General');
+  return createMetadata('General');
 }
 ```
 

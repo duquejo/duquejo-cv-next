@@ -19,7 +19,7 @@ const poppins = Poppins({
 });
 
 export async function generateMetadata() {
-  return await createMetadata('General');
+  return createMetadata('General');
 }
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
