@@ -907,8 +907,10 @@
     "title": "Blog",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "featured": "Featured",
-    "readMore": "Read More",
-    "readingTime": "{time} read"
+    "read_more": "Read more",
+    "reading_time": "{time} read",
+    "no_articles": "No articles found",
+    "back_to_blog": "Back to blog"
   },
   "Pdf": {
     "introduction": "I consider myself a person with a profile based on responsibility, I am an active, recursive, creative, and orderly developer. I have knowledge in TypeScript, Javascript, and PHP with UML, XML, SQL/NoSQL.\nI like so much web programming in general and I am pretty interested in developing a Full-Stack profile. I have a special taste for new technologies and give it all in each project.",

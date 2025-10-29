@@ -903,8 +903,10 @@
     "title": "Blog",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "featured": "Destacado",
-    "readMore": "Leer Más",
-    "readingTime": "{time} de lectura"
+    "read_more": "Leer más",
+    "reading_time": "{time} de lectura",
+    "no_articles": "No se encontraron artículos",
+    "back_to_blog": "Volver al blog"
   },
   "Pdf": {
     "introduction": "Me considero una persona con un perfil basado en la responsabilidad, soy activo, recursivo, creativo y ordenado. Tengo conocimientos en TypeScript, Javascript y PHP con UML, XML, SQL/NoSQL.\nMe gusta la programación web y me interesa desarrollar un perfil Full-Stack. Tengo un gusto especial por aprender nuevas tecnologías y dar el 110% en cada proyecto.",
