@@ -15,7 +15,7 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 export async function generateMetadata() {
-  return await createMetadata('Blog');
+  return createMetadata('Blog');
 }
 
 interface BlogPost {
@@ -196,7 +196,7 @@ export default function BlogPage() {
             key={post.id}
             href={{
               pathname: '/blog/[slug]',
-              params: { slug: 'building-modern-web-apps-nextjs-15' },
+              params: { slug: 'welcome' },
             }}
             className="block"
           >

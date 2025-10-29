@@ -8,7 +8,7 @@ import { Progress } from '@/components/ui/progress';
 import { createMetadata } from '@/lib';
 
 export async function generateMetadata() {
-  return await createMetadata('Services');
+  return createMetadata('Services');
 }
 
 export default function ServicesPage() {

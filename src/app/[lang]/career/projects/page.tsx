@@ -4,7 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import ProjectsShowcase from '@/components/projects/projects-showcase';
 
 export async function generateMetadata() {
-  return await createMetadata('Experience');
+  return createMetadata('Experience');
 }
 
 export default async function ProjectsPage(props: PageProps<'/[lang]/career/projects'>) {
