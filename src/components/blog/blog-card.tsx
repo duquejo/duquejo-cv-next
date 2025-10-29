@@ -1,18 +1,21 @@
 import { Link } from '@/i18n/routing';
 import { BlogPostResult } from '@/interfaces';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
 import { getCategoryVariant } from '@/lib';
-import { Badge } from '../ui/badge';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
-import { Separator } from '../ui/separator';
-import { Button } from '../ui/button';
 import { useTranslations } from 'next-intl';
+import { Badge } from '../ui/badge';
+import { Button } from '../ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
+import { BlogCategoryIcon } from './blog-category-icon';
+import { BlogMetadata } from './blog-metadata';
+import { BlogTags } from './blog-tags';
 
-interface BlogCardProps extends BlogPostResult {}
+interface BlogCardProps {
+  metadata: BlogPostResult['metadata'];
+}
 
 export const BlogCard = ({ metadata }: BlogCardProps) => {
   const t = useTranslations('Blog');
-
   return (
     <Link
       key={metadata.slug}
@@ -25,16 +28,10 @@ export const BlogCard = ({ metadata }: BlogCardProps) => {
       <Card className="group hover:border-primary transition-colors border-dashed overflow-hidden flex flex-col h-full animate-entrance relative">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-          <div className="text-9xl opacity-40">
-            {metadata.category === 'Coding' && '💻'}
-            {metadata.category === 'Lifestyle' && '🌿'}
-            {metadata.category === 'Music' && '🎵'}
-            {metadata.category === 'Gaming' && '🎮'}
-            {metadata.category === 'General' && '📝'}
-          </div>
+          <BlogCategoryIcon category={metadata.category} />
         </div>
 
-        {/* Overlay gradient for better text readability */}
+        {/* Overlay gradient */}
         <div className="absolute inset-0 bg-linear-to-b from-background/60 via-background/80 to-background/95" />
 
         {/* Content Container */}
@@ -56,24 +53,12 @@ export const BlogCard = ({ metadata }: BlogCardProps) => {
             </CardDescription>
 
             {/* Metadata */}
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Calendar size={12} />
-              <span>{metadata.publishDate}</span>
-              <Separator orientation="vertical" className="h-3" />
-              <Clock size={12} />
-              <span>{t('reading_time', { time: metadata.readingTime })}</span>
-            </div>
+            <BlogMetadata publishDate={metadata.publishDate} readingTime={metadata.readingTime} />
           </CardContent>
 
           <CardFooter className="flex-col items-start gap-3 pt-0">
             {/* Tags */}
-            <div className="flex gap-1 flex-wrap">
-              {metadata.tags.slice(0, 3).map((tag) => (
-                <Badge key={tag} variant="secondary" className="text-xs">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
+            <BlogTags tags={metadata.tags} maxTags={3} />
 
             <Button
               variant="ghost"

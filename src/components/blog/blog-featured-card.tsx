@@ -1,18 +1,19 @@
 import { Link } from '@/i18n/routing';
 import { Card, CardDescription, CardTitle } from '../ui/card';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { getCategoryVariant } from '@/lib';
-import { Separator } from '../ui/separator';
 import { Button } from '../ui/button';
 import { useTranslations } from 'next-intl';
 import type { BlogPostResult } from '@/interfaces';
 import { Badge } from '../ui/badge';
+import { BlogMetadata } from './blog-metadata';
 
-interface BlogFeaturedCardProps extends BlogPostResult {}
+interface BlogFeaturedCardProps {
+  metadata: BlogPostResult['metadata'];
+}
 
 export const BlogFeaturedCard = ({ metadata }: BlogFeaturedCardProps) => {
   const t = useTranslations('Blog');
-
   return (
     <Link
       href={{
@@ -23,7 +24,7 @@ export const BlogFeaturedCard = ({ metadata }: BlogFeaturedCardProps) => {
     >
       <Card className="mb-10 bg-sidebar/30 border-2 border-primary overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
         <div className="grid md:grid-cols-5 gap-0">
-          {/* Mock Image Area */}
+          {/* Image Area */}
           <div className="md:col-span-2 bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center min-h-[250px] md:min-h-full">
             <div className="text-center p-8">
               <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
@@ -48,17 +49,11 @@ export const BlogFeaturedCard = ({ metadata }: BlogFeaturedCardProps) => {
             </CardDescription>
 
             {/* Metadata */}
-            <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
-              <div className="flex items-center gap-1">
-                <Calendar size={14} />
-                <span>{metadata.publishDate}</span>
-              </div>
-              <Separator orientation="vertical" className="h-4" />
-              <div className="flex items-center gap-1">
-                <Clock size={14} />
-                <span>{t('reading_time', { time: metadata.readingTime })}</span>
-              </div>
-            </div>
+            <BlogMetadata
+              publishDate={metadata.publishDate}
+              readingTime={metadata.readingTime}
+              className="mb-4"
+            />
 
             {/* Tags */}
             <div className="flex gap-2 flex-wrap mb-4">

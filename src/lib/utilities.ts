@@ -1,5 +1,5 @@
 import { START_ADVENTURE_YEAR } from '@/lib';
-import type { BlogPost, ExperienceType } from '@/interfaces';
+import type { BlogCategory, ExperienceType } from '@/interfaces';
 
 export function calculateYears() {
   return String(new Date().getFullYear() - START_ADVENTURE_YEAR);
@@ -13,17 +13,13 @@ export function filterProjectsByTags(projects: ExperienceType[], tags: string[])
   );
 }
 
-export const getCategoryVariant = (category: BlogPost['category']) => {
-  switch (category) {
-    case 'Coding':
-      return 'default';
-    case 'Lifestyle':
-      return 'secondary';
-    case 'Music':
-      return 'outline';
-    case 'Gaming':
-      return 'outline';
-    default:
-      return 'outline';
-  }
+export const getCategoryVariant = (category: BlogCategory) => {
+  const variants: Record<BlogCategory, 'default' | 'secondary' | 'outline'> = {
+    Coding: 'default',
+    Lifestyle: 'secondary',
+    Music: 'outline',
+    Gaming: 'outline',
+    General: 'outline',
+  };
+  return variants[category];
 };

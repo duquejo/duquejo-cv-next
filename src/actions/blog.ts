@@ -4,6 +4,8 @@ import type { BlogPost, BlogPostResult } from '@/interfaces';
 import { getLocale } from 'next-intl/server';
 import { promises as fs } from 'node:fs';
 
+const BLOG_CONTENT_DIR = 'content/blog';
+
 export async function getBlogPostBySlug(slug: string): Promise<BlogPostResult | null> {
   const currentLocale = await getLocale();
 
@@ -23,13 +25,13 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPostResult | 
 
 export async function getBlogPostsByLocale(): Promise<(BlogPostResult | null)[]> {
   const currentLocale = await getLocale();
-  const files = await fs.readdir('content/blog');
+  const files = await fs.readdir(BLOG_CONTENT_DIR);
 
-  const localeFilePattern = `.${currentLocale}.mdx`;
+  const localeFileSuffix = `.${currentLocale}.mdx`;
 
   const localizedFiles = files
-    .filter((file) => file && file.endsWith(localeFilePattern))
-    .map((file) => file.replace(localeFilePattern, ''));
+    .filter((file) => file && file.endsWith(localeFileSuffix))
+    .map((file) => file.replace(localeFileSuffix, ''));
 
   return Promise.all(localizedFiles.map((fileName) => getBlogPostBySlug(fileName)));
 }
