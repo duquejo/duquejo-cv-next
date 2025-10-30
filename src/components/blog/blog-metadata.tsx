@@ -1,5 +1,5 @@
 import { Calendar, Clock } from 'lucide-react';
-import { Separator } from '../ui/separator';
+import { Separator } from '@/components/ui/separator';
 import { useTranslations } from 'next-intl';
 import { cn } from '@/lib';
 

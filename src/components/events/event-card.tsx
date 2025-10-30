@@ -1,7 +1,6 @@
-import type { Event } from '@/interfaces';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Eye, GitBranch, Github, GitMerge, GitPullRequest } from 'lucide-react';
+import { PushEvent, WatchEvent } from '@/components/events/event-card-content';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
 import {
   Card,
   CardContent,
@@ -10,19 +9,19 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { ReactNode } from 'react';
-import { Badge } from '@/components/ui/badge';
+import type { Event } from '@/interfaces';
 import { cn } from '@/lib';
+import { Eye, GitBranch, Github, GitMerge, GitPullRequest, Star } from 'lucide-react';
+import Link from 'next/link';
+import { ReactNode } from 'react';
 
 export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => {
-  const toLocaleDateString = (dateString: string) => {
-    return new Date(dateString).toLocaleString();
-  };
+  const toLocaleDateString = (dateString: string) => new Date(dateString).toLocaleString();
 
   const toIcon = (iconString: string): ReactNode => {
     const commonCss = 'inline bg-primary rounded-full transition-colors p-1';
     const commonProps = {
-      size: 30,
+      size: 25,
       'data-testid': 'event-action',
     };
     switch (iconString) {
@@ -33,6 +32,7 @@ export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => 
       case 'PushEvent':
         return <GitMerge className={cn(commonCss, 'bg-red-400')} {...commonProps} />;
       case 'WatchEvent':
+        return <Star className={cn(commonCss, 'bg-amber-300')} {...commonProps} />;
       case 'PullRequestReviewEvent':
         return <Eye className={cn(commonCss, 'bg-cyan-300')} {...commonProps} />;
       default:
@@ -45,7 +45,9 @@ export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => 
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center text-xs justify-between">
           <time className="text-xs font-extrabold">{toLocaleDateString(created_at)}</time>
-          {payload.ref && <Badge variant="secondary">{payload.ref}</Badge>}
+          {payload.ref && (
+            <Badge variant="secondary">{payload.ref.replace('refs/heads/', '')}</Badge>
+          )}
         </CardTitle>
         <CardDescription>
           <Link
@@ -54,47 +56,30 @@ export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => 
             rel="noopener noreferrer nofollow"
             target="_blank"
           >
-            <Image
-              src={actor.avatar_url}
-              alt={actor.display_login}
-              className="max-h-7 rounded-full"
-              width="28"
-              height="28"
-            />
-            <span className="font-semibold underline underline-offset-2 decoration-1 truncate text-xs">
-              {repo.name}
-            </span>
+            <Avatar className="max-h-7 rounded-full w-7 h-7">
+              <AvatarImage
+                src={repo.name === 'duquejo/duquejo-cv-next' ? actor.avatar_url : ''}
+                alt={actor.display_login}
+              />
+              <AvatarFallback>
+                <Github />
+              </AvatarFallback>
+            </Avatar>
+            <span className="text-xs underline-offset-2 hover:underline">{repo.name}</span>
           </Link>
         </CardDescription>
       </CardHeader>
-      <CardContent className="text-xs leading-relaxed text-left wrap-break-word">
+      <CardContent className="text-xs leading-relaxed text-left wrap-break-word pt-0 pb-2">
         {payload.description && <strong className="font-bold">{payload.description}</strong>}
-        {payload.commits &&
-          payload.commits.length > 0 &&
-          payload.commits.map(
-            (commit) =>
-              !['dependabot[bot]'].includes(commit.author.name) && (
-                <div key={commit.sha}>
-                  <p className="inline text-muted-foreground">{commit.message}</p>
-                  {type === 'PushEvent' && (
-                    <Link
-                      href={`${commit.url.replace('https://api.github.com/repos', 'https://github.com')}`}
-                      className="inline font-semibold"
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
-                      title="Link"
-                    >
-                      <Github className="ml-2 inline bg-primary rounded-full p-1 h-5 w-5 text-background transition-colors hover:bg-primary-foreground hover:text-foreground" />
-                    </Link>
-                  )}
-                </div>
-              ),
-          )}
+        {type === 'WatchEvent' && <WatchEvent repo={repo} />}
+        {type === 'PushEvent' && <PushEvent repo={repo} payload={payload} />}
       </CardContent>
-      <CardFooter className="flex justify-between">
+      <CardFooter className="flex justify-end gap-x-2">
+        <div className="leading-tight">
+          <span className="text-muted-foreground block text-sm">{type}</span>
+          {payload.ref_type && <span className="capitalize text-xs">{payload.ref_type}</span>}
+        </div>
         <span className="text-background">{toIcon(type)}</span>
-        <span className="text-muted-foreground">{type}</span>
-        {payload.ref_type && <span className="capitalize">({payload.ref_type})</span>}
       </CardFooter>
     </Card>
   );

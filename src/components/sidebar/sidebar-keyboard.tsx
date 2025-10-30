@@ -1,5 +1,5 @@
 import { cn } from '@/lib';
-import { Kbd, KbdGroup } from '../ui/kbd';
+import { Kbd, KbdGroup } from '@/components/ui/kbd';
 
 export const SidebarKeyboard = ({ className }: React.ComponentProps<'div'>) => {
   return (

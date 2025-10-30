@@ -35,7 +35,7 @@ export const STACK_DATA = [
   },
 ];
 
-export const CSP_HEADERS = `default-src 'self';script-src https://*.googletagmanager.com 'self' 'unsafe-eval' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' blob: data:;font-src 'self';object-src 'none';base-uri 'self';form-action 'self';frame-ancestors 'none';upgrade-insecure-requests;connect-src https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com 'self'`;
+export const CSP_HEADERS = `default-src 'self';script-src https://*.googletagmanager.com 'self' 'unsafe-eval' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' https://avatars.githubusercontent.com blob: data:;font-src 'self';object-src 'none';base-uri 'self';form-action 'self';frame-ancestors 'none';upgrade-insecure-requests;connect-src https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com 'self'`;
 
 export const START_ADVENTURE_YEAR = 2017;
 

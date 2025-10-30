@@ -3,9 +3,16 @@ import { BlogPostResult } from '@/interfaces';
 import { getCategoryVariant } from '@/lib';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { Badge } from '../ui/badge';
-import { Button } from '../ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { BlogCategoryIcon } from './blog-category-icon';
 import { BlogMetadata } from './blog-metadata';
 import { BlogTags } from './blog-tags';

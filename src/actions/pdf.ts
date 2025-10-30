@@ -5,10 +5,10 @@ import { calculateYears, getBaseTemplate } from '@/lib';
 
 const years = calculateYears();
 
-export async function generatePdf() {
-  const PDF_EMAIL = process.env.PDF_EMAIL || '';
-  const SITE_URL = process.env.SITE_URL || '';
+const PDF_EMAIL = process.env.PDF_EMAIL || '';
+const SITE_URL = process.env.SITE_URL || '';
 
+export async function generatePdf() {
   const [getTranslations, generate] = await Promise.all([
     import('next-intl/server').then((module) => module.getTranslations),
     import('@pdfme/generator').then((module) => module.generate),
