@@ -231,3 +231,10 @@ export interface EventRepo {
   name: string;
   url: string;
 }
+
+export interface BlogEventPayload extends Payload {
+  blog_slug?: string;
+  blog_title?: string;
+  blog_category?: string;
+  blog_tags?: string[];
+}

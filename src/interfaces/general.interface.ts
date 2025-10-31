@@ -6,7 +6,8 @@ export type EventType =
   | 'PullRequestEvent'
   | 'PushEvent'
   | 'WatchEvent'
-  | 'PullRequestReviewEvent';
+  | 'PullRequestReviewEvent'
+  | 'BlogPostEvent';
 
 export interface ExperienceType {
   start_date: string;

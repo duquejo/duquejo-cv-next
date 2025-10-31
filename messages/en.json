@@ -905,11 +905,12 @@
       "description": "Discover the latest news, tips and interesting tech & lifestyle articles"
     },
     "title": "Blog",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "subtitle": "Latest articles",
+    "content": "Explore my collection of articles on web development, software architecture, technology insights and other topics I'm passionate about.",
     "featured": "Featured",
     "read_more": "Read more",
     "reading_time": "{time} read",
-    "no_articles": "No articles found",
+    "no_articles": "No articles found, yet.",
     "back_to_blog": "Back to blog"
   },
   "Pdf": {

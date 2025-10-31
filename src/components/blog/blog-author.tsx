@@ -1,5 +1,6 @@
 import { Calendar, Clock } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { toLocaleDateString } from '@/lib/utilities';
 
 interface BlogAuthorProps {
   readingTime: string;
@@ -31,7 +32,7 @@ export const BlogAuthor = ({
         <div className="flex items-center gap-3 text-xs text-muted-foreground">
           <div className="flex items-center gap-1">
             <Calendar size={12} />
-            <span>{publishDate}</span>
+            <span>{toLocaleDateString(publishDate)}</span>
           </div>
           <div className="flex items-center gap-1">
             <Clock size={12} />

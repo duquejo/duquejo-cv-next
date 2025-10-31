@@ -23,3 +23,13 @@ export const getCategoryVariant = (category: BlogCategory) => {
   };
   return variants[category];
 };
+
+export const toLocaleDateString = (dateString: string): string => {
+  try {
+    const date = new Date(dateString);
+    return date.toLocaleString('es-CO');
+  } catch (error) {
+    console.error(`Error parsing blog date: ${dateString}`, error);
+    return new Date().toLocaleString();
+  }
+};

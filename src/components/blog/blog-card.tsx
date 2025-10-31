@@ -13,9 +13,9 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { BlogCategoryIcon } from './blog-category-icon';
-import { BlogMetadata } from './blog-metadata';
-import { BlogTags } from './blog-tags';
+import { BlogCategoryIcon } from '@/components/blog/blog-category-icon';
+import { BlogMetadata } from '@/components/blog/blog-metadata';
+import { BlogTags } from '@/components/blog/blog-tags';
 
 interface BlogCardProps {
   metadata: BlogPostResult['metadata'];

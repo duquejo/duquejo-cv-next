@@ -901,11 +901,12 @@
       "description": "Descubre las últimas noticias, consejos y artículos interesantes sobre tecnología y estilo de vida"
     },
     "title": "Blog",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "subtitle": "Últimos artículos",
+    "content": "Explora mi colección de artículos sobre desarrollo web, arquitectura de software, perspectivas tecnológicas y otros temas que me apasionan.",
     "featured": "Destacado",
     "read_more": "Leer más",
     "reading_time": "{time} de lectura",
-    "no_articles": "No se encontraron artículos",
+    "no_articles": "No se encontraron artículos, todavía.",
     "back_to_blog": "Volver al blog"
   },
   "Pdf": {

@@ -1,7 +1,7 @@
 import { Calendar, Clock } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { useTranslations } from 'next-intl';
-import { cn } from '@/lib';
+import { cn, toLocaleDateString } from '@/lib';
 
 interface BlogMetadataProps {
   publishDate: string;
@@ -24,7 +24,7 @@ export const BlogMetadata = ({
     <div className={cn('flex items-center gap-3 text-muted-foreground', textSize, className)}>
       <div className="flex items-center gap-1">
         <Calendar size={iconSize} />
-        <span>{publishDate}</span>
+        <span>{toLocaleDateString(publishDate)}</span>
       </div>
       <Separator orientation="vertical" className="h-3" />
       <div className="flex items-center gap-1">
