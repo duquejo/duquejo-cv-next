@@ -10,7 +10,7 @@ export interface BlogPost {
   tags: string[];
   publishDate: string;
   readingTime: string;
-  coverImage: string;
+  coverImage?: string;
 }
 
 export interface BlogPostResult {

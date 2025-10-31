@@ -4,29 +4,36 @@ import { Link } from '@/i18n/routing';
 import { createMetadata } from '@/lib';
 import { ArrowLeft } from 'lucide-react';
 import { BlogAuthor } from '@/components/blog/blog-author';
-import { getBlogPostBySlug } from '@/actions/blog';
+import { getBlogPostBySlug, getBlogPostsFilenames } from '@/actions/blog';
 import { routing } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
 import { redirect } from 'next/navigation';
+import { Separator } from '@/components/ui/separator';
+
+export const dynamicParams = false;
 
 export async function generateMetadata() {
   return createMetadata('Blog');
 }
 
-export function generateStaticParams() {
-  const slugs = ['welcome', 'building-modern-web-apps-nextjs-15'];
+export async function generateStaticParams() {
   const locales = routing.locales;
 
-  return slugs.flatMap((slug) => locales.map((lang) => ({ slug, lang })));
-}
+  const fileNames = await Promise.all(
+    locales.map(async (locale) => {
+      const fileNames = await getBlogPostsFilenames(locale);
+      return fileNames.map((slug) => ({ slug, lang: locale }));
+    }),
+  );
 
-export const dynamicParams = false;
+  return fileNames.flat();
+}
 
 export default async function BlogPostPage({ params }: PageProps<'/[lang]/blog/[slug]'>) {
   const t = await getTranslations('Blog');
-  const { slug } = await params;
+  const { slug, lang } = await params;
 
-  const result = await getBlogPostBySlug(slug);
+  const result = await getBlogPostBySlug(slug, lang);
 
   if (!result) {
     return redirect('/blog');
@@ -45,7 +52,7 @@ export default async function BlogPostPage({ params }: PageProps<'/[lang]/blog/[
       </Link>
 
       {/* Category Badge */}
-      <div className="flex animate-entrance duration-100">
+      <div className="flex animate-entrance duration-100 mt-5">
         <Badge variant="default" className="mb-4 block mr-2">
           {metadata.category}
         </Badge>
@@ -71,11 +78,11 @@ export default async function BlogPostPage({ params }: PageProps<'/[lang]/blog/[
       )}
 
       {/* Content */}
-      <div className="max-w-none animate-entrance duration-500">
-        <p className="mb-4 text-base leading-relaxed">{metadata.excerpt}</p>
-
+      <section className="max-w-none animate-entrance duration-500">
+        <p className="text-base leading-relaxed">{metadata.excerpt}</p>
+        <Separator className="my-5" />
         <Post />
-      </div>
+      </section>
     </article>
   );
 }

@@ -1,6 +1,11 @@
 import type { Pathnames } from '@/i18n/routing';
 import { LucideIcon } from 'lucide-react';
 
+export interface PageEventParams {
+  slug: string;
+  lang: string;
+}
+
 export type EventType =
   | 'CreateEvent'
   | 'PullRequestEvent'

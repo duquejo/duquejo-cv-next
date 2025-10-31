@@ -1,6 +1,7 @@
-import { CodeBlock } from '@/components/general/code-block';
 import type { MDXComponents } from 'mdx/types';
+import { CodeBlock } from '@/components/general/code-block';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const components: MDXComponents = {
   // Headings
@@ -37,7 +38,7 @@ const components: MDXComponents = {
 
   // Paragraphs and text
   p: ({ children, ...props }) => (
-    <p className="mb-4 text-base leading-relaxed" {...props}>
+    <p className="mb-4 text-base leading-relaxed text-justify" {...props}>
       {children}
     </p>
   ),
@@ -54,10 +55,12 @@ const components: MDXComponents = {
     </ol>
   ),
   li: ({ children, ...props }) => (
-    <li className="leading-relaxed text-base" {...props}>
+    <li className="leading-relaxed" {...props}>
       {children}
     </li>
   ),
+
+  br: ({ props }) => <br {...props} />,
 
   // Blockquote
   blockquote: ({ children, ...props }) => (
@@ -79,11 +82,27 @@ const components: MDXComponents = {
     </code>
   ),
 
+  a: ({ children, href, ...props }) => (
+    <Link href={href} target="_blank" className="underline underline-offset-2">
+      {children}
+    </Link>
+  ),
+
   // Images
-  img: ({ src, alt, ...props }) => (
-    <div className="my-8 relative w-full aspect-video rounded-lg overflow-hidden">
-      <Image src={src || ''} alt={alt || ''} fill className="object-cover" {...props} />
-    </div>
+  Image: ({ src, alt, width, height, full = true, caption = '', ...props }: any) => (
+    <figure className="rounded-lg my-5">
+      <Image
+        src={src}
+        alt={alt || ''}
+        className={`mx-auto ${full ? 'w-full h-full' : 'h-auto'}`}
+        title={alt || ''}
+        unoptimized
+        width={width || 500}
+        height={height || 300}
+        {...props}
+      />
+      {caption && <figcaption className="text-center text-xs mt-2 mb-5">{caption}</figcaption>}
+    </figure>
   ),
 
   pre: ({ children, ...props }) => {
