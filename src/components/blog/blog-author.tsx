@@ -22,14 +22,14 @@ export const BlogAuthor = ({
   },
 }: BlogAuthorProps) => {
   return (
-    <div className="flex items-center gap-3 mb-6 animate-entrance duration-100">
+    <div className="flex items-center gap-3 mb-6 animate-entrance duration-100 justify-center md:justify-start">
       <Avatar className="h-12 w-12">
         <AvatarImage src={author.avatar} alt={author.name} />
         <AvatarFallback>{author.initials}</AvatarFallback>
       </Avatar>
       <div>
         <p className="font-semibold text-sm">{author.name}</p>
-        <div className="flex items-center gap-3 text-xs text-muted-foreground">
+        <div className="flex-none md:flex items-center gap-3 text-xs text-muted-foreground">
           <div className="flex items-center gap-1">
             <Calendar size={12} />
             <span>{toLocaleDateString(publishDate)}</span>

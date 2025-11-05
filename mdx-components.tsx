@@ -90,11 +90,11 @@ const components: MDXComponents = {
 
   // Images
   Image: ({ src, alt, width, height, full = true, caption = '', ...props }: any) => (
-    <figure className="rounded-lg my-5">
+    <figure className="my-5">
       <Image
         src={src}
         alt={alt || ''}
-        className={`mx-auto ${full ? 'w-full h-full' : 'h-auto'}`}
+        className={`mx-auto rounded-lg ${full ? 'md:w-full h-full w-auto' : 'h-auto'}`}
         title={alt || ''}
         unoptimized
         width={width || 500}

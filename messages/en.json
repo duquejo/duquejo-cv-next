@@ -902,7 +902,8 @@
   "Blog": {
     "metadata": {
       "title": "Blog | José Duque",
-      "description": "Discover the latest news, tips and interesting tech & lifestyle articles"
+      "description": "Discover the latest news, tips and interesting tech & lifestyle articles",
+      "not_found_description": "The requested post \"{slug}\" was not found."
     },
     "title": "Blog",
     "subtitle": "Latest articles",

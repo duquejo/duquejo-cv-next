@@ -1,19 +1,27 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
-import { createMetadata } from '@/lib';
+import { createBlogPostMetadata, createMetadata } from '@/lib';
 import { ArrowLeft } from 'lucide-react';
 import { BlogAuthor } from '@/components/blog/blog-author';
-import { getBlogPostBySlug, getBlogPostsFilenames } from '@/actions/blog';
+import { getBlogPostBySlug, getBlogPostsFilenames, resolveBlogPostSlug } from '@/actions/blog';
 import { routing } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
-import { redirect } from 'next/navigation';
 import { Separator } from '@/components/ui/separator';
 
-export const dynamicParams = false;
+export async function generateMetadata({ params }: PageProps<'/[lang]/blog/[slug]'>) {
+  const { slug, lang } = await params;
+  const t = await getTranslations('Blog');
+  const result = await getBlogPostBySlug(slug, lang);
 
-export async function generateMetadata() {
-  return createMetadata('Blog');
+  if (!result) {
+    return {
+      title: t('metadata.title'),
+      description: t('metadata.not_found_description', { slug }),
+    };
+  }
+
+  return createBlogPostMetadata(result.metadata, lang);
 }
 
 export async function generateStaticParams() {
@@ -33,11 +41,7 @@ export default async function BlogPostPage({ params }: PageProps<'/[lang]/blog/[
   const t = await getTranslations('Blog');
   const { slug, lang } = await params;
 
-  const result = await getBlogPostBySlug(slug, lang);
-
-  if (!result) {
-    return redirect('/blog');
-  }
+  const result = await resolveBlogPostSlug(slug, lang);
 
   const { Post, metadata } = result;
 
@@ -53,13 +57,13 @@ export default async function BlogPostPage({ params }: PageProps<'/[lang]/blog/[
 
       {/* Category Badge */}
       <div className="flex animate-entrance duration-100 mt-5">
-        <Badge variant="default" className="mb-4 block mr-2">
+        <Badge variant="default" className="mb-4 block md:mx-0 mx-auto">
           {metadata.category}
         </Badge>
       </div>
 
       {/* Title */}
-      <h1 className="text-3xl lg:text-5xl font-bold mb-4 leading-tight animate-entrance">
+      <h1 className="text-3xl md:text-left text-center lg:text-5xl font-bold mb-4 leading-tight animate-entrance">
         {metadata.title}
       </h1>
 
@@ -68,9 +72,9 @@ export default async function BlogPostPage({ params }: PageProps<'/[lang]/blog/[
 
       {/* Tags */}
       {metadata.tags && (
-        <div className="flex gap-2 flex-wrap mb-8">
+        <div className="flex gap-2 justify-center md:justify-start mb-8 flex-wrap">
           {metadata.tags.map((tag: string) => (
-            <Badge key={tag} variant="secondary" className="animate-entrance duration-200">
+            <Badge key={tag} variant="secondary" className="animate-entrance duration-200 shrink-0">
               {tag}
             </Badge>
           ))}

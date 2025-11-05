@@ -1,12 +1,14 @@
 'use server';
 
 import type { BlogPost, BlogPostResult } from '@/interfaces';
+import { getSlugByLocale } from '@/lib';
 import { getLocale } from 'next-intl/server';
+import { notFound, redirect, RedirectType } from 'next/navigation';
 import { promises as fs } from 'node:fs';
 
 const BLOG_CONTENT_DIR = 'content/blog';
 
-const getLocaleSuffix = (path: string): string => `.${path}.mdx`;
+const getLocaleSuffix = (locale: string): string => `.${locale}.mdx`;
 
 /**
  * getBlogPostsFilenames retrieves the filenames of blog posts for a given locale.
@@ -69,7 +71,52 @@ export async function getBlogPostBySlug(
       metadata: metadata satisfies BlogPost,
     };
   } catch (error) {
-    console.error(`Error loading blog post ${slug}:`, error);
+    console.warn(`Error loading blog post ${slug}:`, error);
     return null;
   }
+}
+
+export async function resolveBlogPostSlug(
+  localizedSlug: string,
+  locale?: string,
+): Promise<BlogPostResult> {
+  const currentLocale = locale || (await getLocale());
+
+  const directMatch = await getBlogPostBySlug(localizedSlug, currentLocale);
+
+  if (directMatch) {
+    return directMatch;
+  }
+
+  // If not found, it might be a slug from frontmatter that doesn't match filename
+  // We need to search, but we can optimize by only loading filenames first
+  const fileNames = await getBlogPostsFilenames(currentLocale);
+
+  for (const fileName of fileNames) {
+    const postResult = await getBlogPostBySlug(fileName, currentLocale);
+
+    if (!postResult) continue;
+
+    const post = postResult.metadata;
+
+    // Check if the localized slug matches this post's slug variants
+    if (
+      post.slug === localizedSlug ||
+      post.slugEn === localizedSlug ||
+      post.slugEs === localizedSlug
+    ) {
+      // Found it! Redirect to the correct filename-based URL
+      const correctSlug = getSlugByLocale(post, currentLocale);
+
+      // If the requested slug is different from the correct one, redirect
+      if (localizedSlug !== correctSlug) {
+        redirect(`/blog/${correctSlug}`, RedirectType.replace);
+      }
+
+      return postResult;
+    }
+  }
+
+  // Not found in any variant
+  return notFound();
 }

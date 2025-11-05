@@ -898,7 +898,8 @@
   "Blog": {
     "metadata": {
       "title": "Blog | José Duque",
-      "description": "Descubre las últimas noticias, consejos y artículos interesantes sobre tecnología y estilo de vida"
+      "description": "Descubre las últimas noticias, consejos y artículos interesantes sobre tecnología y estilo de vida",
+      "not_found_description": "No se encontró el artículo solicitado \"{slug}\"."
     },
     "title": "Blog",
     "subtitle": "Últimos artículos",

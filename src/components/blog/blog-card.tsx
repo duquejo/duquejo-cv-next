@@ -1,8 +1,8 @@
 import { Link } from '@/i18n/routing';
 import { BlogPostResult } from '@/interfaces';
-import { getCategoryVariant } from '@/lib';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { getCategoryVariant, getSlugByLocale } from '@/lib';
+import { ArrowRight } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -23,12 +23,16 @@ interface BlogCardProps {
 
 export const BlogCard = ({ metadata }: BlogCardProps) => {
   const t = useTranslations('Blog');
+  const locale = useLocale();
+
+  const localizedSlug = getSlugByLocale(metadata, locale);
+
   return (
     <Link
       key={metadata.slug}
       href={{
         pathname: '/blog/[slug]',
-        params: { slug: metadata.slug },
+        params: { slug: localizedSlug },
       }}
       className="block"
     >
