@@ -1,5 +1,5 @@
-import { START_ADVENTURE_YEAR } from '@/lib';
 import type { BlogCategory, ExperienceType } from '@/interfaces';
+import { START_ADVENTURE_YEAR } from '@/lib';
 
 export function calculateYears() {
   return String(new Date().getFullYear() - START_ADVENTURE_YEAR);
@@ -27,9 +27,13 @@ export const getCategoryVariant = (category: BlogCategory) => {
 export const toLocaleDateString = (dateString: string): string => {
   try {
     const date = new Date(dateString);
-    return date.toLocaleString('es-CO');
+    return date.toLocaleString('es-CO', {
+      timeZone: 'America/Bogota',
+    });
   } catch (error) {
     console.error(`Error parsing blog date: ${dateString}`, error);
-    return new Date().toLocaleString('es-CO');
+    return new Date().toLocaleString('es-CO', {
+      timeZone: 'America/Bogota',
+    });
   }
 };
