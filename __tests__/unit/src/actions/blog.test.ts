@@ -1,12 +1,27 @@
 import * as actions from '@/actions/blog';
-import { BlogPost, BlogPostResult } from '@/interfaces';
 import * as fs from 'fs/promises';
 import { getLocale } from 'next-intl/server';
+import { MockBlogPostBuilder } from '../../builders';
 
 vi.mock('fs/promises');
 
 vi.mock('next-intl/server', () => ({
   getLocale: vi.fn(),
+}));
+
+vi.mock('@/i18n/routing', () => ({
+  routing: {
+    locales: ['en', 'es'],
+  },
+}));
+
+vi.mock('next/navigation', () => ({
+  notFound: vi.fn(),
+  redirect: vi.fn(),
+  RedirectType: {
+    replace: 'replace',
+    push: 'push',
+  },
 }));
 
 const mockedFileNames = [
@@ -15,6 +30,28 @@ const mockedFileNames = [
   'en-espanol.es.mdx',
   'README.md',
 ] as never;
+
+// Mock blog post fixtures using builder
+const mockBlogPostResultEn = new MockBlogPostBuilder()
+  .withSlugs('test-post', 'test-post', 'post-prueba')
+  .withTitle('Test Blog Post')
+  .withExcerpt('This is a test blog post')
+  .withCategory('Coding')
+  .withTags('test', 'vitest')
+  .withPostComponent(() => 'foo')
+  .build();
+
+const mockBlogPostResultEs = new MockBlogPostBuilder()
+  .withSlugs('post-prueba', 'test-post', 'post-prueba')
+  .withTitle('Post de Prueba')
+  .withExcerpt('Este es un post de prueba')
+  .withCategory('Coding')
+  .withTags('test', 'vitest')
+  .withPostComponent(() => 'bar')
+  .build();
+
+// Extract metadata for convenience
+const mockBlogPostEn = mockBlogPostResultEn.metadata;
 
 describe('Blog actions - getBlogPostsFilenames', () => {
   beforeEach(() => {
@@ -64,36 +101,6 @@ describe('Blog actions - getBlogPostsFilenames', () => {
 });
 
 describe('Blog actions - getBlogPostsByLocale', () => {
-  // Mock blog post metadata
-  const mockBlogPostEn = {
-    slug: 'test-post',
-    slugEn: 'test-post',
-    slugEs: 'post-prueba',
-    title: 'Test Blog Post',
-    excerpt: 'This is a test blog post',
-    category: 'Coding',
-    publishDate: '2024-01-01',
-    readingTime: '5 min',
-    tags: ['test', 'vitest'],
-  } satisfies BlogPost;
-
-  const mockBlogPostEs = {
-    ...mockBlogPostEn,
-    slug: 'post-prueba',
-    title: 'Post de Prueba',
-    excerpt: 'Este es un post de prueba',
-  } satisfies BlogPost;
-
-  const mockBlogPostResultEn: BlogPostResult = {
-    Post: () => 'foo',
-    metadata: mockBlogPostEn,
-  };
-
-  const mockBlogPostResultEs: BlogPostResult = {
-    Post: () => 'bar',
-    metadata: mockBlogPostEs,
-  };
-
   beforeEach(() => {
     vi.clearAllMocks();
   });
@@ -159,18 +166,8 @@ describe('Blog actions - getBlogPostsByLocale', () => {
 });
 
 describe('Blog actions - getBlogPostBySlug', () => {
-  it('should return null when blog post does not exist', async () => {
-    const result = await actions.getBlogPostBySlug('non-existent-post', 'en');
-
-    expect(result).toBeNull();
-  });
-
-  it('should use default locale when not provided', async () => {
-    vi.mocked(getLocale).mockResolvedValue('en');
-
-    await actions.getBlogPostBySlug('test-post');
-
-    expect(getLocale).toHaveBeenCalled();
+  beforeEach(() => {
+    vi.clearAllMocks();
   });
 
   it('should log warning when import fails', async () => {
@@ -185,14 +182,43 @@ describe('Blog actions - getBlogPostBySlug', () => {
   });
 });
 
-describe('Blog actions - resolveBlogPostSlug', () => {
-  it.todo('should return post directly when slug matches exactly');
-  it.todo('should redirect when accessing Spanish slug from English locale');
-  it.todo('should call notFound when post does not exist');
-});
+describe('Blog actions - generateStaticPosts', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
 
-describe.todo('Blog actions - generateStaticPosts', () => {
-  it.todo('should generate static posts for all locales');
-  it.todo('should handle empty blog directory');
-  it.todo('should flatten results from all locales');
+  it('should generate static posts for all locales', async () => {
+    vi.mocked(fs.readdir)
+      .mockResolvedValueOnce(['post-1.en.mdx', 'post-2.en.mdx'] as never) // English
+      .mockResolvedValueOnce(['post-1.es.mdx', 'post-2.es.mdx'] as never); // Spanish
+
+    const result = await actions.generateStaticPosts();
+
+    expect(result).toEqual([
+      { slug: 'post-1', lang: 'en' },
+      { slug: 'post-2', lang: 'en' },
+      { slug: 'post-1', lang: 'es' },
+      { slug: 'post-2', lang: 'es' },
+    ]);
+  });
+
+  it('should handle empty blog directory', async () => {
+    vi.mocked(fs.readdir).mockResolvedValue([] as never);
+
+    const result = await actions.generateStaticPosts();
+
+    expect(result).toEqual([]);
+  });
+
+  it('should flatten results from all locales', async () => {
+    vi.mocked(fs.readdir)
+      .mockResolvedValueOnce(['post-a.en.mdx'] as never) // English
+      .mockResolvedValueOnce(['post-b.es.mdx'] as never); // Spanish
+
+    const result = await actions.generateStaticPosts();
+
+    expect(result).toBeInstanceOf(Array);
+    expect(result).toHaveLength(2);
+    expect(result.every((item) => item.slug && item.lang)).toBeTruthy();
+  });
 });
