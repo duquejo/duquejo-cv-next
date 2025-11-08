@@ -122,8 +122,8 @@ return createMiddleware(routing)(request);
 **Running tests:**
 
 ```bash
-yarn test              # Run tests
-yarn test:coverage     # With coverage
+yarn test --run           # Direct run tests evaluation
+yarn test:coverage --run  # With coverage
 ```
 
 **Mocking pattern:**
@@ -259,6 +259,7 @@ Component will be added to `src/components/ui/` - **do not manually edit**.
 - Create file in `__tests__/unit/src/` matching source structure
 - Import component/function to test
 - Mock external dependencies using MSW or vi.mock()
+- Use the cli --run flag to execute tests without asking confirmation
 
 **E2E test:**
 
