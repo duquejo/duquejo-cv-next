@@ -903,12 +903,11 @@
     "metadata": {
       "title": "Blog | José Duque",
       "description": "Discover the latest news, tips and interesting tech & lifestyle articles",
-      "not_found_description": "The requested post \"{slug}\" was not found."
+      "not_found_description": "The requested article was not found."
     },
     "title": "Blog",
     "subtitle": "Latest articles",
     "content": "Explore my collection of articles on web development, software architecture, technology insights and other topics I'm passionate about.",
-    "featured": "Featured",
     "read_more": "Read more",
     "reading_time": "{time} read",
     "no_articles": "No articles found, yet.",

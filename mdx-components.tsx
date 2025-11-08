@@ -1,5 +1,5 @@
-import type { MDXComponents } from 'mdx/types';
 import { CodeBlock } from '@/components/general/code-block';
+import type { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -55,7 +55,7 @@ const components: MDXComponents = {
     </ol>
   ),
   li: ({ children, ...props }) => (
-    <li className="leading-relaxed" {...props}>
+    <li className="leading-relaxed text-justify" {...props}>
       {children}
     </li>
   ),

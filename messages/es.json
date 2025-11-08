@@ -899,12 +899,11 @@
     "metadata": {
       "title": "Blog | José Duque",
       "description": "Descubre las últimas noticias, consejos y artículos interesantes sobre tecnología y estilo de vida",
-      "not_found_description": "No se encontró el artículo solicitado \"{slug}\"."
+      "not_found_description": "No se encontró el artículo solicitado."
     },
     "title": "Blog",
     "subtitle": "Últimos artículos",
     "content": "Explora mi colección de artículos sobre desarrollo web, arquitectura de software, perspectivas tecnológicas y otros temas que me apasionan.",
-    "featured": "Destacado",
     "read_more": "Leer más",
     "reading_time": "{time} de lectura",
     "no_articles": "No se encontraron artículos, todavía.",
