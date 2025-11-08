@@ -1,8 +1,9 @@
-import { render, within } from '@testing-library/react';
-import ProjectsPage from '@/app/[lang]/career/projects/page';
-import { beforeEach } from 'vitest';
 import { getProjectByFilters, getProjectSkills } from '@/actions/projects';
+import ProjectsPage, { generateMetadata } from '@/app/[lang]/career/projects/page';
+import { render, within } from '@testing-library/react';
 import { SearchParams } from 'next/dist/server/request/search-params';
+import { beforeEach } from 'vitest';
+import validateMetadata from '../../../../../common/validate-metadata';
 
 vi.mock('@/actions/projects', () => ({
   getProjectByFilters: vi.fn(() => Promise.resolve([{ project: 'Test Project' }])),
@@ -22,6 +23,17 @@ vi.mock('next-intl/server', () => ({
     return Promise.resolve((key: string) => translations[key]);
   },
 }));
+
+// Mock @/lib for metadata validation tests
+vi.mock('@/lib', async (importOriginal) => ({
+  ...(await importOriginal()),
+  createMetadata: vi.fn(),
+}));
+
+/**
+ * Validate metadata generation for the Blog page.
+ */
+validateMetadata(generateMetadata, 'Experience');
 
 describe('<ProjectsPage /> tests', () => {
   beforeEach(() => {
@@ -43,7 +55,10 @@ describe('<ProjectsPage /> tests', () => {
     const searchParams: SearchParams = {
       query: undefined,
     };
-    const props = { searchParams: Promise.resolve(searchParams) };
+    const props = {
+      searchParams: Promise.resolve(searchParams),
+    } as PageProps<'/[lang]/career/projects'>;
+
     const { container } = render(await ProjectsPage(props));
 
     const wrapper = within(container);

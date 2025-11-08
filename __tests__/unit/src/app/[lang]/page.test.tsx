@@ -1,5 +1,5 @@
-import { render, within } from '@testing-library/react';
 import MainPage from '@/app/[lang]/page';
+import { render, within } from '@testing-library/react';
 import type { ReactNode } from 'react';
 
 vi.mock('next-intl', () => ({

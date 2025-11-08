@@ -1,15 +1,19 @@
-import { beforeEach, type MockInstance } from 'vitest';
-import { getEvents } from '@/actions/github';
-import { worker } from '@/msw/worker';
+import { getBlogPostsByLocale } from '@/actions/blog';
+import { getEvents } from '@/actions/events';
 import { errorHandlers } from '@/msw/handlers';
+import { worker } from '@/msw/worker';
+import { beforeEach, type MockInstance } from 'vitest';
 
-describe('Github action', () => {
+vi.mock('@/actions/blog');
+
+describe('Events action', () => {
   let fetchSpy: MockInstance;
+  let getBlogPostsByLocaleMock: MockInstance;
 
   const expectedConfig = {
-    cache: 'force-cache',
-    headers: expect.any(Object),
     method: 'GET',
+    headers: expect.any(Object),
+    cache: 'force-cache',
     next: {
       revalidate: 3600,
     },
@@ -19,13 +23,17 @@ describe('Github action', () => {
     vi.clearAllMocks();
 
     fetchSpy = vi.spyOn(global, 'fetch');
+    getBlogPostsByLocaleMock = vi.mocked(getBlogPostsByLocale);
+
+    getBlogPostsByLocaleMock.mockResolvedValueOnce([]);
   });
 
-  it('should retrieve the Github events', async () => {
+  it('should retrieve the events', async () => {
     const response = await getEvents();
 
     expect(response.length).toBeGreaterThan(0);
     expect(fetchSpy).toHaveBeenCalledWith(expect.any(Object), expectedConfig);
+    expect(getBlogPostsByLocaleMock).toHaveBeenCalledWith(5);
   });
 
   it('should retrieve empty if the request fails', async () => {
@@ -35,6 +43,7 @@ describe('Github action', () => {
 
     expect(response).toEqual([]);
     expect(fetchSpy).toHaveBeenCalledWith(expect.any(Object), expectedConfig);
+    expect(getBlogPostsByLocaleMock).not.toHaveBeenCalled();
   });
 
   it('should filter the non-required events', async () => {
@@ -42,5 +51,6 @@ describe('Github action', () => {
 
     expect(response).toHaveLength(1);
     expect(fetchSpy).toHaveBeenCalledWith(expect.any(Object), expectedConfig);
+    expect(getBlogPostsByLocaleMock).toHaveBeenCalledWith(5);
   });
 });

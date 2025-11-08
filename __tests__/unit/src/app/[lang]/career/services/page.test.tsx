@@ -1,6 +1,7 @@
+import ServicesPage, { generateMetadata } from '@/app/[lang]/career/services/page';
 import { render, within } from '@testing-library/react';
-import ServicesPage from '@/app/[lang]/career/services/page';
 import type { ReactNode } from 'react';
+import validateMetadata from '../../../../../common/validate-metadata';
 
 vi.mock('next-intl', () => ({
   useTranslations: () => {
@@ -30,6 +31,17 @@ vi.mock('next-intl', () => ({
     return t;
   },
 }));
+
+// Mock @/lib for metadata validation tests
+vi.mock('@/lib', async (importOriginal) => ({
+  ...(await importOriginal()),
+  createMetadata: vi.fn(),
+}));
+
+/**
+ * Validate metadata generation for the Blog page.
+ */
+validateMetadata(generateMetadata, 'Services');
 
 describe('<ServicesPage /> tests', () => {
   it('should render the page', () => {

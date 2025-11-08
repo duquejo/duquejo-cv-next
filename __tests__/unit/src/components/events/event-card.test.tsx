@@ -46,7 +46,7 @@ describe('<EventCard /> tests', () => {
               name: 'johndoe',
               email: 'johndoe@email.com',
             },
-            url: 'https://api.github.com/repos/johndoe',
+            url: 'https://github.com/johndoe',
             sha: '123',
             message: 'Commit detail',
             distinct: false,

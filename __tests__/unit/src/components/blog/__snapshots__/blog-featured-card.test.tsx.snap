@@ -1,0 +1,176 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<BlogFeaturedCard /> tests > should match the snapshot 1`] = `
+<div>
+  <a
+    class="block"
+    href="sample-blog-post"
+  >
+    <div
+      class="rounded-xl text-card-foreground shadow-sm mb-10 bg-sidebar/30 border-2 border-primary overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+    >
+      <div
+        class="grid md:grid-cols-5 gap-0"
+      >
+        <div
+          class="md:col-span-2 bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center min-h-[250px] md:min-h-full"
+        >
+          <div
+            class="text-center p-8"
+          >
+            <div
+              class="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center animate-wiggle"
+            >
+              <div
+                class="grayscale text-9xl opacity-50"
+              >
+                💻
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="md:col-span-3 p-6 flex flex-col justify-center"
+        >
+          <div
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow-sm hover:bg-primary/80 w-fit mb-3"
+          >
+            Coding
+          </div>
+          <div
+            class="font-semibold tracking-tight text-2xl lg:text-3xl mb-3 leading-tight"
+          >
+            Sample Blog Post
+          </div>
+          <div
+            class="text-muted-foreground text-base mb-4 leading-relaxed"
+          >
+            This is a sample excerpt for the blog post.
+          </div>
+          <div
+            class="flex items-center gap-3 text-muted-foreground text-xs mb-4"
+          >
+            <div
+              class="flex items-center gap-1"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-calendar"
+                fill="none"
+                height="12"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 2v4"
+                />
+                <path
+                  d="M16 2v4"
+                />
+                <rect
+                  height="18"
+                  rx="2"
+                  width="18"
+                  x="3"
+                  y="4"
+                />
+                <path
+                  d="M3 10h18"
+                />
+              </svg>
+              <span>
+                31/12/2022, 7:00:00 p. m.
+              </span>
+            </div>
+            <div
+              class="shrink-0 bg-border w-[1px] h-3"
+              data-orientation="vertical"
+              role="none"
+            />
+            <div
+              class="flex items-center gap-1"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-clock"
+                fill="none"
+                height="12"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 6v6l4 2"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+              </svg>
+              <time>
+                5 min read
+              </time>
+            </div>
+          </div>
+          <div
+            class="flex gap-2 flex-wrap mb-4"
+          >
+            <div
+              class="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs"
+              title="Next.js"
+            >
+              Next.js
+            </div>
+            <div
+              class="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs"
+              title="React"
+            >
+              React
+            </div>
+            <div
+              class="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs"
+              title="JavaScript"
+            >
+              JavaScript
+            </div>
+          </div>
+          <button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs w-fit cursor-pointer"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-arrow-right ml-2"
+              fill="none"
+              height="16"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12h14"
+              />
+              <path
+                d="m12 5 7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+`;

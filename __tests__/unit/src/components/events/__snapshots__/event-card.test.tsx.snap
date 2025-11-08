@@ -3,7 +3,7 @@
 exports[`<EventCard /> tests > should match the snapshot 1`] = `
 <div>
   <div
-    class="rounded-xl border bg-card text-card-foreground shadow-sm lg:max-w-xs"
+    class="rounded-xl border bg-card text-card-foreground shadow-sm lg:max-w-xs group hover:border-primary transition-colors border-dashed cursor-default"
     role="listitem"
   >
     <div
@@ -23,7 +23,7 @@ exports[`<EventCard /> tests > should match the snapshot 1`] = `
       >
         <a
           class="flex items-center space-x-2"
-          href="https://github.com/johndoe"
+          href="https://foo.bar"
           rel="noopener noreferrer nofollow"
           target="_blank"
         >
@@ -118,7 +118,7 @@ exports[`<EventCard /> tests > should match the snapshot 1`] = `
 exports[`<EventCard /> tests > should render the optional fields if they are given 1`] = `
 <div>
   <div
-    class="rounded-xl border bg-card text-card-foreground shadow-sm lg:max-w-xs"
+    class="rounded-xl border bg-card text-card-foreground shadow-sm lg:max-w-xs group hover:border-primary transition-colors border-dashed cursor-default"
     role="listitem"
   >
     <div
@@ -143,7 +143,7 @@ exports[`<EventCard /> tests > should render the optional fields if they are giv
       >
         <a
           class="flex items-center space-x-2"
-          href="https://github.com/johndoe"
+          href="https://foo.bar"
           rel="noopener noreferrer nofollow"
           target="_blank"
         >
