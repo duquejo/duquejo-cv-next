@@ -17,7 +17,7 @@ export const CodeBlock = ({ code }: CodeBlockProps) => {
     <SyntaxHighlighter
       style={atomDark}
       showLineNumbers
-      customStyle={{ margin: 0, borderRadius: 0, fontSize: 14 }}
+      customStyle={{ margin: 0, borderRadius: 0, fontSize: 13 }}
     >
       {code}
     </SyntaxHighlighter>

@@ -1,5 +1,5 @@
 import { Badge } from '@/components/ui/badge';
-import type { BlogEventPayload, EventRepo, Payload } from '@/interfaces';
+import type { BlogEventPayload, EventRepo } from '@/interfaces';
 import Link from 'next/link';
 
 interface BlogPostProps {
@@ -15,7 +15,7 @@ export const BlogPostEvent = ({ payload, repo }: BlogPostProps) => {
       </Link>
 
       {payload.description && (
-        <p className="text-xs text-muted-foreground line-clamp-2">{payload.description}</p>
+        <p className="text-xs text-muted-foreground line-clamp-3">{payload.description}</p>
       )}
 
       <div className="flex flex-wrap gap-1 items-center">
