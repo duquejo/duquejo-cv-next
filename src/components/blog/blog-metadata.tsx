@@ -1,11 +1,10 @@
-import { Calendar, Clock } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
-import { useTranslations } from 'next-intl';
 import { cn, toLocaleDateString } from '@/lib';
+import { Calendar, Clock } from 'lucide-react';
 
 interface BlogMetadataProps {
   publishDate: string;
-  readingTime: string;
+  readingTime?: string;
   size?: 'sm' | 'md';
   className?: string;
 }
@@ -16,7 +15,6 @@ export const BlogMetadata = ({
   size = 'sm',
   className,
 }: BlogMetadataProps) => {
-  const t = useTranslations('Blog');
   const iconSize = size === 'sm' ? 12 : 14;
   const textSize = size === 'sm' ? 'text-xs' : 'text-sm';
 
@@ -26,11 +24,15 @@ export const BlogMetadata = ({
         <Calendar size={iconSize} />
         <span>{toLocaleDateString(publishDate)}</span>
       </div>
-      <Separator orientation="vertical" className="h-3" />
-      <div className="flex items-center gap-1">
-        <Clock size={iconSize} />
-        <span>{t('reading_time', { time: readingTime })}</span>
-      </div>
+      {readingTime && (
+        <>
+          <Separator orientation="vertical" className="h-3" />
+          <div className="flex items-center gap-1">
+            <Clock size={iconSize} />
+            <time>{readingTime}</time>
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { BlogPost } from '@/interfaces';
+import { cn } from '@/lib';
 
 interface BlogCategoryIconProps {
   category: BlogPost['category'];
@@ -14,7 +15,11 @@ const CATEGORY_EMOJI = {
 };
 
 export const BlogCategoryIcon = ({ category, size = 'lg' }: BlogCategoryIconProps) => {
-  const textSize = size === 'lg' ? 'text-9xl opacity-40' : 'text-4xl';
+  const textSize = size === 'lg' ? 'text-9xl opacity-50' : 'text-4xl';
 
-  return <div className={textSize}>{CATEGORY_EMOJI[category] || CATEGORY_EMOJI.General}</div>;
+  return (
+    <div className={cn(`grayscale`, textSize)}>
+      {CATEGORY_EMOJI[category] || CATEGORY_EMOJI.General}
+    </div>
+  );
 };

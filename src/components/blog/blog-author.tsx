@@ -1,6 +1,6 @@
-import { Calendar, Clock } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { toLocaleDateString } from '@/lib/utilities';
+import { Calendar, Clock } from 'lucide-react';
 
 interface BlogAuthorProps {
   readingTime: string;
@@ -28,7 +28,7 @@ export const BlogAuthor = ({
         <AvatarFallback>{author.initials}</AvatarFallback>
       </Avatar>
       <div>
-        <p className="font-semibold text-sm">{author.name}</p>
+        <div className="font-semibold text-sm">{author.name}</div>
         <div className="flex-none md:flex items-center gap-3 text-xs text-muted-foreground">
           <div className="flex items-center gap-1">
             <Calendar size={12} />
@@ -36,7 +36,7 @@ export const BlogAuthor = ({
           </div>
           <div className="flex items-center gap-1">
             <Clock size={12} />
-            <span>{readingTime}</span>
+            <time>{readingTime}</time>
           </div>
         </div>
       </div>
