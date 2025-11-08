@@ -92,14 +92,15 @@ const components: MDXComponents = {
   Image: ({ src, alt, width, height, full = true, caption = '', ...props }: any) => (
     <figure className="my-5">
       <Image
+        {...props}
         src={src}
         alt={alt || ''}
         className={`mx-auto rounded-lg ${full ? 'md:w-full h-full w-auto' : 'h-auto'}`}
         title={alt || ''}
+        style={{ width: 'auto', height: 'auto' }}
         unoptimized
-        width={width || 500}
-        height={height || 300}
-        {...props}
+        width={width || 400}
+        height={height || 200}
       />
       {caption && <figcaption className="text-center text-xs mt-2 mb-5">{caption}</figcaption>}
     </figure>
@@ -113,11 +114,11 @@ const components: MDXComponents = {
 
     return (
       <div
-        className="my-8 rounded-lg bg-sidebar/50 border border-border overflow-hidden"
+        className="flex flex-col my-8 rounded-lg bg-sidebar/50 border border-border max-w-screen -mx-5"
         {...props}
       >
         <div className="bg-sidebar/80 px-4 py-2 border-b border-border flex justify-end">
-          <span className="text-xs font-mono text-muted-foreground">{language}</span>
+          <span className="text-xs font-mono font-bold text-muted-foreground">{language}</span>
         </div>
         <CodeBlock code={String(code).trim()} />
       </div>
