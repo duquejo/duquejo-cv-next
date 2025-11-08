@@ -1,10 +1,10 @@
-import { getTranslations } from 'next-intl/server';
-import { createMetadata } from '@/lib';
 import { getBlogPostsByLocale } from '@/actions/blog';
 import { BlogCard } from '@/components/blog/blog-card';
-import { BlogNotFound } from '@/components/blog/blog-not-found';
 import { BlogFeaturedCard } from '@/components/blog/blog-featured-card';
+import { BlogNotFound } from '@/components/blog/blog-not-found';
 import { Separator } from '@/components/ui/separator';
+import { createMetadata, getSlugByLocale } from '@/lib';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 export async function generateMetadata() {
   return createMetadata('Blog');
@@ -12,10 +12,13 @@ export async function generateMetadata() {
 
 export default async function BlogPage() {
   const t = await getTranslations('Blog');
-  const posts = await getBlogPostsByLocale();
+  const locale = await getLocale();
+  const posts = await getBlogPostsByLocale(-1, locale); // If wanted, limit can be adjusted here.
 
   if (posts.length === 0) {
-    return <BlogNotFound />;
+    return (
+      <BlogNotFound title={t('title')} content={t('content')} no_articles={t('no_articles')} />
+    );
   }
 
   const [featuredPost, ...regularPosts] = posts.sort(
@@ -31,22 +34,43 @@ export default async function BlogPage() {
       {/* Featured Post */}
       {featuredPost && (
         <section className="flex flex-col">
-          <BlogFeaturedCard metadata={featuredPost.metadata} />
+          <BlogFeaturedCard
+            title={featuredPost.metadata.title}
+            category={featuredPost.metadata.category}
+            slug={getSlugByLocale(featuredPost.metadata, locale)}
+            excerpt={featuredPost.metadata.excerpt}
+            publishDate={featuredPost.metadata.publishDate}
+            tags={featuredPost.metadata.tags}
+            readingTime={t('reading_time', { time: featuredPost.metadata.readingTime })}
+            readMoreText={t('read_more')}
+          />
         </section>
       )}
 
-      <Separator className="my-2" />
-
       {/* Regular Posts Grid */}
       {regularPosts.length > 0 && (
-        <section className="flex flex-col">
-          <h2 className="main-subtitle">{t('subtitle')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {regularPosts.map((post) => (
-              <BlogCard key={post.metadata.slug} metadata={post.metadata} />
-            ))}
-          </div>
-        </section>
+        <>
+          <Separator className="my-2" />
+
+          <section className="flex flex-col">
+            <h2 className="main-subtitle">{t('subtitle')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {regularPosts.map((post) => (
+                <BlogCard
+                  key={post.metadata.slug}
+                  slug={getSlugByLocale(post.metadata, locale)}
+                  category={post.metadata.category}
+                  title={post.metadata.title}
+                  excerpt={post.metadata.excerpt}
+                  publishDate={post.metadata.publishDate}
+                  tags={post.metadata.tags}
+                  readingTime={t('reading_time', { time: post.metadata.readingTime })}
+                  readMoreText={t('read_more')}
+                />
+              ))}
+            </div>
+          </section>
+        </>
       )}
     </article>
   );

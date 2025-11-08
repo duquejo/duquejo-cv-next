@@ -1,13 +1,13 @@
+import { generateStaticPosts, getBlogPostBySlug } from '@/actions/blog';
+import { resolveBlogPostSlug } from '@/actions/blog-post-resolver';
+import { BlogAuthor } from '@/components/blog/blog-author';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Link } from '@/i18n/routing';
-import { createBlogPostMetadata, createMetadata } from '@/lib';
-import { ArrowLeft } from 'lucide-react';
-import { BlogAuthor } from '@/components/blog/blog-author';
-import { getBlogPostBySlug, getBlogPostsFilenames, resolveBlogPostSlug } from '@/actions/blog';
-import { routing } from '@/i18n/routing';
-import { getTranslations } from 'next-intl/server';
 import { Separator } from '@/components/ui/separator';
+import { Link } from '@/i18n/routing';
+import { createBlogPostMetadata } from '@/lib';
+import { ArrowLeft } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({ params }: PageProps<'/[lang]/blog/[slug]'>) {
   const { slug, lang } = await params;
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps<'/[lang]/blog/[slug
   if (!result) {
     return {
       title: t('metadata.title'),
-      description: t('metadata.not_found_description', { slug }),
+      description: t('metadata.not_found_description'),
     };
   }
 
@@ -25,16 +25,7 @@ export async function generateMetadata({ params }: PageProps<'/[lang]/blog/[slug
 }
 
 export async function generateStaticParams() {
-  const locales = routing.locales;
-
-  const fileNames = await Promise.all(
-    locales.map(async (locale) => {
-      const fileNames = await getBlogPostsFilenames(locale);
-      return fileNames.map((slug) => ({ slug, lang: locale }));
-    }),
-  );
-
-  return fileNames.flat();
+  return generateStaticPosts();
 }
 
 export default async function BlogPostPage({ params }: PageProps<'/[lang]/blog/[slug]'>) {
