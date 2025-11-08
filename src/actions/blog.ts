@@ -1,13 +1,15 @@
 'use server';
 
+import { routing } from '@/i18n/routing';
 import type { BlogPost, BlogPostResult } from '@/interfaces';
-import { getSlugByLocale } from '@/lib';
+import * as fs from 'fs/promises';
 import { getLocale } from 'next-intl/server';
-import { notFound, redirect, RedirectType } from 'next/navigation';
-import { promises as fs } from 'node:fs';
 
 const BLOG_CONTENT_DIR = 'content/blog';
 
+/**
+ * Returns the file suffix for a given locale.
+ */
 const getLocaleSuffix = (locale: string): string => `.${locale}.mdx`;
 
 /**
@@ -76,47 +78,19 @@ export async function getBlogPostBySlug(
   }
 }
 
-export async function resolveBlogPostSlug(
-  localizedSlug: string,
-  locale?: string,
-): Promise<BlogPostResult> {
-  const currentLocale = locale || (await getLocale());
+/**
+ * Generates static blog post metadata for all locales.
+ * @returns A promise that resolves to an array of blog post metadata.
+ */
+export async function generateStaticPosts() {
+  const locales = routing.locales;
 
-  const directMatch = await getBlogPostBySlug(localizedSlug, currentLocale);
+  const fileNames = await Promise.all(
+    locales.map(async (locale) => {
+      const fileNames = await getBlogPostsFilenames(locale);
+      return fileNames.map((slug) => ({ slug, lang: locale }));
+    }),
+  );
 
-  if (directMatch) {
-    return directMatch;
-  }
-
-  // If not found, it might be a slug from frontmatter that doesn't match filename
-  // We need to search, but we can optimize by only loading filenames first
-  const fileNames = await getBlogPostsFilenames(currentLocale);
-
-  for (const fileName of fileNames) {
-    const postResult = await getBlogPostBySlug(fileName, currentLocale);
-
-    if (!postResult) continue;
-
-    const post = postResult.metadata;
-
-    // Check if the localized slug matches this post's slug variants
-    if (
-      post.slug === localizedSlug ||
-      post.slugEn === localizedSlug ||
-      post.slugEs === localizedSlug
-    ) {
-      // Found it! Redirect to the correct filename-based URL
-      const correctSlug = getSlugByLocale(post, currentLocale);
-
-      // If the requested slug is different from the correct one, redirect
-      if (localizedSlug !== correctSlug) {
-        redirect(`/blog/${correctSlug}`, RedirectType.replace);
-      }
-
-      return postResult;
-    }
-  }
-
-  // Not found in any variant
-  return notFound();
+  return fileNames.flat();
 }
