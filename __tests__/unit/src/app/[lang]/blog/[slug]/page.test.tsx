@@ -1,4 +1,5 @@
-import { generateStaticPosts, getBlogPostBySlug, resolveBlogPostSlug } from '@/actions/blog';
+import { generateStaticPosts, getBlogPostBySlug } from '@/actions/blog';
+import { resolveBlogPostSlug } from '@/actions/blog-post-resolver';
 import BlogPostPage, {
   generateMetadata,
   generateStaticParams,
@@ -9,6 +10,10 @@ import { render, within } from '@testing-library/react';
 import { getTranslations } from 'next-intl/server';
 import { Params } from 'next/dist/server/request/params';
 import { SearchParams } from 'next/dist/server/request/search-params';
+
+vi.mock('@/actions/blog-post-resolver', () => ({
+  resolveBlogPostSlug: vi.fn(),
+}));
 
 vi.mock('next-intl/server', () => ({
   getTranslations: vi.fn(() => {
@@ -30,7 +35,6 @@ vi.mock('@/i18n/routing', () => ({
 }));
 
 vi.mock('@/actions/blog', () => ({
-  resolveBlogPostSlug: vi.fn(),
   generateStaticPosts: vi.fn(),
   getBlogPostBySlug: vi.fn(),
 }));
