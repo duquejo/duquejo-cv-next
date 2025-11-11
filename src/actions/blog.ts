@@ -4,8 +4,11 @@ import { routing } from '@/i18n/routing';
 import type { BlogPost, BlogPostResult } from '@/interfaces';
 import * as fs from 'fs/promises';
 import { getLocale } from 'next-intl/server';
+import path from 'path';
 
 const BLOG_CONTENT_DIR = 'content/blog';
+
+const BLOG_POSTS_DIRECTORY = path.join(process.cwd(), BLOG_CONTENT_DIR);
 
 /**
  * Returns the file suffix for a given locale.
@@ -18,7 +21,7 @@ const getLocaleSuffix = (locale: string): string => `.${locale}.mdx`;
  */
 export async function getBlogPostsFilenames(locale?: string): Promise<string[]> {
   const currentLocale = locale || (await getLocale());
-  const files = await fs.readdir(BLOG_CONTENT_DIR);
+  const files = await fs.readdir(BLOG_POSTS_DIRECTORY);
 
   const localeFileSuffix = getLocaleSuffix(currentLocale);
 
