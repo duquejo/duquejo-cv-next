@@ -1,6 +1,8 @@
 'use client';
 
-import { ReactNode, useState } from 'react';
+import { getEvents } from '@/actions/events';
+import { EventCard } from '@/components/events/event-card';
+import { EventSkeleton } from '@/components/events/event-skeleton';
 import {
   Sheet,
   SheetContent,
@@ -9,13 +11,11 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/components/ui/sheet';
-import Link from 'next/link';
-import { EventSkeleton } from '@/components/events/event-skeleton';
-import useSWR from 'swr';
-import { getEvents } from '@/actions/github';
 import { Event } from '@/interfaces';
-import { EventCard } from '@/components/events/event-card';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { ReactNode, useState } from 'react';
+import useSWR from 'swr';
 
 interface Props {
   children: ReactNode;

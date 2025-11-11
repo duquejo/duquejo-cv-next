@@ -6,19 +6,18 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
 };
 
-const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS
-  ? process.env.ALLOWED_ORIGINS.split(',').map((url) => url.trim())
-  : [];
-
-const PDF_FILENAME = process.env.PDF_FILENAME || 'document';
-
 const applyCorsHeaders = (headers: Headers, origin: string) => {
+  const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS
+    ? process.env.ALLOWED_ORIGINS.split(',').map((url) => url.trim())
+    : [];
+
   if (ALLOWED_ORIGINS.includes(origin)) headers.set('Access-Control-Allow-Origin', origin);
 
   Object.entries(CORS_HEADERS).forEach(([key, value]) => headers.set(key, value));
 };
 
 export async function POST(request: NextRequest): Promise<Response> {
+  const PDF_FILENAME = process.env.PDF_FILENAME || 'document';
   const origin = request.headers.get('origin') ?? '';
 
   const headers = new Headers();

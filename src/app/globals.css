@@ -247,6 +247,9 @@
   p {
     @apply text-muted-foreground text-justify;
   }
+  li {
+    @apply text-muted-foreground;
+  }
 }
 
 @layer base {

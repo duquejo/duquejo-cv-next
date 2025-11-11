@@ -47,7 +47,6 @@ describe('<ThemeToggle /> tests', () => {
   });
 
   it('Should match the snapshot with a given args', async () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { title, ...rest } = props;
     const { container } = render(
       <ThemeToggle variant="secondary" title="Testing toggle" className="bg-color-red" {...rest} />,
@@ -134,7 +133,6 @@ describe('<ThemeToggle /> tests', () => {
   });
 
   it('Should trigger the button click events', async () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { title, ...rest } = props;
     render(
       <ThemeToggle variant="secondary" title="Testing toggle" className="bg-color-red" {...rest} />,

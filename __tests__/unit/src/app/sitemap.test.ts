@@ -1,22 +1,42 @@
 import sitemap from '@/app/sitemap';
 
-describe('Sitemap tests', () => {
-  vi.mock('@/i18n/routing', () => ({
-    routing: {
-      defaultLocale: 'en',
-      locales: ['en', 'es'],
+vi.mock('@/i18n/routing', () => ({
+  routing: {
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
+  },
+  getPathname: ({ locale, href }: { locale: string; href: string }) => `/${locale}${href}`,
+}));
+
+vi.mock('@/actions/blog', () => ({
+  getBlogPostsByLocale: async (limit: number, locale: string) => [
+    {
+      metadata: {
+        slug: 'welcome-to-my-blog',
+        slugEn: 'welcome-to-my-blog',
+        slugEs: 'bienvenido-a-mi-nuevo-blog',
+        publishDate: '2023-01-01T00:00:00.000Z',
+      },
     },
-    getPathname: ({ locale, href }: { locale: string; href: string }) => `/${locale}${href}`,
-  }));
+  ],
+}));
 
-  it('should return an array of 3 sitemap entries with correct URLs and alternates', () => {
-    const result = sitemap();
+describe('Sitemap tests', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
 
-    expect(result).toHaveLength(3);
+  it('should return an array of 3 sitemap entries with correct URLs and alternates', async () => {
+    const staticPages = 4;
+    const blogPosts = 1;
+
+    const result = await sitemap();
+
+    expect(result).toHaveLength(staticPages + blogPosts);
 
     result.forEach(({ alternates, lastModified, priority, url }) => {
       expect(lastModified).toBeInstanceOf(Date);
-      expect(priority).toBe(1);
+      expect(priority).toBeOneOf([1, 0.8]);
 
       expect(url).toBeTypeOf('string');
 

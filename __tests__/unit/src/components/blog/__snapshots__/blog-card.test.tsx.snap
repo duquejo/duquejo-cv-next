@@ -1,0 +1,183 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<BlogCard /> tests > should match the snapshot 1`] = `
+<div>
+  <a
+    class="block"
+    href="sample-blog-post"
+  >
+    <div
+      class="rounded-xl border bg-card text-card-foreground shadow-sm group hover:border-primary transition-colors border-dashed overflow-hidden flex flex-col h-full animate-entrance relative"
+    >
+      <div
+        class="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 flex items-center justify-center"
+      >
+        <div
+          class="grayscale text-9xl opacity-50"
+        >
+          💻
+        </div>
+      </div>
+      <div
+        class="absolute inset-0 bg-linear-to-b from-background/60 via-background/80 to-background/95"
+      />
+      <div
+        class="relative z-10 flex flex-col h-full"
+      >
+        <div
+          class="flex flex-col space-y-1.5 p-6 pb-3"
+        >
+          <div
+            class="flex justify-end mb-2"
+          >
+            <div
+              class="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow-sm hover:bg-primary/80 text-xs"
+            >
+              Coding
+            </div>
+          </div>
+          <div
+            class="font-semibold tracking-tight line-clamp-2 text-lg group-hover:text-primary transition-colors"
+          >
+            Sample Blog Post
+          </div>
+        </div>
+        <div
+          class="p-6 flex-1 flex flex-col pt-0"
+        >
+          <div
+            class="text-sm text-muted-foreground line-clamp-3 mb-4 flex-1"
+          >
+            This is a sample excerpt for the blog post.
+          </div>
+          <div
+            class="flex items-center gap-3 text-muted-foreground text-xs"
+          >
+            <div
+              class="flex items-center gap-1"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-calendar"
+                fill="none"
+                height="12"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 2v4"
+                />
+                <path
+                  d="M16 2v4"
+                />
+                <rect
+                  height="18"
+                  rx="2"
+                  width="18"
+                  x="3"
+                  y="4"
+                />
+                <path
+                  d="M3 10h18"
+                />
+              </svg>
+              <span>
+                31/12/2022, 7:00:00 p. m.
+              </span>
+            </div>
+            <div
+              class="shrink-0 bg-border w-[1px] h-3"
+              data-orientation="vertical"
+              role="none"
+            />
+            <div
+              class="flex items-center gap-1"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-clock"
+                fill="none"
+                height="12"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 6v6l4 2"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+              </svg>
+              <time>
+                5 min read
+              </time>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex p-6 flex-col items-start gap-3 pt-0"
+        >
+          <div
+            class="flex gap-2 flex-wrap"
+          >
+            <div
+              class="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs"
+              title="Next.js"
+            >
+              Next.js
+            </div>
+            <div
+              class="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs"
+              title="React"
+            >
+              React
+            </div>
+            <div
+              class="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs"
+              title="JavaScript"
+            >
+              JavaScript
+            </div>
+          </div>
+          <button
+            class="inline-flex items-center gap-2 whitespace-nowrap font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-8 rounded-md px-3 text-xs justify-end w-full transition-colors group-hover:text-primary hover:text-primary cursor-pointer hover:bg-transparent"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-arrow-right ml-2"
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12h14"
+              />
+              <path
+                d="m12 5 7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+`;

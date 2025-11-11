@@ -11,6 +11,10 @@ export const handlers = [
         id: '456',
         type: 'CreateEvent',
       },
+      {
+        id: '789',
+        type: 'IssuesEvent',
+      },
     ];
 
     return new HttpResponse(JSON.stringify(interceptedResponse), {

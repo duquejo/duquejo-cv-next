@@ -3,7 +3,6 @@ import { SidebarTrigger } from '@/components/ui/sidebar';
 import { SheetTrigger } from '@/components/ui/sheet';
 import { Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import * as React from 'react';
 import { PdfGeneratorToggle } from '@/components/pdf/pdf-toggle';
 import { useTranslations } from 'next-intl';
 

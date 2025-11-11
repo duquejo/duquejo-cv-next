@@ -1,0 +1,105 @@
+---
+slug: copilot-instructions-for-developers
+slugEn: copilot-instructions-for-developers
+slugEs: instrucciones-copilot-para-desarrolladores
+title: Cómo escribir instrucciones efectivas de Copilot para desarrolladores
+excerpt: Mis ideas personales sobre cómo usar GitHub Copilot de manera efectiva para cualquier lenguaje.
+category: Coding
+tags: [Copilot, IA, Desarrollo, IA Generativa]
+publishDate: 2025-10-30T21:49:00.000Z
+readingTime: 10 minutos
+---
+
+## Introducción
+
+Como desarrollador, aprovechar herramientas de IA como GitHub Copilot puede mejorar significativamente la productividad y la calidad del código. En esta publicación, compartiré mis ideas personales sobre cómo usar Copilot de manera efectiva en cualquier proyecto.
+
+Confieso que cuando comencé a usar Copilot, era escéptico sobre su capacidad para entender los matices de mi lenguaje principal, Javascript/TypeScript. Sin embargo, después de experimentar con él en varios proyectos, he descubierto que con los prompts y el contexto adecuados, Copilot puede ser un aliado poderoso.
+
+> La clave para lograr el **control y la precisión** que deseas es proporcionar **instrucciones claras y concisas**.
+
+### Configurando las Instrucciones de Copilot
+
+Aquí hay algunas estrategias que he encontrado útiles:
+
+1. Instala la extensión de Copilot para tu IDE _(por ejemplo, VS Code)_. Recomiendo principalmente usar **Visual Studio Code** para obtener la mejor experiencia con Copilot, también probé otros IDEs como **JetBrains IDEs** pero la experiencia no es la misma hasta ahora.
+2. Crea un archivo vacío `.github/copilot-instructions.md` en la raíz de tu proyecto. Este archivo contendrá instrucciones específicas para que Copilot las siga al generar código. Esta ubicación podría cambiar en el futuro, pero por ahora, este es el estándar para propósitos generales. Si deseas tener diferentes instrucciones por carpeta, puedes crear una carpeta `.github/instructions` y agregar archivos de instrucciones específicos allí con este estándar `ALGO.instructions-md`, por ejemplo `UNIT_TESTS.instructions.md`.
+3. ¡Listo!, ahora a escribir instrucciones claras.
+
+### Propuestas de temas a cubrir
+
+Aquí hay algunos temas con los que podrías dar más contexto a Copilot:
+
+- **Lineamientos Generales**
+- **Formato y Linting**
+- **Convenciones de Nomenclatura**
+- **Documentación y Tipos**
+- **Prácticas de Testing**
+
+Por ejemplo, según mi experiencia... tiendo a preferir tipos explícitos mientras estoy codificando, así que incluyo eso en mis instrucciones. Por otro lado, también me gusta tener en cuenta mientras desarrollo las buenas prácticas descritas en **TypeScript Deep Dive**, o **PSR-12** para desarrolladores de PHP, o la guía de estilo **Sun Java** para desarrolladores de Java. La IA se adaptará a tus preferencias siempre que proporciones información clara.
+
+### Ejemplos de Instrucciones
+
+Aquí hay algunos ejemplos de instrucciones que puedes incluir:
+
+```markdown
+---
+description: 'Estándares de Codificación TypeScript'
+applyTo: '**/*.ts, **/*.tsx'
+---
+
+# Estándares de Codificación TypeScript
+
+## Lineamientos Generales
+
+- Adhiérete a los principios de la guía de estilo **TypeScript Deep Dive**.
+- Siempre prioriza la **seguridad de tipos**, **legibilidad** y **mantenibilidad**.
+- Prefiere **tipos explícitos** sobre implícitos o `any` cuando sea posible.
+- Usa **ES Modules (`import`/`export`)** para todas las relaciones de archivos.
+- Prefiere declaraciones **(`async`/`await`)** sobre callbacks.
+
+---
+
+## Formato y Linting
+
+- Usa **2 espacios** para la indentación (no tabs), alineado con prácticas comunes de JS/TS.
+- Longitud máxima de línea de **120 caracteres**.
+- Usa **punto y coma** consistentemente al final de las declaraciones.
+- Imports ordenados: **paquetes npm, luego imports relativos**.
+
+---
+
+## Convenciones de Nomenclatura
+
+- Variables, funciones y parámetros: **`camelCase`**
+- Clases, Interfaces y Types: **`PascalCase`**
+- Constantes (nivel superior): **`UPPER_SNAKE_CASE`**
+- Archivos: **`kebab-case.ts`** o **`PascalCase.tsx`** (para componentes)
+
+---
+
+## Documentación y Tipos
+
+- Todas las funciones, clases e interfaces públicas deben tener **comentarios estilo JSDoc**.
+- Documenta todos los parámetros de función y tipos de retorno, incluso si hay hints de tipo presentes.
+- Usa **`interface`** para formas de objeto y **`type`** para primitivos complejos o uniones.
+- Incluye **pruebas unitarias** con el código (por ejemplo, en un archivo `.test.ts` co-localizado).
+```
+
+Al final, tu configuración de VSCode Copilot debería verse así:
+
+<Image
+  src="/static/img/blog/vscode-instructions.webp"
+  alt="Thinking about migrations"
+  caption="Esta imagen es usada primordialmente para estructuras de nombres de archivos personalizados."
+  full={false}
+/>
+
+Te animo a personalizar estas instrucciones según los estándares de codificación de tu equipo y los requisitos del proyecto. Cuanto más específico seas, mejor podrá ayudarte Copilot. Además de lo anterior, también sugeriría revisar algunos archivos de instrucciones Gist específicos del lenguaje que hice para algunos proyectos personales:
+
+- [Instrucciones Java](https://gist.github.com/duquejo/45dc781307bee624e825253f3aeb4a0c)
+- [Instrucciones PHP](https://gist.github.com/duquejo/669f655e38e7780990cbfadf52b8cc20)
+
+### Conclusión
+
+¡Y ese es mi enfoque!, espero que encuentres estos consejos útiles para mejorar tu flujo de trabajo de desarrollo con GitHub Copilot. Recuerda, la clave para sacar el máximo provecho de Copilot radica en proporcionar instrucciones claras y detalladas. Happy coding!
