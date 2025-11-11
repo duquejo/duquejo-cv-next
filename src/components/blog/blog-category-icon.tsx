@@ -1,4 +1,4 @@
-import { BlogPost } from '@/interfaces';
+import type { BlogPost } from '@/interfaces';
 import { cn } from '@/lib';
 
 interface BlogCategoryIconProps {

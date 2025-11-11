@@ -12,7 +12,7 @@ import {
 import type { Event } from '@/interfaces';
 import { cn, toLocaleDateString } from '@/lib';
 import { Eye, FileText, GitBranch, GitMerge, GitPullRequest, Star } from 'lucide-react';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => {
   const toIcon = (iconString: string): ReactNode => {

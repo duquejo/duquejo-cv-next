@@ -1,8 +1,8 @@
-import { MenuItems } from '@/components/menu/menu-items/menu-items';
-import { fireEvent, render, screen } from '@testing-library/react';
-import { MenuItem } from '@/interfaces';
+import { MenuItems } from '@/components/menu/menu-items';
 import { SidebarProvider, useSidebar } from '@/components/ui/sidebar';
 import type { Pathnames } from '@/i18n/routing';
+import { MenuItem } from '@/interfaces';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 // Partial mocking
 vi.mock('@/components/ui/sidebar', async (importOriginal) => ({

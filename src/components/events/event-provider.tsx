@@ -11,7 +11,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/components/ui/sheet';
-import { Event } from '@/interfaces';
+import type { Event } from '@/interfaces';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { ReactNode, useState } from 'react';

@@ -1,7 +1,7 @@
-import { createMetadata } from '@/lib';
 import { getProjectByFilters, getProjectSkills } from '@/actions/projects';
-import { getTranslations } from 'next-intl/server';
 import ProjectsShowcase from '@/components/projects/projects-showcase';
+import { createMetadata } from '@/lib';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata() {
   return createMetadata('Experience');

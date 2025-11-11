@@ -1,3 +1,4 @@
+import { getBlogPostBySlug } from '@/actions/blog';
 import { getUrl } from '@/app/sitemap';
 import { type Href, routing } from '@/i18n/routing';
 import { BlogPost, MetadataTypes } from '@/interfaces';
@@ -15,7 +16,39 @@ export async function createMetadata(namespace: MetadataTypes): Promise<Metadata
   };
 }
 
-export async function createBlogPostMetadata(post: BlogPost, locale: Locale): Promise<Metadata> {
+export async function createBlogPostMetadata(slug: string, lang: string): Promise<Metadata> {
+  const result = await getBlogPostBySlug(slug, lang);
+
+  if (!result) {
+    const t = await getTranslations('Blog');
+    return {
+      title: t('metadata.title'),
+      description: t('metadata.not_found_description'),
+    };
+  }
+
+  return generateBlogPostVariants(result.metadata, lang);
+}
+
+export async function createBlogImageMetadata(
+  slug: string,
+  lang: string,
+): Promise<{ title: string; subtitle: string }> {
+  const result = await getBlogPostBySlug(slug, lang);
+
+  const imageMetadata = {
+    subtitle: 'Blog | José Duque',
+    title: 'Blog entry',
+  };
+
+  if (result) {
+    imageMetadata.title = result.metadata.title;
+  }
+
+  return imageMetadata;
+}
+
+function generateBlogPostVariants(post: BlogPost, locale: Locale): Metadata {
   const languageUrls: Record<string, string> = {};
 
   const slugVariants = getAllSlugVariants(post);
@@ -32,7 +65,6 @@ export async function createBlogPostMetadata(post: BlogPost, locale: Locale): Pr
     description: post.excerpt,
     keywords: post.tags,
     authors: [{ name: 'José Duque', url: '/' }],
-
     alternates: {
       canonical: canonicalUrl,
       languages: {

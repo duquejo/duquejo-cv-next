@@ -1,13 +1,13 @@
+import { RichText } from '@/components/general/rich-text';
 import { ExperienceItem } from '@/components/resume/experience-item';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Languages } from 'lucide-react';
-import { calculateYears, cn } from '@/lib';
 import { HeroImage } from '@/components/resume/hero-image';
+import { TechMarquee } from '@/components/resume/tech-marquee';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import type { ExperienceType, LanguageType } from '@/interfaces';
+import { calculateYears, cn } from '@/lib';
+import { Languages } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useCallback } from 'react';
-import { RichText } from '@/components/general/rich-text';
-import type { ExperienceType, LanguageType } from '@/interfaces';
-import { TechMarquee } from '@/components/resume/tech-marquee';
 
 export default function MainPage() {
   const t = useTranslations('General');

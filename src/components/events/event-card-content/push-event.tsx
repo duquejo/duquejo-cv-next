@@ -1,7 +1,6 @@
-import { useCallback } from 'react';
-import Link from 'next/link';
-import { Commit, Event } from '@/interfaces';
+import type { Commit, Event } from '@/interfaces';
 import { Github } from 'lucide-react';
+import Link from 'next/link';
 
 interface PushEventProps {
   repo: Event['repo'];

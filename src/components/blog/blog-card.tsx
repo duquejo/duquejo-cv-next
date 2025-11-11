@@ -1,6 +1,4 @@
-import { BlogCategoryIcon } from '@/components/blog/blog-category-icon';
-import { BlogMetadata } from '@/components/blog/blog-metadata';
-import { BlogTags } from '@/components/blog/blog-tags';
+import { BlogCategoryIcon, BlogMetadata, BlogTags } from '@/components/blog';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {

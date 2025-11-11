@@ -1,14 +1,14 @@
 'use client';
 
-import type { ExperienceType, Skill } from '@/interfaces';
-import { ExperienceItem } from '@/components/resume/experience-item';
-import { useCallback, useRef, useState } from 'react';
-import { ProjectsFilter, type ProjectsFilterRef } from '@/components/projects/projects-filter';
-import { Button } from '@/components/ui/button';
-import { X } from 'lucide-react';
-import { filterProjectsByTags } from '@/lib';
-import { usePathname, useRouter } from '@/i18n/routing';
 import { getProjectByFilters } from '@/actions/projects';
+import { ProjectsFilter, type ProjectsFilterRef } from '@/components/projects/projects-filter';
+import { ExperienceItem } from '@/components/resume/experience-item';
+import { Button } from '@/components/ui/button';
+import { usePathname, useRouter } from '@/i18n/routing';
+import type { ExperienceType, Skill } from '@/interfaces';
+import { filterProjectsByTags } from '@/lib';
+import { X } from 'lucide-react';
+import { useCallback, useRef, useState } from 'react';
 
 interface Props {
   filterTitle: string;

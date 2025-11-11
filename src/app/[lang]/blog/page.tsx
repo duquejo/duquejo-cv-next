@@ -1,9 +1,7 @@
 import { getBlogPostsByLocale } from '@/actions/blog';
-import { BlogCard } from '@/components/blog/blog-card';
-import { BlogFeaturedCard } from '@/components/blog/blog-featured-card';
-import { BlogNotFound } from '@/components/blog/blog-not-found';
+import { BlogCard, BlogFeaturedCard, BlogNotFound } from '@/components/blog';
 import { Separator } from '@/components/ui/separator';
-import { createMetadata, getSlugByLocale } from '@/lib';
+import { createMetadata, getSlugByLocale, sortByDateString } from '@/lib';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 export async function generateMetadata() {
@@ -21,9 +19,8 @@ export default async function BlogPage() {
     );
   }
 
-  const [featuredPost, ...regularPosts] = posts.sort(
-    (a, b) =>
-      new Date(b.metadata.publishDate).getTime() - new Date(a.metadata.publishDate).getTime(),
+  const [featuredPost, ...regularPosts] = posts.sort((a, b) =>
+    sortByDateString(a.metadata.publishDate, b.metadata.publishDate),
   );
 
   return (
@@ -33,7 +30,7 @@ export default async function BlogPage() {
 
       {/* Featured Post */}
       {featuredPost && (
-        <section className="flex flex-col">
+        <section role="contentinfo" className="flex flex-col">
           <BlogFeaturedCard
             title={featuredPost.metadata.title}
             category={featuredPost.metadata.category}
@@ -52,7 +49,7 @@ export default async function BlogPage() {
         <>
           <Separator className="my-2" />
 
-          <section className="flex flex-col">
+          <section role="contentinfo" className="flex flex-col">
             <h2 className="main-subtitle">{t('subtitle')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {regularPosts.map((post) => (

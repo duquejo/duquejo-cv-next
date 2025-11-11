@@ -1,11 +1,11 @@
 'use server';
 
+import { getBlogPostBySlug, getBlogPostsFilenames } from '@/actions/blog';
 import { type Href, redirect } from '@/i18n/routing';
 import type { BlogPost, BlogPostResult } from '@/interfaces';
 import { getSlugByLocale } from '@/lib';
 import { getLocale } from 'next-intl/server';
 import { notFound, RedirectType } from 'next/navigation';
-import { getBlogPostBySlug, getBlogPostsFilenames } from './blog';
 
 const BLOG_BASE_PATH = '/blog';
 

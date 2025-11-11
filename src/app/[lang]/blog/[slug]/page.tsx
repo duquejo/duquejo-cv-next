@@ -1,6 +1,6 @@
-import { generateStaticPosts, getBlogPostBySlug } from '@/actions/blog';
+import { generateStaticPosts } from '@/actions/blog';
 import { resolveBlogPostSlug } from '@/actions/blog-post-resolver';
-import { BlogAuthor } from '@/components/blog/blog-author';
+import { BlogAuthor } from '@/components/blog';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
@@ -11,17 +11,7 @@ import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({ params }: PageProps<'/[lang]/blog/[slug]'>) {
   const { slug, lang } = await params;
-  const t = await getTranslations('Blog');
-  const result = await getBlogPostBySlug(slug, lang);
-
-  if (!result) {
-    return {
-      title: t('metadata.title'),
-      description: t('metadata.not_found_description'),
-    };
-  }
-
-  return createBlogPostMetadata(result.metadata, lang);
+  return createBlogPostMetadata(slug, lang);
 }
 
 export async function generateStaticParams() {
@@ -39,12 +29,18 @@ export default async function BlogPostPage({ params }: PageProps<'/[lang]/blog/[
   return (
     <article className="px-5 pt-5 pb-20 sm:pb-5 max-w-4xl mx-auto">
       {/* Back Button */}
-      <Link href="/blog">
-        <Button variant="ghost" size="sm" className="mb-2 md:mb-4 cursor-pointer mt-10 md:mt-0">
+
+      <Button
+        variant="ghost"
+        size="sm"
+        className="mb-2 md:mb-4 cursor-pointer mt-10 md:mt-0"
+        asChild
+      >
+        <Link href="/blog">
           <ArrowLeft size={16} />
           {t('back_to_blog')}
-        </Button>
-      </Link>
+        </Link>
+      </Button>
 
       {/* Category Badge */}
       <div className="flex animate-entrance duration-100 mt-5">

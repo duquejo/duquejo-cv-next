@@ -1,6 +1,5 @@
-import { cn } from '@/lib';
-import type { ExperienceType } from '@/interfaces';
-
+import { ExperienceItemContent } from '@/components/resume/experience-item-content';
+import { Badge } from '@/components/ui/badge';
 import {
   Card,
   CardContent,
@@ -9,8 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ExperienceItemContent } from '@/components/resume/experience-item-content';
+import type { ExperienceType } from '@/interfaces';
+import { cn } from '@/lib';
 
 interface Props extends ExperienceType {
   className?: string;
