@@ -1,4 +1,4 @@
-import { generateStaticPosts, getBlogPostBySlug } from '@/actions/blog';
+import { generateStaticPosts } from '@/actions/blog';
 import { resolveBlogPostSlug } from '@/actions/blog-post-resolver';
 import { BlogAuthor } from '@/components/blog/blog-author';
 import { Badge } from '@/components/ui/badge';
@@ -11,17 +11,7 @@ import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({ params }: PageProps<'/[lang]/blog/[slug]'>) {
   const { slug, lang } = await params;
-  const t = await getTranslations('Blog');
-  const result = await getBlogPostBySlug(slug, lang);
-
-  if (!result) {
-    return {
-      title: t('metadata.title'),
-      description: t('metadata.not_found_description'),
-    };
-  }
-
-  return createBlogPostMetadata(result.metadata, lang);
+  return createBlogPostMetadata(slug, lang);
 }
 
 export async function generateStaticParams() {
