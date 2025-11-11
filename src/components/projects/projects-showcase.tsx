@@ -70,7 +70,9 @@ export default function ProjectsShowcase({
     setActiveFilters([]);
     const projects = await getProjectByFilters();
     setProjects(projects);
-    router.replace(pathname);
+
+    // @ts-expect-error -- next/intl typescript issue https://next-intl.dev/docs/routing/navigation#usepathname
+    router.replace({ pathname });
   }, [initialFilters, initialProjects, router, pathname]);
 
   return (

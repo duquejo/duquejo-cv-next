@@ -1,4 +1,4 @@
-import { Marquee } from '@/components/magicui/marquee';
+import { Marquee } from '@/components/ui/marquee';
 import { STACK_DATA as stack } from '@/lib';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';

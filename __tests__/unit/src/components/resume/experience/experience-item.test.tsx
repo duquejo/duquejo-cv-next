@@ -32,7 +32,6 @@ describe('<ExperienceItemContent /> tests', () => {
   };
 
   it('Should match the snapshot with the default args', () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { resume, screenshot, url, end_date, ...mandatoryFields } = data;
 
     const { container } = render(<ExperienceItem {...mandatoryFields} {...textData} />);

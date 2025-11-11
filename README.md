@@ -55,8 +55,8 @@ Download the project directory and follow the next steps:
 ## Screenshots
 
 <div style="display: block; text-align: center;"> 
-  <img src="desktop.png" width="73%" />
-  <img src="mobile.png" width="25%" />
+  <img src="content/docs/desktop.png" width="73%" />
+  <img src="content/docs/mobile.png" width="25%" />
 </div>
 
 ## Contributing

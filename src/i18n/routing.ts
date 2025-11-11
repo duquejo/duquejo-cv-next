@@ -1,5 +1,5 @@
-import { defineRouting } from 'next-intl/routing';
 import { createNavigation } from 'next-intl/navigation';
+import { defineRouting } from 'next-intl/routing';
 
 export const routing = defineRouting({
   locales: ['en', 'es'],
@@ -10,6 +10,10 @@ export const routing = defineRouting({
 
   pathnames: {
     '/': '/',
+
+    '/blog': '/blog',
+
+    '/blog/[slug]': '/blog/[slug]',
 
     '/career/projects': {
       en: '/career/projects',
@@ -25,10 +29,6 @@ export const routing = defineRouting({
 
 export type Pathnames = keyof typeof routing.pathnames;
 
-export const {
-  getPathname,
-  // redirect,
-  useRouter,
-  Link,
-  usePathname,
-} = createNavigation(routing);
+export type Href = Parameters<typeof getPathname>[0]['href'];
+
+export const { getPathname, redirect, useRouter, Link, usePathname } = createNavigation(routing);

@@ -37,7 +37,7 @@ describe('<EventCard /> tests', () => {
       ...args,
       payload: {
         ref: 'main', // Optional
-        ref_type: 'PushEvent', // Optional
+        ref_type: 'WatchEvent', // Optional
         description: 'Commit title',
         commits: [
           {
@@ -46,7 +46,7 @@ describe('<EventCard /> tests', () => {
               name: 'johndoe',
               email: 'johndoe@email.com',
             },
-            url: 'https://api.github.com/repos/johndoe',
+            url: 'https://github.com/johndoe',
             sha: '123',
             message: 'Commit detail',
             distinct: false,
@@ -87,7 +87,7 @@ describe('<EventCard /> tests', () => {
       },
       {
         type: 'WatchEvent',
-        expectedColor: 'bg-cyan-300',
+        expectedColor: 'bg-amber-300',
       },
       {
         type: 'PullRequestReviewEvent',
