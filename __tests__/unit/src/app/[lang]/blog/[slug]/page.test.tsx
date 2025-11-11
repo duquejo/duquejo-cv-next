@@ -1,4 +1,4 @@
-import { generateStaticPosts, getBlogPostBySlug } from '@/actions/blog';
+import { generateStaticPosts } from '@/actions/blog';
 import { resolveBlogPostSlug } from '@/actions/blog-post-resolver';
 import BlogPostPage, {
   generateMetadata,
@@ -36,7 +36,6 @@ vi.mock('@/i18n/routing', () => ({
 
 vi.mock('@/actions/blog', () => ({
   generateStaticPosts: vi.fn(),
-  getBlogPostBySlug: vi.fn(),
 }));
 
 vi.mock('@/lib', async (importOriginal) => ({
@@ -116,7 +115,10 @@ describe('generateStaticParams tests', () => {
 
 describe('generateMetadata tests', () => {
   it('should generate metadata for blog posts - not found', async () => {
-    vi.mocked(getBlogPostBySlug).mockResolvedValueOnce(null);
+    vi.mocked(createBlogPostMetadata).mockResolvedValueOnce({
+      title: 'Mocked blog post',
+      description: 'The requested mocked blog post was not found.',
+    });
 
     const metadata = await generateMetadata(props);
 
@@ -124,17 +126,14 @@ describe('generateMetadata tests', () => {
       title: 'Mocked blog post',
       description: 'The requested mocked blog post was not found.',
     });
-    expect(getBlogPostBySlug).toHaveBeenCalledWith(params.slug, params.lang);
-    expect(createBlogPostMetadata).not.toHaveBeenCalled();
+    expect(createBlogPostMetadata).toHaveBeenCalledWith(params.slug, params.lang);
   });
 
   it('should generate metadata for blog posts - happy path', async () => {
-    vi.mocked(getBlogPostBySlug).mockResolvedValueOnce(blogPostResultMock);
     vi.mocked(createBlogPostMetadata).mockResolvedValueOnce(metadata);
 
     await generateMetadata(props);
 
-    expect(getBlogPostBySlug).toHaveBeenCalledWith(params.slug, params.lang);
-    expect(createBlogPostMetadata).toHaveBeenCalledWith(metadata, params.lang);
+    expect(createBlogPostMetadata).toHaveBeenCalledWith(params.slug, params.lang);
   });
 });
