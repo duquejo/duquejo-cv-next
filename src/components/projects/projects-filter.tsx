@@ -1,8 +1,5 @@
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Button } from '@/components/ui/button';
-import { Check, PlusCircle } from 'lucide-react';
-import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
   Command,
   CommandEmpty,
@@ -12,9 +9,12 @@ import {
   CommandList,
   CommandSeparator,
 } from '@/components/ui/command';
-import { cn } from '@/lib';
-import { forwardRef, useCallback, useImperativeHandle, useState } from 'react';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Separator } from '@/components/ui/separator';
 import type { Skill } from '@/interfaces';
+import { cn } from '@/lib';
+import { Check, PlusCircle } from 'lucide-react';
+import { forwardRef, useCallback, useImperativeHandle, useState } from 'react';
 
 interface ProjectsFilterProps {
   title: string;

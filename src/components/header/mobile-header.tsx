@@ -1,10 +1,10 @@
 'use client';
 
-import { NameTag } from '@/components/menu/name-tag/name-tag';
-import { Menu, X } from 'lucide-react';
-import { useSidebar } from '@/components/ui/sidebar';
-import { useTranslations } from 'next-intl';
+import { NameTag } from '@/components/menu/name-tag';
 import { Button } from '@/components/ui/button';
+import { useSidebar } from '@/components/ui/sidebar';
+import { Menu, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const commonProps = {
   size: 20,

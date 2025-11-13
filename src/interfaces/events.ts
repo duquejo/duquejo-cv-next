@@ -5,7 +5,7 @@ export interface Event {
   type: EventType | string;
   actor: Actor;
   repo: EventRepo;
-  payload: Payload;
+  payload: Payload | BlogEventPayload;
   public: boolean;
   created_at: string;
 }

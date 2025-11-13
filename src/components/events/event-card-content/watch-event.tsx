@@ -1,4 +1,4 @@
-import { Event } from '@/interfaces';
+import type { Event } from '@/interfaces';
 import Link from 'next/link';
 
 interface WatchEventProps {

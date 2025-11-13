@@ -5,6 +5,10 @@ export function calculateYears() {
   return String(new Date().getFullYear() - START_ADVENTURE_YEAR);
 }
 
+export function sortByDateString(a: string, b: string) {
+  return new Date(b).getTime() - new Date(a).getTime();
+}
+
 export function filterProjectsByTags(projects: ExperienceType[], tags: string[]) {
   return projects.filter((project) =>
     tags.every((tag) =>

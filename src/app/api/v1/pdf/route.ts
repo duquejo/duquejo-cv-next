@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
 import { generatePdf } from '@/actions/pdf';
+import { type NextRequest, NextResponse } from 'next/server';
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Methods': 'POST, OPTIONS',

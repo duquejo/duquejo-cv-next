@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { cn, SOCIAL_DATA as socials } from '@/lib';
+import Link from 'next/link';
 
 interface Props {
   className?: string;
