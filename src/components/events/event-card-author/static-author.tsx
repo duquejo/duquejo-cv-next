@@ -1,4 +1,4 @@
-import { Event } from '@/interfaces';
+import type { Event } from '@/interfaces';
 import Image from 'next/image';
 
 interface EventStaticAuthorProps {

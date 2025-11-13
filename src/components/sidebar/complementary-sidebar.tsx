@@ -1,9 +1,9 @@
-import { ThemeToggle } from '@/components/theme/theme-toggle';
-import { SidebarTrigger } from '@/components/ui/sidebar';
-import { SheetTrigger } from '@/components/ui/sheet';
-import { Lightbulb } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { PdfGeneratorToggle } from '@/components/pdf/pdf-toggle';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
+import { Button } from '@/components/ui/button';
+import { SheetTrigger } from '@/components/ui/sheet';
+import { SidebarTrigger } from '@/components/ui/sidebar';
+import { Lightbulb } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 interface Props {

@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Event } from '@/interfaces';
+import type { Event } from '@/interfaces';
 import { Github } from 'lucide-react';
 import Link from 'next/link';
 

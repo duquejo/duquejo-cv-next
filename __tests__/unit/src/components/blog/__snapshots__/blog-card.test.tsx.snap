@@ -91,7 +91,7 @@ exports[`<BlogCard /> tests > should match the snapshot 1`] = `
               </span>
             </div>
             <div
-              class="shrink-0 bg-border w-[1px] h-3"
+              class="shrink-0 bg-border w-px h-3"
               data-orientation="vertical"
               role="none"
             />

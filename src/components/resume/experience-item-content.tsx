@@ -1,8 +1,8 @@
-import { cn } from '@/lib';
 import { Button } from '@/components/ui/button';
 import { ExperienceType } from '@/interfaces';
-import Link from 'next/link';
+import { cn } from '@/lib';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Props extends Partial<ExperienceType> {
   contentTitle?: string;

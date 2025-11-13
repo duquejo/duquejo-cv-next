@@ -60,7 +60,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                     class="text-center"
                   >
                     <span
-                      class="relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:opacity-80 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-secondary-foreground  after:ml-0.5 font-light text-secondary-foreground tracking-widest"
+                      class="relative w-max font-mono before:absolute before:inset-0 before:animate-typewriter before:opacity-80 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-secondary-foreground  after:ml-0.5 font-light text-secondary-foreground tracking-widest"
                     >
                       @duquejo
                     </span>
@@ -79,7 +79,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
               </ul>
             </div>
             <div
-              class="shrink-0 h-[1px] mx-2 w-auto bg-sidebar-border"
+              class="shrink-0 h-px mx-2 w-auto bg-sidebar-border"
               data-orientation="horizontal"
               data-sidebar="separator"
               role="none"
@@ -282,7 +282,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
               </div>
             </div>
             <div
-              class="shrink-0 h-[1px] mx-2 w-auto bg-sidebar-border"
+              class="shrink-0 h-px mx-2 w-auto bg-sidebar-border"
               data-orientation="horizontal"
               data-sidebar="separator"
               role="none"
@@ -350,7 +350,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
               data-sidebar="group"
             >
               <div
-                class="shrink-0 h-[1px] mx-2 w-auto bg-sidebar-border my-2 group-data-[collapsible=icon]:hidden"
+                class="shrink-0 h-px mx-2 w-auto bg-sidebar-border my-2 group-data-[collapsible=icon]:hidden"
                 data-orientation="horizontal"
                 data-sidebar="separator"
                 role="none"
@@ -401,7 +401,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                   </li>
                 </ul>
                 <div
-                  class="shrink-0 h-[1px] mx-2 w-auto bg-sidebar-border sm:flex my-2 group-data-[collapsible=icon]:hidden hidden"
+                  class="shrink-0 h-px mx-2 w-auto bg-sidebar-border sm:flex my-2 group-data-[collapsible=icon]:hidden hidden"
                   data-orientation="horizontal"
                   data-sidebar="separator"
                   role="none"
@@ -450,7 +450,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
               data-sidebar="group"
             >
               <div
-                class="shrink-0 h-[1px] w-auto bg-sidebar-border mx-0 mb-2"
+                class="shrink-0 h-px w-auto bg-sidebar-border mx-0 mb-2"
                 data-orientation="horizontal"
                 data-sidebar="separator"
                 role="none"

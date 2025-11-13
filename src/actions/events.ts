@@ -2,6 +2,8 @@
 
 import { getBlogPostsByLocale } from '@/actions/blog';
 import type { BlogPostResult, Event, EventType } from '@/interfaces';
+import { sortByDateString } from '@/lib';
+import { BlogMapper } from '@/mappers/blog-mapper';
 
 const EVENT_GITHUB_URL = process.env.EVENT_GITHUB_URL;
 const EVENT_GITHUB_SOURCE = process.env.EVENT_GITHUB_SOURCE;
@@ -61,33 +63,7 @@ const parseInnerUrls = (url: string, pattern: string = '') =>
   String(url).replace(`https://api.github.com${pattern}`, 'https://github.com');
 
 const mapBlogPostsIntoEvents = (blogPosts: BlogPostResult[]): Event[] =>
-  blogPosts.map(({ metadata }) => ({
-    id: `blog-${metadata.slug}`,
-    type: 'BlogPostEvent',
-    created_at: metadata.publishDate,
-    public: true,
-    actor: {
-      id: 0,
-      login: 'duquejo/duquejo-cv-next',
-      display_login: 'José Duque',
-      gravatar_id: '',
-      url: '',
-      avatar_url: 'https://avatars.githubusercontent.com/u/47703424',
-    },
-    repo: {
-      id: 0,
-      name: 'duquejo/duquejo-cv-next',
-      url: `/blog/${metadata.slug}`,
-    },
-    payload: {
-      ref: 'blog',
-      blog_slug: metadata.slug,
-      blog_title: metadata.title,
-      description: metadata.excerpt,
-      blog_category: metadata.category,
-      blog_tags: metadata.tags,
-    },
-  }));
+  blogPosts.map(({ metadata: blogPost }) => BlogMapper.toEvent(blogPost));
 
 export async function getEvents(): Promise<Event[]> {
   if (!(EVENT_GITHUB_URL && EVENT_GITHUB_SOURCE)) return [];
@@ -111,9 +87,7 @@ export async function getEvents(): Promise<Event[]> {
       events.push(...mapBlogPostsIntoEvents(blogPosts));
     }
 
-    return events.sort(
-      (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
-    );
+    return events.sort((a, b) => sortByDateString(a.created_at, b.created_at));
   } catch (e: unknown) {
     if (e instanceof Error) {
       console.error(`[error - events]: ${e.message}`);

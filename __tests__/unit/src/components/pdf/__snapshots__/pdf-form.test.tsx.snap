@@ -8,7 +8,7 @@ exports[`<PdfForm /> tests > should match the snapshot 1`] = `
     class="flex flex-col"
   >
     <div
-      class="shrink-0 bg-border h-[1px] w-full mt-2 mb-3"
+      class="shrink-0 bg-border h-px w-full mt-2 mb-3"
       data-orientation="horizontal"
       role="none"
     />

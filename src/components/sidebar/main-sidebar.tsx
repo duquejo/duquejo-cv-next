@@ -1,3 +1,8 @@
+import { MenuAvatar } from '@/components/menu/menu-avatar';
+import { MenuItems } from '@/components/menu/menu-items';
+import { ComplementarySidebar } from '@/components/sidebar/complementary-sidebar';
+import { SidebarKeyboard } from '@/components/sidebar/sidebar-keyboard';
+import { SocialItemsHorizontal } from '@/components/social/social-items-horizontal';
 import {
   Sidebar,
   SidebarContent,
@@ -10,12 +15,7 @@ import {
   SidebarMenuItem,
   SidebarSeparator,
 } from '@/components/ui/sidebar';
-import { MenuAvatar } from '@/components/menu/menu-avatar/menu-avatar';
 import { useTranslations } from 'next-intl';
-import { MenuItems } from '@/components/menu/menu-items/menu-items';
-import { ComplementarySidebar } from '@/components/sidebar/complementary-sidebar';
-import { SocialItemsHorizontal } from '@/components/social/social-items-horizontal';
-import { SidebarKeyboard } from './sidebar-keyboard';
 
 export const MainSidebar = () => {
   const t = useTranslations('Sidebar');
