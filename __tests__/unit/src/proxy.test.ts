@@ -1,8 +1,8 @@
-import middleware, { config } from '@/middleware';
+import proxy, { config } from '@/proxy';
 
 describe('Middleware tests', () => {
   it('should export the middleware function', () => {
-    expect(typeof middleware).toBe('function');
+    expect(typeof proxy).toBe('function');
   });
 
   it('should have the correct config', () => {

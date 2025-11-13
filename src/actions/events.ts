@@ -16,25 +16,34 @@ const EVENTS_TO_EXCLUDE = [
 ];
 
 const DEFAULT_BLOG_EVENTS_LIMIT = 5;
+const DEFAULT_GITHUB_EVENTS_LIMIT = 15;
 
-const requestParams = { per_page: 10, page: 1 };
+const requestParams = {
+  per_page: DEFAULT_GITHUB_EVENTS_LIMIT,
+  page: 1,
+};
 
-const requestArgs: RequestInit = {
+const filterTypeEvents = (event: Event) => !EVENTS_TO_EXCLUDE.includes(event.type as EventType);
+
+const filterBranchEvents = (event: Event) =>
+  !event.payload?.ref?.includes('refs/heads/feat') &&
+  !event.payload?.ref?.includes('refs/heads/develop');
+
+const parseBranch = (url?: string | null) => url && String(url).replace('refs/heads/', '');
+
+const parseInnerUrls = (url: string, pattern: string = '') =>
+  String(url).replace(`https://api.github.com${pattern}`, 'https://github.com');
+
+const getRequestConfig = (authSource: string): RequestInit => ({
   method: 'GET',
   headers: {
     accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+    Authorization: 'token '.concat(authSource),
   },
   cache: 'force-cache',
   next: {
     revalidate: 3600,
-  },
-};
-
-const getRequestConfig = (authSource: string): RequestInit => ({
-  ...requestArgs,
-  headers: {
-    ...requestArgs.headers,
-    Authorization: 'token '.concat(authSource),
   },
 });
 
@@ -49,18 +58,14 @@ const buildUrl = (url: string, queryParams = {}): URL => {
 
 const filterEventsChain = (events: Event[]): Event[] =>
   events
-    .filter((event: Event) => !EVENTS_TO_EXCLUDE.includes(event.type as EventType))
+    .filter(filterTypeEvents)
+    .filter(filterBranchEvents)
     .map((event: Event) => ({
       ...event,
       payload: { ...event.payload, ref: parseBranch(event.payload?.ref) },
       actor: { ...event.actor, url: parseInnerUrls(event.actor?.url, '/users') },
       repo: { ...event.repo, url: parseInnerUrls(event.repo?.url, '/repos') },
     }));
-
-const parseBranch = (url?: string | null) => url && String(url).replace('refs/heads/', '');
-
-const parseInnerUrls = (url: string, pattern: string = '') =>
-  String(url).replace(`https://api.github.com${pattern}`, 'https://github.com');
 
 const mapBlogPostsIntoEvents = (blogPosts: BlogPostResult[]): Event[] =>
   blogPosts.map(({ metadata: blogPost }) => BlogMapper.toEvent(blogPost));
