@@ -19,6 +19,7 @@ export const BlogProgress = () => {
 
   return (
     <div
+      data-testid="reading-progress"
       className="fixed z-10 top-13 md:top-0 h-1 bg-primary border-none appearance-none left-0 w-full opacity-60 md:opacity-100"
       style={{ width: `${readingProgress}%` }}
     />

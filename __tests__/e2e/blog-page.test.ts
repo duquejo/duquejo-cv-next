@@ -30,6 +30,7 @@ test.describe('Blog page', () => {
     const firstBlogPost = page.getByRole('contentinfo').first();
 
     await firstBlogPost.click();
+    await page.waitForURL(/blog\//);
 
     await expect(page).toHaveURL(/blog\//);
 
@@ -55,6 +56,7 @@ test.describe('Blog page', () => {
     const lastBlogPost = page.getByRole('contentinfo').last();
 
     await lastBlogPost.click();
+    await page.waitForURL(/blog\//);
 
     await expect(page).toHaveURL(/blog\//);
 
@@ -69,5 +71,16 @@ test.describe('Blog page', () => {
     await page.getByRole('link', { name: /Back to blog/i }).click();
 
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Blog');
+  });
+
+  test('should display the reading progress bar', async ({ page }) => {
+    const firstBlogPost = page.getByRole('contentinfo').first();
+
+    await firstBlogPost.click();
+
+    await page.waitForURL(/blog\//);
+
+    await page.mouse.wheel(0, 1000);
+    await expect(page.getByTestId('reading-progress')).toBeVisible();
   });
 });
