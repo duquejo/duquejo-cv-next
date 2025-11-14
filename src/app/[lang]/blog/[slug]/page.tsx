@@ -1,13 +1,11 @@
 import { generateStaticPosts } from '@/actions/blog';
 import { resolveBlogPostSlug } from '@/actions/blog-post-resolver';
-import { BlogAuthor } from '@/components/blog';
+import { getUrl } from '@/app/sitemap';
+import { BlogAuthor, BlogSocialShare } from '@/components/blog';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Link } from '@/i18n/routing';
+import { type Href } from '@/i18n/routing';
 import { createBlogPostMetadata } from '@/lib';
-import { ArrowLeft } from 'lucide-react';
-import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({ params }: PageProps<'/[lang]/blog/[slug]'>) {
   const { slug, lang } = await params;
@@ -19,7 +17,6 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPostPage({ params }: PageProps<'/[lang]/blog/[slug]'>) {
-  const t = await getTranslations('Blog');
   const { slug, lang } = await params;
 
   const result = await resolveBlogPostSlug(slug, lang);
@@ -27,21 +24,7 @@ export default async function BlogPostPage({ params }: PageProps<'/[lang]/blog/[
   const { Post, metadata } = result;
 
   return (
-    <article className="px-5 pt-5 pb-20 sm:pb-5 max-w-4xl mx-auto">
-      {/* Back Button */}
-
-      <Button
-        variant="ghost"
-        size="sm"
-        className="mb-2 md:mb-4 cursor-pointer mt-10 md:mt-0"
-        asChild
-      >
-        <Link href="/blog">
-          <ArrowLeft size={16} />
-          {t('back_to_blog')}
-        </Link>
-      </Button>
-
+    <>
       {/* Category Badge */}
       <div className="flex animate-entrance duration-100 mt-5">
         <Badge variant="default" className="mb-4 block md:mx-0 mx-auto">
@@ -59,21 +42,29 @@ export default async function BlogPostPage({ params }: PageProps<'/[lang]/blog/[
 
       {/* Tags */}
       {metadata.tags && (
-        <div className="flex gap-2 justify-center md:justify-start mb-8 flex-wrap">
-          {metadata.tags.map((tag: string) => (
-            <Badge key={tag} variant="secondary" className="animate-entrance duration-200 shrink-0">
-              {tag}
-            </Badge>
-          ))}
+        <div className="md:flex-row flex flex-col justify-center md:justify-between my-2">
+          <div className="flex flex-wrap gap-2 md:max-w-10/12 justify-center md:justify-start">
+            {metadata.tags.map((tag: string) => (
+              <Badge
+                key={tag}
+                variant="secondary"
+                className="animate-entrance duration-200 shrink-0"
+              >
+                {tag}
+              </Badge>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2 mt-4 md:mt-0 justify-center">
+            <BlogSocialShare url={getUrl(`/blog/${slug}` as Href, lang)} />
+          </div>
         </div>
       )}
 
       {/* Content */}
       <section className="max-w-none animate-entrance duration-500">
-        <p className="text-base leading-relaxed">{metadata.excerpt}</p>
         <Separator className="my-5" />
         <Post />
       </section>
-    </article>
+    </>
   );
 }
