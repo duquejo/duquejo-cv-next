@@ -7,7 +7,6 @@ import BlogPostPage, {
 import { BlogPostResult } from '@/interfaces';
 import { createBlogPostMetadata } from '@/lib';
 import { render, within } from '@testing-library/react';
-import { getTranslations } from 'next-intl/server';
 import { Params } from 'next/dist/server/request/params';
 import { SearchParams } from 'next/dist/server/request/search-params';
 
@@ -15,23 +14,14 @@ vi.mock('@/actions/blog-post-resolver', () => ({
   resolveBlogPostSlug: vi.fn(),
 }));
 
-vi.mock('next-intl/server', () => ({
-  getTranslations: vi.fn(() => {
-    const translations: Record<string, unknown> = {
-      title: 'projects',
-      back_to_blog: 'Back to blog',
-      read_more: 'Read more',
-      'metadata.title': 'Mocked blog post',
-      'metadata.not_found_description': 'The requested mocked blog post was not found.',
-    };
-    return Promise.resolve((key: string) => translations[key]);
-  }),
-}));
-
 vi.mock('@/i18n/routing', () => ({
   Link: ({ children, href }: { children: React.ReactNode; href: string }) => (
     <a href={href}>{children}</a>
   ),
+}));
+
+vi.mock('@/app/sitemap', () => ({
+  getUrl: (href: string) => `https://example.com${href}`,
 }));
 
 vi.mock('@/actions/blog', () => ({
@@ -85,13 +75,30 @@ describe('<BlogPostPage /> tests', () => {
     expect(wrapper).toBeDefined();
     expect(wrapper.getByRole('heading', { level: 1, name: 'Test Blog Post' })).toBeInTheDocument();
     expect(wrapper.getByRole('blockquote')).toHaveTextContent('Test Blog Post Content');
-    expect(wrapper.getByRole('link', { name: 'Back to blog' })).toBeInTheDocument();
-    expect(wrapper.getByRole('paragraph')).toHaveTextContent(metadata.excerpt);
     expect(wrapper.getByText(metadata.category)).toBeInTheDocument();
     expect(wrapper.getAllByText(/Testing|Vitest/)).toHaveLength(metadata.tags.length);
 
     expect(resolveBlogPostSlug).toHaveBeenCalledWith('test-blog-post', 'en');
-    expect(getTranslations).toHaveBeenCalledWith('Blog');
+  });
+
+  it('should render the socials buttons', async () => {
+    vi.mocked(resolveBlogPostSlug).mockResolvedValueOnce(blogPostResultMock);
+
+    const { container } = render(await BlogPostPage(props));
+
+    const wrapper = within(container);
+
+    expect(wrapper).toBeDefined();
+
+    const socials = wrapper.getAllByRole('button');
+
+    expect(socials).toHaveLength(4);
+    expect(socials[0]).toHaveAttribute('title', 'X');
+    expect(socials[1]).toHaveAttribute('title', 'Threads');
+    expect(socials[2]).toHaveAttribute('title', 'LinkedIn');
+    expect(socials[3]).toHaveAttribute('title', 'Email');
+
+    expect(resolveBlogPostSlug).toHaveBeenCalledWith('test-blog-post', 'en');
   });
 });
 
