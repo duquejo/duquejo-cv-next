@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<BlogProgress /> tests > should render correctly 1`] = `
+<div>
+  <div
+    class="fixed z-10 top-13 md:top-0 h-1 bg-primary border-none appearance-none left-0 w-full opacity-60 md:opacity-100"
+    data-testid="reading-progress"
+    style="width: 0%;"
+  />
+</div>
+`;
