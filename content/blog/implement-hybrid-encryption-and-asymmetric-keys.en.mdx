@@ -1,0 +1,241 @@
+---
+slug: implement-hybrid-encryption-and-asymmetric-keys
+slugEn: implement-hybrid-encryption-and-asymmetric-keys
+slugEs: implementar-cifrado-hibrido-y-claves-asimetricas
+title: How to implement hybrid encryption with AES and asymmetric keys
+excerpt: A practical guide to implementing hybrid encryption using AES and asymmetric keys in secure applications.
+category: Coding
+tags: [Security, Backend, Encryption, Cryptography, AES, RSA, Hybrid Encryption]
+publishDate: 2025-11-27T10:23:35.000Z
+readingTime: 14 min
+---
+
+## Introduction
+
+A few years ago, while working on a project that required a high level of security for data transmission, I found myself needing to implement a hybrid encryption system. This approach combines the speed of symmetric encryption with the security of asymmetric encryption, and in this post I'll share how I achieved it using AES for symmetric encryption and asymmetric keys using RSA for secure information exchange.
+
+> At that time, the approach was implemented using the **Java & Spring Boot** duo to achieve it, however, to share this experience I used **Nest.js** _(An excellent framework!)_ as my backend, which was my preferred tool to perform the proof of concept for the challenge I had in mind.
+
+### Key Concepts
+
+Before diving into the implementation, let's briefly review the key concepts:
+
+- **Symmetric Encryption:** Uses the same key to encrypt and decrypt data. It's fast and efficient, ideal for large volumes of data, but relies on the security of the shared key.
+- **AES (Advanced Encryption Standard):** is a widely used **symmetric** encryption algorithm due to its speed and security.
+
+- **Asymmetric Encryption:** Uses a pair of keys _(public and private)_. The public key encrypts the data, while the private key decrypts it. It's more secure for key exchange, but slower.
+- **RSA:** is a commonly used **asymmetric** encryption algorithm for secure key exchange.
+
+Now that we know the basic concepts, it's important to understand that in practice combining both methods is ideal to achieve the goal of security and efficiency. This is where hybrid encryption comes into play.
+
+### Hybrid Encryption Implementation
+
+#### Prerequisites
+
+1. An RSA key pair (public and private) is generated from the server.
+
+> _(Optional)_ If you want to generate an RSA key pair, you can use `openssl` from the terminal. For Linux it's straightforward. However for Windows, you can install dependencies like _[Openssl for Windows](https://slproweb.com/products/Win32OpenSSL.html)_.
+
+After that, you can run the following commands:
+
+To generate the **private key**:
+
+```bash
+openssl genrsa -out {private-location.pem}
+```
+
+To generate the **public key** from the **private key**:
+
+```bash
+openssl rsa -in {private-location.pem} -pubout -out {public-location.pem}
+```
+
+#### Encryption Flow
+
+The hybrid encryption flow consists of the following steps which will be commented in the following code:
+
+```typescript
+class EncryptUseCase {
+  constructor(
+    /**
+     * Handles symmetric AES encryption operations.
+     */
+    private readonly aesEncryptor: AesEncryptor,
+    /**
+     * Handles asymmetric RSA encryption operations.
+     */
+    private readonly rsaKeyManager: RsaKeyManager,
+    /**
+     * Handles HMAC generation operations
+     * (Optional - Integrity validation).
+     */
+    private readonly hmacGenerator: HmacGenerator,
+    /**
+     * Handles data compression operations
+     * (Optional - Performance improvement).
+     */
+    private readonly compression: CompressionService,
+  ) {}
+
+  public encrypt(data: string): string {
+    /**
+     * 1) A unique AES key is generated for each encryption session.
+     */
+    const aesKey = this.aesEncryptor.generateKey();
+
+    /**
+     * 2) Additionally, a random initialization vector (IV) is generated.
+     * This ensures that each encrypted message is unique.
+     */
+    const iv = this.aesEncryptor.generateIv();
+
+    /**
+     * 3) The data is encrypted using the AES key.
+     */
+    const encryptedPayload = this.aesEncryptor.encrypt(data, aesKey, iv);
+
+    const encryptedIv = iv.toString('base64');
+
+    /**
+     * 4) The AES key is encrypted using the server's RSA public key.
+     */
+    const encryptedAesKey = this.rsaKeyManager.encryptKey(aesKey).toString('base64');
+
+    /**
+     * 5) (Optional) HMAC generation to validate data integrity.
+     */
+    const hmacMessage = StringUtils.concat(encryptedPayload, encryptedAesKey, encryptedIv);
+    const hmac = this.hmacGenerator.generate(aesKey, hmacMessage);
+
+    /**
+     * 6) The client gathers both the encrypted data and the encrypted AES key to send to the server.
+     */
+    const instance = plainToInstance(EncryptedData, {
+      d: encryptedPayload,
+      k: encryptedAesKey,
+      i: encryptedIv,
+      h: hmac,
+    });
+
+    /**
+     * 7) (Optional) Compression of encrypted data to optimize transmission.
+     * 8) Finally, the encrypted and compressed information is returned to the client.
+     */
+    return this.compression.compress(JSON.stringify(instance));
+  }
+}
+```
+
+> If you're more visual, the [following diagram](https://github.com/duquejo/hybrid-encryption-service/tree/master?tab=readme-ov-file#encrypt-flow) illustrates the described hybrid encryption flow.
+
+Now, as seen in the snippet, additional steps are included such as **HMAC generation**, which allows verifying data integrity, ensuring that data hasn't been altered during transmission, and **data compression**, which reduces the size of encrypted data, optimizing network performance respectively.
+
+An important feature to highlight is that every buffer generated in the encryption process is converted to a base64 string to facilitate transmission supporting different mediums (HTTP, WebSockets, etc.).
+
+#### Decryption Flow
+
+The reverse decryption flow consists of the following steps which will be commented in the following code:
+
+```typescript
+class DecryptUseCase {
+  constructor(
+    /**
+     * Handles symmetric AES encryption operations.
+     */
+    private readonly aesEncryptor: AesEncryptor,
+    /**
+     * Handles asymmetric RSA encryption operations.
+     */
+    private readonly rsaKeyManager: RsaKeyManager,
+    /**
+     * Handles HMAC generation operations
+     * (Optional - Integrity validation).
+     */
+    private readonly hmacGenerator: HmacGenerator,
+    /**
+     * Handles data compression operations
+     * (Optional - Performance improvement).
+     */
+    private readonly compression: CompressionService,
+  ) {}
+
+  public decrypt(encryptedData: string): string {
+    /**
+     * 1) (Optional) Decompression of received data, using the inverse
+     *    strategy of the compression applied during encryption.
+     */
+    const unzipped = this.compression.decompress(encryptedData);
+
+    /**
+     * 2) The decompressed data is parsed to extract
+     *    the encrypted payload, the encrypted AES key, the IV, and the HMAC.
+     */
+    const data = JSON.parse(unzipped) as object;
+    const encryptedOutput = plainToInstance(EncryptedData, data);
+
+    /**
+     * 3) The AES key is decrypted using the server's RSA private key.
+     */
+    const encryptedAesKey = Buffer.from(encryptedOutput.k, 'base64');
+    const decryptedKey = this.rsaKeyManager.decryptKey(encryptedAesKey);
+
+    /**
+     * 4) (Optional) Data integrity verification using HMAC.
+     *    If the HMAC doesn't match, it's assumed that the data has been altered,
+     *    therefore an error exception is thrown.
+     */
+    const hmacMessage = StringUtils.concat(encryptedOutput.d, encryptedOutput.k, encryptedOutput.i);
+    if (!this.hmacGenerator.verify(decryptedKey, hmacMessage, encryptedOutput.h)) {
+      throw new DecryptException('Data integrity check failed.');
+    }
+
+    const iv = Buffer.from(encryptedOutput.i, 'base64');
+
+    /**
+     * 5) Finally, the data is decrypted using the decrypted AES key and the IV.
+     */
+    return this.aesEncryptor.decrypt(encryptedOutput.d, decryptedKey, iv);
+  }
+}
+```
+
+> If you're more visual, the [following diagram](https://github.com/duquejo/hybrid-encryption-service/tree/master?tab=readme-ov-file#decrypt-flow) illustrates the described hybrid decryption flow.
+
+Again, optional steps for **integrity verification** via HMAC and **data decompression** are included to optimize performance.
+
+Although the implementation is oriented towards a backend environment with Nest.js, the principles and techniques described are applicable to any environment that supports the necessary cryptographic operations.
+
+#### Additional Resources
+
+Now, if you want to dive deeper into the implementation of each of the dependencies mentioned above (AES, RSA, HMAC, Compression), in the following repository, you can find a fully functional proof of concept of this hybrid encryption approach:
+
+**Mandatory**
+
+- [AESEncryptor](https://github.com/duquejo/hybrid-encryption-service/blob/master/src/infrastructure/config/encryption/aes-encryptor.service.ts): Contains the implementation of **AES encryption/decryption** and methods to generate **keys** and **IVs**.
+- [RSAKeyManager](https://github.com/duquejo/hybrid-encryption-service/blob/master/src/infrastructure/config/encryption/rsa-key-manager.service.ts): Contains the implementation of **RSA encryption/decryption** and methods to load **public** and **private keys**.
+
+**Optional**
+
+- [HMACGenerator](https://github.com/duquejo/hybrid-encryption-service/blob/master/src/infrastructure/config/encryption/hmac-generator.service.ts): Contains the implementation to generate and verify **HMACs**.
+- [CompressionService](https://github.com/duquejo/hybrid-encryption-service/tree/master/src/infrastructure/config/compression): Contains the implementation to **compress** and **decompress** data using different algorithms. It's built under the `Strategy` pattern, allowing selection of the compression algorithm at runtime, for our practical case **gzip**.
+
+### Summary
+
+If you want to implement a hybrid encryption system:
+
+1. **Generate** a unique AES key for each encryption session.
+2. **Generate** a random initialization vector (IV).
+3. **Encrypt** the data using the AES key.
+4. **Encrypt** the AES key using the server's RSA public key.
+5. **Gather** both the encrypted data and the encrypted AES key for the server.
+6. **Return** the encrypted and compressed information to the client.
+
+If you want to implement the reverse decryption flow:
+
+1. **Parse** the decompressed data to extract the encrypted payload, the encrypted AES key, and the IV.
+2. **Decrypt** the AES key using the server's RSA private key.
+3. **Decrypt** the data using the decrypted AES key and the IV.
+
+## Conclusion
+
+That's how I implemented the hybrid encryption system in the project I was developing. If you have any questions or suggestions, don't hesitate to contact me through my social networks. Thanks for reading!

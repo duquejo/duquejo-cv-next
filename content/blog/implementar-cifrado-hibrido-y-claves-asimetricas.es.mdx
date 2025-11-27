@@ -1,0 +1,241 @@
+---
+slug: implement-hybrid-encryption-and-asymmetric-keys
+slugEn: implement-hybrid-encryption-and-asymmetric-keys
+slugEs: implementar-cifrado-hibrido-y-claves-asimetricas
+title: Cómo implementar cifrado híbrido con AES y claves asimétricas
+excerpt: Una guía práctica para implementar cifrado híbrido utilizando AES y claves asimétricas en aplicaciones seguras.
+category: Coding
+tags: [Seguridad, Backend, Encriptación, Criptografía, AES, RSA, Cifrado Híbrido]
+publishDate: 2025-11-27T10:23:35.000Z
+readingTime: 14 minutos
+---
+
+## Introducción
+
+Hace algunos años, mientras trabajaba en un proyecto que requería un alto nivel de seguridad para la transmisión de datos, me encontré con la necesidad de implementar un sistema de cifrado híbrido. Este enfoque combina la velocidad del cifrado simétrico con la seguridad del cifrado asimétrico, y en esta publicación compartiré cómo lo logré utilizando AES para el cifrado simétrico y claves asimétricas usando RSA para el intercambio seguro de información.
+
+> En su momento, el enfoque obtenido se realizó usando la dupla **Java & Spring Boot** para alcanzarlo, sin embargo, para compartir esta experiencia utilicé **Nest.js** _(¡Un excelente framework!)_ como mi backend, el cual fué mi herramienta predilecta para realizar la prueba de concepto del reto que tenía en mente.
+
+### Conceptos clave
+
+Antes de sumergirnos en la implementación, repasemos brevemente los conceptos clave:
+
+- **Cifrado Simétrico:** Utiliza la misma clave para cifrar y descifrar datos. Es rápido y eficiente, ideal para grandes volúmenes de datos, pero recae en la seguridad de la clave compartida.
+- **AES (Advanced Encryption Standard):** es un algoritmo de cifrado **simétrico** ampliamente utilizado debido a su velocidad y seguridad.
+
+- **Cifrado Asimétrico:** Utiliza un par de claves _(pública y privada)_. La clave pública cifra los datos, mientras que la clave privada los descifra. Es más seguro para el intercambio de claves, pero más lento.
+- **RSA:** es un algoritmo de cifrado **asimétrico** comúnmente utilizado para el intercambio seguro de claves.
+
+Ahora conociendo los conceptos básicos, es importante entender que en la práctica combinar ambos métodos, es ideal para lograr el objetivo de seguridad y eficiencia. Aquí es donde entra en juego el cifrado híbrido.
+
+### Implementación del Cifrado Híbrido
+
+#### Requerimentos previos
+
+1. Se genera desde el servidor un par de claves RSA (pública y privada).
+
+> _(Opcional)_ Si deseas generar un par de claves RSA, puedes usar `openssl` desde la terminal. Para linux es sencillo. Sin embargo para Windows, puedes instalar dependencias como _[Openssl for Windows](https://slproweb.com/products/Win32OpenSSL.html)_.
+
+Posterior a ello, puedes ejecutar los siguientes comandos:
+
+Para generar la **clave privada**:
+
+```bash
+openssl genrsa -out {private-location.pem}
+```
+
+Para generar la **clave pública** a partir de la **clave privada**:
+
+```bash
+openssl rsa -in {private-location.pem} -pubout -out {public-location.pem}
+```
+
+#### Flujo de Encriptación
+
+El flujo de encriptación híbrido consta de los siguientes pasos los cuales estarán comentados en el siguiente código:
+
+```typescript
+class EncryptUseCase {
+  constructor(
+    /**
+     * Comprende operaciones de cifrado AES simétrico.
+     */
+    private readonly aesEncryptor: AesEncryptor,
+    /**
+     *  Comprende operaciones de cifrado RSA asimétrico.
+     */
+    private readonly rsaKeyManager: RsaKeyManager,
+    /**
+     * Comprende operaciones de generación de HMAC
+     * (Opcional - Validación de integridad).
+     */
+    private readonly hmacGenerator: HmacGenerator,
+    /**
+     * Comprende operaciones de compresión de datos
+     * (Opcional - Mejora de rendimiento).
+     */
+    private readonly compression: CompressionService,
+  ) {}
+
+  public encrypt(data: string): string {
+    /**
+     * 1) Se genera una clave AES única para cada sesión de cifrado.
+     */
+    const aesKey = this.aesEncryptor.generateKey();
+
+    /**
+     * 2) Adicionalmente se genera un vector de inicialización (IV) aleatorio.
+     * Esto garantiza que cada mensaje cifrado sea único.
+     */
+    const iv = this.aesEncryptor.generateIv();
+
+    /**
+     * 3) Se cifran los datos utilizando la clave AES.
+     */
+    const encryptedPayload = this.aesEncryptor.encrypt(data, aesKey, iv);
+
+    const encryptedIv = iv.toString('base64');
+
+    /**
+     * 4) Se cifra la clave AES utilizando la clave pública RSA del servidor.
+     */
+    const encryptedAesKey = this.rsaKeyManager.encryptKey(aesKey).toString('base64');
+
+    /**
+     * 5) (Opcional) Generación de HMAC para validar la integridad de los datos.
+     */
+    const hmacMessage = StringUtils.concat(encryptedPayload, encryptedAesKey, encryptedIv);
+    const hmac = this.hmacGenerator.generate(aesKey, hmacMessage);
+
+    /**
+     * 6) El cliente reune tanto los datos cifrados como la clave AES cifrada al servidor.
+     */
+    const instance = plainToInstance(EncryptedData, {
+      d: encryptedPayload,
+      k: encryptedAesKey,
+      i: encryptedIv,
+      h: hmac,
+    });
+
+    /**
+     * 7) (Opcional) Compresión de los datos cifrados para optimizar la transmisión.
+     * 8) Finalmente, se retorna la información cifrada y comprimida al cliente.
+     */
+    return this.compression.compress(JSON.stringify(instance));
+  }
+}
+```
+
+> Si eres más visual, el [siguiente diagrama](https://github.com/duquejo/hybrid-encryption-service/tree/master?tab=readme-ov-file#encrypt-flow) ilustra el flujo de cifrado híbrido descrito.
+
+Ahora, así como se observa en el snippet, Se comprenden pasos adicionales como la **generación de HMAC**, el cual permite verificar la integridad de los datos, asegurando que no hayan sido alterados durante la transmisión y la **compresión de datos**, la cual reduce el tamaño de los datos cifrados, optimizando el rendimiento de la red respectivamente.
+
+Una característica importante a destacar, es que todo buffer generado en el proceso de cifrado, es convertido a una cadena en base64 para facilitar su transmisión soportando diferentes medios (HTTP, WebSockets, etc.).
+
+#### Flujo de Desencriptación
+
+El flujo de desencriptación inverso consta de los siguientes pasos los cuales estarán comentados en el siguiente código:
+
+```typescript
+class DecryptUseCase {
+  constructor(
+    /**
+     * Comprende operaciones de cifrado AES simétrico.
+     */
+    private readonly aesEncryptor: AesEncryptor,
+    /**
+     *  Comprende operaciones de cifrado RSA asimétrico.
+     */
+    private readonly rsaKeyManager: RsaKeyManager,
+    /**
+     * Comprende operaciones de generación de HMAC
+     * (Opcional - Validación de integridad).
+     */
+    private readonly hmacGenerator: HmacGenerator,
+    /**
+     * Comprende operaciones de compresión de datos
+     * (Opcional - Mejora de rendimiento).
+     */
+    private readonly compression: CompressionService,
+  ) {}
+
+  public decrypt(encryptedData: string): string {
+    /**
+     * 1) (Opcional) Descompresión de los datos recibidos, usando la estrategia
+     *    inversa de la compresión aplicada durante el cifrado.
+     */
+    const unzipped = this.compression.decompress(encryptedData);
+
+    /**
+     * 2) Se parsean los datos descomprimidos para extraer
+     *    el payload cifrado, la clave AES cifrada, el IV y el HMAC.
+     */
+    const data = JSON.parse(unzipped) as object;
+    const encryptedOutput = plainToInstance(EncryptedData, data);
+
+    /**
+     * 3) Se descifra la clave AES utilizando la clave privada RSA del servidor.
+     */
+    const encryptedAesKey = Buffer.from(encryptedOutput.k, 'base64');
+    const decryptedKey = this.rsaKeyManager.decryptKey(encryptedAesKey);
+
+    /**
+     * 4) (Opcional) Verificación de la integridad de los datos utilizando HMAC.
+     *    Si el HMAC no coincide, se pretende que los datos han sido alterados por lo tanto
+     *    se lanza una excepción de error.
+     */
+    const hmacMessage = StringUtils.concat(encryptedOutput.d, encryptedOutput.k, encryptedOutput.i);
+    if (!this.hmacGenerator.verify(decryptedKey, hmacMessage, encryptedOutput.h)) {
+      throw new DecryptException('Data integrity check failed.');
+    }
+
+    const iv = Buffer.from(encryptedOutput.i, 'base64');
+
+    /**
+     * 5) Finalmente, se descifran los datos utilizando la clave AES descifrada y el IV.
+     */
+    return this.aesEncryptor.decrypt(encryptedOutput.d, decryptedKey, iv);
+  }
+}
+```
+
+> Si eres más visual, el [siguiente diagrama](https://github.com/duquejo/hybrid-encryption-service/tree/master?tab=readme-ov-file#decrypt-flow) ilustra el flujo de decifrado híbrido descrito.
+
+Nuevamente, se incluyen pasos opcionales para la **verificación de integridad** mediante HMAC y la **descompresión de datos** para optimizar el rendimiento.
+
+A pesar de que la implementación está orientada a un entorno de backend con Nest.js, los principios y técnicas descritas son aplicables a cualquier entorno que soporte las operaciones criptográficas necesarias.
+
+#### Recursos adicionales
+
+Ahora, si deseas profundizar en la implementación de cada una de las dependencias anteriores (AES, RSA, HMAC, Compresión), en el siguiente repositorio, puedes encontrar una prueba de concepto completamente funcional de este enfoque de cifrado híbrido:
+
+**Obligatorios**
+
+- [AESEncryptor](https://github.com/duquejo/hybrid-encryption-service/blob/master/src/infrastructure/config/encryption/aes-encryptor.service.ts): Contiene la implementación de **cifrado/decifrado AES** y métodos para generar **claves** e **IVs**.
+- [RSAKeyManager](https://github.com/duquejo/hybrid-encryption-service/blob/master/src/infrastructure/config/encryption/rsa-key-manager.service.ts): Contiene la implementación de **cifrado/decifrado RSA** y métodos para cargar **claves públicas** y **privadas**.
+
+**Opcionales**
+
+- [HMACGenerator](https://github.com/duquejo/hybrid-encryption-service/blob/master/src/infrastructure/config/encryption/hmac-generator.service.ts): Contiene la implementación para generar y verificar **HMACs**.
+- [CompressionService](https://github.com/duquejo/hybrid-encryption-service/tree/master/src/infrastructure/config/compression): Contiene la implementación para **comprimir** y **descomprimir** datos usando diferentes algoritmos. Está construído bajo el patrón `Strategy`, permitiendo seleccionar el algoritmo de compresión en tiempo de ejecución, para nuestro caso práctico **gzip**.
+
+### Resumen
+
+Si deseas implementar un sistema de cifrado híbrido:
+
+1. **Genera** una clave AES única para cada sesión de cifrado.
+2. **Genera** un vector de inicialización (IV) aleatorio.
+3. **Cifra** los datos utilizando la clave AES.
+4. **Cifra** la clave AES utilizando la clave pública RSA del servidor.
+5. **Reúne** tanto los datos cifrados como la clave AES cifrada al servidor.
+6. **Retorna** la información cifrada y comprimida al cliente.
+
+Si deseas implementar el flujo inverso de desencriptación:
+
+1. **Parsea** los datos descomprimidos para extraer el payload cifrado, la clave AES cifrada y el IV.
+2. **Descifra** la clave AES utilizando la clave privada RSA del servidor.
+3. **Descifra** los datos utilizando la clave AES descifrada y el IV.
+
+## Conclusión
+
+Así logré implementar el sistema cifrado híbrido en el proyecto que estaba desarrollando. Si tienes alguna duda o sugerencia, no dudes en contactarme a través de mis redes sociales. ¡Gracias por leer!
