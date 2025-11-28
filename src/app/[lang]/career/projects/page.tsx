@@ -29,6 +29,7 @@ export default async function ProjectsPage(props: PageProps<'/[lang]/career/proj
           filterMaxMobileSelection={t('filters.max-selection-mobile')}
           filterMaxSelection={t('filters.max-selection')}
           noProjectResultsText={t('no-results')}
+          experienceShowcaseStartText={t('showcase-end')}
           filterNoResultsText={t('filters.no-results')}
           experienceItemTitle={t('subtitle')}
           experienceItemButtonLabel={t('button')}

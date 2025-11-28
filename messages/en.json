@@ -168,11 +168,12 @@
       "title": "Projects | José Duque",
       "description": "Latest projects where I had been contributed"
     },
-    "title": "Latest projects",
+    "title": "Projects showcase",
     "subtitle": "Responsabilities",
-    "button": "External URL",
+    "button": "Open in a new tab",
     "footer": "Skills",
     "no-results": "There are no projects that match the selected filters, try again",
+    "showcase-end": "Hey! the journey started from here!",
     "filters": {
       "title": "Skills",
       "placeholder": "Search by {filter}",
@@ -186,13 +187,13 @@
       {
         "start_date": "2023",
         "end_date": "Present",
-        "enterprise": "SURA Insurance - Ceiba Software S.A.S",
+        "enterprise": "SURA Insurances - Ceiba Software S.A.S",
         "isRecent": true,
-        "project": "SURA Insurance - Integrations Team Bus",
+        "project": "SURA Insurances - Integrations Team Bus",
         "role": "Backend developer",
         "resume": [
-          "Design and creation of serverless services for the Azure Cloud",
-          "Implemented event-oriented architectures (RabbitMQ / ServiceBus) and HTTP/REST feature services aimed at solving all the required integrations between Salesforce Industries and SURA Colombia in the sales and shipping process vehicle insurance business."
+          "Streamlined vehicle/lease/travel insurance sales processes by designing serverless Azure solutions and RESTful APIs.",
+          "Solved critical integration challenges between Suratech (Salesforce) and SURA Colombia core business systems by implementing a robust Event-Driven Architecture utilizing RabbitMQ and Azure Service Bus."
         ],
         "additional_info": [
           "Azure Functions",
@@ -201,7 +202,7 @@
           "Terraform",
           "Microservices",
           "Node.js",
-          "J Meter",
+          "J-Meter",
           "Unit Tests",
           "Integration Tests",
           "SonarQube",
@@ -220,13 +221,10 @@
         "project": "Aval Digital Labs - AV Villas Bank / Credit Card Infrastructure Migration team",
         "role": "Senior backend developer",
         "resume": [
-          "Migration of legacy infrastructure from Amazon Web Services to Infrastructure as Code using Serverless Framework and Terraform guaranteeing enterprise standards and full supervision of the configuration of the application architecture components.",
-          "Refactoring and optimization of the legacy code given to lambdas (Node-JS/Java) and monoliths (Java Springboot) involved in the application",
-          "Improved up to a percentage greater than or equal to 85% of the Quality Gates standards against good practices required by the company",
-          "Improved in a high percentage the execution performance of lambdas and code associated with step functions used in the application.",
-          "Generation of new components with business logic added to support the work cell in parallel to production activities. migration, allowing flexibility between migration loads.",
-          "Generation of security policies and vulnerability corrections in accordance with the OWASP standard",
-          "the results of which adequately responded to the high internal demands of the organization Aval Digital Labs as well as Banco AV Villas."
+          "Modernized legacy AWS infrastructure by migrating to Infrastructure as Code (Serverless Framework & Terraform), ensuring strict enterprise standards and architectural governance for Aval Digital Labs and Banco AV Villas",
+          "Boosted execution performance of AWS Lambdas and Step Functions by refactoring and optimizing legacy Node.js, Java, and Spring Boot monoliths.",
+          "Surpassed 85% compliance on Code Quality Gates and hardened application security by implementing policies and vulnerability fixes in accordance with OWASP standards.",
+          "Enabled seamless migration without production downtime by engineering a parallel development strategy that allowed new business components to be deployed alongside active migration loads."
         ],
         "additional_info": [
           "DynamoDB",
@@ -238,7 +236,7 @@
           "Gradle",
           "Jira",
           "Maven",
-          "J Meter",
+          "J-Meter",
           "Jenkins",
           "Docker",
           "Unit Tests",
@@ -258,12 +256,11 @@
         "project": "Mentu App",
         "role": "Full-Stack developer",
         "resume": [
-          "Development of a learning platform for primary and secondary education, based on a hexagonal architecture, oriented towards microservices, and utilizing Serverless Framework with AWS Node.js (TypeScript) and AWS Lambdas. This approach promotes maintainability, high availability, and resilience to errors",
-          "Using Serverless Framework, strategies were implemented with AWS CloudFormation to decentralize each Lambda function in alignment with the desired data lake, connecting various Amazon Web Services such as API Gateway, S3 (hooks), SNS, SQS, among others",
-          "An ETL process was established to deliver standardized and optimized information for the Metabase platform, generating updated and complete data through AWS EventBridge",
-          "An ETL was made available that delivers standardized and optimized information for the Metabase platform generating updated and complete information through AWS Eventbridge",
-          "The frontend was built with React.js, Webpack, and TypeScript, segmenting the core business functionalities into different microservices via Module Federation, and generalizing graphical components of the frontend through a shared library exposed via Storybook, all based on best practices",
-          "External applications such as Mixpanel, Concerto, Hotjar, and Google Analytics were integrated to ensure effective strategies for the target audience (teachers and students)"
+          "Architected a high-availability learning platform for primary and secondary education, implementing Hexagonal Architecture and AWS Serverless (Node.js/TypeScript) to ensure system resilience and maintainability.",
+          "Orchestrated modular infrastructure strategies using Serverless Framework and CloudFormation to decouple Lambda functions, seamlessly integrating API Gateway, S3, SNS, and SQS with the enterprise data lake.",
+          "Engineered an automated ETL pipeline triggered by AWS EventBridge to deliver standardized, real-time data to Metabase, enabling accurate reporting and analytics.",
+          "Designed a Micro-Frontend architecture using React.js and Webpack Module Federation to segment business logic, while establishing a shared UI component library via Storybook to ensure design consistency.",
+          "Enabled data-driven user engagement strategies by integrating advanced analytics tools (Mixpanel, Concerto, Hotjar, Google Analytics) to track teacher and student behavior."
         ],
         "additional_info": [
           "MySQL",
@@ -291,11 +288,12 @@
         "end_date": "27/12/2021",
         "enterprise": "Ceiba Software S.A.S",
         "isRecent": false,
-        "project": "ADN Ceiba",
+        "project": "Ceiba DNA",
         "role": "Software architect developer",
         "resume": [
-          "A hexagonal architecture was defined and developed where domain orientation where solid principles and maintainability of the projects are favored. all this under a continuous integration process with static code analysis and execution of tests that guarantee the quality of the developed project.",
-          "It was possible to build front implemented under a core which shared the feature architecture with management of this global using Redux."
+          "Defined and implemented a Hexagonal Architecture grounded in Domain-Driven Design (DDD) and SOLID principles to maximize maintainability.",
+          "Guaranteed code quality and stability by establishing a Continuous Integration (CI) pipeline featuring automated testing and static code analysis.",
+          "Built a scalable frontend architecture based on a shared Core and feature-based design, implementing Redux to centralize and optimize global state management."
         ],
         "additional_info": [
           "MySQL",
@@ -306,7 +304,7 @@
           "TypeScript",
           "Redux",
           "Nest JS",
-          "J Meter",
+          "J-Meter",
           "NPM",
           "Jenkins",
           "SonarQube",
@@ -317,57 +315,17 @@
         ]
       },
       {
-        "start_date": "05/05/2021",
-        "end_date": "10/12/2021",
-        "enterprise": "SM Digital",
-        "isRecent": false,
-        "project": "SM Digital - Website development & Custom Integrations between third parties",
-        "role": "Tech-lead developer",
-        "resume": [
-          "Custom Website development using WordPress as CMS modularization of business logic functionalities through good practices via Plugins",
-          "Custom themes creation from scratch, guaranteeing fully responsive and optimized for the web, designed with the aim of optimizing profits and generate customer visibility through Marketing strategies.",
-          "Implementation of virtual stores and integrations with third parties such as payment gateways like ERP's, CRM's  and specialized platforms for collecting leads used in Marketing in addition implementation of SSO (Single Sign-On) services with social networks such as Facebook/Twitter/Instagram among others.",
-          "Implementation of customized automated messaging strategies for platforms via WhatsApp using authorized APIs for the business which made it possible to communicate reports to lists of authorized clients in a simple way.",
-          "Various strategies were used for the frontend and backend highlighting HTML, CSS, JS (jQuery Framework, Angular JS and React JS)",
-          "PHP and Node JS respectively for the creation of websites and generation of applications for third parties as well as integrators between unsupported platforms."
-        ],
-        "screenshot": "/static/img/showcase/smdigital.webp",
-        "url": "https://smdigital.com.co",
-        "additional_info": [
-          "MySQL",
-          "MongoDB",
-          "jQuery",
-          "Node.js",
-          "Express",
-          "React.js",
-          "Bootstrap",
-          "SASS",
-          "HTML",
-          "CSS",
-          "Jira",
-          "Trello",
-          "WordPress",
-          "WooCommerce",
-          "JavaScript",
-          "TypeScript",
-          "PHP",
-          "Auth0",
-          "JWT",
-          "Laravel"
-        ]
-      },
-      {
         "start_date": "05/04/2020",
-        "end_date": "29/11/2020",
+        "end_date": "05/04/2021",
         "enterprise": "Nutresa Group - SM Digital",
         "isRecent": false,
         "project": "E-learning Client School for vendors (LMS)",
         "role": "Full-Stack developer",
         "resume": [
-          "Full-Stack project developed from scratch which had to be built under the WordPress CMS framework which exposed REST services to be consumed from the application client.",
-          "The frontend had to be built with Angular JS and the use of libraries was allowed for the manipulation of multimedia content.",
-          "Implemented UX strategies due to the target population (50 years or older)",
-          "The delivery of multimedia resources had to be optimized and respond to a high flow of users using AWS S3, AWS CloudFront among others."
+          "Architected a Headless WordPress solution from scratch, exposing custom RESTful APIs to drive dynamic content for the client application.",
+          "Developed a rich multimedia frontend using AngularJS, integrating specialized libraries to manage, render, and manipulate complex media content.",
+          "Implemented accessible User Experience (UX) strategies specifically tailored for a senior demographic (50+), ensuring ease of use and high adoption rates.",
+          "Optimized high-traffic media delivery by implementing a CDN strategy using AWS S3 and CloudFront, ensuring low latency and high availability for global users."
         ],
         "screenshot": "/static/img/showcase/escuela_clientes.webp",
         "url": "https://escueladeclientesnutresa.com",
@@ -395,10 +353,10 @@
         "project": "SURA Advisors Intranet",
         "role": "Full-Stack developer",
         "resume": [
-          "Full-Stack project where the integration of a SEUS 4 (Active Directory - SAML) was required integrating it with an E-Commerce using WordPress with WooCommerce as CMS.",
-          "According to the good practices for WordPress it was required to set up an adaptable plugin based on an MVC architecture which favored the division of its logic and components.",
-          "The application had to have custom reports generated via CSV which come from different sources such as Google Docs and external REST APIs.",
-          "The project was completed by complying with the functional requirements and the quality of the software advocated by the client."
+          "Integrated enterprise security by connecting SEUS 4 (Active Directory/SAML) with a WordPress/WooCommerce platform to enable secure authentication.",
+          "Architected a custom WordPress plugin using the MVC pattern, ensuring a strict separation of concerns and maintainability in alignment with industry best practices.",
+          "Engineered a custom reporting module that aggregates data from disparate sources (Google Docs, external REST APIs) and generates unified CSV reports.",
+          "Delivered a high-quality solution that strictly adhered to all functional requirements and software quality standards mandated by the client."
         ],
         "additional_info": [
           "SASS",
@@ -418,14 +376,15 @@
         ]
       },
       {
-        "start_date": "16/05/2019",
-        "end_date": "23/06/2019",
+        "start_date": "20/06/2019",
+        "end_date": "31/07/2019",
         "enterprise": "Zenú meat foods - Colombia - SM Digital",
         "isRecent": false,
         "project": "Corporate Zenú - Game Advance and learn!",
         "role": "Frontend developer",
         "resume": [
-          "Interactive Frontend project developed from scratch with Angular 7 technology under the architecture recommended by the Angular style guide. It sought to satisfy the principles of maintainability respecting concepts of clean code and design patterns suggested by the framework"
+          "Developed a scalable frontend from scratch using Angular 7, strictly adhering to the official Angular Style Guide architecture.",
+          "Ensured long-term maintainability by enforcing Clean Code principles and framework-specific design patterns throughout the codebase."
         ],
         "additional_info": [
           "Angular JS",
@@ -446,11 +405,11 @@
         "project": "Familia Group Co - Napkin simulator - SM Digital",
         "role": "Full-Stack developer",
         "resume": [
-          "Full-Stack interactive project developed from scratch under the WordPress CMS Framework.",
-          "Due to the infrastructure suggested by the client it was necessary to use jQuery and libraries focused on manipulating the DOM.",
-          "The project required respecting very specific brand directives directly related to the functional requirements.",
-          "The component should also include administrative features to manage the creation, editing, updating, and deletion of custom napkins, allowing for the provision of a user-friendly and intuitive user interface for its use.",
-          "In addition to enabling napkin customization as its primary function, it also allowed the final result to be delivered by email, generating valuable leads for the client."
+          "Architected a custom Full-Stack Product Configurator (for custom napkins) within WordPress, built from scratch to meet specific interactive requirements.",
+          "Engineered a dynamic DOM manipulation engine using jQuery, ensuring compatibility with the client’s legacy infrastructure constraints.",
+          "Translated strict brand identity guidelines into pixel-perfect functional requirements and UI components.",
+          "Developed a full CRUD administrative dashboard, allowing non-technical staff to easily manage, edit, and update custom product templates via an intuitive interface.",
+          "Implemented a Lead Generation workflow that delivered custom designs via email, successfully converting user engagement into tangible business leads."
         ],
         "additional_info": [
           "MySQL",
@@ -467,8 +426,8 @@
         "screenshot": "/static/img/showcase/personalizador_familia.webp"
       },
       {
-        "start_date": "14/12/2019",
-        "end_date": "04/05/2021",
+        "start_date": "10/02/2019",
+        "end_date": "13/03/2019",
         "enterprise": "COLGAS",
         "isRecent": false,
         "project": "Insa (NORGAS) - Energy quote simulator - SM Digital",
@@ -476,9 +435,9 @@
         "screenshot": "/static/img/showcase/simulador_energetico.webp",
         "url": "https://colgas.com/simulador-energetico-login/",
         "resume": [
-          "Frontend project developed from scratch which required using entirely JavaScript (Vanilla) language.",
-          "This quote used very precise calculations that are carried out in detail due to the company's quality policies therefore that the interaction with the client had to be constant",
-          "The continuous deployment process was properly configured through scheduled tasks on a remote server in the cloud."
+          "Developed a lightweight, dependency-free frontend application from scratch using Vanilla JavaScript, optimizing for performance without the overhead of external frameworks.",
+          "Engineered a high-precision Quoting Engine involving complex calculation logic; collaborated closely with the client to validate algorithms against strict corporate quality policies.",
+          "Automated the Continuous Deployment (CD) process by configuring scheduled tasks (Cron jobs) on a cloud-based server."
         ],
         "additional_info": ["MySQL", "Bootstrap", "SASS", "HTML", "Jira", "JavaScript"]
       },
@@ -490,9 +449,10 @@
         "project": "Vacation resort quote simulator/generator",
         "role": "Full-Stack developer",
         "resume": [
-          "Full-Stack project developed from scratch with PHP technologies and using the Framework for WordPress web pages.",
-          "In accordance with the good practices of the Wordpress CMS it was required to build entirely using a plugin implementing a MVC architecture.",
-          "It was important for the client to respond clearly to the functional requirements whose importance lay in the calculation the evaluation of results and their deployment (PDF - Email) which were used for strategies of Marketing and Digital Guidelines. It was essential that it be fully manageable and configurable."
+          "Developed a custom Full-Stack solution from scratch",
+          "Architected a bespoke plugin using the MVC (Model-View-Controller) pattern, ensuring code modularity and adherence to strict development best practices.",
+          "Engineered a fully configurable calculation and evaluation engine, capable of processing complex logic to generate dynamic PDF reports and email notifications.",
+          "Optimized the system for Marketing and Digital Guidelines, providing the client with a flexible administrative interface to manage results and user engagement strategies."
         ],
         "additional_info": [
           "MySQL",
@@ -510,17 +470,57 @@
         ]
       },
       {
-        "start_date": "07/11/2017",
+        "start_date": "03/02/2019",
+        "end_date": "10/12/2021",
+        "enterprise": "SM Digital",
+        "isRecent": false,
+        "project": "SM Digital - Website development & Custom Integrations between third parties",
+        "role": "Tech-lead developer",
+        "resume": [
+          "Engineered custom WordPress architectures, modularizing complex business logic into bespoke plugins following industry best practices.",
+          "Developed high-performance custom themes from scratch, ensuring fully responsive design and SEO optimization to drive traffic and maximize client revenue.",
+          "Deployed full-scale e-commerce solutions featuring deep integrations with Payment Gateways, ERPs, CRMs, and marketing lead-gen platforms.",
+          "Implemented secure Single Sign-On (SSO) authentication to allow user access via social networks (Facebook, Twitter, Instagram).",
+          "Automated client communication workflows using the official WhatsApp Business API, streamlining the delivery of reports and notifications.",
+          "Leveraged a diverse Full Stack environment (HTML, CSS, jQuery, Angular, React, PHP, Node.js) to build custom web applications and middleware integrators for unsupported platforms."
+        ],
+        "screenshot": "/static/img/showcase/smdigital.webp",
+        "url": "https://smdigital.com.co",
+        "additional_info": [
+          "MySQL",
+          "MongoDB",
+          "jQuery",
+          "Node.js",
+          "Express",
+          "React.js",
+          "Bootstrap",
+          "SASS",
+          "HTML",
+          "CSS",
+          "Jira",
+          "Trello",
+          "WordPress",
+          "WooCommerce",
+          "JavaScript",
+          "TypeScript",
+          "PHP",
+          "Auth0",
+          "JWT",
+          "Laravel"
+        ]
+      },
+      {
+        "start_date": "11/07/2017",
         "end_date": "10/10/2018",
         "enterprise": "EAFIT University",
         "isRecent": false,
         "project": "EAFIT University - Plataforma Línea en Informática Educativa (Imaginar futuros)",
         "role": "Systems analyst",
         "resume": [
-          "Full-Stack project developed from scratch under the WordPress CMS Framework (PHP).",
-          "It required using good CMS practices for its construction so its modules were developed under the Kernel architecture /Plugin common in CMS such as WordPress.",
-          "It required managing information dynamically from the frontend using jQuery and Ajax.",
-          "Different cloud service structures had to be maintained for its users and collaborators using the AWS suite for this (S3, Glacier, Cloudfront, Route 53, etc.) and administration of Azure and Office 365 Cloud services."
+          "Developed a bespoke PHP application on the WordPress framework, adhering to industry-standard plugin development practices.",
+          "Built interactive user interfaces leveraging jQuery and AJAX to manage real-time data flow between the client and server.",
+          "Managed AWS cloud infrastructure (S3, Glacier, CloudFront, Route 53) to optimize storage and content delivery.",
+          "Administered enterprise cloud services including Microsoft Azure and Office 365 to support user management and collaboration tools."
         ],
         "screenshot": "/static/img/showcase/linea_ie.webp",
         "additional_info": [

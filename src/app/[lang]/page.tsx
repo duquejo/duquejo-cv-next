@@ -50,7 +50,7 @@ export default function MainPage() {
           {t.raw('education.content') && (
             <ul>
               {t.raw('education.content').map((a: ExperienceType, i: number) => (
-                <ExperienceItem key={i} {...a} />
+                <ExperienceItem key={i} {...a} withIcons={false} />
               ))}
             </ul>
           )}
