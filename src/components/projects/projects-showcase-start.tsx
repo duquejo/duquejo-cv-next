@@ -1,7 +1,8 @@
 import { Rocket } from 'lucide-react';
+import { memo } from 'react';
 import { Separator } from '../ui/separator';
 
-export const ProjectsShowcaseStart = ({ text }: { text?: string }) => {
+export const ProjectsShowcaseStart = memo(({ text }: { text?: string }) => {
   return (
     <div className="my-4 flex flex-col w-full items-center text-sm text-foreground">
       <Separator orientation="vertical" className="h-8 md:h-15" />
@@ -12,4 +13,6 @@ export const ProjectsShowcaseStart = ({ text }: { text?: string }) => {
       <Separator orientation="vertical" className="h-3 md:h-5" />.
     </div>
   );
-};
+});
+
+ProjectsShowcaseStart.displayName = 'ProjectsShowcaseStart';

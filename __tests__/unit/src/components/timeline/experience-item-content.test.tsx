@@ -1,6 +1,6 @@
-import { ExperienceItemContent } from '@/components/resume/experience-item-content';
-import { render, screen } from '@testing-library/react';
+import { ExperienceItemContent } from '@/components/timeline/experience-item-content';
 import { ExperienceType } from '@/interfaces';
+import { render, screen } from '@testing-library/react';
 
 describe('<ExperienceItemContent /> tests', () => {
   const {

@@ -2,7 +2,7 @@
 
 import { getProjectByFilters } from '@/actions/projects';
 import { ProjectsFilter, type ProjectsFilterRef } from '@/components/projects/projects-filter';
-import { ExperienceItem } from '@/components/resume/experience-item';
+import { ExperienceItem } from '@/components/timeline/experience-item';
 import { Button } from '@/components/ui/button';
 import { usePathname, useRouter } from '@/i18n/routing';
 import type { ExperienceType, Skill } from '@/interfaces';
