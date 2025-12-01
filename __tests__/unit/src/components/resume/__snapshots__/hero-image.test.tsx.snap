@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<HeroImage /> tests > Should match the snapshot with the default args 1`] = `
+<div>
+  <div
+    class="overflow-hidden relative"
+    data-testid="hero-image"
+  >
+    <picture
+      class="relative"
+    >
+      <img
+        alt="José Miguel Duque"
+        class="rounded-full backdrop-blur-xs bg-primary/10 shadow-inner"
+        data-nimg="1"
+        decoding="async"
+        height="410"
+        src="/public/static/img/avatar_410.png"
+        style="color: transparent;"
+        width="410"
+      />
+    </picture>
+  </div>
+</div>
+`;

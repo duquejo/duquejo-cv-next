@@ -10,6 +10,7 @@ export const ExperienceItemExternalUrl = memo(
       <Tooltip>
         <TooltipTrigger asChild>
           <Link
+            title={label}
             href={url}
             target="_blank"
             rel="noopener noreferrer nofollow"
@@ -29,8 +30,6 @@ export const ExperienceItemExternalUrl = memo(
     );
   },
 );
-
-ExperienceItemExternalUrl.displayName = 'ExperienceItemExternalUrl';
 
 const ExperienceItemExternalTooltip = ({
   screenshot,
@@ -53,3 +52,5 @@ const ExperienceItemExternalTooltip = ({
     </picture>
   );
 };
+
+ExperienceItemExternalUrl.displayName = 'ExperienceItemExternalUrl';

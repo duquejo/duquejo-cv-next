@@ -73,9 +73,8 @@ export const ExperienceItem = memo(
             )}
           </CardHeader>
           <CardContent className="py-0">
-            <ExperienceItemContent contentTitle={experienceItemTitle} resume={resume} />
+            {resume && <ExperienceItemContent contentTitle={experienceItemTitle} resume={resume} />}
           </CardContent>
-
           {additionalInfo && (
             <CardFooter className="flex flex-col items-start gap-y-2 pt-5">
               <ExperienceAdditionalInfo

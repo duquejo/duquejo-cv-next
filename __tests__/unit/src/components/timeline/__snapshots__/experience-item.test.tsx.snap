@@ -3,17 +3,17 @@
 exports[`<ExperienceItemContent /> tests > Should match the snapshot with the available args 1`] = `
 <div>
   <li
-    class="first-of-type:pt-0 pt-5 relative border-s border-gray-200 list-none"
+    class="group first-of-type:pt-0 pt-5 relative border-s border-gray-160 list-none"
   >
     <span
       class="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-primary"
       data-testid="detail"
     />
-    <span
-      class="pb-2 ms-4 flex items-center justify-between lg:justify-normal"
+    <div
+      class="pb-2 ml-4 flex items-center justify-between lg:justify-normal group-hover:text-foreground group-hover:ml-6 transition-all"
     >
       <span
-        class="lg:inline-flex items-center border-2 rounded px-2 py-1 font-semibold text-xs text-center border-secondary"
+        class="lg:inline-flex items-center border rounded px-2 py-1 font-semibold text-xs text-center group-hover:border-primary transition-all border-secondary"
         data-testid="time"
       >
         <time
@@ -27,118 +27,281 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
           2025-01-02
         </time>
       </span>
-      <span
-        class="text-xs font-normal ml-2 text-right lg:text-left"
-      >
-        John Doe
-      </span>
-    </span>
+    </div>
     <div
-      class="rounded-xl border text-card-foreground shadow-sm ms-4 bg-sidebar/30 border-dashed"
+      class="rounded-xl border text-card-foreground shadow-sm group-hover:border-primary group-hover:ml-6 ms-4 bg-sidebar/30 border-dashed transition-all"
     >
       <div
-        class="flex flex-col space-y-1.5 p-6"
+        class="space-y-1.5 p-6 flex flex-row justify-between items-start"
       >
         <div
-          class="font-semibold leading-none tracking-tight"
+          class="flex flex-col"
         >
-          <h2>
-            Foo-Bar Baz Inc.
-          </h2>
+          <div
+            class="font-semibold leading-none tracking-tight"
+          >
+            <div
+              class="text-xs font-light mb-4 inline-flex items-center"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-building hidden md:block mr-2"
+                fill="none"
+                height="16"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 10h.01"
+                />
+                <path
+                  d="M12 14h.01"
+                />
+                <path
+                  d="M12 6h.01"
+                />
+                <path
+                  d="M16 10h.01"
+                />
+                <path
+                  d="M16 14h.01"
+                />
+                <path
+                  d="M16 6h.01"
+                />
+                <path
+                  d="M8 10h.01"
+                />
+                <path
+                  d="M8 14h.01"
+                />
+                <path
+                  d="M8 6h.01"
+                />
+                <path
+                  d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"
+                />
+                <rect
+                  height="20"
+                  rx="2"
+                  width="16"
+                  x="4"
+                  y="2"
+                />
+              </svg>
+              John Doe
+            </div>
+            <h2
+              class="flex items-center gap-x-2 text-lg"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-target hidden md:block"
+                fill="none"
+                height="16"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="6"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="2"
+                />
+              </svg>
+              Foo-Bar Baz Inc.
+            </h2>
+          </div>
+          <div
+            class="text-sm text-muted-foreground"
+          >
+            <div>
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-code mr-2 hidden md:inline"
+                fill="none"
+                height="16"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m16 18 6-6-6-6"
+                />
+                <path
+                  d="m8 6-6 6 6 6"
+                />
+              </svg>
+              Software analyst
+            </div>
+          </div>
         </div>
-        <div
-          class="text-sm text-muted-foreground"
+        <a
+          class="relative transition-all group-hover:text-primary group-hover:animate-wiggle"
+          data-state="closed"
+          href="https://foo.bar"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          title="experience button label"
         >
-          Software analyst
-        </div>
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-square-arrow-out-up-right"
+            fill="none"
+            height="20"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"
+            />
+            <path
+              d="m21 3-9 9"
+            />
+            <path
+              d="M15 3h6v6"
+            />
+          </svg>
+        </a>
       </div>
       <div
         class="p-6 py-0"
       >
         <div
-          class="flex flex-col lg:flex-row gap-x-4"
+          class="flex flex-col gap-x-4"
         >
-          <div
-            class="flex flex-col order-2 lg:order-1 justify-between items-baseline basis-8/12"
+          <span
+            class="font-semibold transition-colors flex items-center gap-x-2"
           >
-            <div
-              class="flex-auto"
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-square-check hidden md:block"
+              fill="none"
+              height="16"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <span
-                class="font-semibold text-base"
-              >
-                experience item title
-              </span>
-              <ol
-                class="list-disc ml-4 text-justify marker:text-secondary"
-              >
-                <li
-                  class="my-2 text-xs text-justify leading-normal text-foreground"
-                >
-                  foo
-                </li>
-                <li
-                  class="my-2 text-xs text-justify leading-normal text-foreground"
-                >
-                  bar
-                </li>
-                <li
-                  class="my-2 text-xs text-justify leading-normal text-foreground"
-                >
-                  baz
-                </li>
-              </ol>
-            </div>
-            <a
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 h-8 rounded-md px-3 text-xs mt-5 lg:shrink lg:w-auto w-full"
-              href="https://foo.bar"
-              rel="noopener noreferrer nofollow"
-              target="_blank"
-            >
-              experience button label
-            </a>
-          </div>
-          <picture
-            class="order-1 lg:order-2 flex grow flex-col items-center px-0 mb-5 pt-0 lg:px-4 lg:pt-8 lg:mb-0 lg:max-h-60 lg:max-w-xs overflow-hidden"
+              <rect
+                height="18"
+                rx="2"
+                width="18"
+                x="3"
+                y="3"
+              />
+              <path
+                d="m9 12 2 2 4-4"
+              />
+            </svg>
+             
+            experience item title
+          </span>
+          <ol
+            class="md:list-disc md:ml-5 text-justify group-hover:marker:text-primary"
           >
-            <img
-              alt="Foo-Bar Baz Inc."
-              class="rounded object-cover shadow-lg w-auto"
-              data-nimg="1"
-              decoding="async"
-              height="150"
-              loading="lazy"
-              src="/_next/image?url=%2Ffoo%2Fbar.webp&w=640&q=75"
-              srcset="/_next/image?url=%2Ffoo%2Fbar.webp&w=384&q=75 1x, /_next/image?url=%2Ffoo%2Fbar.webp&w=640&q=75 2x"
-              style="color: transparent;"
-              width="300"
-            />
-          </picture>
+            <li
+              class="my-3 md:my-0 text-justify text-sm leading-relaxed"
+            >
+              foo
+            </li>
+            <li
+              class="my-3 md:my-0 text-justify text-sm leading-relaxed"
+            >
+              bar
+            </li>
+            <li
+              class="my-3 md:my-0 text-justify text-sm leading-relaxed"
+            >
+              baz
+            </li>
+          </ol>
         </div>
       </div>
       <div
         class="p-6 flex flex-col items-start gap-y-2 pt-5"
       >
         <span
-          class="font-semibold text-base"
+          class="font-semibold text-based flex items-center gap-x-2"
         >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-pocket-knife hidden md:block"
+            fill="none"
+            height="16"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3 2v1c0 1 2 1 2 2S3 6 3 7s2 1 2 2-2 1-2 2 2 1 2 2"
+            />
+            <path
+              d="M18 6h.01"
+            />
+            <path
+              d="M6 18h.01"
+            />
+            <path
+              d="M20.83 8.83a4 4 0 0 0-5.66-5.66l-12 12a4 4 0 1 0 5.66 5.66Z"
+            />
+            <path
+              d="M18 11.66V22a4 4 0 0 0 4-4V6"
+            />
+          </svg>
+           
           experience footer text
         </span>
         <div
-          class="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around"
+          class="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-center"
         >
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-default"
           >
             Next JS
           </div>
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-default"
           >
             React
           </div>
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-default"
           >
             Vitest
           </div>
@@ -152,17 +315,17 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
 exports[`<ExperienceItemContent /> tests > Should match the snapshot with the default args 1`] = `
 <div>
   <li
-    class="first-of-type:pt-0 pt-5 relative border-s border-gray-200 list-none"
+    class="group first-of-type:pt-0 pt-5 relative border-s border-gray-160 list-none"
   >
     <span
       class="absolute w-2 h-2 rounded-full mt-1.5 -start-1 bg-primary"
       data-testid="detail"
     />
-    <span
-      class="pb-2 ms-4 flex items-center justify-between lg:justify-normal"
+    <div
+      class="pb-2 ml-4 flex items-center justify-between lg:justify-normal group-hover:text-foreground group-hover:ml-6 transition-all"
     >
       <span
-        class="lg:inline-flex items-center border-2 rounded px-2 py-1 font-semibold text-xs text-center border-secondary"
+        class="lg:inline-flex items-center border rounded px-2 py-1 font-semibold text-xs text-center group-hover:border-primary transition-all border-secondary"
         data-testid="time"
       >
         <time
@@ -171,61 +334,184 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the de
           2025-01-01
         </time>
       </span>
-      <span
-        class="text-xs font-normal ml-2 text-right lg:text-left"
-      >
-        John Doe
-      </span>
-    </span>
+    </div>
     <div
-      class="rounded-xl border text-card-foreground shadow-sm ms-4 bg-sidebar/30 border-dashed"
+      class="rounded-xl border text-card-foreground shadow-sm group-hover:border-primary group-hover:ml-6 ms-4 bg-sidebar/30 border-dashed transition-all"
     >
       <div
-        class="flex flex-col space-y-1.5 p-6"
+        class="space-y-1.5 p-6 flex flex-row justify-between items-start"
       >
         <div
-          class="font-semibold leading-none tracking-tight"
+          class="flex flex-col"
         >
-          <h2>
-            Foo-Bar Baz Inc.
-          </h2>
-        </div>
-        <div
-          class="text-sm text-muted-foreground"
-        >
-          Software analyst
+          <div
+            class="font-semibold leading-none tracking-tight"
+          >
+            <div
+              class="text-xs font-light mb-4 inline-flex items-center"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-building hidden md:block mr-2"
+                fill="none"
+                height="16"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 10h.01"
+                />
+                <path
+                  d="M12 14h.01"
+                />
+                <path
+                  d="M12 6h.01"
+                />
+                <path
+                  d="M16 10h.01"
+                />
+                <path
+                  d="M16 14h.01"
+                />
+                <path
+                  d="M16 6h.01"
+                />
+                <path
+                  d="M8 10h.01"
+                />
+                <path
+                  d="M8 14h.01"
+                />
+                <path
+                  d="M8 6h.01"
+                />
+                <path
+                  d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"
+                />
+                <rect
+                  height="20"
+                  rx="2"
+                  width="16"
+                  x="4"
+                  y="2"
+                />
+              </svg>
+              John Doe
+            </div>
+            <h2
+              class="flex items-center gap-x-2 text-lg"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-target hidden md:block"
+                fill="none"
+                height="16"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="6"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="2"
+                />
+              </svg>
+              Foo-Bar Baz Inc.
+            </h2>
+          </div>
+          <div
+            class="text-sm text-muted-foreground"
+          >
+            <div>
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-code mr-2 hidden md:inline"
+                fill="none"
+                height="16"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m16 18 6-6-6-6"
+                />
+                <path
+                  d="m8 6-6 6 6 6"
+                />
+              </svg>
+              Software analyst
+            </div>
+          </div>
         </div>
       </div>
       <div
         class="p-6 py-0"
       >
         <div
-          class="flex flex-col lg:flex-row gap-x-4"
-        />
+          class="flex flex-col gap-x-4"
+        >
+          <ol
+            class="md:list-disc md:ml-5 text-justify group-hover:marker:text-primary"
+          >
+            <li
+              class="my-3 md:my-0 text-justify text-sm leading-relaxed"
+            >
+              foo
+            </li>
+            <li
+              class="my-3 md:my-0 text-justify text-sm leading-relaxed"
+            >
+              bar
+            </li>
+            <li
+              class="my-3 md:my-0 text-justify text-sm leading-relaxed"
+            >
+              baz
+            </li>
+          </ol>
+        </div>
       </div>
       <div
         class="p-6 flex flex-col items-start gap-y-2 pt-5"
       >
-        <span
-          class="font-semibold text-base"
-        >
-          experience footer text
-        </span>
         <div
-          class="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-around"
+          class="flex lg:gap-1 gap-2 flex-wrap lg:justify-normal justify-center"
         >
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-default"
           >
             Next JS
           </div>
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-default"
           >
             React
           </div>
           <div
-            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer"
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-default"
           >
             Vitest
           </div>
