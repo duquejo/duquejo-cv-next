@@ -36,7 +36,7 @@ export const BlogFeaturedCard = ({
       }}
       className="block"
     >
-      <Card className="mb-10 bg-sidebar/30 border-2 border-primary overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+      <Card className="mb-10 bg-sidebar/30 border-primary/60 overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
         <div className="grid md:grid-cols-5 gap-0">
           {/* Image Area */}
           <div className="md:col-span-2 bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center min-h-[250px] md:min-h-full">
@@ -61,7 +61,7 @@ export const BlogFeaturedCard = ({
             {/* Tags */}
             {tags && tags.length > 0 && <BlogTags tags={tags} className="mb-4" />}
 
-            <Button variant="default" size="sm" className="w-fit cursor-pointer">
+            <Button variant="default" size="sm" className="w-fit cursor-pointer font-bold">
               {readMoreText}
               <ArrowRight className="ml-2" size={16} />
             </Button>

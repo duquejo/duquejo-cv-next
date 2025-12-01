@@ -38,9 +38,7 @@ export default function ServicesPage() {
                   />
                 )}
                 <div className="basis-3/4 mt-3 lg:mt-0">
-                  <p className="text-sm text-justify text-muted-foreground">
-                    {service.description}
-                  </p>
+                  <p className="text-justify text-muted-foreground">{service.description}</p>
                 </div>
               </CardContent>
             </Card>

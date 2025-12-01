@@ -8,16 +8,23 @@ SyntaxHighlighter.registerLanguage('markdown', md);
 
 interface CodeBlockProps {
   code: string;
+  language?: string;
 }
 
-export const CodeBlock = ({ code }: CodeBlockProps) => {
+export const CodeBlock = ({ code, language }: CodeBlockProps) => {
   return (
-    <SyntaxHighlighter
-      style={atomDark}
-      showLineNumbers
-      customStyle={{ margin: 0, borderRadius: 0, fontSize: 13, overflowX: 'auto' }}
-    >
-      {code}
-    </SyntaxHighlighter>
+    <>
+      <div className="bg-sidebar/80 px-4 py-2 border-b border-border flex justify-end">
+        <span className="text-xs font-mono font-bold text-muted-foreground">{language}</span>
+      </div>
+      <SyntaxHighlighter
+        style={atomDark}
+        showLineNumbers
+        customStyle={{ margin: 0, borderRadius: 0, fontSize: 13, overflowX: 'auto' }}
+        language={language}
+      >
+        {code}
+      </SyntaxHighlighter>
+    </>
   );
 };

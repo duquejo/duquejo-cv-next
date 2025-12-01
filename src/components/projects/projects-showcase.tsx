@@ -2,13 +2,15 @@
 
 import { getProjectByFilters } from '@/actions/projects';
 import { ProjectsFilter, type ProjectsFilterRef } from '@/components/projects/projects-filter';
-import { ExperienceItem } from '@/components/resume/experience-item';
+import { ExperienceItem } from '@/components/timeline/experience-item';
 import { Button } from '@/components/ui/button';
 import { usePathname, useRouter } from '@/i18n/routing';
 import type { ExperienceType, Skill } from '@/interfaces';
 import { filterProjectsByTags } from '@/lib';
 import { X } from 'lucide-react';
 import { useCallback, useRef, useState } from 'react';
+import { ProjectsShowcaseNotFound } from './projects-showcase-not-found';
+import { ProjectsShowcaseStart } from './projects-showcase-start';
 
 interface Props {
   filterTitle: string;
@@ -23,6 +25,7 @@ interface Props {
   filterMaxMobileSelection: string;
   availableFilters: Skill[];
   initialProjects: ExperienceType[];
+  experienceShowcaseStartText?: string;
   initialFilters?: string[];
 }
 
@@ -36,6 +39,7 @@ export default function ProjectsShowcase({
   experienceItemTitle,
   experienceItemButtonLabel,
   filterMaxMobileSelection,
+  experienceShowcaseStartText,
   experienceFooterText,
   noProjectResultsText,
   initialProjects = [],
@@ -113,9 +117,10 @@ export default function ProjectsShowcase({
               {...exp}
             />
           ))}
+          <ProjectsShowcaseStart text={experienceShowcaseStartText} />
         </ul>
       ) : (
-        <p data-testid="not-found">{noProjectResultsText}</p>
+        <ProjectsShowcaseNotFound text={noProjectResultsText} />
       )}
     </>
   );

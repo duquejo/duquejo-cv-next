@@ -117,10 +117,7 @@ const components: MDXComponents = {
         className="flex flex-col my-8 rounded-lg bg-sidebar/50 border border-border max-w-screen -mx-5"
         {...props}
       >
-        <div className="bg-sidebar/80 px-4 py-2 border-b border-border flex justify-end">
-          <span className="text-xs font-mono font-bold text-muted-foreground">{language}</span>
-        </div>
-        <CodeBlock code={String(code).trim()} />
+        <CodeBlock code={String(code).trim()} language={language} />
       </div>
     );
   },

@@ -183,6 +183,8 @@ NEXT_PUBLIC_ANALYTICS_ID="Google Analytics Identifier"
 :bug: fix(api): handle null responses
 ```
 
+**Commitlint verbs**: build, ci, docs, feat, fix, perf, refactor, revert, style, test, chore, wip.
+
 **Husky hooks:** Pre-commit formatting, commit message linting enabled.
 
 ## Code Style & Patterns

@@ -1,0 +1,87 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<ExperienceItemContent /> tests > Should match the snapshot with the available args - >1 resume items 1`] = `
+<div>
+  <div
+    class="flex flex-col gap-x-4"
+  >
+    <span
+      class="font-semibold transition-colors flex items-center gap-x-2"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-square-check hidden md:block"
+        fill="none"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          height="18"
+          rx="2"
+          width="18"
+          x="3"
+          y="3"
+        />
+        <path
+          d="m9 12 2 2 4-4"
+        />
+      </svg>
+       
+      Mocked title
+    </span>
+    <ol
+      class="md:list-disc md:ml-5 text-justify group-hover:marker:text-primary"
+    >
+      <li
+        class="my-3 md:my-0 text-justify text-sm leading-relaxed"
+      >
+        foo
+      </li>
+      <li
+        class="my-3 md:my-0 text-justify text-sm leading-relaxed"
+      >
+        bar
+      </li>
+      <li
+        class="my-3 md:my-0 text-justify text-sm leading-relaxed"
+      >
+        baz
+      </li>
+    </ol>
+  </div>
+</div>
+`;
+
+exports[`<ExperienceItemContent /> tests > Should match the snapshot with the default args 1`] = `
+<div>
+  <div
+    class="flex flex-col gap-x-4"
+  >
+    <ol
+      class="md:list-disc md:ml-5 text-justify group-hover:marker:text-primary"
+    >
+      <li
+        class="my-3 md:my-0 text-justify text-sm leading-relaxed"
+      >
+        foo
+      </li>
+      <li
+        class="my-3 md:my-0 text-justify text-sm leading-relaxed"
+      >
+        bar
+      </li>
+      <li
+        class="my-3 md:my-0 text-justify text-sm leading-relaxed"
+      >
+        baz
+      </li>
+    </ol>
+  </div>
+</div>
+`;
