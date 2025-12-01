@@ -1,6 +1,7 @@
+import { ExperienceItem } from '@/components/timeline/experience-item';
+import { TooltipProvider } from '@/components/ui/tooltip';
 import type { ExperienceType } from '@/interfaces';
 import { render, screen } from '@testing-library/react';
-import { ExperienceItem } from '@/components/resume/experience-item';
 
 vi.mock('next-intl', () => ({
   useTranslations: () => (key: string) =>
@@ -32,25 +33,39 @@ describe('<ExperienceItemContent /> tests', () => {
   };
 
   it('Should match the snapshot with the default args', () => {
-    const { resume, screenshot, url, end_date, ...mandatoryFields } = data;
+    const { screenshot, url, end_date, ...mandatoryFields } = data;
 
-    const { container } = render(<ExperienceItem {...mandatoryFields} {...textData} />);
+    const { container } = render(<ExperienceItem {...mandatoryFields} />);
 
     expect(container).toMatchSnapshot();
 
     expect(screen.getByTestId('time')).not.toHaveTextContent(end_date);
     expect(screen.getByTestId('time')).not.toHaveClass('border-yellow-400');
+
+    expect(screen.queryByText(textData.experienceItemTitle)).not.toBeInTheDocument();
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    expect(screen.queryByText(textData.experienceItemButtonLabel)).not.toBeInTheDocument();
+    expect(screen.queryByRole('img')).not.toBeInTheDocument();
   });
 
   it('Should match the snapshot with the available args', () => {
-    const { container } = render(<ExperienceItem {...data} {...textData} />);
+    const { container } = render(
+      <TooltipProvider>
+        <ExperienceItem {...data} {...textData} />
+      </TooltipProvider>,
+    );
 
     expect(container).toMatchSnapshot();
 
     expect(screen.getByText(textData.experienceItemTitle)).toBeInTheDocument();
+
     data.additional_info.forEach((item: string) =>
       expect(screen.getByText(item)).toBeInTheDocument(),
     );
+    data.resume.forEach((item: string) => expect(screen.getByText(item)).toBeInTheDocument());
+    expect(
+      screen.queryByRole('link', { name: textData.experienceItemButtonLabel }),
+    ).toBeInTheDocument();
 
     expect(screen.getByTestId('time')).toHaveTextContent(data.start_date);
     expect(screen.getByTestId('time')).toHaveTextContent(data.end_date);
@@ -62,7 +77,11 @@ describe('<ExperienceItemContent /> tests', () => {
       isRecent: true,
     };
 
-    render(<ExperienceItem {...isRecentWithData} {...textData} />);
+    render(
+      <TooltipProvider>
+        <ExperienceItem {...isRecentWithData} {...textData} />
+      </TooltipProvider>,
+    );
 
     expect(screen.getByTestId('time')).toHaveClass('border-primary');
     expect(screen.getByTestId('detail')).toHaveClass('bg-primary');

@@ -1,7 +1,7 @@
 import { RichText } from '@/components/general/rich-text';
-import { ExperienceItem } from '@/components/resume/experience-item';
 import { HeroImage } from '@/components/resume/hero-image';
 import { TechMarquee } from '@/components/resume/tech-marquee';
+import { ExperienceItem } from '@/components/timeline/experience-item';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import type { ExperienceType, LanguageType } from '@/interfaces';
 import { calculateYears, cn } from '@/lib';
@@ -50,7 +50,7 @@ export default function MainPage() {
           {t.raw('education.content') && (
             <ul>
               {t.raw('education.content').map((a: ExperienceType, i: number) => (
-                <ExperienceItem key={i} {...a} />
+                <ExperienceItem key={i} {...a} withIcons={false} />
               ))}
             </ul>
           )}

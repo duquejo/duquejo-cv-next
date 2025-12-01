@@ -16,7 +16,7 @@ test.describe('Projects page', () => {
     const mainWrapper = page.getByRole('main');
 
     await expect(mainWrapper).toBeVisible();
-    await expect(mainWrapper.getByRole('heading', { level: 1 })).toContainText(/Latest projects/);
+    await expect(mainWrapper.getByRole('heading', { level: 1 })).toContainText(/Projects showcase/);
   });
 
   test('should be able the project skill filters feature', async ({ page, isMobile }) => {

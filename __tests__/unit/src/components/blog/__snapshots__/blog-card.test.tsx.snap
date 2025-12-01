@@ -7,7 +7,7 @@ exports[`<BlogCard /> tests > should match the snapshot 1`] = `
     href="sample-blog-post"
   >
     <div
-      class="rounded-xl border bg-card text-card-foreground shadow-sm group hover:border-primary transition-colors border-dashed overflow-hidden flex flex-col h-full animate-entrance relative"
+      class="rounded-xl border bg-card text-card-foreground shadow-sm group hover:border-primary/40 transition-colors border-dashed overflow-hidden flex flex-col h-full animate-entrance relative"
     >
       <div
         class="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 flex items-center justify-center"

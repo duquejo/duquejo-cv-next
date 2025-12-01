@@ -65,7 +65,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                       @duquejo
                     </span>
                     <div
-                      class="text-xl font-bold"
+                      class="text-xl font-bold text-foreground"
                     >
                       José Duque
                     </div>

@@ -32,7 +32,7 @@ export const MenuAvatar = ({ role }: Props) => {
       {state === 'expanded' && (
         <div className="text-center">
           <NameTag />
-          <div className="text-xl font-bold">José Duque</div>
+          <div className="text-xl font-bold text-foreground">José Duque</div>
           <div className="font-light text-sm">{role}</div>
         </div>
       )}

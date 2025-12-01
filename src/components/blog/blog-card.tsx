@@ -43,7 +43,7 @@ export const BlogCard = ({
       }}
       className="block"
     >
-      <Card className="group hover:border-primary transition-colors border-dashed overflow-hidden flex flex-col h-full animate-entrance relative">
+      <Card className="group hover:border-primary/40 transition-colors border-dashed overflow-hidden flex flex-col h-full animate-entrance relative">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 flex items-center justify-center">
           <BlogCategoryIcon category={category} />

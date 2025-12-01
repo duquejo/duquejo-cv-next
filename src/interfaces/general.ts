@@ -27,6 +27,11 @@ export interface ExperienceType {
   screenshot?: string;
 }
 
+export interface ExperienceWithItemsProps {
+  withIcons: boolean;
+  title: string;
+}
+
 export interface KnowledgeType {
   name: string;
   type: 'soft' | 'hard';
