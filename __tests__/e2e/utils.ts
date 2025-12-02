@@ -1,7 +1,7 @@
 import type { Page } from '@playwright/test';
 
 export function metatag(page: Page, name: string) {
-  return page.locator(`head > meta[name="${name}"]`);
+  return page.locator(`head > meta[name="${name}"]`).first();
 }
 
 export function openGraph(page: Page, name: string) {

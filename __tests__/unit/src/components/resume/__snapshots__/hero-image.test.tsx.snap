@@ -7,11 +7,17 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
     data-testid="hero-image"
   >
     <picture
-      class="relative"
+      class="relative group"
     >
+      <span
+        class="z-0 absolute top-5 left-5 right-5 bottom-5 rounded-full bg-primary/10 group-hover:translate-y-2 transition-transform duration-500"
+      />
+      <span
+        class="z-10 absolute top-14 left-14 right-14 bottom-14 rounded-full bg-primary/10 group-hover:translate-y-2 transition-transform duration-500"
+      />
       <img
         alt="José Miguel Duque"
-        class="rounded-full backdrop-blur-xs bg-primary/10 shadow-inner"
+        class="z-20 relative group-hover:scale-[1.02] group-hover:-translate-x-5 duration-500 transition-transform"
         data-nimg="1"
         decoding="async"
         height="410"
