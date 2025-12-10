@@ -1,4 +1,5 @@
 import { CodeBlock } from '@/components/general/code-block';
+import { YouTube } from '@/components/general/youtube';
 import type { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -105,6 +106,9 @@ const components: MDXComponents = {
       {caption && <figcaption className="text-center text-xs mt-2 mb-5">{caption}</figcaption>}
     </figure>
   ),
+
+  // YouTube embeds
+  YouTube,
 
   pre: ({ children, ...props }) => {
     const childProps = (children as any)?.props;
