@@ -6,15 +6,15 @@ interface YouTubeProps {
 }
 
 // Validates YouTube video ID to prevent XSS attacks
-// YouTube IDs can be 10-12 characters (varies by video type)
+// YouTube IDs are typically 11 characters (standard videos)
 const isValidYouTubeId = (id: string): boolean => {
-  return /^[a-zA-Z0-9_-]{10,12}$/.test(id);
+  return /^[a-zA-Z0-9_-]{11}$/.test(id);
 };
 
 export const YouTube: FC<YouTubeProps> = ({ videoId, title = 'YouTube video' }) => {
   // Validate videoId to prevent XSS
   if (!isValidYouTubeId(videoId)) {
-    console.error(`Invalid YouTube video ID: ${videoId}`);
+    console.error('Invalid YouTube video ID provided');
     return null;
   }
 
