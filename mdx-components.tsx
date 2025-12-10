@@ -66,7 +66,7 @@ const components: MDXComponents = {
   // Blockquote
   blockquote: ({ children, ...props }) => (
     <blockquote
-      className="my-6 border-l-4 border-primary pl-6 italic text-muted-foreground"
+      className="my-6 border-l-2 border-primary pl-4 md:pl-6 italic text-muted-foreground"
       {...props}
     >
       {children}
@@ -108,7 +108,12 @@ const components: MDXComponents = {
   ),
 
   // YouTube embeds
-  YouTube,
+  YouTube: ({ videoId, title = '', caption = '' }: any) => (
+    <figure className="flex flex-col justify-center items-center w-full my-5">
+      <YouTube videoId={videoId} title={title} />
+      {caption && <figcaption className="text-center text-xs mt-2 mb-5">{caption}</figcaption>}
+    </figure>
+  ),
 
   pre: ({ children, ...props }) => {
     const childProps = (children as any)?.props;

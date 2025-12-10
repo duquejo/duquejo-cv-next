@@ -22,7 +22,7 @@ exports[`<BlogFeaturedCard /> tests > should match the snapshot 1`] = `
               class="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center animate-wiggle"
             >
               <div
-                class="grayscale text-9xl opacity-50"
+                class="grayscale-50 text-9xl opacity-50"
               >
                 💻
               </div>
