@@ -13,7 +13,7 @@ exports[`<BlogCard /> tests > should match the snapshot 1`] = `
         class="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 flex items-center justify-center"
       >
         <div
-          class="grayscale text-9xl opacity-50"
+          class="grayscale-50 text-9xl opacity-50"
         >
           💻
         </div>
