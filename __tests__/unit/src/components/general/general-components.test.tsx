@@ -1,6 +1,7 @@
 import { CodeBlock } from '@/components/general/code-block';
 import { DynamicIcon } from '@/components/general/dynamic-icon';
 import { RichText } from '@/components/general/rich-text';
+import { YouTube } from '@/components/general/youtube';
 import { render, screen } from '@testing-library/react';
 
 vi.mock('next/dynamic', () => ({
@@ -89,5 +90,23 @@ describe('General components unit tests', () => {
 
     // Assert
     expect(screen.getByTestId('dynamic-icon')).toBeInTheDocument();
+  });
+
+  it('should render components - Youtube embed', () => {
+    // Act
+    render(<YouTube videoId="abcdef12345" title="Test Video" />);
+
+    // Assert
+    const iframe = screen.getByTitle('Test Video') as HTMLIFrameElement;
+    expect(iframe).toBeInTheDocument();
+    expect(iframe.src).toContain('/embed/abcdef12345');
+  });
+
+  it('should fail if does not satisfy conditions - Youtube embed', () => {
+    // Act
+    render(<YouTube videoId="abc123" title="Test Video" />);
+
+    // Assert
+    expect(screen.queryByTitle('Test Video')).not.toBeInTheDocument();
   });
 });

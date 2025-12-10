@@ -18,7 +18,7 @@ export const BlogCategoryIcon = ({ category, size = 'lg' }: BlogCategoryIconProp
   const textSize = size === 'lg' ? 'text-9xl opacity-50' : 'text-4xl';
 
   return (
-    <div className={cn(`grayscale`, textSize)}>
+    <div className={cn(`grayscale-50`, textSize)}>
       {CATEGORY_EMOJI[category] || CATEGORY_EMOJI.General}
     </div>
   );

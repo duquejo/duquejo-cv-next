@@ -1,4 +1,5 @@
 import { CodeBlock } from '@/components/general/code-block';
+import { YouTube } from '@/components/general/youtube';
 import type { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -65,7 +66,7 @@ const components: MDXComponents = {
   // Blockquote
   blockquote: ({ children, ...props }) => (
     <blockquote
-      className="my-6 border-l-4 border-primary pl-6 italic text-muted-foreground"
+      className="my-6 border-l-2 border-primary pl-4 md:pl-6 italic text-muted-foreground"
       {...props}
     >
       {children}
@@ -102,6 +103,14 @@ const components: MDXComponents = {
         width={width || 400}
         height={height || 200}
       />
+      {caption && <figcaption className="text-center text-xs mt-2 mb-5">{caption}</figcaption>}
+    </figure>
+  ),
+
+  // YouTube embeds
+  YouTube: ({ videoId, title = '', caption = '' }: any) => (
+    <figure className="flex flex-col justify-center items-center w-full my-5">
+      <YouTube videoId={videoId} title={title} />
       {caption && <figcaption className="text-center text-xs mt-2 mb-5">{caption}</figcaption>}
     </figure>
   ),
