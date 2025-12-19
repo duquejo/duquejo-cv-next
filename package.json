@@ -10,9 +10,9 @@
     "prepare": "husky",
     "format:silent": "prettier --check . --log-level silent",
     "format": "prettier --write .",
-    "test": "vitest --pool=threads --ui",
+    "test": "vitest --pool=threads --ui --api 3001",
     "test:e2e": "playwright test",
-    "test:coverage": "vitest --coverage --ui",
+    "test:coverage": "vitest --coverage --ui --api 3001",
     "analize": "cross-env ANALIZE=true next build --webpack"
   },
   "dependencies": {
@@ -38,7 +38,7 @@
     "cmdk": "^1.0.4",
     "lucide-react": "^0.548.0",
     "negotiator": "^1.0.0",
-    "next": "^16.0.7",
+    "next": "^16.0.10",
     "next-intl": "^4.3.9",
     "next-themes": "^0.4.4",
     "react": "^19.2.1",
