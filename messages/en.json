@@ -731,11 +731,11 @@
           "type": "hard"
         },
         {
-          "name": "ORM's",
+          "name": "ORM",
           "type": "soft"
         },
         {
-          "name": "ODM's",
+          "name": "ODM",
           "type": "soft"
         },
         {
@@ -827,7 +827,15 @@
           "type": "hard"
         },
         {
+          "name": "Nuxt",
+          "type": "hard"
+        },
+        {
           "name": "React Native",
+          "type": "hard"
+        },
+        {
+          "name": "Expo",
           "type": "hard"
         },
         {
@@ -862,7 +870,7 @@
         {
           "color": "#0369a1",
           "tag": "Typescript",
-          "value": 93
+          "value": 98
         },
         {
           "color": "#facc15",
@@ -872,12 +880,12 @@
         {
           "color": "#7e22ce",
           "tag": "PHP",
-          "value": 75
+          "value": 80
         },
         {
           "color": "#c2410c",
           "tag": "Java",
-          "value": 35
+          "value": 45
         }
       ]
     }

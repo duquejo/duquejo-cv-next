@@ -10,9 +10,9 @@
     "prepare": "husky",
     "format:silent": "prettier --check . --log-level silent",
     "format": "prettier --write .",
-    "test": "vitest --pool=threads --ui",
+    "test": "vitest --pool=threads --ui --api 3001",
     "test:e2e": "playwright test",
-    "test:coverage": "vitest --coverage --ui",
+    "test:coverage": "vitest --coverage --ui --api 3001",
     "analize": "cross-env ANALIZE=true next build --webpack"
   },
   "dependencies": {
