@@ -731,11 +731,11 @@
           "type": "hard"
         },
         {
-          "name": "ORM's",
+          "name": "ORM",
           "type": "soft"
         },
         {
-          "name": "ODM's",
+          "name": "ODM",
           "type": "soft"
         },
         {
@@ -827,7 +827,15 @@
           "type": "hard"
         },
         {
+          "name": "Nuxt",
+          "type": "hard"
+        },
+        {
           "name": "React Native",
+          "type": "hard"
+        },
+        {
+          "name": "Expo",
           "type": "hard"
         },
         {
