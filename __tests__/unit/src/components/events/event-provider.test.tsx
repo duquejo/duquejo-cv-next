@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { EventProvider } from '@/components/events/event-provider';
 import { SWRConfig } from 'swr';
+import { EventProvider } from '@/components/events/event-provider';
 
 vi.mock('next-intl', () => ({
   useTranslations: () => (key: string) =>

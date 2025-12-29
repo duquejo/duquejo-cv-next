@@ -1,5 +1,5 @@
-import { BlogProgress } from '@/components/blog/blog-progress';
 import { fireEvent, render, screen } from '@testing-library/react';
+import { BlogProgress } from '@/components/blog/blog-progress';
 
 describe('<BlogProgress /> tests', () => {
   it('should render correctly', () => {

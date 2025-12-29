@@ -1,8 +1,8 @@
-import { CodeBlock } from '@/components/general/code-block';
-import { YouTube } from '@/components/general/youtube';
 import type { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 import Link from 'next/link';
+import { CodeBlock } from '@/components/general/code-block';
+import { YouTube } from '@/components/general/youtube';
 
 const components: MDXComponents = {
   // Headings

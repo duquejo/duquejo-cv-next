@@ -1,6 +1,6 @@
-import ServicesPage, { generateMetadata } from '@/app/[lang]/career/services/page';
 import { render, within } from '@testing-library/react';
 import type { ReactNode } from 'react';
+import ServicesPage, { generateMetadata } from '@/app/[lang]/career/services/page';
 import validateMetadata from '../../../../../common/validate-metadata';
 
 vi.mock('next-intl', () => ({

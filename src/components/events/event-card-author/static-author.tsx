@@ -1,5 +1,5 @@
-import type { Event } from '@/interfaces';
 import Image from 'next/image';
+import type { Event } from '@/interfaces';
 
 interface EventStaticAuthorProps {
   avatarUrl: Event['actor']['avatar_url'];

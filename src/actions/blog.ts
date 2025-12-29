@@ -1,10 +1,10 @@
 'use server';
 
-import { routing } from '@/i18n/routing';
-import type { BlogPost, BlogPostResult } from '@/interfaces';
 import * as fs from 'fs/promises';
 import { getLocale } from 'next-intl/server';
 import path from 'path';
+import { routing } from '@/i18n/routing';
+import type { BlogPost, BlogPostResult } from '@/interfaces';
 
 const BLOG_CONTENT_DIR = 'content/blog';
 

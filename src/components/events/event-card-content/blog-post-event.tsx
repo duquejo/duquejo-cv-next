@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import type { BlogEventPayload, EventRepo } from '@/interfaces';
-import Link from 'next/link';
 
 interface BlogPostProps {
   payload: BlogEventPayload;

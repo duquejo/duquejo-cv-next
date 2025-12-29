@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react';
 import { BlogCategoryIcon, BlogMetadata, BlogTags } from '@/components/blog';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -5,7 +6,6 @@ import { Card, CardDescription, CardTitle } from '@/components/ui/card';
 import { Link } from '@/i18n/routing';
 import type { BlogPostResult } from '@/interfaces';
 import { getCategoryVariant } from '@/lib';
-import { ArrowRight } from 'lucide-react';
 
 interface BlogFeaturedCardProps {
   category: BlogPostResult['metadata']['category'];

@@ -1,8 +1,8 @@
+import { ArrowLeft } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 import { BlogProgress } from '@/components/blog/blog-progress';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
-import { ArrowLeft } from 'lucide-react';
-import { getTranslations } from 'next-intl/server';
 
 export default async function BlogPostLayout({ children }: LayoutProps<'/[lang]/blog/[slug]'>) {
   const t = await getTranslations('Blog');

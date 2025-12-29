@@ -1,9 +1,8 @@
+import createBundleAnalyzer from '@next/bundle-analyzer';
+import createMDX from '@next/mdx';
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 import { CSP_HEADERS } from '@/lib/constants';
-import createMDX from '@next/mdx';
-
-import createBundleAnalyzer from '@next/bundle-analyzer';
 
 const nextConfig: NextConfig = {
   devIndicators: false,

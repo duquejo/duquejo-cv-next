@@ -1,8 +1,8 @@
+import type { MetadataRoute } from 'next';
+import type { Locale } from 'next-intl';
 import { getBlogPostsByLocale } from '@/actions/blog';
 import { getPathname, type Href, routing } from '@/i18n/routing';
 import { getAllSlugVariants } from '@/lib';
-import type { MetadataRoute } from 'next';
-import type { Locale } from 'next-intl';
 
 /**
  * Retrieves the full URL for a given href and locale

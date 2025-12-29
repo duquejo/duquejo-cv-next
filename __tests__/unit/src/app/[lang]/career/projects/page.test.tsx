@@ -1,8 +1,8 @@
+import { render, within } from '@testing-library/react';
+import type { SearchParams } from 'next/dist/server/request/search-params';
+import { beforeEach } from 'vitest';
 import { getProjectByFilters, getProjectSkills } from '@/actions/projects';
 import ProjectsPage, { generateMetadata } from '@/app/[lang]/career/projects/page';
-import { render, within } from '@testing-library/react';
-import { SearchParams } from 'next/dist/server/request/search-params';
-import { beforeEach } from 'vitest';
 import validateMetadata from '../../../../../common/validate-metadata';
 
 vi.mock('@/actions/projects', () => ({

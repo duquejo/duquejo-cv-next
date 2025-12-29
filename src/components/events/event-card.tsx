@@ -1,3 +1,5 @@
+import { Eye, FileText, GitBranch, GitMerge, GitPullRequest, Star } from 'lucide-react';
+import type { ReactNode } from 'react';
 import { EventLinkedAuthor, EventStaticAuthor } from '@/components/events/event-card-author';
 import { BlogPostEvent, PushEvent, WatchEvent } from '@/components/events/event-card-content';
 import { Badge } from '@/components/ui/badge';
@@ -11,8 +13,6 @@ import {
 } from '@/components/ui/card';
 import type { Event } from '@/interfaces';
 import { cn, toLocaleDateString } from '@/lib';
-import { Eye, FileText, GitBranch, GitMerge, GitPullRequest, Star } from 'lucide-react';
-import type { ReactNode } from 'react';
 
 export const EventCard = ({ created_at, payload, actor, repo, type }: Event) => {
   const toIcon = (iconString: string): ReactNode => {

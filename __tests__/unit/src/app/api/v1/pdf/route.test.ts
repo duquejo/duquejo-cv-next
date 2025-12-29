@@ -1,6 +1,6 @@
-import { OPTIONS, POST } from '@/app/api/v1/pdf/route';
-import { generatePdf } from '@/actions/pdf';
 import { NextRequest } from 'next/server';
+import { generatePdf } from '@/actions/pdf';
+import { OPTIONS, POST } from '@/app/api/v1/pdf/route';
 
 vi.mock('@/actions/pdf', () => ({
   generatePdf: vi.fn(),

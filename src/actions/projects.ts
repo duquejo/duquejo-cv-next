@@ -1,8 +1,8 @@
 'use server';
 
+import { getMessages } from 'next-intl/server';
 import type { Skill } from '@/interfaces';
 import { filterProjectsByTags } from '@/lib';
-import { getMessages } from 'next-intl/server';
 import type { IntlMessages } from '../../global';
 
 async function getProjectsJSON(): Promise<IntlMessages['Experience']['content']> {

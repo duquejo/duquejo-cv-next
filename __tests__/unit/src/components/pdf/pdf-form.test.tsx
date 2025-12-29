@@ -1,8 +1,8 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { afterEach, beforeEach, type MockInstance, vi } from 'vitest';
 import { PdfForm } from '@/components/pdf/pdf-form';
-import { afterEach, beforeEach, MockInstance, vi } from 'vitest';
-import { worker } from '@/msw/worker';
 import { errorHandlers } from '@/msw/handlers';
+import { worker } from '@/msw/worker';
 
 describe('<PdfForm /> tests', () => {
   let fetchSpy: MockInstance;

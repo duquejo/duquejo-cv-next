@@ -1,6 +1,6 @@
+import type { Metadata } from 'next';
 import type { MetadataTypes } from '@/interfaces';
 import { createMetadata } from '@/lib';
-import type { Metadata } from 'next';
 
 /**
  * Helper function to create metadata validation tests.

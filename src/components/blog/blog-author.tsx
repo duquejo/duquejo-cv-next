@@ -1,6 +1,6 @@
+import { Calendar, Clock } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { toLocaleDateString } from '@/lib/utilities';
-import { Calendar, Clock } from 'lucide-react';
 
 interface BlogAuthorProps {
   readingTime: string;

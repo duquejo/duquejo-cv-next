@@ -1,6 +1,6 @@
+import { ImageResponse } from 'next/og';
 import Image, { alt, contentType, size } from '@/app/[lang]/blog/[slug]/opengraph-image';
 import { createBlogImageMetadata } from '@/lib/metadata';
-import { ImageResponse } from 'next/og';
 
 vi.mock('@/lib/metadata', () => ({
   createBlogImageMetadata: vi.fn(),

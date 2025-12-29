@@ -1,5 +1,5 @@
-import { cn } from '@/lib';
 import { memo } from 'react';
+import { cn } from '@/lib';
 
 interface Props {
   isRecent: boolean;

@@ -1,5 +1,5 @@
-import { HeroImage } from '@/components/resume/hero-image';
 import { render, screen } from '@testing-library/react';
+import { HeroImage } from '@/components/resume/hero-image';
 
 describe('<HeroImage /> tests', () => {
   it('Should match the snapshot with the default args', () => {

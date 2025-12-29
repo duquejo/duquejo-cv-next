@@ -1,11 +1,11 @@
+import { useTranslations } from 'next-intl';
 import { DynamicIcon } from '@/components/general/dynamic-icon';
 import { RichText } from '@/components/general/rich-text';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { KnowledgeType, MainLanguageType, ServicesType } from '@/interfaces';
+import type { KnowledgeType, MainLanguageType, ServicesType } from '@/interfaces';
 import { createMetadata } from '@/lib';
-import { useTranslations } from 'next-intl';
 
 export async function generateMetadata() {
   return createMetadata('Services');
