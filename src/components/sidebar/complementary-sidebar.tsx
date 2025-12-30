@@ -19,7 +19,7 @@ export const ComplementarySidebar = ({ outerClassName, innerClassName }: Props) 
       <div className={innerClassName}>
         <SidebarTrigger
           variant="outline"
-          className="h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex cursor-pointer"
+          className="h-8 w-8 lg:h-10 lg:w-10 hidden md:flex cursor-pointer"
           title={t('sidebar.title')}
         />
         <PdfGeneratorToggle

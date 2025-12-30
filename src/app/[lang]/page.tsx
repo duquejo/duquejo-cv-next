@@ -17,7 +17,7 @@ export default function MainPage() {
   return (
     <>
       <section className="flex flex-col items-center justify-center m-5 lg:m-10 relative lg:flex-row lg:justify-between">
-        <div className="order-2 lg:order-1 max-w-full xl:max-w-3/5">
+        <div className="order-2 lg:order-1 max-w-full lg:max-w-3/5">
           <h1 className="text-4xl lg:text-6xl md:text-5xl mb-5 animate-entrance duration-1000 font-semibold text-center lg:text-justify">
             {t('resume.greetings')}
             <strong className="mt-2 block bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-primary">

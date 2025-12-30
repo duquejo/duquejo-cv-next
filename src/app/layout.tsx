@@ -44,7 +44,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
                 <MainSidebar />
                 {children}
                 <ComplementarySidebar
-                  outerClassName="hidden sm:flex z-10 lg:w-14 lg:max-w-14 lg:h-screen lg:relative w-auto fixed right-0 lg:mr-1"
+                  outerClassName="hidden md:flex z-10 lg:w-14 lg:max-w-14 lg:h-screen lg:relative w-auto fixed right-0 lg:mr-1"
                   innerClassName="flex flex-row gap-2 bg-sidebar rounded-lg p-2 m-2 lg:mx-0 lg:mb-2 lg:flex-col lg:fixed lg:bottom-0 lg:border lg:p-1"
                 />
               </EventProvider>

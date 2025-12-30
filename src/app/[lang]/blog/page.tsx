@@ -51,7 +51,7 @@ export default async function BlogPage() {
 
           <section role="contentinfo" className="flex flex-col">
             <h2 className="main-subtitle">{t('subtitle')}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
               {regularPosts.map((post) => (
                 <BlogCard
                   key={post.metadata.slug}
