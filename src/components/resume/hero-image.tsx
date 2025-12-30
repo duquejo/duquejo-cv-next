@@ -16,7 +16,7 @@ const SpeechBubble = ({ message = '' }) => (
 export const HeroImage = ({ className, message = '' }: Props) => {
   return (
     <div data-testid="hero-image" className={cn('overflow-hidden relative', className)}>
-      <picture className="relative group">
+      <picture className="block relative group">
         <span className="z-0 absolute top-5 left-5 right-5 bottom-5 rounded-full bg-primary/10 group-hover:translate-y-2 transition-transform duration-500"></span>
         <span className="z-10 absolute top-14 left-14 right-14 bottom-14 rounded-full bg-primary/10 group-hover:translate-y-2 transition-transform duration-500"></span>
         {message && <SpeechBubble message={message} />}

@@ -7,7 +7,7 @@ exports[`<HeroImage /> tests > Should match the snapshot with the default args 1
     data-testid="hero-image"
   >
     <picture
-      class="relative group"
+      class="block relative group"
     >
       <span
         class="z-0 absolute top-5 left-5 right-5 bottom-5 rounded-full bg-primary/10 group-hover:translate-y-2 transition-transform duration-500"
