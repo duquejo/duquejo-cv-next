@@ -43,7 +43,7 @@ export default async function BlogPostPage({ params }: PageProps<'/[lang]/blog/[
       {/* Tags */}
       {metadata.tags && (
         <div className="md:flex-row flex flex-col justify-center md:justify-between my-2">
-          <div className="flex flex-wrap gap-2 md:max-w-10/12 justify-center md:justify-start">
+          <div className="flex flex-wrap gap-2 md:max-w-9/12 justify-center md:justify-start">
             {metadata.tags.map((tag: string) => (
               <Badge
                 key={tag}

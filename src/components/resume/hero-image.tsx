@@ -8,7 +8,7 @@ interface Props {
 }
 
 const SpeechBubble = ({ message = '' }) => (
-  <span className="z-15 absolute top-15 right-4 p-3 bg-secondary text-xs font-light h-fit rounded-t-xl rounded-e-xl opacity-0 group-hover:opacity-100 group-hover:rotate-6 group-hover:translate-2 transition-all duration-500">
+  <span className="z-15 absolute top-5 right-2 p-2 md:top-15 md:right-4 md:p-3 bg-secondary text-xs font-light h-fit rounded-t-xl rounded-e-xl opacity-0 group-hover:opacity-100 group-hover:rotate-6 group-hover:translate-x-5 group-hover:translate-y-0 group-hover:md:translate-x-8 group-hover:md:-translate-y-5 transition-all duration-500">
     {message}
   </span>
 );

@@ -10,7 +10,7 @@ exports[`<BlogCard /> tests > should match the snapshot 1`] = `
       class="rounded-xl border bg-card text-card-foreground shadow-sm group hover:border-primary/40 transition-colors border-dashed overflow-hidden flex flex-col h-full animate-entrance relative"
     >
       <div
-        class="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 flex items-center justify-center"
+        class="absolute inset-0 flex items-center justify-center"
       >
         <div
           class="grayscale-50 text-9xl opacity-50"

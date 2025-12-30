@@ -9,7 +9,7 @@ export default async function BlogPostLayout({ children }: LayoutProps<'/[lang]/
   return (
     <>
       <BlogProgress />
-      <article className="px-5 md:px-0 pt-5 pb-20 sm:pb-5 max-w-4xl mx-auto">
+      <article className="px-5 md:px-0 pt-5 pb-20 sm:pb-5 max-w-2xl xl:max-w-4xl mx-auto">
         {/* Back Button */}
         <Button
           variant="ghost"
