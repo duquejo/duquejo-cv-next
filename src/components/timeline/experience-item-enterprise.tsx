@@ -1,6 +1,6 @@
-import type { ExperienceWithItemsProps } from '@/interfaces';
 import { Building } from 'lucide-react';
 import { memo } from 'react';
+import type { ExperienceWithItemsProps } from '@/interfaces';
 
 export const ExperienceItemEnterprise = memo(({ withIcons, title }: ExperienceWithItemsProps) => {
   return (

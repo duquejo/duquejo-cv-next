@@ -1,4 +1,4 @@
-import { render, type RenderResult, screen } from '@testing-library/react';
+import { type RenderResult, render, screen } from '@testing-library/react';
 import { Footer } from '@/components/footer/footer';
 import { SOCIAL_DATA as social } from '@/lib/constants';
 

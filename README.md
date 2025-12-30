@@ -29,7 +29,7 @@ Thank you for visiting, and I look forward to connecting with you!
 - React Testing library
 - Playwright (Integration & e2e tests)
 - Next intl (Internationalization)
-- Eslint / Prettier (Code standards)
+- Biome (Code standards)
 - Husky & Commitlint / Gitmoji (Commit standards)
 - Vercel (Deployment & Statistics)
 

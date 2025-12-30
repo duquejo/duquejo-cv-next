@@ -1,6 +1,6 @@
+import { Calendar, Clock } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { cn, toLocaleDateString } from '@/lib';
-import { Calendar, Clock } from 'lucide-react';
 
 interface BlogMetadataProps {
   publishDate: string;

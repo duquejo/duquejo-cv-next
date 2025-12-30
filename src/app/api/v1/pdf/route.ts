@@ -1,7 +1,7 @@
-import { generatePdf } from '@/actions/pdf';
 import { type NextRequest, NextResponse } from 'next/server';
+import { generatePdf } from '@/actions/pdf';
 
-const CORS_HEADERS = {
+const CORS_HEADERS: Record<string, string> = {
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
 };

@@ -1,6 +1,6 @@
-import type { ComponentType } from 'react';
-import dynamic from 'next/dynamic';
 import { LoaderCircle } from 'lucide-react';
+import dynamic from 'next/dynamic';
+import type { ComponentType } from 'react';
 
 interface Props {
   iconName: string;

@@ -1,4 +1,4 @@
-import { EventType } from '@/interfaces/general';
+import type { EventType } from '@/interfaces/general';
 
 export interface Event {
   id: string;

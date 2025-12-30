@@ -1,6 +1,6 @@
-import { PdfGeneratorToggle } from '@/components/pdf/pdf-toggle';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
+import { PdfGeneratorToggle } from '@/components/pdf/pdf-toggle';
 
 describe('<PdfGeneratorToggle /> tests', () => {
   let user: UserEvent;

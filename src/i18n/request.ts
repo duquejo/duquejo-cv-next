@@ -1,7 +1,7 @@
-import { getRequestConfig } from 'next-intl/server';
+import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 import { headers as serverHeaders } from 'next/headers';
-import { match } from '@formatjs/intl-localematcher';
+import { getRequestConfig } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 
 export default getRequestConfig(async () => {

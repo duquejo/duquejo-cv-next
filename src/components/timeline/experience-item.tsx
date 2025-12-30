@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import {
   Card,
   CardContent,
@@ -8,7 +9,6 @@ import {
 } from '@/components/ui/card';
 import type { ExperienceType } from '@/interfaces';
 import { cn } from '@/lib';
-import { memo } from 'react';
 import { ExperienceAdditionalInfo } from './experience-additional-info';
 import { ExperienceHeaderTime } from './experience-header-time';
 import { ExperienceItemContent } from './experience-item-content';

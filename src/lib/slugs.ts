@@ -1,5 +1,5 @@
-import type { BlogPost } from '@/interfaces';
 import type { Locale } from 'next-intl';
+import type { BlogPost } from '@/interfaces';
 
 /**
  * Get the localized slug for a blog post based on locale

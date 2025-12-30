@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { ThemeToggle } from '@/components/theme/theme-toggle';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
-import { useTheme, type UseThemeProps } from 'next-themes';
+import { type UseThemeProps, useTheme } from 'next-themes';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
 
 vi.mock('next-themes', () => ({
   useTheme: vi.fn(),

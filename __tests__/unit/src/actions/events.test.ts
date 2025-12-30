@@ -1,9 +1,9 @@
+import { beforeEach, type MockInstance } from 'vitest';
 import { getBlogPostsByLocale } from '@/actions/blog';
 import { getEvents } from '@/actions/events';
-import { Event } from '@/interfaces';
+import type { Event } from '@/interfaces';
 import { errorHandlers } from '@/msw/handlers';
 import { worker } from '@/msw/worker';
-import { beforeEach, type MockInstance } from 'vitest';
 import { MockBlogPostBuilder } from '../../builders';
 
 vi.mock('@/actions/blog', () => ({

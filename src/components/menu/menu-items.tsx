@@ -6,8 +6,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
-import type { MenuItem } from '@/interfaces';
 import { Link, usePathname } from '@/i18n/routing';
+import type { MenuItem } from '@/interfaces';
 
 interface Props {
   items: MenuItem[];

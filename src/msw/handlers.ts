@@ -1,6 +1,6 @@
-import { http, HttpResponse } from 'msw';
+import { HttpResponse, http, type RequestHandler } from 'msw';
 
-export const handlers = [
+export const handlers: RequestHandler[] = [
   http.get('https://abc.xyz/events', () => {
     const interceptedResponse = [
       {
@@ -35,7 +35,7 @@ export const handlers = [
   }),
 ];
 
-export const errorHandlers = [
+export const errorHandlers: RequestHandler[] = [
   http.get('https://abc.xyz/events', () => {
     return HttpResponse.error();
   }),

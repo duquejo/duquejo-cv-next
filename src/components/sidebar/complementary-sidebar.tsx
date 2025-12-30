@@ -1,10 +1,10 @@
+import { Lightbulb } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { PdfGeneratorToggle } from '@/components/pdf/pdf-toggle';
 import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { SheetTrigger } from '@/components/ui/sheet';
 import { SidebarTrigger } from '@/components/ui/sidebar';
-import { Lightbulb } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 
 interface Props {
   outerClassName?: string;

@@ -1,5 +1,5 @@
-import { EventSkeleton } from '@/components/events/event-skeleton';
 import { render, screen } from '@testing-library/react';
+import { EventSkeleton } from '@/components/events/event-skeleton';
 
 describe('<EventSkeleton /> tests', () => {
   it('should match the snapshot', () => {

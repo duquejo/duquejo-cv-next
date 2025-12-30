@@ -1,7 +1,7 @@
+import type { MiddlewareConfig, NextRequest, NextResponse } from 'next/server';
+import createMiddleware from 'next-intl/middleware';
 import { routing } from '@/i18n/routing';
 import rateLimitMiddleware from '@/middleware/rate-limiter-middleware';
-import createMiddleware from 'next-intl/middleware';
-import type { NextRequest, NextResponse } from 'next/server';
 
 export default function proxy(request: NextRequest): NextResponse<unknown> {
   const { pathname } = request.nextUrl;
@@ -13,7 +13,7 @@ export default function proxy(request: NextRequest): NextResponse<unknown> {
   return createMiddleware(routing)(request);
 }
 
-export const config = {
+export const config: MiddlewareConfig = {
   // Skip all paths that should not be internationalized
   matcher: [
     '/',

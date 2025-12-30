@@ -1,8 +1,8 @@
+import { render, screen } from '@testing-library/react';
 import { CodeBlock } from '@/components/general/code-block';
 import { DynamicIcon } from '@/components/general/dynamic-icon';
 import { RichText } from '@/components/general/rich-text';
 import { YouTube } from '@/components/general/youtube';
-import { render, screen } from '@testing-library/react';
 
 vi.mock('next/dynamic', () => ({
   default: (importFn: () => Promise<unknown>, options?: { loading?: () => any }) => {

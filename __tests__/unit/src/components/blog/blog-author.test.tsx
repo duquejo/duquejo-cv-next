@@ -1,5 +1,5 @@
-import { BlogAuthor } from '@/components/blog/blog-author';
 import { render, screen } from '@testing-library/react';
+import { BlogAuthor } from '@/components/blog/blog-author';
 
 describe('<BlogAuthor /> tests', () => {
   it('should match the snapshot', () => {

@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server';
-import rateLimitMiddleware from '@/middleware/rate-limiter-middleware';
 import { afterEach, beforeEach } from 'vitest';
+import rateLimitMiddleware from '@/middleware/rate-limiter-middleware';
 
 describe('In-memory Rate Limiter tests', () => {
   const createMockRequest = (ip: string): NextRequest => {
