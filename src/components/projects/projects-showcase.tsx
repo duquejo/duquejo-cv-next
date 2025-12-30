@@ -1,5 +1,7 @@
 'use client';
 
+import { X } from 'lucide-react';
+import { useCallback, useRef, useState } from 'react';
 import { getProjectByFilters } from '@/actions/projects';
 import { ProjectsFilter, type ProjectsFilterRef } from '@/components/projects/projects-filter';
 import { ExperienceItem } from '@/components/timeline/experience-item';
@@ -7,8 +9,6 @@ import { Button } from '@/components/ui/button';
 import { usePathname, useRouter } from '@/i18n/routing';
 import type { ExperienceType, Skill } from '@/interfaces';
 import { filterProjectsByTags } from '@/lib';
-import { X } from 'lucide-react';
-import { useCallback, useRef, useState } from 'react';
 import { ProjectsShowcaseNotFound } from './projects-showcase-not-found';
 import { ProjectsShowcaseStart } from './projects-showcase-start';
 

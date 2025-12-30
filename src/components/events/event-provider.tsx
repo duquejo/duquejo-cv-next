@@ -1,5 +1,9 @@
 'use client';
 
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { type ReactNode, useState } from 'react';
+import useSWR from 'swr';
 import { getEvents } from '@/actions/events';
 import { EventCard } from '@/components/events/event-card';
 import { EventSkeleton } from '@/components/events/event-skeleton';
@@ -12,10 +16,6 @@ import {
   SheetTitle,
 } from '@/components/ui/sheet';
 import type { Event } from '@/interfaces';
-import { useTranslations } from 'next-intl';
-import Link from 'next/link';
-import { ReactNode, useState } from 'react';
-import useSWR from 'swr';
 
 interface Props {
   children: ReactNode;

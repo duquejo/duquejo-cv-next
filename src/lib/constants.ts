@@ -1,5 +1,5 @@
-import type { Social } from '@/interfaces';
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import type { Social } from '@/interfaces';
 
 export const STACK_DATA = [
   {

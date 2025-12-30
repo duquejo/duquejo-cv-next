@@ -1,7 +1,7 @@
+import { render, screen } from '@testing-library/react';
 import { ExperienceItem } from '@/components/timeline/experience-item';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import type { ExperienceType } from '@/interfaces';
-import { render, screen } from '@testing-library/react';
 
 vi.mock('next-intl', () => ({
   useTranslations: () => (key: string) =>

@@ -5,7 +5,8 @@ test.use({
 });
 
 test.describe('PDF API Endpoint test', () => {
-  const expectedOrigin = 'http://abc.xyz';
+  const expectedOrigin = process.env.SITE_URL ?? 'http://abc.xyz';
+  const pdfDocument = process.env.PDF_FILENAME ?? 'cv_jose_duque';
   const endpoint = '/api/v1/pdf';
 
   const assertCSPHeaders = (headers: Record<string, string>) => {
@@ -53,7 +54,7 @@ test.describe('PDF API Endpoint test', () => {
     expect(response.headers()).toHaveProperty('access-control-allow-methods', 'POST, OPTIONS');
     expect(response.headers()).toHaveProperty(
       'content-disposition',
-      'attachment; filename="cv_jose_duque.pdf"',
+      `attachment; filename="${pdfDocument}.pdf"`,
     );
     expect(response.headers()).toHaveProperty('content-type', 'application/pdf');
     expect(response.headers()).toHaveProperty(

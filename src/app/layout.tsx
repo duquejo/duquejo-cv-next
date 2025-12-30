@@ -1,3 +1,8 @@
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { Poppins } from 'next/font/google';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
+import type { ReactNode } from 'react';
 import { EventProvider } from '@/components/events/event-provider';
 import { MobileHeader } from '@/components/header/mobile-header';
 import { ComplementarySidebar } from '@/components/sidebar/complementary-sidebar';
@@ -5,11 +10,6 @@ import { MainSidebar } from '@/components/sidebar/main-sidebar';
 import { ThemeProvider } from '@/components/theme/theme-provider';
 import { SidebarProvider } from '@/components/ui/sidebar';
 import { createMetadata } from '@/lib';
-import { GoogleAnalytics } from '@next/third-parties/google';
-import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages } from 'next-intl/server';
-import { Poppins } from 'next/font/google';
-import type { ReactNode } from 'react';
 import './globals.css';
 
 const poppins = Poppins({

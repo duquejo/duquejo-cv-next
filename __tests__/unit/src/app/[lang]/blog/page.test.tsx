@@ -1,8 +1,8 @@
-import { getBlogPostsByLocale } from '@/actions/blog';
-import BlogPage, { generateMetadata } from '@/app/[lang]/blog/page';
-import { BlogPostResult } from '@/interfaces';
 import { render, within } from '@testing-library/react';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { getBlogPostsByLocale } from '@/actions/blog';
+import BlogPage, { generateMetadata } from '@/app/[lang]/blog/page';
+import type { BlogPostResult } from '@/interfaces';
 import validateMetadata from '../../../../common/validate-metadata';
 
 // Mock @/lib for metadata validation tests

@@ -1,9 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import { NameTag } from '@/components/menu/name-tag';
 import { useSidebar } from '@/components/ui/sidebar';
 import { cn } from '@/lib';
-import Image from 'next/image';
 
 interface Props {
   role: string;

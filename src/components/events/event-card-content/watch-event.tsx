@@ -1,5 +1,5 @@
-import type { Event } from '@/interfaces';
 import Link from 'next/link';
+import type { Event } from '@/interfaces';
 
 interface WatchEventProps {
   repo: Event['repo'];
@@ -17,7 +17,6 @@ const DEFAULT_SENTENCES = [
 
 export const WatchEvent = ({ repo, payload }: WatchEventProps) => {
   const getRandomSentence = () => {
-    // eslint-disable-next-line react-hooks/purity
     const randomIndex = Math.floor(Math.random() * DEFAULT_SENTENCES.length);
     return DEFAULT_SENTENCES[randomIndex];
   };

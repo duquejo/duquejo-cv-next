@@ -1,11 +1,11 @@
+import type { Metadata } from 'next';
+import type { Locale } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { getBlogPostBySlug } from '@/actions/blog';
 import { getUrl } from '@/app/sitemap';
 import { type Href, routing } from '@/i18n/routing';
-import { BlogPost, MetadataTypes } from '@/interfaces';
+import type { BlogPost, MetadataTypes } from '@/interfaces';
 import { getAllSlugVariants } from '@/lib/slugs';
-import type { Metadata } from 'next';
-import { Locale } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
 
 export async function createMetadata(namespace: MetadataTypes): Promise<Metadata> {
   const t = await getTranslations(namespace);

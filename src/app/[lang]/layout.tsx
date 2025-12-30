@@ -1,6 +1,6 @@
+import type { ReactNode } from 'react';
 import { Footer } from '@/components/footer/footer';
 import { AnimatedBackground } from '@/components/theme/animated-background';
-import type { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;

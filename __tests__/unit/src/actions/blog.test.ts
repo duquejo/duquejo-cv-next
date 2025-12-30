@@ -1,6 +1,6 @@
-import * as actions from '@/actions/blog';
 import * as fs from 'fs/promises';
 import { getLocale } from 'next-intl/server';
+import * as actions from '@/actions/blog';
 import { MockBlogPostBuilder } from '../../builders';
 
 vi.mock('fs/promises');

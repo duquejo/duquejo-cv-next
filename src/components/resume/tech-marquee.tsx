@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Marquee } from '@/components/ui/marquee';
 import { STACK_DATA as stack } from '@/lib';
-import Image from 'next/image';
 
 export const TechMarquee = () => {
   return (

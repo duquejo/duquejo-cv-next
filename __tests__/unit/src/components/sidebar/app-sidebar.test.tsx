@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { MainSidebar } from '@/components/sidebar/main-sidebar';
-import { SidebarProvider } from '@/components/ui/sidebar';
 import { Sheet } from '@/components/ui/sheet';
+import { SidebarProvider } from '@/components/ui/sidebar';
 
 const professionalItems = [
   { title: 'Home', url: '/home' },

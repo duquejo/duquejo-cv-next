@@ -1,5 +1,5 @@
+import type { LucideIcon } from 'lucide-react';
 import type { Pathnames } from '@/i18n/routing';
-import { LucideIcon } from 'lucide-react';
 
 export interface PageEventParams {
   slug: string;

@@ -1,5 +1,5 @@
-import { cn } from '@/lib';
 import Image from 'next/image';
+import { cn } from '@/lib';
 import avatarPicture from '../../../public/static/img/avatar_410.png';
 
 interface Props {

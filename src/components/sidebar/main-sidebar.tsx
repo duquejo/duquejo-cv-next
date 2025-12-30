@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { MenuAvatar } from '@/components/menu/menu-avatar';
 import { MenuItems } from '@/components/menu/menu-items';
 import { ComplementarySidebar } from '@/components/sidebar/complementary-sidebar';
@@ -15,7 +16,6 @@ import {
   SidebarMenuItem,
   SidebarSeparator,
 } from '@/components/ui/sidebar';
-import { useTranslations } from 'next-intl';
 
 export const MainSidebar = () => {
   const t = useTranslations('Sidebar');

@@ -1,5 +1,5 @@
-import { createBlogImageMetadata } from '@/lib/metadata';
 import { ImageResponse } from 'next/og';
+import { createBlogImageMetadata } from '@/lib/metadata';
 
 // Image metadata
 export const alt = 'Blog';

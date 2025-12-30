@@ -1,8 +1,8 @@
+import { getLocale, getTranslations } from 'next-intl/server';
 import { getBlogPostsByLocale } from '@/actions/blog';
 import { BlogCard, BlogFeaturedCard, BlogNotFound } from '@/components/blog';
 import { Separator } from '@/components/ui/separator';
 import { createMetadata, getSlugByLocale, sortByDateString } from '@/lib';
-import { getLocale, getTranslations } from 'next-intl/server';
 
 export async function generateMetadata() {
   return createMetadata('Blog');

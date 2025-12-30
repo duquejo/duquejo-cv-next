@@ -1,6 +1,6 @@
-import { BlogCard } from '@/components/blog/blog-card';
-import { BlogPostResult } from '@/interfaces';
 import { render, screen } from '@testing-library/react';
+import { BlogCard } from '@/components/blog/blog-card';
+import type { BlogPostResult } from '@/interfaces';
 
 vi.mock('@/i18n/routing', () => ({
   Link: ({ children, href, onClick, ...props }: any) => (

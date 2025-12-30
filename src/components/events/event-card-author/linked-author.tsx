@@ -1,7 +1,7 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import type { Event } from '@/interfaces';
 import { Github } from 'lucide-react';
 import Link from 'next/link';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import type { Event } from '@/interfaces';
 
 interface EventLinkedAuthorProps {
   url: string;

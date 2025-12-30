@@ -155,8 +155,8 @@ yarn test:e2e          # Run e2e tests
 yarn dev               # Development server with Turbopack
 yarn build             # Production build
 yarn start             # Production server
-yarn lint              # ESLint check
-yarn format            # Prettier format
+yarn lint              # Biome lint check
+yarn format            # Biome format
 yarn analize           # Bundle analyzer
 ```
 

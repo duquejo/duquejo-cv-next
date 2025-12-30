@@ -1,9 +1,9 @@
+import { notFound, RedirectType } from 'next/navigation';
+import { getLocale } from 'next-intl/server';
 import * as blogActions from '@/actions/blog';
 import { resolveBlogPostSlug } from '@/actions/blog-post-resolver';
 import { redirect } from '@/i18n/routing';
 import { getSlugByLocale } from '@/lib';
-import { getLocale } from 'next-intl/server';
-import { notFound, RedirectType } from 'next/navigation';
 import { MockBlogPostBuilder } from '../../builders';
 
 // Mock dependencies

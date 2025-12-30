@@ -1,5 +1,5 @@
-import { ExperienceItemContent } from '@/components/timeline/experience-item-content';
 import { render, screen } from '@testing-library/react';
+import { ExperienceItemContent } from '@/components/timeline/experience-item-content';
 
 describe('<ExperienceItemContent /> tests', () => {
   const args = {

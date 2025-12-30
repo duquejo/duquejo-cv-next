@@ -1,6 +1,6 @@
+import { type FormEvent, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { FormEvent, useState } from 'react';
 
 interface Props {
   onSubmitFinish: () => void;

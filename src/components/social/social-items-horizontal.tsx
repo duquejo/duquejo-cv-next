@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { SOCIAL_DATA as socials } from '@/lib';
-import Link from 'next/link';
 
 export const SocialItemsHorizontal = () => {
   return (

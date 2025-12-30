@@ -4,7 +4,7 @@ import { getUrl } from '@/app/sitemap';
 import { BlogAuthor, BlogSocialShare } from '@/components/blog';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { type Href } from '@/i18n/routing';
+import type { Href } from '@/i18n/routing';
 import { createBlogPostMetadata } from '@/lib';
 
 export async function generateMetadata({ params }: PageProps<'/[lang]/blog/[slug]'>) {

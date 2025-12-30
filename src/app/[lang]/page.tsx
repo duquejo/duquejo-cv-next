@@ -1,3 +1,6 @@
+import { Languages } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { useCallback } from 'react';
 import { RichText } from '@/components/general/rich-text';
 import { HeroImage } from '@/components/resume/hero-image';
 import { TechMarquee } from '@/components/resume/tech-marquee';
@@ -5,9 +8,6 @@ import { ExperienceItem } from '@/components/timeline/experience-item';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import type { ExperienceType, LanguageType } from '@/interfaces';
 import { calculateYears, cn } from '@/lib';
-import { Languages } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-import { useCallback } from 'react';
 
 export default function MainPage() {
   const t = useTranslations('General');

@@ -1,7 +1,7 @@
-import { getProjectByFilters, getProjectSkills } from '@/actions/projects';
-import { filterProjectsByTags } from '@/lib';
 import { getMessages } from 'next-intl/server';
 import { beforeEach } from 'vitest';
+import { getProjectByFilters, getProjectSkills } from '@/actions/projects';
+import { filterProjectsByTags } from '@/lib';
 
 vi.mock('next-intl/server', () => ({
   getMessages: vi.fn(),

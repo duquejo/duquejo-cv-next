@@ -1,14 +1,14 @@
+import { render, within } from '@testing-library/react';
+import type { Params } from 'next/dist/server/request/params';
+import type { SearchParams } from 'next/dist/server/request/search-params';
 import { generateStaticPosts } from '@/actions/blog';
 import { resolveBlogPostSlug } from '@/actions/blog-post-resolver';
 import BlogPostPage, {
   generateMetadata,
   generateStaticParams,
 } from '@/app/[lang]/blog/[slug]/page';
-import { BlogPostResult } from '@/interfaces';
+import type { BlogPostResult } from '@/interfaces';
 import { createBlogPostMetadata } from '@/lib';
-import { render, within } from '@testing-library/react';
-import { Params } from 'next/dist/server/request/params';
-import { SearchParams } from 'next/dist/server/request/search-params';
 
 vi.mock('@/actions/blog-post-resolver', () => ({
   resolveBlogPostSlug: vi.fn(),
