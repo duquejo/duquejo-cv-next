@@ -13,23 +13,6 @@ exports[`<BlogFeaturedCard /> tests > should match the snapshot 1`] = `
         class="grid md:grid-cols-5 gap-0"
       >
         <div
-          class="md:col-span-2 bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center min-h-[250px] md:min-h-full"
-        >
-          <div
-            class="text-center p-8"
-          >
-            <div
-              class="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center animate-wiggle"
-            >
-              <div
-                class="grayscale-50 text-9xl opacity-50"
-              >
-                💻
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
           class="md:col-span-3 p-6 flex flex-col justify-center"
         >
           <div
@@ -168,6 +151,23 @@ exports[`<BlogFeaturedCard /> tests > should match the snapshot 1`] = `
               />
             </svg>
           </button>
+        </div>
+        <div
+          class="md:col-span-2 bg-linear-to-br from-primary/5 to-primary/5 flex items-center justify-center min-h-[250px] md:min-h-full"
+        >
+          <div
+            class="text-center p-8"
+          >
+            <div
+              class="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/5 flex items-center justify-center animate-wiggle"
+            >
+              <div
+                class="grayscale-50 text-9xl opacity-50"
+              >
+                💻
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -99,16 +99,23 @@ class EncryptUseCase {
     /**
      * 4) Se cifra la clave AES utilizando la clave pública RSA del servidor.
      */
-    const encryptedAesKey = this.rsaKeyManager.encryptKey(aesKey).toString('base64');
+    const encryptedAesKey = this.rsaKeyManager
+      .encryptKey(aesKey)
+      .toString('base64');
 
     /**
      * 5) (Opcional) Generación de HMAC para validar la integridad de los datos.
      */
-    const hmacMessage = StringUtils.concat(encryptedPayload, encryptedAesKey, encryptedIv);
+    const hmacMessage = StringUtils.concat(
+      encryptedPayload, 
+      encryptedAesKey, 
+      encryptedIv
+    );
     const hmac = this.hmacGenerator.generate(aesKey, hmacMessage);
 
     /**
-     * 6) El cliente reune tanto los datos cifrados como la clave AES cifrada al servidor.
+     * 6) El cliente reune tanto los datos cifrados como la clave AES 
+     * cifrada al servidor.
      */
     const instance = plainToInstance(EncryptedData, {
       d: encryptedPayload,
@@ -118,8 +125,9 @@ class EncryptUseCase {
     });
 
     /**
-     * 7) (Opcional) Compresión de los datos cifrados para optimizar la transmisión.
-     * 8) Finalmente, se retorna la información cifrada y comprimida al cliente.
+     * 7) (Opcional) Compresión de los datos cifrados.
+     * 8) Finalmente, se retorna la información cifrada y 
+     * comprimida al cliente.
      */
     return this.compression.compress(JSON.stringify(instance));
   }
@@ -174,17 +182,22 @@ class DecryptUseCase {
     const encryptedOutput = plainToInstance(EncryptedData, data);
 
     /**
-     * 3) Se descifra la clave AES utilizando la clave privada RSA del servidor.
+     * 3) Se descifra la clave AES utilizando la clave 
+     * privada RSA del servidor.
      */
     const encryptedAesKey = Buffer.from(encryptedOutput.k, 'base64');
     const decryptedKey = this.rsaKeyManager.decryptKey(encryptedAesKey);
 
     /**
      * 4) (Opcional) Verificación de la integridad de los datos utilizando HMAC.
-     *    Si el HMAC no coincide, se pretende que los datos han sido alterados por lo tanto
-     *    se lanza una excepción de error.
+     * Si el HMAC no coincide, se pretende que los datos han sido 
+     * alterados por lo tanto se lanza una excepción de error.
      */
-    const hmacMessage = StringUtils.concat(encryptedOutput.d, encryptedOutput.k, encryptedOutput.i);
+    const hmacMessage = StringUtils.concat(
+      encryptedOutput.d, 
+      encryptedOutput.k, 
+      encryptedOutput.i
+    );
     if (!this.hmacGenerator.verify(decryptedKey, hmacMessage, encryptedOutput.h)) {
       throw new DecryptException('Data integrity check failed.');
     }
@@ -192,7 +205,8 @@ class DecryptUseCase {
     const iv = Buffer.from(encryptedOutput.i, 'base64');
 
     /**
-     * 5) Finalmente, se descifran los datos utilizando la clave AES descifrada y el IV.
+     * 5) Finalmente, se descifran los datos utilizando 
+     * la clave AES descifrada y el IV.
      */
     return this.aesEncryptor.decrypt(encryptedOutput.d, decryptedKey, iv);
   }

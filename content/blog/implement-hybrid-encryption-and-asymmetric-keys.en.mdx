@@ -84,31 +84,43 @@ class EncryptUseCase {
     const aesKey = this.aesEncryptor.generateKey();
 
     /**
-     * 2) Additionally, a random initialization vector (IV) is generated.
-     * This ensures that each encrypted message is unique.
+     * 2) Additionally, a random initialization vector (IV) is 
+     * generated. This ensures that each encrypted message is unique.
      */
     const iv = this.aesEncryptor.generateIv();
 
     /**
      * 3) The data is encrypted using the AES key.
      */
-    const encryptedPayload = this.aesEncryptor.encrypt(data, aesKey, iv);
+    const encryptedPayload = this.aesEncryptor
+      .encrypt(data, aesKey, iv);
 
     const encryptedIv = iv.toString('base64');
 
     /**
      * 4) The AES key is encrypted using the server's RSA public key.
      */
-    const encryptedAesKey = this.rsaKeyManager.encryptKey(aesKey).toString('base64');
+    const encryptedAesKey = this.rsaKeyManager
+      .encryptKey(aesKey)
+      .toString('base64');
 
     /**
      * 5) (Optional) HMAC generation to validate data integrity.
      */
-    const hmacMessage = StringUtils.concat(encryptedPayload, encryptedAesKey, encryptedIv);
-    const hmac = this.hmacGenerator.generate(aesKey, hmacMessage);
+    const hmacMessage = StringUtils.concat(
+      encryptedPayload, 
+      encryptedAesKey, 
+      encryptedIv
+    );
+
+    const hmac = this.hmacGenerator.generate(
+      aesKey, 
+      hmacMessage
+    );
 
     /**
-     * 6) The client gathers both the encrypted data and the encrypted AES key to send to the server.
+     * 6) The client gathers both the encrypted data 
+     * and the encrypted AES key to send to the server.
      */
     const instance = plainToInstance(EncryptedData, {
       d: encryptedPayload,
@@ -118,8 +130,9 @@ class EncryptUseCase {
     });
 
     /**
-     * 7) (Optional) Compression of encrypted data to optimize transmission.
-     * 8) Finally, the encrypted and compressed information is returned to the client.
+     * 7) (Optional) Encrypted data compression.
+     * 8) Finally, the encrypted and compressed information
+     * is returned to the client.
      */
     return this.compression.compress(JSON.stringify(instance));
   }
@@ -177,14 +190,20 @@ class DecryptUseCase {
      * 3) The AES key is decrypted using the server's RSA private key.
      */
     const encryptedAesKey = Buffer.from(encryptedOutput.k, 'base64');
-    const decryptedKey = this.rsaKeyManager.decryptKey(encryptedAesKey);
+    const decryptedKey = this.rsaKeyManager
+      .decryptKey(encryptedAesKey);
 
     /**
      * 4) (Optional) Data integrity verification using HMAC.
      *    If the HMAC doesn't match, it's assumed that the data has been altered,
      *    therefore an error exception is thrown.
      */
-    const hmacMessage = StringUtils.concat(encryptedOutput.d, encryptedOutput.k, encryptedOutput.i);
+    const hmacMessage = StringUtils.concat(
+      encryptedOutput.d, 
+      encryptedOutput.k, 
+      encryptedOutput.i
+    );
+
     if (!this.hmacGenerator.verify(decryptedKey, hmacMessage, encryptedOutput.h)) {
       throw new DecryptException('Data integrity check failed.');
     }

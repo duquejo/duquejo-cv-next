@@ -8,7 +8,7 @@ interface Props {
 
 export default function ResumeLayout({ children }: LayoutProps<'/[lang]'>) {
   return (
-    <main className="container flex flex-1 h-screen">
+    <main className="container flex flex-1 h-screen mx-auto">
       <div className="flex-1">
         {children}
         <Footer />

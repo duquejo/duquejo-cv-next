@@ -38,15 +38,6 @@ export const BlogFeaturedCard = ({
     >
       <Card className="mb-10 bg-sidebar/30 border-primary/60 overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
         <div className="grid md:grid-cols-5 gap-0">
-          {/* Image Area */}
-          <div className="md:col-span-2 bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center min-h-[250px] md:min-h-full">
-            <div className="text-center p-8">
-              <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center animate-wiggle">
-                <BlogCategoryIcon category={category} />
-              </div>
-            </div>
-          </div>
-
           {/* Content */}
           <div className="md:col-span-3 p-6 flex flex-col justify-center">
             <Badge variant={getCategoryVariant(category)} className="w-fit mb-3">
@@ -65,6 +56,14 @@ export const BlogFeaturedCard = ({
               {readMoreText}
               <ArrowRight className="ml-2" size={16} />
             </Button>
+          </div>
+          {/* Image Area */}
+          <div className="md:col-span-2 bg-linear-to-br from-primary/5 to-primary/5 flex items-center justify-center min-h-[250px] md:min-h-full">
+            <div className="text-center p-8">
+              <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/5 flex items-center justify-center animate-wiggle">
+                <BlogCategoryIcon category={category} />
+              </div>
+            </div>
           </div>
         </div>
       </Card>
