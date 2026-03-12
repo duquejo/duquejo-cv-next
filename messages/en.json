@@ -186,10 +186,38 @@
     },
     "content": [
       {
-        "start_date": "2023",
+        "start_date": "02/02/2026",
         "end_date": "Present",
-        "enterprise": "SURA Insurances - Ceiba Software S.A.S",
+        "enterprise": "WhiteWaterWest Vantage - Ceiba Software S.A.S",
         "isRecent": true,
+        "project": "Vantage - Attractions management core platform team",
+        "role": "Backend developer",
+        "resume": [
+          "Resolved complex integrations between core payment gateways and fragmented ticketing systems across multiple venues.",
+          "Engineered high-performance features to scale platform capabilities, including advanced reporting, administrative tools, and modular extensions.",
+          "Optimized system responsiveness by implementing an event-driven design, enabling seamless asynchronous processing across distributed services"
+        ],
+        "additional_info": [
+          "AWS Lambdas",
+          "AWS Cognito",
+          "AWS Eventbridge",
+          "Terraform",
+          "Node.js",
+          "TypeScript",
+          "Unit Tests",
+          "Integration Tests",
+          "SonarQube",
+          "Flutter",
+          "Git",
+          "Scrum"
+        ],
+        "url": "https://vantage.co"
+      },
+      {
+        "start_date": "01/05/2023",
+        "end_date": "30/01/2026",
+        "enterprise": "SURA Insurances - Ceiba Software S.A.S",
+        "isRecent": false,
         "project": "SURA Insurances - Integrations Team Bus",
         "role": "Backend developer",
         "resume": [

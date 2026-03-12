@@ -186,8 +186,36 @@
     },
     "content": [
       {
-        "start_date": "2023",
+        "start_date": "02/02/2026",
         "end_date": "Actualidad",
+        "enterprise": "WhiteWaterWest Vantage - Ceiba Software S.A.S",
+        "isRecent": true,
+        "project": "Vantage - Plataforma de gestión de atracciones",
+        "role": "Desarrollador Backend",
+        "resume": [
+          "Resolución de integraciones complejas entre pasarelas de pago principales y sistemas de ticketing fragmentados en múltiples sedes.",
+          "Desarrollo de funcionalidades de alto rendimiento para escalar las capacidades de la plataforma, incluyendo reportes avanzados, herramientas administrativas y extensiones modulares.",
+          "Optimización de la capacidad de respuesta del sistema mediante la implementación de un diseño orientado a eventos, permitiendo un procesamiento asíncrono fluido entre servicios distribuidos."
+        ],
+        "additional_info": [
+          "AWS Lambdas",
+          "AWS Cognito",
+          "AWS Eventbridge",
+          "Terraform",
+          "Node.js",
+          "TypeScript",
+          "Unit Tests",
+          "Integration Tests",
+          "SonarQube",
+          "Flutter",
+          "Git",
+          "Scrum"
+        ],
+        "url": "https://vantage.co"
+      },
+      {
+        "start_date": "01/05/2023",
+        "end_date": "30/01/2026",
         "enterprise": "SURA Seguros - Ceiba Software S.A.S",
         "isRecent": true,
         "project": "SURA Seguros - Bus de integraciones",
