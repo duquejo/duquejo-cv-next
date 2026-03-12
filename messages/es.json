@@ -198,10 +198,12 @@
           "Optimización de la capacidad de respuesta del sistema mediante la implementación de un diseño orientado a eventos, permitiendo un procesamiento asíncrono fluido entre servicios distribuidos."
         ],
         "additional_info": [
-          "AWS Lambdas",
+          "AWS DynamoDB",
+          "AWS Lambda",
           "AWS Cognito",
           "AWS Eventbridge",
           "Terraform",
+          "PostgresSQL",
           "Node.js",
           "TypeScript",
           "Unit Tests",

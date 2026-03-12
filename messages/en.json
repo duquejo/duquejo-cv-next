@@ -198,10 +198,12 @@
           "Optimized system responsiveness by implementing an event-driven design, enabling seamless asynchronous processing across distributed services"
         ],
         "additional_info": [
-          "AWS Lambdas",
+          "AWS DynamoDB",
+          "AWS Lambda",
           "AWS Cognito",
           "AWS Eventbridge",
           "Terraform",
+          "PostgresSQL",
           "Node.js",
           "TypeScript",
           "Unit Tests",
