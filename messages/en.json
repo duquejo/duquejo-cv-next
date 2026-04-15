@@ -5,7 +5,7 @@
       "title": "Professional career",
       "links": [
         {
-          "title": "Resumeé",
+          "title": "About me",
           "url": "/"
         },
         {
@@ -38,7 +38,7 @@
         "title": "Download CV",
         "dialog": {
           "title": "Download Curriculum Vitae",
-          "description": "Download my resume as PDF \uD83C\uDF1F",
+          "description": "Download my resumeé as PDF \uD83C\uDF1F",
           "button": "Generate",
           "loading": "Generating..."
         }
