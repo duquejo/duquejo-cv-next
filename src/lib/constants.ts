@@ -1,5 +1,6 @@
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import type { Social } from '@/interfaces';
+import { Github, LinkedIn } from './lucide-custom-icons';
 
 export const STACK_DATA = [
   {
@@ -48,7 +49,7 @@ export const SOCIAL_DATA: Social[] = [
     name: 'LinkedIn',
     fullName: 'linkedin.com/duquejo',
     link: 'https://www.linkedin.com/in/duquejo/',
-    icon: Linkedin,
+    icon: LinkedIn,
     isVisibleInFooter: true,
   },
   {

@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { SOCIAL_DATA as socials } from '@/lib';
@@ -16,24 +18,18 @@ export const SocialItemsHorizontal = () => {
           <SidebarMenuItem key={social.name}>
             <SidebarMenuButton
               asChild
-              className="focus-visible:ring-primary focus-visible:ring-1"
               size="sm"
+              className="focus-visible:ring-primary focus-visible:ring-1"
             >
               {social.isVisibleInFooter ? (
-                <Link
-                  key={social.name}
-                  href={social.link}
-                  target="_blank"
-                  {...commonProps}
-                  prefetch={false}
-                >
+                <Link href={social.link} target="_blank" prefetch={false} {...commonProps}>
                   <social.icon size={15} />
                   <span className="peer-data-[active=true]/menu-item:hidden">
                     {social.fullName}
                   </span>
                 </Link>
               ) : (
-                <button type="button" tabIndex={0} key={social.name} {...commonProps}>
+                <button type="button" tabIndex={0} {...commonProps}>
                   <social.icon size={15} />
                   <span className="peer-data-[active=true]/menu-item:hidden">
                     {social.fullName}

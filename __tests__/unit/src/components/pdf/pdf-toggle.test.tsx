@@ -45,7 +45,7 @@ describe('<PdfGeneratorToggle /> tests', () => {
     expect(button).toHaveAttribute('data-state', 'closed');
     expect(button).toHaveAttribute('aria-expanded', 'false');
     expect(button).toHaveTextContent(props.buttonTitle);
-    expect(button).toHaveClass('text-primary-foreground', 'hover:bg-primary/90');
+    expect(button).toHaveClass('text-primary-foreground', '[a]:hover:bg-primary/90');
   });
 
   it('Should match the snapshot with a given args', async () => {

@@ -1,6 +1,6 @@
-import { Github } from 'lucide-react';
 import Link from 'next/link';
 import type { Commit, Event } from '@/interfaces';
+import { Github } from '@/lib/lucide-custom-icons';
 
 interface PushEventProps {
   repo: Event['repo'];

@@ -161,6 +161,7 @@ exports[`<ExperienceItemContent /> tests > Should match the snapshot with the av
         </div>
         <a
           class="relative transition-all group-hover:text-primary group-hover:animate-wiggle"
+          data-slot="tooltip-trigger"
           data-state="closed"
           href="https://foo.bar"
           rel="noopener noreferrer nofollow"

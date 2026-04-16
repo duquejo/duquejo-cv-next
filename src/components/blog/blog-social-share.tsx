@@ -7,8 +7,8 @@ import {
   LinkedinShareButton,
   ThreadsIcon,
   ThreadsShareButton,
-  TwitterShareButton,
   XIcon,
+  XShareButton,
 } from 'react-share';
 
 interface BlogSocialShareProps {
@@ -19,9 +19,9 @@ interface BlogSocialShareProps {
 export const BlogSocialShare = ({ url, iconSize = 25 }: BlogSocialShareProps) => {
   return (
     <>
-      <TwitterShareButton url={url} title="X" htmlTitle="X">
+      <XShareButton url={url} title="X" htmlTitle="X">
         <XIcon size={iconSize} round />
-      </TwitterShareButton>
+      </XShareButton>
       <ThreadsShareButton url={url} title="Threads" htmlTitle="Threads">
         <ThreadsIcon size={iconSize} round />
       </ThreadsShareButton>

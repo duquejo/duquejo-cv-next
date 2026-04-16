@@ -1,4 +1,4 @@
-import { type FormEvent, useState } from 'react';
+import { type SubmitEvent, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 
@@ -11,7 +11,7 @@ interface Props {
 export const PdfForm = ({ onSubmitFinish, button, buttonLoading }: Props) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (event: FormEvent) => {
+  const handleSubmit = async (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
 
