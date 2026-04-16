@@ -13,22 +13,27 @@ exports[`<EventSkeleton /> tests > should match the snapshot 1`] = `
     >
       <div
         class="animate-pulse rounded-md bg-primary/10 flex-1 h-8 w-full"
+        data-slot="skeleton"
       />
       <div
         class="animate-pulse rounded-md bg-primary/10 h-8 w-[100px]"
+        data-slot="skeleton"
       />
     </div>
     <div
       class="animate-pulse rounded-md bg-primary/10 h-[125px] w-full"
+      data-slot="skeleton"
     />
     <div
       class="space-y-3"
     >
       <div
         class="animate-pulse rounded-md bg-primary/10 h-4 w-full"
+        data-slot="skeleton"
       />
       <div
         class="animate-pulse rounded-md bg-primary/10 h-4 w-full"
+        data-slot="skeleton"
       />
     </div>
     <div
@@ -36,15 +41,18 @@ exports[`<EventSkeleton /> tests > should match the snapshot 1`] = `
     >
       <div
         class="animate-pulse bg-primary/10 h-12 w-12 rounded-full"
+        data-slot="skeleton"
       />
       <div
         class="space-y-3"
       >
         <div
           class="animate-pulse rounded-md bg-primary/10 h-4 w-[250px]"
+          data-slot="skeleton"
         />
         <div
           class="animate-pulse rounded-md bg-primary/10 h-4 w-[200px]"
+          data-slot="skeleton"
         />
       </div>
     </div>
@@ -60,22 +68,27 @@ exports[`<EventSkeleton /> tests > should match the snapshot 1`] = `
     >
       <div
         class="animate-pulse rounded-md bg-primary/10 flex-1 h-8 w-full"
+        data-slot="skeleton"
       />
       <div
         class="animate-pulse rounded-md bg-primary/10 h-8 w-[100px]"
+        data-slot="skeleton"
       />
     </div>
     <div
       class="animate-pulse rounded-md bg-primary/10 h-[125px] w-full"
+      data-slot="skeleton"
     />
     <div
       class="space-y-3"
     >
       <div
         class="animate-pulse rounded-md bg-primary/10 h-4 w-full"
+        data-slot="skeleton"
       />
       <div
         class="animate-pulse rounded-md bg-primary/10 h-4 w-full"
+        data-slot="skeleton"
       />
     </div>
     <div
@@ -83,15 +96,18 @@ exports[`<EventSkeleton /> tests > should match the snapshot 1`] = `
     >
       <div
         class="animate-pulse bg-primary/10 h-12 w-12 rounded-full"
+        data-slot="skeleton"
       />
       <div
         class="space-y-3"
       >
         <div
           class="animate-pulse rounded-md bg-primary/10 h-4 w-[250px]"
+          data-slot="skeleton"
         />
         <div
           class="animate-pulse rounded-md bg-primary/10 h-4 w-[200px]"
+          data-slot="skeleton"
         />
       </div>
     </div>

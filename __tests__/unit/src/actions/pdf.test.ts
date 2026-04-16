@@ -1,6 +1,10 @@
 import * as pdfMeModule from '@pdfme/generator';
 import { generatePdf } from '@/actions/pdf';
 
+vi.mock('@pdfme/generator', {
+  spy: true,
+});
+
 vi.mock('next-intl/server', () => ({
   getTranslations: () => {
     const translations: Record<string, unknown> = {

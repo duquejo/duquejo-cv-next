@@ -43,7 +43,7 @@ describe('<ThemeToggle /> tests', () => {
     expect(button).toHaveAttribute('aria-expanded', 'false');
     expect(button).toHaveAttribute('title', props.title);
     expect(button).toHaveTextContent(props.title);
-    expect(button).toHaveClass('text-primary-foreground', 'hover:bg-primary/90');
+    expect(button).toHaveClass('text-primary-foreground', '[a]:hover:bg-primary/90');
   });
 
   it('Should match the snapshot with a given args', async () => {
