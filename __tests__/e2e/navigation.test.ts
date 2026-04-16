@@ -6,13 +6,13 @@ test.describe('navigation', () => {
     await page.goto('/');
   });
 
-  test('should navigate to resumeé', async ({ page, isMobile }) => {
+  test('should navigate to about me', async ({ page, isMobile }) => {
     if (isMobile) {
-      await expect(page.getByRole('link', { name: /Resumeé/ })).toBeHidden();
+      await expect(page.getByRole('link', { name: /About me/ })).toBeHidden();
       await toggleSidebar(page);
     }
 
-    await page.getByRole('link', { name: /Resumeé/ }).click();
+    await page.getByRole('link', { name: /About me/ }).click();
 
     await page.waitForURL('/');
 

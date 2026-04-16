@@ -1,3 +1,5 @@
+'use client';
+
 import { Lightbulb } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { PdfGeneratorToggle } from '@/components/pdf/pdf-toggle';
@@ -42,6 +44,7 @@ export const ComplementarySidebar = ({ outerClassName, innerClassName }: Props) 
         <SheetTrigger asChild>
           <Button
             variant="outline"
+            size="icon-sm"
             className="h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex cursor-pointer"
             title={t('activity.title')}
           >

@@ -164,5 +164,5 @@ const ProjectsFilter = forwardRef<ProjectsFilterRef, ProjectsFilterProps>(
 
 ProjectsFilter.displayName = 'ProjectsFilter';
 
-export { ProjectsFilter };
 export type { ProjectsFilterRef };
+export { ProjectsFilter };
