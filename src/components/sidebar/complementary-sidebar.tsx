@@ -17,7 +17,7 @@ export const ComplementarySidebar = ({ outerClassName, innerClassName }: Props) 
   const t = useTranslations('Sidebar.complementary');
 
   return (
-    <div role="complementary" className={outerClassName}>
+    <aside className={outerClassName}>
       <div className={innerClassName}>
         <SidebarTrigger
           variant="outline"
@@ -53,6 +53,6 @@ export const ComplementarySidebar = ({ outerClassName, innerClassName }: Props) 
           </Button>
         </SheetTrigger>
       </div>
-    </div>
+    </aside>
   );
 };

@@ -19,9 +19,9 @@ const Progress = React.forwardRef<
     const progressInterval = setInterval(() => {
       setProgress((prevProgress) => {
         const updatedProgress = prevProgress + incrementSpeed;
-        if (updatedProgress >= value!) {
+        if (value && updatedProgress >= value) {
           clearInterval(progressInterval);
-          return value!;
+          return value;
         }
         return updatedProgress;
       });

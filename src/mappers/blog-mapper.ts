@@ -1,7 +1,7 @@
 import type { BlogPost, Event } from '@/interfaces';
 
-export class BlogMapper {
-  static toEvent(blogEntity: BlogPost): Event {
+export const BlogMapper = {
+  toEvent(blogEntity: BlogPost): Event {
     return {
       id: `blog-${blogEntity.slug}`,
       type: 'BlogPostEvent',
@@ -29,5 +29,5 @@ export class BlogMapper {
         blog_tags: blogEntity.tags,
       },
     };
-  }
-}
+  },
+};

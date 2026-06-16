@@ -83,14 +83,14 @@ const components: MDXComponents = {
     </code>
   ),
 
-  a: ({ children, href, ...props }) => (
+  a: ({ children, href, ..._props }) => (
     <Link href={href} target="_blank" className="underline underline-offset-2">
       {children}
     </Link>
   ),
 
   // Images
-  Image: ({ src, alt, width, height, full = true, caption = '', ...props }: any) => (
+  Image: ({ src, alt, width, height, full = true, caption = '', ...props }) => (
     <figure className="my-5">
       <Image
         {...props}
@@ -108,7 +108,7 @@ const components: MDXComponents = {
   ),
 
   // YouTube embeds
-  YouTube: ({ videoId, title = '', caption = '' }: any) => (
+  YouTube: ({ videoId, title = '', caption = '' }) => (
     <figure className="flex flex-col justify-center items-center w-full my-5">
       <YouTube videoId={videoId} title={title} />
       {caption && <figcaption className="text-center text-xs mt-2 mb-5">{caption}</figcaption>}
@@ -116,7 +116,7 @@ const components: MDXComponents = {
   ),
 
   pre: ({ children, ...props }) => {
-    const childProps = (children as any)?.props;
+    const childProps = children.props;
     const code = childProps?.children || '';
     const className = childProps?.className || '';
     const language = className.replace('language-', '') || 'text';

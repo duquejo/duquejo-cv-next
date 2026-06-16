@@ -23,6 +23,7 @@ export default function ServicesPage() {
       <section className="pt-5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-6">
           {t.raw('content')?.map((service: ServicesType, i: number) => (
+            // biome-ignore lint: Keep KISS
             <Card key={`service-${i}`} className="bg-sidebar/30 rounded-xl border-dashed">
               <CardHeader>
                 <CardTitle>{service.title}</CardTitle>

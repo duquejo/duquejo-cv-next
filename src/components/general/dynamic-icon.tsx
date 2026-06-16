@@ -4,6 +4,7 @@ import type { ComponentType } from 'react';
 
 interface Props {
   iconName: string;
+  // biome-ignore lint: Keep KISS
   [key: string]: any;
 }
 type LucideIconsModule = Record<string, ComponentType<unknown>>;

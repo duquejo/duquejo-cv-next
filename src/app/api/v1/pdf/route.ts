@@ -13,7 +13,7 @@ const applyCorsHeaders = (headers: Headers, origin: string) => {
 
   if (ALLOWED_ORIGINS.includes(origin)) headers.set('Access-Control-Allow-Origin', origin);
 
-  Object.entries(CORS_HEADERS).forEach(([key, value]) => headers.set(key, value));
+  Object.entries(CORS_HEADERS).map(([key, value]) => headers.set(key, value));
 };
 
 export async function POST(request: NextRequest): Promise<Response> {

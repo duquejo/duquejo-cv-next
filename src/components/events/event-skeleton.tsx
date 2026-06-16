@@ -7,6 +7,7 @@ interface Props {
 export const EventSkeleton = ({ rounds = 2 }: Props) => {
   return new Array(rounds).fill(0).map((_, i) => (
     <div
+      // biome-ignore lint: Keep KISS
       key={i}
       aria-hidden="true"
       aria-busy="true"
