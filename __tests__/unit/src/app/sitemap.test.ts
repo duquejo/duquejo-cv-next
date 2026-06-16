@@ -9,7 +9,7 @@ vi.mock('@/i18n/routing', () => ({
 }));
 
 vi.mock('@/actions/blog', () => ({
-  getBlogPostsByLocale: async (limit: number, locale: string) => [
+  getBlogPostsByLocale: async (_limit: number, _locale: string) => [
     {
       metadata: {
         slug: 'welcome-to-my-blog',

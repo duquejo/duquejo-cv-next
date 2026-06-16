@@ -139,7 +139,7 @@ describe('<ThemeToggle /> tests', () => {
     );
 
     const button = screen.getByRole('button');
-    const buttonWrapper = button.parentElement!;
+    const buttonWrapper = button.parentElement;
 
     await user.click(button);
 
