@@ -30,7 +30,7 @@ export default async function BlogPage() {
 
       {/* Featured Post */}
       {featuredPost && (
-        <section role="contentinfo" className="flex flex-col">
+        <section className="flex flex-col">
           <BlogFeaturedCard
             title={featuredPost.metadata.title}
             category={featuredPost.metadata.category}
@@ -49,7 +49,7 @@ export default async function BlogPage() {
         <>
           <Separator className="my-2" />
 
-          <section role="contentinfo" className="flex flex-col">
+          <section className="flex flex-col">
             <h2 className="main-subtitle">{t('subtitle')}</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
               {regularPosts.map((post) => (

@@ -23,7 +23,7 @@ describe('<Footer /> tests', () => {
     expect(footer).toBeInTheDocument();
     expect(footer).toHaveTextContent('© 1992 José Duque');
 
-    social.map((s) => {
+    social.forEach((s) => {
       const link = screen.queryByRole('link', { name: s.name });
 
       if (!s.isVisibleInFooter) {

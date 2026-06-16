@@ -3,9 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 
 interface Props {
-  onSubmitFinish: () => void;
   button: string;
   buttonLoading: string;
+  onSubmitFinish?: () => void;
 }
 
 export const PdfForm = ({ onSubmitFinish, button, buttonLoading }: Props) => {
@@ -22,7 +22,7 @@ export const PdfForm = ({ onSubmitFinish, button, buttonLoading }: Props) => {
       });
 
       if (response.status !== 200) {
-        throw new Error('Request failed with status code ' + response.status);
+        throw new Error(`Request failed with status code ${response.status}`);
       }
 
       const blob = await response.blob();
@@ -34,7 +34,8 @@ export const PdfForm = ({ onSubmitFinish, button, buttonLoading }: Props) => {
       link.remove();
 
       window.URL.revokeObjectURL(url);
-      onSubmitFinish();
+
+      if (onSubmitFinish) onSubmitFinish();
     } catch (e: unknown) {
       if (e instanceof Error) {
         console.error(e.message);

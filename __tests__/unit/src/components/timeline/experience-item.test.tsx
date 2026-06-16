@@ -59,10 +59,8 @@ describe('<ExperienceItemContent /> tests', () => {
 
     expect(screen.getByText(textData.experienceItemTitle)).toBeInTheDocument();
 
-    data.additional_info.forEach((item: string) =>
-      expect(screen.getByText(item)).toBeInTheDocument(),
-    );
-    data.resume.forEach((item: string) => expect(screen.getByText(item)).toBeInTheDocument());
+    data.additional_info.map((item: string) => expect(screen.getByText(item)).toBeInTheDocument());
+    data.resume.map((item: string) => expect(screen.getByText(item)).toBeInTheDocument());
     expect(
       screen.queryByRole('link', { name: textData.experienceItemButtonLabel }),
     ).toBeInTheDocument();

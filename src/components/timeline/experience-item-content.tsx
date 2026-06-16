@@ -16,6 +16,7 @@ export const ExperienceItemContent = memo(({ resume, contentTitle }: Props) => {
       )}
       <ol className="md:list-disc md:ml-5 text-justify group-hover:marker:text-primary">
         {resume.map((r, i) => (
+          // biome-ignore lint: Keep KISS
           <li key={`resume-${i}`} className="my-3 md:my-0 text-justify text-sm leading-relaxed">
             {r}
           </li>

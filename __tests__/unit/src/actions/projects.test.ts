@@ -57,7 +57,7 @@ describe('Projects action', () => {
 
     // Assert
     expect(filterProjectsByTags).toHaveBeenCalledWith(
-      dummyIntlMessages['Experience']['content'],
+      dummyIntlMessages.Experience.content,
       filtersArray,
     );
     expect(result).toEqual(expectedProject);
@@ -67,7 +67,7 @@ describe('Projects action', () => {
     // Arrange
     vi.mocked(getMessages).mockResolvedValue(dummyIntlMessages);
     const filtersArray: string[] = [];
-    const expectedProjects = dummyIntlMessages['Experience']['content'];
+    const expectedProjects = dummyIntlMessages.Experience.content;
 
     // Act
     const result = await getProjectByFilters(filtersArray);

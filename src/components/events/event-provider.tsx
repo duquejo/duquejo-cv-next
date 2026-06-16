@@ -47,15 +47,15 @@ export const EventProvider = ({ children, defaultOpen = false }: Props) => {
           {isLoading ? (
             <EventSkeleton rounds={2} />
           ) : (
-            <div role="list" className="flex flex-col gap-2 overflow-y-auto list-none">
+            <ol className="flex flex-col gap-2 overflow-y-auto list-none">
               {!data || data.length === 0 ? (
-                <p data-testid="empty" className="text-muted-foreground text-sm">
+                <li data-testid="empty" className="text-muted-foreground text-sm">
                   {t('empty')}
-                </p>
+                </li>
               ) : (
                 data.map((event) => <EventCard key={event.id} {...event} />)
               )}
-            </div>
+            </ol>
           )}
         </div>
         <SheetFooter>

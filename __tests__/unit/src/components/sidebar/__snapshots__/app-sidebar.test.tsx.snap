@@ -536,9 +536,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                     data-sidebar="menu-item"
                     data-slot="sidebar-menu-item"
                   >
-                    <div
-                      role="complementary"
-                    >
+                    <aside>
                       <div
                         class="flex flex-row gap-x-2"
                       >
@@ -580,12 +578,11 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                           </span>
                         </button>
                         <button
-                          aria-controls="radix-_r_3_"
                           aria-expanded="false"
                           aria-haspopup="dialog"
                           class="group/button inline-flex shrink-0 items-center justify-center rounded-lg border bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50 size-8 h-8 w-8 lg:h-10 lg:w-10 cursor-pointer"
                           data-size="icon"
-                          data-slot="button"
+                          data-slot="popover-trigger"
                           data-state="closed"
                           data-variant="outline"
                           type="button"
@@ -695,7 +692,6 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                           />
                         </button>
                         <button
-                          aria-controls="radix-_r_0_"
                           aria-expanded="false"
                           aria-haspopup="dialog"
                           class="group/button shrink-0 items-center justify-center border bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50 size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg h-8 w-8 lg:h-10 lg:w-10 hidden sm:flex cursor-pointer"
@@ -733,7 +729,7 @@ exports[`<MainSidebar /> tests > Should match the snapshot 1`] = `
                           />
                         </button>
                       </div>
-                    </div>
+                    </aside>
                   </li>
                 </ul>
               </div>
