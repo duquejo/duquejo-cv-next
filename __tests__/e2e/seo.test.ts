@@ -13,6 +13,11 @@ test.describe('SEO tests', () => {
     const response = await page.goto('/sitemap.xml');
     const body = await response?.body();
     const headers = response?.headers();
+
+    if (!headers) {
+      throw new Error('No headers found in the response');
+    }
+
     expect(body?.toString()).toContain('<?xml version="1.0" encoding="UTF-8"?>');
     expect(headers['content-type']).toContain('application/xml');
   });
