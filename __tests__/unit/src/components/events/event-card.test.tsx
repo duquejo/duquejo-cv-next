@@ -1,3 +1,4 @@
+import { fail } from 'node:assert/strict';
 import { cleanup, render, screen } from '@testing-library/react';
 import { EventCard } from '@/components/events/event-card';
 import type { Event } from '@/interfaces';
@@ -58,7 +59,15 @@ describe('<EventCard /> tests', () => {
 
     expect(container).toMatchSnapshot();
 
-    expect(screen.getByText(completeArgs.payload.ref!)).toBeInTheDocument();
+    if (
+      !completeArgs.payload.ref ||
+      !completeArgs.payload.description ||
+      !completeArgs.payload.ref_type
+    ) {
+      fail('Payload should be defined for this test case');
+    }
+
+    expect(screen.getByText(completeArgs.payload.ref)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Link' })).toHaveAttribute(
       'href',
       'https://github.com/johndoe',
@@ -67,8 +76,8 @@ describe('<EventCard /> tests', () => {
       'rel',
       'noopener noreferrer nofollow',
     );
-    expect(screen.getByText(completeArgs.payload.description!)).toBeInTheDocument();
-    expect(screen.getByText(completeArgs.payload.ref_type!)).toBeInTheDocument();
+    expect(screen.getByText(completeArgs.payload.description)).toBeInTheDocument();
+    expect(screen.getByText(completeArgs.payload.ref_type)).toBeInTheDocument();
   });
 
   it('should render the event icon conditionally', () => {

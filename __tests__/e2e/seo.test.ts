@@ -11,8 +11,8 @@ test.describe('SEO tests', () => {
 
   test('Serves a sitemap.xml', async ({ page }) => {
     const response = await page.goto('/sitemap.xml');
-    const body = await response!.body();
-    const headers = response!.headers();
+    const body = await response?.body();
+    const headers = response?.headers();
     expect(body?.toString()).toContain('<?xml version="1.0" encoding="UTF-8"?>');
     expect(headers['content-type']).toContain('application/xml');
   });

@@ -14,6 +14,7 @@ const otherItems = [
 ];
 
 vi.mock('@/i18n/routing', () => ({
+  // biome-ignore lint: Keep KISS
   Link: ({ children, href, onClick, ...props }: any) => (
     <a href={href} onClick={onClick} {...props}>
       {children}

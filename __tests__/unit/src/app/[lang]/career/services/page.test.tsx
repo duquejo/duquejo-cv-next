@@ -27,7 +27,7 @@ vi.mock('next-intl', () => ({
     const t = (key: string) => translations[key];
     t.raw = (key: string) => translations[key];
 
-    t.rich = (key: string, tags: ReactNode) => key;
+    t.rich = (key: string, _tags: ReactNode) => key;
     return t;
   },
 }));

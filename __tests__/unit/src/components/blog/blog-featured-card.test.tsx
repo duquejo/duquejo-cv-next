@@ -3,6 +3,7 @@ import { BlogFeaturedCard } from '@/components/blog/blog-featured-card';
 import type { BlogPostResult } from '@/interfaces';
 
 vi.mock('@/i18n/routing', () => ({
+  // biome-ignore lint: Keep KISS
   Link: ({ children, href, onClick, ...props }: any) => (
     <a href={href?.params?.slug} onClick={onClick} {...props}>
       {children}

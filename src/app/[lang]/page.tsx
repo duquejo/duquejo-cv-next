@@ -53,6 +53,7 @@ export default function MainPage() {
           {t.raw('education.content') && (
             <ul>
               {t.raw('education.content').map((a: ExperienceType, i: number) => (
+                // biome-ignore lint: Keep KISS
                 <ExperienceItem key={i} {...a} withIcons={false} />
               ))}
             </ul>
@@ -65,6 +66,7 @@ export default function MainPage() {
             {t.raw('languages.content')?.map((l: LanguageType, i: number) => (
               <Card
                 className="flex flex-col justify-center items-center bg-sidebar/30 rounded-xl border-dashed"
+                // biome-ignore lint: Keep KISS
                 key={`language-${i}`}
               >
                 <CardHeader>

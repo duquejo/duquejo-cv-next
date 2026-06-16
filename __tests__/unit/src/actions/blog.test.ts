@@ -1,12 +1,11 @@
 import { getLocale } from 'next-intl/server';
 import * as actions from '@/actions/blog';
-import { MockBlogPostBuilder } from '../../builders';
 
 const { mockReaddir } = vi.hoisted(() => ({
   mockReaddir: vi.fn(),
 }));
 
-vi.mock('fs/promises', () => ({
+vi.mock('node:fs/promises', () => ({
   readdir: mockReaddir,
 }));
 
@@ -35,28 +34,6 @@ const mockedFileNames: string[] = [
   'en-espanol.es.mdx',
   'README.md',
 ];
-
-// Mock blog post fixtures using builder
-const mockBlogPostResultEn = new MockBlogPostBuilder()
-  .withSlugs('test-post', 'test-post', 'post-prueba')
-  .withTitle('Test Blog Post')
-  .withExcerpt('This is a test blog post')
-  .withCategory('Coding')
-  .withTags('test', 'vitest')
-  .withPostComponent(() => 'foo')
-  .build();
-
-const mockBlogPostResultEs = new MockBlogPostBuilder()
-  .withSlugs('post-prueba', 'test-post', 'post-prueba')
-  .withTitle('Post de Prueba')
-  .withExcerpt('Este es un post de prueba')
-  .withCategory('Coding')
-  .withTags('test', 'vitest')
-  .withPostComponent(() => 'bar')
-  .build();
-
-// Extract metadata for convenience
-const mockBlogPostEn = mockBlogPostResultEn.metadata;
 
 describe('Blog actions - getBlogPostsFilenames', () => {
   beforeEach(() => {

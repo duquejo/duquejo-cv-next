@@ -5,7 +5,8 @@ import { RichText } from '@/components/general/rich-text';
 import { YouTube } from '@/components/general/youtube';
 
 vi.mock('next/dynamic', () => ({
-  default: (importFn: () => Promise<unknown>, options?: { loading?: () => any }) => {
+  // biome-ignore lint: Keep KISS
+  default: (_importFn: () => Promise<unknown>, options?: { loading?: () => any }) => {
     const MockComponent = (props: Record<string, unknown>) => (
       <span data-testid="dynamic-icon" {...props} />
     );

@@ -11,7 +11,7 @@ export const SocialItemsHorizontal = () => {
         const commonProps = {
           className: 'transition-colors hover:text-primary inline-flex cursor-pointer',
           title: social.name,
-          ['aria-label']: social.name,
+          'aria-label': social.name,
         };
 
         return (

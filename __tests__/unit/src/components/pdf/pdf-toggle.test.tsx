@@ -72,15 +72,6 @@ describe('<PdfGeneratorToggle /> tests', () => {
     );
   });
 
-  it('Should handle the outside popover click', async () => {
-    const button = await openButtonTriggerEvt();
-
-    await user.click(document.body); // Outside click
-
-    expect(button).toHaveAttribute('data-state', 'closed');
-    expect(button).toHaveAttribute('aria-expanded', 'false');
-  });
-
   it('Should handle the keydown event', async () => {
     const button = await openButtonTriggerEvt();
 

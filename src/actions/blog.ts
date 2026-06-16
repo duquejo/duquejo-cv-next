@@ -1,8 +1,8 @@
 'use server';
 
-import * as fs from 'fs/promises';
+import * as fs from 'node:fs/promises';
+import path from 'node:path';
 import { getLocale } from 'next-intl/server';
-import path from 'path';
 import { routing } from '@/i18n/routing';
 import type { BlogPost, BlogPostResult } from '@/interfaces';
 
@@ -26,7 +26,7 @@ export async function getBlogPostsFilenames(locale?: string): Promise<string[]> 
   const localeFileSuffix = getLocaleSuffix(currentLocale);
 
   return files
-    .filter((file) => file && file.endsWith(localeFileSuffix))
+    .filter((file) => file?.endsWith(localeFileSuffix))
     .map((file) => file.replace(localeFileSuffix, ''));
 }
 

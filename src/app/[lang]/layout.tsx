@@ -1,10 +1,5 @@
-import type { ReactNode } from 'react';
 import { Footer } from '@/components/footer/footer';
 import { AnimatedBackground } from '@/components/theme/animated-background';
-
-interface Props {
-  children: ReactNode;
-}
 
 export default function ResumeLayout({ children }: LayoutProps<'/[lang]'>) {
   return (
