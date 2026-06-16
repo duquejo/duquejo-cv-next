@@ -77,6 +77,7 @@ describe('<ProjectsPage /> tests', () => {
         searchParams: Promise.resolve({
           query: searchCriteria,
         }),
+        params: Promise.resolve({ lang: 'en' }),
       }),
     );
 
@@ -91,6 +92,7 @@ describe('<ProjectsPage /> tests', () => {
         searchParams: Promise.resolve({
           query: searchCriteria,
         }),
+        params: Promise.resolve({ lang: 'en' }),
       }),
     );
 
