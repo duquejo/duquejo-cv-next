@@ -16,7 +16,7 @@ describe('Projects action', () => {
     Experience: {
       content: [{ additional_info: ['React', 'Next'] }, { additional_info: ['Next', 'Jest'] }],
     },
-  } as never;
+  };
 
   beforeEach(() => {
     vi.clearAllMocks();
