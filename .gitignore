@@ -4,11 +4,16 @@
 /node_modules
 /.pnp
 .pnp.*
+.pnp.cjs
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
+!.yarn/sdks
 !.yarn/versions
+
+# Cache
+.yarn/cache
 
 # testing
 /coverage
