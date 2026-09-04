@@ -67,7 +67,7 @@ exports[`<BlogFeaturedCard /> tests > should match the snapshot 1`] = `
                 />
               </svg>
               <span>
-                31/12/2022, 7:00:00 p. m.
+                31/12/2022, 7:00:00 p. m.
               </span>
             </div>
             <div
