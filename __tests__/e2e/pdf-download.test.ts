@@ -6,7 +6,7 @@ test.describe('pdf download dialog', () => {
     await page.goto('/');
   });
 
-  test.skip('should perform a pdf file download', async ({ page, isMobile }) => {
+  test('should perform a pdf file download', async ({ page, isMobile }) => {
     if (isMobile) {
       await toggleSidebar(page);
     }

@@ -27,7 +27,7 @@ test.describe('Blog page', () => {
   test('should navigate to the first blog post entry and go back successfully', async ({
     page,
   }) => {
-    const firstBlogPost = page.getByRole('contentinfo').first();
+    const firstBlogPost = page.locator('.grid').getByRole('link').first();
 
     await firstBlogPost.click();
     await page.waitForURL(/blog\//);
@@ -53,7 +53,7 @@ test.describe('Blog page', () => {
   });
 
   test('should navigate to the last blog post entry and go back successfully', async ({ page }) => {
-    const lastBlogPost = page.getByRole('contentinfo').last();
+    const lastBlogPost = page.locator('.grid').getByRole('link').last();
 
     await lastBlogPost.click();
     await page.waitForURL(/blog\//);
@@ -74,7 +74,7 @@ test.describe('Blog page', () => {
   });
 
   test('should display the reading progress bar', async ({ page }) => {
-    const firstBlogPost = page.getByRole('contentinfo').first();
+    const firstBlogPost = page.locator('.grid').getByRole('link').first();
 
     await firstBlogPost.click();
 
